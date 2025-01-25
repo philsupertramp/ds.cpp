@@ -1,0 +1,29 @@
+# build directories
+*build*/
+*release*/
+*debug*/
+build/*
+out/
+DeepLearningPython35/
+
+# IDE files
+.idea/
+.vscode
+massif.out.*
+octave-workspace
+*.RData
+*.Rhistory
+tags
+
+# code coverage
+cov*.info
+*.info
+cmake-debug-coverage/
+coverage-report/
+
+# testing files
+flower_photos/
+image_processing/training/
+image_classification/
+in.png
+out.png

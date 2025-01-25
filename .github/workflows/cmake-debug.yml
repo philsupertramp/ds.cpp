@@ -1,0 +1,20 @@
+name: CMake
+
+on: [ pull_request ]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Debug
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull repo
+        uses: actions/checkout@v2
+      - name: Prepare
+        run: docker pull philsupertramp/cpp-test:latest
+      - name: Build-n-Test
+        run: |
+          chmod +x build.sh
+          docker run --rm -v ${PWD}:/usr/app -w /usr/app philsupertramp/cpp-test:latest make test
