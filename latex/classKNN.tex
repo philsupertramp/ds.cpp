@@ -1,0 +1,147 @@
+\doxysection{KNN Class Reference}
+\hypertarget{classKNN}{}\label{classKNN}\index{KNN@{KNN}}
+
+
+{\ttfamily \#include $<$KNN.\+h$>$}
+
+Inheritance diagram for KNN\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classKNN}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKNN_a21c02a5dbd28d9fb9e1a5daefd287a28}{KNN}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{neighbors}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classKNN_ab5c83a7deee14bf6b66ecef806f77b41}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classKNN_a8e9c1edbc9a7fc4756ef86fbe52bb753}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClassifier_ae6132b100c96a4f3d8ad3885b5acb28e}{Classifier}} ()
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Rows}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Columns}}=1)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{update}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{delta}})
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classKNN_a4b23e38827e4de329fa9a383f69655d5}{nearest\+\_\+neighbors}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classKNN_a98edf87cb19959a95cfdbad5c8a02449}{train\+Labels}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
+\begin{DoxyCompactList}\small\item\em Vector holding weights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
+\begin{DoxyCompactList}\small\item\em Vector holding classification error per epoch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+\begin{DoxyCompactList}\small\item\em flag to initialize weights only once \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+K Nearest Neightbor \doxylink{classClassifier}{Classifier} (\doxylink{classKNN}{KNN}) for linear and non-\/linear classification.
+
+Works well on
+\begin{DoxyItemize}
+\item correlated data
+\item uncorrelated data
+\end{DoxyItemize}
+
+Implementation\+:
+
+fit model\+: not required
+
+prediction\+:
+\begin{DoxyEnumerate}
+\item Compute distance between test data X and training data weights\+: \$\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}weights -\/ X\+\_\+i\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\+\_\+2\$
+\item Sort distances, in ascending order, select K shortest distances\+: \$\textbackslash{}text\{argsort\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}weights -\/ X\+\_\+i\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\+\_\+2\$
+\item For each class in train\+Labels count the number of members inside the distance set\+: \$\textbackslash{}gamma\+\_\+\{y\+\_\+k\} \textbackslash{}leftarrow \textbackslash{}gamma\+\_\+\{y\+\_\+k\} + 1\$
+\item Select the class with most members inside distance set\+: \$\textbackslash{}text\{argmax\}\+\_\+k(\textbackslash{}gamma) 
+\end{DoxyEnumerate}\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{ds_2TestKNN_8cpp-example}{ds/\+Test\+KNN.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classKNN_a21c02a5dbd28d9fb9e1a5daefd287a28}\label{classKNN_a21c02a5dbd28d9fb9e1a5daefd287a28} 
+\index{KNN@{KNN}!KNN@{KNN}}
+\index{KNN@{KNN}!KNN@{KNN}}
+\doxysubsubsection{\texorpdfstring{KNN()}{KNN()}}
+{\footnotesize\ttfamily KNN\+::\+KNN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{neighbors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classKNN_ab5c83a7deee14bf6b66ecef806f77b41}\label{classKNN_ab5c83a7deee14bf6b66ecef806f77b41} 
+\index{KNN@{KNN}!fit@{fit}}
+\index{fit@{fit}!KNN@{KNN}}
+\doxysubsubsection{\texorpdfstring{fit()}{fit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} KNN\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Helper method to \textquotesingle{}fit\textquotesingle{} the model.
+
+Stores given X in weights and y in train\+Labels
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & \doxylink{classMatrix}{Matrix} of known input data \\
+\hline
+{\em y} & vector of corresponding labels \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
+
+\Hypertarget{classKNN_a8e9c1edbc9a7fc4756ef86fbe52bb753}\label{classKNN_a8e9c1edbc9a7fc4756ef86fbe52bb753} 
+\index{KNN@{KNN}!predict@{predict}}
+\index{predict@{predict}!KNN@{KNN}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ KNN\+::predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+K-\/\+Nearest Neighbor \doxylink{classClassifier}{Classifier} Prediction
+
+
+\begin{DoxyEnumerate}
+\item Compute distance between test data X and training data weights\+: \$\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}weights -\/ X\+\_\+i\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\+\_\+2\$
+\item Sort distances, in ascending order, select K shortest distances\+: \$\textbackslash{}text\{argsort\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}weights -\/ X\+\_\+i\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\+\_\+2\$
+\item For each class in train\+Labels count the number of members inside the distance set\+: \$\textbackslash{}gamma\+\_\+\{y\+\_\+k\} \textbackslash{}leftarrow \textbackslash{}gamma\+\_\+\{y\+\_\+k\} + 1\$
+\item Select the class with most members inside distance set\+: \$\textbackslash{}text\{argmax\}\+\_\+k(\textbackslash{}gamma) 
+\end{DoxyEnumerate}
+
+Implements \mbox{\hyperlink{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}{Predictor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classKNN_a4b23e38827e4de329fa9a383f69655d5}\label{classKNN_a4b23e38827e4de329fa9a383f69655d5} 
+\index{KNN@{KNN}!nearest\_neighbors@{nearest\_neighbors}}
+\index{nearest\_neighbors@{nearest\_neighbors}!KNN@{KNN}}
+\doxysubsubsection{\texorpdfstring{nearest\_neighbors}{nearest\_neighbors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} KNN\+::nearest\+\_\+neighbors\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classKNN_a98edf87cb19959a95cfdbad5c8a02449}\label{classKNN_a98edf87cb19959a95cfdbad5c8a02449} 
+\index{KNN@{KNN}!trainLabels@{trainLabels}}
+\index{trainLabels@{trainLabels}!KNN@{KNN}}
+\doxysubsubsection{\texorpdfstring{trainLabels}{trainLabels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ KNN\+::train\+Labels\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/ds/\mbox{\hyperlink{KNN_8h}{KNN.\+h}}\end{DoxyCompactItemize}

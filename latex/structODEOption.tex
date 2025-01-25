@@ -1,0 +1,71 @@
+\doxysection{ODEOption Struct Reference}
+\hypertarget{structODEOption}{}\label{structODEOption}\index{ODEOption@{ODEOption}}
+
+
+{\ttfamily \#include $<$ode.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{structODEOption_a4d1ab902dfbb3f19b3ef2fa219a76303}{h}} = 0
+\begin{DoxyCompactList}\small\item\em step width of t \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{structODEOption_a33c4d75068cc55a3fcc6b15c79523483}{TOL}} = 1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/7
+\begin{DoxyCompactList}\small\item\em tolerance for the algorithm to determine convergence \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{structODEOption_a45abb7aa0806c54ed678f2a7d9cad631}{max\+Iter}} = 50
+\begin{DoxyCompactList}\small\item\em max iterations for integrated newton steps \end{DoxyCompactList}\item 
+\mbox{\hyperlink{ode_2ode_8h_aaf3a41db4e8837085cf81e769e20cc89}{ODEJac}} \mbox{\hyperlink{structODEOption_a99dbd698766a95bb8a9cf0f2e28d7816}{Jac}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}
+\begin{DoxyCompactList}\small\item\em jacobian matrix of given function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Option struct for ODE solvers \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestExplicitEuler_8cpp-example}{numerics/ode/\+Test\+Explicit\+Euler.\+cpp}}, \mbox{\hyperlink{numerics_2ode_2TestODEBDF2_8cpp-example}{numerics/ode/\+Test\+ODEBDF2.\+cpp}}, and \mbox{\hyperlink{numerics_2ode_2TestODETrapez_8cpp-example}{numerics/ode/\+Test\+ODETrapez.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structODEOption_a4d1ab902dfbb3f19b3ef2fa219a76303}\label{structODEOption_a4d1ab902dfbb3f19b3ef2fa219a76303} 
+\index{ODEOption@{ODEOption}!h@{h}}
+\index{h@{h}!ODEOption@{ODEOption}}
+\doxysubsubsection{\texorpdfstring{h}{h}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} ODEOption\+::h = 0}
+
+
+
+step width of t 
+
+\Hypertarget{structODEOption_a99dbd698766a95bb8a9cf0f2e28d7816}\label{structODEOption_a99dbd698766a95bb8a9cf0f2e28d7816} 
+\index{ODEOption@{ODEOption}!Jac@{Jac}}
+\index{Jac@{Jac}!ODEOption@{ODEOption}}
+\doxysubsubsection{\texorpdfstring{Jac}{Jac}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ode_2ode_8h_aaf3a41db4e8837085cf81e769e20cc89}{ODEJac}} ODEOption\+::\+Jac = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}}
+
+
+
+jacobian matrix of given function 
+
+\Hypertarget{structODEOption_a45abb7aa0806c54ed678f2a7d9cad631}\label{structODEOption_a45abb7aa0806c54ed678f2a7d9cad631} 
+\index{ODEOption@{ODEOption}!maxIter@{maxIter}}
+\index{maxIter@{maxIter}!ODEOption@{ODEOption}}
+\doxysubsubsection{\texorpdfstring{maxIter}{maxIter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} ODEOption\+::max\+Iter = 50}
+
+
+
+max iterations for integrated newton steps 
+
+\Hypertarget{structODEOption_a33c4d75068cc55a3fcc6b15c79523483}\label{structODEOption_a33c4d75068cc55a3fcc6b15c79523483} 
+\index{ODEOption@{ODEOption}!TOL@{TOL}}
+\index{TOL@{TOL}!ODEOption@{ODEOption}}
+\doxysubsubsection{\texorpdfstring{TOL}{TOL}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} ODEOption\+::\+TOL = 1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/7}
+
+
+
+tolerance for the algorithm to determine convergence 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/ode/\mbox{\hyperlink{ode_2ode_8h}{ode.\+h}}\end{DoxyCompactItemize}

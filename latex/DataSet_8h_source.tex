@@ -1,0 +1,180 @@
+\doxysection{Data\+Set.\+h}
+\hypertarget{DataSet_8h_source}{}\label{DataSet_8h_source}\index{include/math/ds/DataSet.h@{include/math/ds/DataSet.h}}
+\mbox{\hyperlink{DataSet_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../Matrix.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../format.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../matrix\_utils.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95}{NormalizerMethod}}\ \{\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aa833163aabec0b8502288f07e10734ea}{SET\_MEAN}}\ =\ 0,\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aff671eea9cd628361f1a7713ed372ce8}{COL\_MEAN}}\ =\ 1,\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95afada0aad94a33b044fc15d463b814988}{ROW\_MEAN}}\ =\ 2\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structSet}{Set}}\ \{}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}};}
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{structSet_abeb4570e7f558220e76e3fcb03551813}{Output}};}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}}\ =\ 0;}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}}\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structSet_a21819d28230d81776628a4d152a6fed0}{count}}\ =\ 0;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{structSet_a3e07b0fec2e0982ee8457c9189e8f7df}{Set}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{structSet_add24eedb05dfe379e130a64008edcc23}{Set}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}}\ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}};}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}};}
+\DoxyCodeLine{00043\ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{structSet_a2b299f468513b17e4fe2495c526b7a90}{Set}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fileName}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}}\ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{structSet_a4f4968d31600cbf8497464eeab1ca139}{ReadFromFile}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fileName}});}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structSet_a4f4968d31600cbf8497464eeab1ca139}{ReadFromFile}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fileName}})\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ std::string\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{line}};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{lineCount}}\ =\ 0;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ std::ifstream\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile2}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fileName}});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile2}}.is\_open())\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{getline}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile2}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{line}},\ \textcolor{charliteral}{'\(\backslash\)n'}))\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{lineCount}}++;\ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile2}}.close();}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ std::ifstream\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fileName}});}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{structSet_a21819d28230d81776628a4d152a6fed0}{count}}\ \ =\ 0;}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}\ \ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{lineCount}},\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}});}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{structSet_abeb4570e7f558220e76e3fcb03551813}{Output}}\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{lineCount}},\ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}});}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile}}.is\_open())\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{line}}\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{getline}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{line}},\ \textcolor{charliteral}{'\(\backslash\)n'}))\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::stringstream\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{lineStream}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{line}});}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}}\ +\ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}};\ i++)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ <\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}}\ +\ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}}\ -\/\ 1)\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{lineStream}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}},\ \textcolor{charliteral}{'\(\backslash\)t'});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ std::getline(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{lineStream}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ <\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}})\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(\mbox{\hyperlink{structSet_a21819d28230d81776628a4d152a6fed0}{count}},\ i)\ =\ std::atof(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}}.c\_str());}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSet_abeb4570e7f558220e76e3fcb03551813}{Output}}(\mbox{\hyperlink{structSet_a21819d28230d81776628a4d152a6fed0}{count}},\ i\ -\/\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}})\ =\ std::atof(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}}.c\_str());}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ ++\mbox{\hyperlink{structSet_a21819d28230d81776628a4d152a6fed0}{count}};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataFile}}.close();}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ Classes\ =\ OutputToClass(Output);}}
+\DoxyCodeLine{00099\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}DataSet::ReadFromFile:\ Unable\ to\ open\ file\ "{}}\ <<\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fileName}}\ <<\ std::endl;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00109\ \ \ [[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nodiscard}}]]\ \mbox{\hyperlink{structSet}{Set}}\ \mbox{\hyperlink{structSet_a38774f6f226f344d4444507fc5e53dc5}{GetBatch}}(\textcolor{keywordtype}{int}\ batchSize)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}(batchSize\ ==\ -\/1\ ||\ batchSize\ ==\ (\textcolor{keywordtype}{int})\mbox{\hyperlink{structSet_a21819d28230d81776628a4d152a6fed0}{count}})\ \{\ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};\ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newDS}}\ \ \ =\ \mbox{\hyperlink{structSet_a3e07b0fec2e0982ee8457c9189e8f7df}{Set}}(\mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}},\ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}});}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newDS}}.Input\ \ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ batchSize,\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}});}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newDS}}.Output\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ batchSize,\ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}});}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ batchSize;\ i++)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ index\ =\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}})(\mbox{\hyperlink{classRandom_a5e7703d9e1a4de62e6483748afe35243}{Random::Get}}()\ *\ \mbox{\hyperlink{structSet_a21819d28230d81776628a4d152a6fed0}{count}});}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}\ <\ \mbox{\hyperlink{structSet_a2b7d3fdcba4188a6c2cd7808e8b0892a}{InputCount}};\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}++)\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newDS}}.Input(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})\ =\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(index,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}});\ \}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}\ <\ \mbox{\hyperlink{structSet_a6064a5992e5bc26890f985a836b4aa59}{OutputCount}};\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}++)\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newDS}}.Output(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}})\ =\ \mbox{\hyperlink{structSet_abeb4570e7f558220e76e3fcb03551813}{Output}}(index,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}});\ \}}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newDS}};}
+\DoxyCodeLine{00121\ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structSet_ad7c51502d31b11cd673436a4d15f0f77}{NormalizeSetMean}}()\ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maxIndex}}\ =\ \mbox{\hyperlink{matrix__utils_8h_a2a01e8ac881ea58d279cd73ec1803444}{argmax}}(\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}});}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minIndex}}\ =\ \mbox{\hyperlink{matrix__utils_8h_a14c028e4d81577bbda70dd22db04afe8}{argmin}}(\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}});}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maxVal}}\ \ \ =\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(\textcolor{keywordtype}{int}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maxIndex}}\ /\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}()),\ \textcolor{keywordtype}{int}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maxIndex}}\ \%\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}()));}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minVal}}\ \ \ =\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(\textcolor{keywordtype}{int}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minIndex}}\ /\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}()),\ \textcolor{keywordtype}{int}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minIndex}}\ \%\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}()));}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minMax}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maxVal}}\ -\/\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minVal}};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ i++)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}++)\ \{\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ =\ (\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ -\/\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minVal}})\ /\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{minMax}};\ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \}}
+\DoxyCodeLine{00136\ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00141\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structSet_a87905c022276dc73d862e58a6315ec06}{NormalizeRowMean}}()\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{auto}\ means\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}(),\ 1);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ ++i)\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ \{\ means(i,\ 0)\ +=\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}});\ \}}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ means(i,\ 0)\ /=\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();}
+\DoxyCodeLine{00146\ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}(),\ 1);}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ ++i)\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}(i,\ 0)\ +=\ \mbox{\hyperlink{Probability_8h_a4f0f49581ae9315695fb32a1e9fc4bdc}{pow}}(\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ -\/\ means(i,\ 0),\ 2);\ \}}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}(i,\ 0)\ /=\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ ++i)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ \{\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ =\ (\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ -\/\ means(i,\ 0))\ /\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}(i,\ 0);\ \}}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00160\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structSet_a92e8cf6700597dd78c5221b0a8d7a374}{NormalizeColMean}}()\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}\ \ \ \ \ \ =\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a054a03bcae4eb86d6f4ef84dc87840ef}{Transpose}}();}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{auto}\ means\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}(),\ 1);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ ++i)\ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ \{\ means(i,\ 0)\ +=\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}});\ \}}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ means(i,\ 0)\ /=\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}(),\ 1);}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ ++i)\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}(i,\ 0)\ +=\ \mbox{\hyperlink{Probability_8h_a4f0f49581ae9315695fb32a1e9fc4bdc}{pow}}(\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ -\/\ means(i,\ 0),\ 2);\ \}}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}(i,\ 0)\ /=\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ ++i)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ \{\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ =\ (\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ -\/\ means(i,\ 0))\ /\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stds}}(i,\ 0);\ \}}
+\DoxyCodeLine{00174\ \ \ \ \ \}}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}\ =\ \mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}.\mbox{\hyperlink{classMatrix_a054a03bcae4eb86d6f4ef84dc87840ef}{Transpose}}();}
+\DoxyCodeLine{00176\ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00182\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structSet_ad9bb56d9eb99ff66113e7c2978449500}{Normalize}}(\mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95}{NormalizerMethod}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{method}}\ =\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aa833163aabec0b8502288f07e10734ea}{NormalizerMethod::SET\_MEAN}})\ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{switch}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{method}})\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aa833163aabec0b8502288f07e10734ea}{SET\_MEAN}}:\ \mbox{\hyperlink{structSet_ad7c51502d31b11cd673436a4d15f0f77}{NormalizeSetMean}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aff671eea9cd628361f1a7713ed372ce8}{COL\_MEAN}}:\ \mbox{\hyperlink{structSet_a92e8cf6700597dd78c5221b0a8d7a374}{NormalizeColMean}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95afada0aad94a33b044fc15d463b814988}{ROW\_MEAN}}:\ \mbox{\hyperlink{structSet_a87905c022276dc73d862e58a6315ec06}{NormalizeRowMean}}();\ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \}}
+\DoxyCodeLine{00189\ \};}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00194\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDataSet}{DataSet}}}
+\DoxyCodeLine{00195\ \{}
+\DoxyCodeLine{00196\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImageDataSet}{ImageDataSet}};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00205\ \ \ \mbox{\hyperlink{classDataSet_a06a0a03f65d1ed5a3b9102242e761639}{DataSet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{filePath}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00206\ \ \ \ \ :\ \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{InputCount}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}})}
+\DoxyCodeLine{00207\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{OutputCount}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00208\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}}(\mbox{\hyperlink{format_8h_a1921b31564b858b45e94efff9e9d54bf}{format}}(\textcolor{stringliteral}{"{}\%s\%s"{}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{filePath}},\ \textcolor{stringliteral}{"{}training.dat"{}}).\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{c\_str}}(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00209\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_a83ba4064a6be64f1b1535de18005e270}{Validation}}(\mbox{\hyperlink{format_8h_a1921b31564b858b45e94efff9e9d54bf}{format}}(\textcolor{stringliteral}{"{}\%s\%s"{}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{filePath}},\ \textcolor{stringliteral}{"{}validation.dat"{}}).\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{c\_str}}(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00210\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b}{Test}}(\mbox{\hyperlink{format_8h_a1921b31564b858b45e94efff9e9d54bf}{format}}(\textcolor{stringliteral}{"{}\%s\%s"{}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{filePath}},\ \textcolor{stringliteral}{"{}test.dat"{}}).\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{c\_str}}(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})\ \{\ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00217\ \ \ \mbox{\hyperlink{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb}{DataSet}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00218\ \ \ \ \ :\ \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{InputCount}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}})}
+\DoxyCodeLine{00219\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{OutputCount}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00220\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00221\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_a83ba4064a6be64f1b1535de18005e270}{Validation}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00222\ \ \ \ \ ,\ \mbox{\hyperlink{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b}{Test}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})\ \{\ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00228\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDataSet_ab55020328d9b53265bfece0e16696baf}{PrepareDirectory}}([[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maybe\_unused}}]]\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{filePath}})\ \{\ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00232\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{InputCount}};}
+\DoxyCodeLine{00234\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{OutputCount}};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00237\ \ \ \mbox{\hyperlink{structSet}{Set}}\ \mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}};}
+\DoxyCodeLine{00239\ \ \ \mbox{\hyperlink{structSet}{Set}}\ \mbox{\hyperlink{classDataSet_a83ba4064a6be64f1b1535de18005e270}{Validation}};}
+\DoxyCodeLine{00241\ \ \ \mbox{\hyperlink{structSet}{Set}}\ \mbox{\hyperlink{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b}{Test}};}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00244\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57}{maxEpoch}}\ =\ 1000;}
+\DoxyCodeLine{00246\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3}{stopThreshold}}\ =\ 0.001;}
+\DoxyCodeLine{00248\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classDataSet_a5e96a7989e932a765382ec05df96f02e}{eta}}\ =\ 0.0051;}
+\DoxyCodeLine{00250\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classDataSet_a72f424eb8039147514fe51fbd2e0948b}{batchSize}}\ =\ 5;}
+\DoxyCodeLine{00252\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596}{verbose}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00253\ \};}
+
+\end{DoxyCode}

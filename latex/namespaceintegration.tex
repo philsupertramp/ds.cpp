@@ -1,0 +1,49 @@
+\doxysection{integration Namespace Reference}
+\hypertarget{namespaceintegration}{}\label{namespaceintegration}\index{integration@{integration}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}, std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ $>$ \mbox{\hyperlink{namespaceintegration_a443a7013503d92fa671399f39f970a19}{quad\+\_\+adaptive\+\_\+rec}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::function$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}})$>$ \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&b, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&tol, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{h\+Min}}, std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nodes}}, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{values}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespaceintegration_a443a7013503d92fa671399f39f970a19}\label{namespaceintegration_a443a7013503d92fa671399f39f970a19} 
+\index{integration@{integration}!quad\_adaptive\_rec@{quad\_adaptive\_rec}}
+\index{quad\_adaptive\_rec@{quad\_adaptive\_rec}!integration@{integration}}
+\doxysubsubsection{\texorpdfstring{quad\_adaptive\_rec()}{quad\_adaptive\_rec()}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}, std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ $>$ integration\+::quad\+\_\+adaptive\+\_\+rec (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::function$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}})$>$ \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{a,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{b,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{tol,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{h\+Min,  }\item[{std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{nodes,  }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{values }\end{DoxyParamCaption})}
+
+Recursive implementation of numerical quadrature to approximate a given exact integral uses Simspon\textquotesingle{}s -\/ and Trapezoid Rule for approximation.
+
+The Trapezoid Rule is given as
+
+\textbackslash{}begin\{equation\} \textbackslash{}int \textbackslash{}limits\+\_\+a\texorpdfstring{$^\wedge$}{\string^}b f(x) dx \textbackslash{}approx T(x) = \textbackslash{}frac\{b -\/ a\}\{2\} \textbackslash{}left\mbox{[} f(a) + f(b) \textbackslash{}right\mbox{]} \textbackslash{}end\{equation\} Simpson is given as \textbackslash{}begin\{equation\} \textbackslash{}int \textbackslash{}limits\+\_\+a\texorpdfstring{$^\wedge$}{\string^}b f(x) dx \textbackslash{}approx S(x) = \textbackslash{}frac\{ b -\/ a \}\{ 6 \} \textbackslash{}left\mbox{[} f(a) + 4 f \textbackslash{}left( \textbackslash{}frac\{a+b\}\{2\} \textbackslash{}right)
+\begin{DoxyItemize}
+\item f(b) \textbackslash{}right\mbox{]} \textbackslash{}end\{equation\}
+\end{DoxyItemize}
+
+For approximation a tolerance is given, which is used to compare against the local error of approximation. The error is calculated as \$\$ \texorpdfstring{$\vert$}{|} S -\/ T \texorpdfstring{$\vert$}{|} \$\$ Whenever the error reaches the threshold of tol, the method has succeeded and the result of Simpson\textquotesingle{}s rule is returned.
+
+{\bfseries{Note}} if (b-\/a) \texorpdfstring{$<$}{<} h\+Min we reached the minimal step with and haven\textquotesingle{}t found an satisfying result, therefore the algorithm exits with error code 1
+
+
+\begin{DoxyParams}{Parameters}
+{\em fun} & given \doxylink{classFunction}{Function} to calculate the exact integral of \\
+\hline
+{\em a} & left boundary of integral \\
+\hline
+{\em b} & right boundary of integral \\
+\hline
+{\em tol} & local tolerance \\
+\hline
+{\em h\+Min} & minimum distance between a and b \\
+\hline
+{\em nodes} & already visited nodes on the integral ("{}x-\/axis"{}) \\
+\hline
+{\em values} & already calculated function values for visited nodes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximation of given exact integral. 
+\end{DoxyReturn}

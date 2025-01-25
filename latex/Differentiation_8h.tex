@@ -1,0 +1,133 @@
+\doxysection{include/math/numerics/analysis/\+Differentiation.h File Reference}
+\hypertarget{Differentiation_8h}{}\label{Differentiation_8h}\index{include/math/numerics/analysis/Differentiation.h@{include/math/numerics/analysis/Differentiation.h}}
+{\ttfamily \#include "{}../../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../../matrix\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include "{}../utils.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{Differentiation_8h_a03b7286d06d466aedafd5fe7e2fcb636}{forward\+Diff}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{Differentiation_8h_a0d1f10df297acbf012f59dbe025a4d85}{backward\+Diff}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{Differentiation_8h_a491c1ed77a5dc36d6e7a2656a0c7a436}{central\+Diff}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{Differentiation_8h_ad0138b0a17dd2be7243b310c3cf5a1f1}{backward\+Diff2}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{Differentiation_8h_a29c9f611b1a069da1d521c96b5d817fc}{central\+Diff4}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Numerical differentiation methods to approximate the first order derivative using support values.
+
+\$\$f\textquotesingle{}(x) = ?\$\$
+
+Implemented quotients\+:
+\begin{DoxyItemize}
+\item Forward \$\$ \textbackslash{}frac\{f(x+h)-\/f(x)\}\{h\} \$\$
+\item Backward \$\$ \textbackslash{}frac\{f(x)-\/f(x-\/h)\}\{h\} \$\$
+\item Center \$\$ \textbackslash{}frac\{f(x+h)-\/f(x-\/h)\}\{2h\} \$\$
+\end{DoxyItemize}
+
+Usage\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ create\ a\ function}}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ fun\ =\ [](\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{input}})\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{input}}.Apply([](\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}})\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}}*\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}};\ \});\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ create\ support\ values}}
+\DoxyCodeLine{\textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xk}}\ =\ \mbox{\hyperlink{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350}{linspace}}(-\/5,\ 5,\ 20).\mbox{\hyperlink{classMatrix_a054a03bcae4eb86d6f4ef84dc87840ef}{Transpose}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ calculate\ 1st\ derivative}}
+\DoxyCodeLine{\mbox{\hyperlink{Differentiation_8h_a491c1ed77a5dc36d6e7a2656a0c7a436}{centralDiff}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xk}},\ fun(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xk}}));}
+
+\end{DoxyCode}
+
+
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Differentiation_8h_a0d1f10df297acbf012f59dbe025a4d85}\label{Differentiation_8h_a0d1f10df297acbf012f59dbe025a4d85} 
+\index{Differentiation.h@{Differentiation.h}!backwardDiff@{backwardDiff}}
+\index{backwardDiff@{backwardDiff}!Differentiation.h@{Differentiation.h}}
+\doxysubsubsection{\texorpdfstring{backwardDiff()}{backwardDiff()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ backward\+Diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes backward difference quotient \$\$ f\textquotesingle{}(x) = \textbackslash{}frac\{f(x)-\/f(x-\/h)\}\{h\} \$\$ {\bfseries{Error}} O(dx) 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/values \\
+\hline
+{\em y} & y-\/values @returnss approximated first differential evaluated on x-\/values \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}.\end{Desc}
+\Hypertarget{Differentiation_8h_ad0138b0a17dd2be7243b310c3cf5a1f1}\label{Differentiation_8h_ad0138b0a17dd2be7243b310c3cf5a1f1} 
+\index{Differentiation.h@{Differentiation.h}!backwardDiff2@{backwardDiff2}}
+\index{backwardDiff2@{backwardDiff2}!Differentiation.h@{Differentiation.h}}
+\doxysubsubsection{\texorpdfstring{backwardDiff2()}{backwardDiff2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ backward\+Diff2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes backward difference quotient for 1st differential uses 2nd order polynomial for approximation
+
+{\bfseries{Error}} O(dx) 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/values \\
+\hline
+{\em y} & y-\/values @returnss approximated second differential evaluated on x-\/values \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}.\end{Desc}
+\Hypertarget{Differentiation_8h_a491c1ed77a5dc36d6e7a2656a0c7a436}\label{Differentiation_8h_a491c1ed77a5dc36d6e7a2656a0c7a436} 
+\index{Differentiation.h@{Differentiation.h}!centralDiff@{centralDiff}}
+\index{centralDiff@{centralDiff}!Differentiation.h@{Differentiation.h}}
+\doxysubsubsection{\texorpdfstring{centralDiff()}{centralDiff()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ central\+Diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes central difference quotient \$\$ f\textquotesingle{}(x) = \textbackslash{}frac\{f(x+h)-\/f(x-\/h)\}\{2h\} \$\$ {\bfseries{Error}} O(dx\texorpdfstring{$^\wedge$}{\string^}2) 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/values \\
+\hline
+{\em y} & y-\/values @returnss approximated first differential evaluated on x-\/values \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}.\end{Desc}
+\Hypertarget{Differentiation_8h_a29c9f611b1a069da1d521c96b5d817fc}\label{Differentiation_8h_a29c9f611b1a069da1d521c96b5d817fc} 
+\index{Differentiation.h@{Differentiation.h}!centralDiff4@{centralDiff4}}
+\index{centralDiff4@{centralDiff4}!Differentiation.h@{Differentiation.h}}
+\doxysubsubsection{\texorpdfstring{centralDiff4()}{centralDiff4()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ central\+Diff4 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes central difference quotient for 1st differential uses 2nd order polynomial for approximation
+
+{\bfseries{Error}} O(dx\texorpdfstring{$^\wedge$}{\string^}2) 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/values \\
+\hline
+{\em y} & y-\/values @returnss approximated second differential evaluated on x-\/values \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}.\end{Desc}
+\Hypertarget{Differentiation_8h_a03b7286d06d466aedafd5fe7e2fcb636}\label{Differentiation_8h_a03b7286d06d466aedafd5fe7e2fcb636} 
+\index{Differentiation.h@{Differentiation.h}!forwardDiff@{forwardDiff}}
+\index{forwardDiff@{forwardDiff}!Differentiation.h@{Differentiation.h}}
+\doxysubsubsection{\texorpdfstring{forwardDiff()}{forwardDiff()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ forward\+Diff (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes forward difference quotient \$\$ \textbackslash{}frac\{f(x+h)-\/f(x)\}\{h\} \$\$ {\bfseries{Error}} O(dx) 
+\begin{DoxyParams}{Parameters}
+{\em x} & x-\/values \\
+\hline
+{\em y} & y-\/values @returnss approximated differential evaluated on x-\/values \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}.\end{Desc}

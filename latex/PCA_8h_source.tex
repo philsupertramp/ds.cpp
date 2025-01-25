@@ -1,0 +1,30 @@
+\doxysection{PCA.\+h}
+\hypertarget{PCA_8h_source}{}\label{PCA_8h_source}\index{include/math/ds/decomposition/PCA.h@{include/math/ds/decomposition/PCA.h}}
+\mbox{\hyperlink{PCA_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../../numerics/lin\_alg/svd.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../Predictor.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPCA}{PCA}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classTransformer}{Transformer}}}
+\DoxyCodeLine{00007\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{classPCA_a0337f6dfbb33528325f515c0a2d5116a}{PCs}};}
+\DoxyCodeLine{00010\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{classPCA_a9a1284cd642c93db82d98d6c3a042b2b}{right}};}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPCA_a3a3cb88e88d8a341cd4c03df91c986da}{keep\_components}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{classPCA_a99d020177376b81962442d9001d17e99}{PCA}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{k\_components}}\ =\ 0)}
+\DoxyCodeLine{00015\ \ \ \ \ :\ \mbox{\hyperlink{classTransformer}{Transformer}}()}
+\DoxyCodeLine{00016\ \ \ \ \ ,\ \mbox{\hyperlink{classPCA_a3a3cb88e88d8a341cd4c03df91c986da}{keep\_components}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{k\_components}})\ \{\ \}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPCA_a425bf6a87a11aa8bfd5c82cdf2b18520}{fit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ X,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{res}}\ =\ \mbox{\hyperlink{svd_8h_a3b139aaaee48ddeff126b386e555cee0}{svd}}(X,\ \mbox{\hyperlink{classPCA_a3a3cb88e88d8a341cd4c03df91c986da}{keep\_components}});}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{classPCA_a0337f6dfbb33528325f515c0a2d5116a}{PCs}}\ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{res}}[0]\ *\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{res}}[1];}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{classPCA_a9a1284cd642c93db82d98d6c3a042b2b}{right}}\ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{res}}[2];}
+\DoxyCodeLine{00022\ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{classPCA_adc66271e89ab7e91e90081f5d1e4257a}{transform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}\ *\ \mbox{\hyperlink{classPCA_a0337f6dfbb33528325f515c0a2d5116a}{PCs}};\ \}}
+\DoxyCodeLine{00024\ \};}
+
+\end{DoxyCode}

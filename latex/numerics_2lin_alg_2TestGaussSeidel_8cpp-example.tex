@@ -1,0 +1,132 @@
+\doxysection{numerics/lin\+\_\+alg/\+Test\+Gauss\+Seidel.\+cpp}
+\hypertarget{numerics_2lin_alg_2TestGaussSeidel_8cpp-example}{}\label{numerics_2lin_alg_2TestGaussSeidel_8cpp-example}This is an example on how to use gauss\+Seidel.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{gaussJordan_8h}{math/numerics/lin\_alg/gaussJordan.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{gaussSeidel_8h}{math/numerics/lin\_alg/gaussSeidel.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }GaussSeidelTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGaussSeidel()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(\{\ \{\ 4,\ 2,\ 3\ \},\ \{\ 2,\ 2,\ 1\ \},\ \{\ 2,\ 2,\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ b(\{\ \{\ 2\ \},\ \{\ 1\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{gaussSeidel_8h_a7bb1e3f545d858ee2a450500c711f471}{gaussSeidel}}(A,\ b);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ expectedX\ =\ \{\ -\/0.5f,\ 0.5f,\ 1.0f\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ expectedX.size();\ i++)\ \{\ AssertEqual(result(i,\ 0),\ expectedX[i]);\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGaussSeidel2()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(\{\ \{\ 2,\ -\/1\ \},\ \{\ 1,\ 3\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ b(\{\ \{\ 4\ \},\ \{\ -\/5\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{gaussSeidel_8h_a7bb1e3f545d858ee2a450500c711f471}{gaussSeidel}}(A,\ b);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ expectedX\ =\ \{\ 1.0f,\ -\/2.0f\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ expectedX.size();\ i++)\ \{\ AssertEqual(result(i,\ 0),\ expectedX[i]);\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGaussSeidelInverse()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(50);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ trivial\ examples}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ out\ =\ \mbox{\hyperlink{gaussJordan_8h_a087b5645f23895d3500c37baa113cb9d}{gaussJordan}}(A);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(out,\ A);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ more\ advanced\ example}}
+\DoxyCodeLine{\ \ \ \ A\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ -\/1,}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ -\/1,}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ -\/1,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ B\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ 1.\ /\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ 1.\ /\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ 1.\ /\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ 1.\ /\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ 1.\ /\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ 1.\ /\ 2,}
+\DoxyCodeLine{\ \ \ \ \ \ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ out\ =\ \mbox{\hyperlink{gaussJordan_8h_a087b5645f23895d3500c37baa113cb9d}{gaussJordan}}(A);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ out;}
+\DoxyCodeLine{\ \ \ \ AssertEqual(out,\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ A\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ -\/1,\ 1,\ 1,\ 1\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 1,\ -\/1,\ 1,\ 1\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 1,\ 1,\ -\/1,\ 1\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 1,\ 1,\ 1,\ -\/1\ \},}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ B\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ -\/1.\ /\ 4,\ 1.\ /\ 4,\ 1.\ /\ 4,\ 1.\ /\ 4\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 1.\ /\ 4,\ -\/1.\ /\ 4,\ 1.\ /\ 4,\ 1.\ /\ 4\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 1.\ /\ 4,\ 1.\ /\ 4,\ -\/1.\ /\ 4,\ 1.\ /\ 4\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 1.\ /\ 4,\ 1.\ /\ 4,\ 1.\ /\ 4,\ -\/1.\ /\ 4\ \},}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ out\ =\ \mbox{\hyperlink{gaussJordan_8h_a087b5645f23895d3500c37baa113cb9d}{gaussJordan}}(A);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(out,\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Not\ working\ example,\ inverse\ not\ available,\ det(A)\ =\ 0!}}
+\DoxyCodeLine{\ \ \ \ A\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ -\/1,}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ 1,}
+\DoxyCodeLine{\ \ \ \ \ \ -\/1,}
+\DoxyCodeLine{\ \ \ \ \ \ \},}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ B\ =\ \{\ \{\ INFINITY,\ INFINITY\ \},\ \{\ INFINITY,\ INFINITY\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ out\ =\ \mbox{\hyperlink{gaussJordan_8h_a087b5645f23895d3500c37baa113cb9d}{gaussJordan}}(A);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(out,\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ TestGaussSeidel();}
+\DoxyCodeLine{\ \ \ \ TestGaussSeidel2();}
+\DoxyCodeLine{\ \ \ \ TestGaussSeidelInverse();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ GaussSeidelTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

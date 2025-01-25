@@ -1,0 +1,78 @@
+\doxysection{include/math/visualization/\+Plot.h File Reference}
+\hypertarget{Plot_8h}{}\label{Plot_8h}\index{include/math/visualization/Plot.h@{include/math/visualization/Plot.h}}
+{\ttfamily \#include "{}../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../matrix\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include "{}../numerics/utils.\+h"{}}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPlotBoundary}{Plot\+Boundary}}
+\item 
+struct \mbox{\hyperlink{structPlotIndex}{Plot\+Index}}
+\item 
+struct \mbox{\hyperlink{structPlotAttributes}{Plot\+Attributes}}
+\item 
+class \mbox{\hyperlink{classPlot}{Plot}}
+\item 
+class \mbox{\hyperlink{classScatterPlot}{Scatter\+Plot}}
+\item 
+class \mbox{\hyperlink{classFunctionPlot}{Function\+Plot}}
+\item 
+class \mbox{\hyperlink{classSurfacePlot}{Surface\+Plot}}
+\item 
+class \mbox{\hyperlink{classImagePlot}{Image\+Plot}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}} \{ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ab023460c84f774a219d46ccf4665994c}{LINE}} = 1
+, \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DOTS}} = 2
+, \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}} = -\/1
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{Plot_8h_aabdee3e53fca620b2e7929e0f29d41b4}{Get\+Plot\+Data\+Type\+Name}} (\mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}} type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Plot_8h_afb6eb4f28419b652027fad41104a6d22}\label{Plot_8h_afb6eb4f28419b652027fad41104a6d22} 
+\index{Plot.h@{Plot.h}!DataTypes@{DataTypes}}
+\index{DataTypes@{DataTypes}!Plot.h@{Plot.h}}
+\doxysubsubsection{\texorpdfstring{DataTypes}{DataTypes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{enum}} \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}}}
+
+data type enum to display a specific dataset \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LINE@{LINE}!Plot.h@{Plot.h}}\index{Plot.h@{Plot.h}!LINE@{LINE}}}\Hypertarget{Plot_8h_afb6eb4f28419b652027fad41104a6d22ab023460c84f774a219d46ccf4665994c}\label{Plot_8h_afb6eb4f28419b652027fad41104a6d22ab023460c84f774a219d46ccf4665994c} 
+LINE&Creates line data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DOTS@{DOTS}!Plot.h@{Plot.h}}\index{Plot.h@{Plot.h}!DOTS@{DOTS}}}\Hypertarget{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}\label{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49} 
+DOTS&Creates dot data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE@{NONE}!Plot.h@{Plot.h}}\index{Plot.h@{Plot.h}!NONE@{NONE}}}\Hypertarget{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}\label{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2} 
+NONE&Unknown data type. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Plot_8h_aabdee3e53fca620b2e7929e0f29d41b4}\label{Plot_8h_aabdee3e53fca620b2e7929e0f29d41b4} 
+\index{Plot.h@{Plot.h}!GetPlotDataTypeName@{GetPlotDataTypeName}}
+\index{GetPlotDataTypeName@{GetPlotDataTypeName}!Plot.h@{Plot.h}}
+\doxysubsubsection{\texorpdfstring{GetPlotDataTypeName()}{GetPlotDataTypeName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} Get\+Plot\+Data\+Type\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}}}]{type }\end{DoxyParamCaption})}
+
+Getter for name strings of types 
+\begin{DoxyParams}{Parameters}
+{\em type} & type to get string representation of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string representation of type 
+\end{DoxyReturn}

@@ -1,0 +1,338 @@
+\doxysection{symb/\+Test\+Symbolic.\+cpp}
+\hypertarget{symb_2TestSymbolic_8cpp-example}{}\label{symb_2TestSymbolic_8cpp-example}This is an example on how to use the symb module.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Equation_8h}{math/symb/Equation.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }SymbolicTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{classEquation}{Equation}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestParser()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ eq(\textcolor{stringliteral}{"{}x+2-\/((3*5)-\/x)-\/2"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMathematicalProperties()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ +\ x\ +\ 1\ +\ 2\ +\ y"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1,\ 2),\ 8);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(3,\ 3),\ 11);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(6,\ 4),\ 15);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\ *\ 2"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1),\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(3),\ 6);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(6),\ 12);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}5\ +\ x\ *\ 2"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1),\ 7);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(3),\ 11);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(6),\ 17);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation1(\textcolor{stringliteral}{"{}x\ *\ 2\ +\ 5"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ -\/10;\ i\ <\ 10;\ ++i)\ \{\ AssertEqual(equation(i),\ equation1(i));\ \}}
+\DoxyCodeLine{\ \ \ \ equation\ \ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}5\ *\ 3\ +\ 2\ *\ x"{}});}
+\DoxyCodeLine{\ \ \ \ equation1\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}5\ *\ 3\ +\ x\ *\ 2"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation2(\textcolor{stringliteral}{"{}2\ *\ x\ +\ 5\ *\ 3"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation3(\textcolor{stringliteral}{"{}x\ *\ 2\ +\ 3\ *\ 5"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ -\/10;\ i\ <\ 10;\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{comment}{//\ Commutative\ property\ of\ multiplication}}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(equation(i),\ equation1(i));}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{comment}{//\ Commutative\ property\ of\ addition}}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(equation1(i),\ equation2(i));}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{comment}{//\ Commutative\ property\ of\ addition\ and\ multiplication}}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(equation2(i),\ equation3(i));}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}5\ /\ x\ \ -\/\ 2"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1),\ 3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(5),\ -\/1);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2),\ 0.5);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\string^2\ \ -\/\ 5"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1),\ -\/4);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(5),\ 20);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2),\ -\/1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestNegative()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation(\textcolor{stringliteral}{"{}-\/x\ +\ 5"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2),\ 3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(-\/2),\ 7);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}-\/x\ +\ -\/5"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2),\ -\/7);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(-\/2),\ -\/3);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}-\/x\ -\/\ -\/5"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2),\ 3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(-\/2),\ 7);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestPower()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ eq(\textcolor{stringliteral}{"{}2\ +\ x\string^2"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq(2),\ 6);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ x\string^2"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq(2),\ 8);}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ x\string^(3+y)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq(2,\ 1),\ 2\ *\ (2\ *\ 2\ *\ 2\ *\ 2));}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ x\ \string^\ (3+y)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq(2,\ 1),\ 2\ *\ (2\ *\ 2\ *\ 2\ *\ 2));}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestParentheses()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation(\textcolor{stringliteral}{"{}2\ *\ (x\ -\/\ 1)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2),\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(60),\ 118);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ (x\ -\/\ (1\ *\ y))\ -\/\ 2"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1,\ 1),\ -\/2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1,\ 2),\ -\/4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ (x\ -\/\ 1\ +\ y)\ -\/\ 2"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1,\ 1),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1,\ 2),\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}(x\ -\/\ 1\ +\ y)\ *\ 2\ -\/\ 2"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1,\ 1),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1,\ 2),\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ (x\ -\/\ 1)\ -\/\ 2"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1),\ -\/2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(3),\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(99),\ 194);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFailsGracefully()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ eq(\textcolor{stringliteral}{"{}µ"{}});}
+\DoxyCodeLine{\ \ \ \ AssertTrue(eq.\mbox{\hyperlink{classEquation_af1bd5572e55f920d9be6285874219c6e}{baseNode}}\ ==\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGetRegex()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ sym\ =\ \mbox{\hyperlink{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c}{GetRegex}}(\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea1e2b34bb3fd76d1773c0e739ab757f0b}{MathNodeType::NodeType\_Symbolic}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ num\ =\ \mbox{\hyperlink{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c}{GetRegex}}(\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefead04e2797598b259ea0d4a18142932f96}{MathNodeType::NodeType\_Numeric}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ ope\ =\ \mbox{\hyperlink{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c}{GetRegex}}(\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea1c144f8bf59ab742c4408ec393602d02}{MathNodeType::NodeType\_Operator}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ par\ =\ \mbox{\hyperlink{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c}{GetRegex}}(\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefeabb22938ecb03779ebe89024bb122529a}{MathNodeType::NodeType\_Parentheses}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ any\ =\ \mbox{\hyperlink{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c}{GetRegex}}(\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea33343182081eb115cca4d5655d15fe4d}{MathNodeType::NodeType\_Any}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::cmatch\ m;}
+\DoxyCodeLine{\ \ \ \ AssertTrue(std::regex\_match(\textcolor{stringliteral}{"{}x"{}},\ m,\ sym));}
+\DoxyCodeLine{\ \ \ \ AssertFalse(std::regex\_match(\textcolor{stringliteral}{"{}+"{}},\ m,\ sym));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertTrue(std::regex\_match(\textcolor{stringliteral}{"{}2"{}},\ m,\ num));}
+\DoxyCodeLine{\ \ \ \ AssertFalse(std::regex\_match(\textcolor{stringliteral}{"{}x"{}},\ m,\ num));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertTrue(std::regex\_match(\textcolor{stringliteral}{"{}+"{}},\ m,\ ope));}
+\DoxyCodeLine{\ \ \ \ AssertFalse(std::regex\_match(\textcolor{stringliteral}{"{}2"{}},\ m,\ ope));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertTrue(std::regex\_match(\textcolor{stringliteral}{"{}(1)"{}},\ m,\ par));}
+\DoxyCodeLine{\ \ \ \ AssertFalse(std::regex\_match(\textcolor{stringliteral}{"{}1"{}},\ m,\ par));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertTrue(std::regex\_match(\textcolor{stringliteral}{"{}\string^"{}},\ m,\ any));}
+\DoxyCodeLine{\ \ \ \ AssertFalse(std::regex\_match(\textcolor{stringliteral}{"{}µ"{}},\ m,\ any));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGenerateOperator()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ \mbox{\hyperlink{Probability_8h_a4f0f49581ae9315695fb32a1e9fc4bdc}{pow}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a234eaa29e4af2f0d4711216c296a6445}{OperatorType::TYPE\_POWER}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ add\ \ \ \ \ \ \ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576}{OperatorType::TYPE\_ADDITION}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ sub\ \ \ \ \ \ \ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a7637e5c33286f4e519ec1622c113e273}{OperatorType::TYPE\_SUBTRACTION}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ mul\ \ \ \ \ \ \ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40c6b3a7d7ccf0fb358be439f7a969d9}{OperatorType::TYPE\_MULTIPLICATION}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ div\ \ \ \ \ \ \ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40d27ed340959efbbe20f81dc93028fb}{OperatorType::TYPE\_DIVISION}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ par\_open\ \ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117adb06169322e6eae6db269eab60a12117}{OperatorType::TYPE\_PARENTHESES\_OPEN}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ par\_close\ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117aca16c2cd01b23b65503c291f19a8235c}{OperatorType::TYPE\_PARENTHESES\_CLOSE}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Operator>\&\ empty\ \ \ \ \ =\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{OperatorType}}\textcolor{keyword}{>}(-\/1));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Probability_8h_a4f0f49581ae9315695fb32a1e9fc4bdc}{pow}}-\/>value,\ \textcolor{stringliteral}{"{}\string^"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Probability_8h_a4f0f49581ae9315695fb32a1e9fc4bdc}{pow}}-\/>op(1,\ 2),\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(add-\/>value,\ \textcolor{stringliteral}{"{}+"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(add-\/>op(1,\ 2),\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(sub-\/>value,\ \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(sub-\/>op(1,\ 2),\ -\/1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(mul-\/>value,\ \textcolor{stringliteral}{"{}*"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(mul-\/>op(1,\ 2),\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(div-\/>value,\ \textcolor{stringliteral}{"{}/"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(div-\/>op(1,\ 2),\ 0.5);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(par\_open-\/>value,\ \textcolor{stringliteral}{"{}("{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(par\_open-\/>op(1,\ 2),\ 0.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(par\_close-\/>value,\ \textcolor{stringliteral}{"{})"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(par\_close-\/>op(1,\ 2),\ 0.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(empty-\/>value,\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(empty-\/>op(1,\ 2),\ -\/1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestChaining()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ a(\textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ b(\textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ combined\ =\ \mbox{\hyperlink{classEquation_a9d6bd2cd4533aee69ef03cc494f61d94}{Equation::Chain}}(a,\ b,\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576}{OperatorType::TYPE\_ADDITION}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ expected(\textcolor{stringliteral}{"{}x\ +\ 1"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ -\/10;\ i\ <\ 10;\ ++i)\ AssertEqual(expected(i),\ combined(i));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ can\ chain\ using\ different\ operator}}
+\DoxyCodeLine{\ \ \ \ a\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{\ \ \ \ b\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}1"{}});}
+\DoxyCodeLine{\ \ \ \ combined\ =\ \mbox{\hyperlink{classEquation_a9d6bd2cd4533aee69ef03cc494f61d94}{Equation::Chain}}(a,\ b,\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a7637e5c33286f4e519ec1622c113e273}{OperatorType::TYPE\_SUBTRACTION}}));}
+\DoxyCodeLine{\ \ \ \ expected\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\ -\/\ 1"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ -\/10;\ i\ <\ 10;\ ++i)\ AssertEqual(combined(i),\ expected(i));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ can\ chain\ using\ same\ symbols}}
+\DoxyCodeLine{\ \ \ \ a\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{\ \ \ \ b\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{\ \ \ \ combined\ =\ \mbox{\hyperlink{classEquation_a9d6bd2cd4533aee69ef03cc494f61d94}{Equation::Chain}}(a,\ b,\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576}{OperatorType::TYPE\_ADDITION}}));}
+\DoxyCodeLine{\ \ \ \ expected\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\ +\ x"{}});\ \textcolor{comment}{//\ although\ real\ equation\ is\ "{}x\ +\ x"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ -\/10;\ i\ <\ 10;\ ++i)\ AssertEqual(combined(i),\ expected(i));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ can\ chain\ using\ different\ symbols}}
+\DoxyCodeLine{\ \ \ \ a\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{\ \ \ \ b\ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}y"{}});}
+\DoxyCodeLine{\ \ \ \ combined\ =\ \mbox{\hyperlink{classEquation_a9d6bd2cd4533aee69ef03cc494f61d94}{Equation::Chain}}(a,\ b,\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576}{OperatorType::TYPE\_ADDITION}}));}
+\DoxyCodeLine{\ \ \ \ expected\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\ +\ y"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ -\/10;\ i\ <\ 10;\ ++i)\ AssertEqual(combined(1,\ i),\ expected(1,\ i));}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFunctions()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ equation(\textcolor{stringliteral}{"{}sqrt(x)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1.0),\ 1.0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2.0),\ 1.414213562373095);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}sqrt(x)\ +\ 1"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1.0),\ 2.0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2.0),\ 2.414213562373095);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ 3\ +\ sqrt(x)\ +\ 1"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1.0),\ 8.0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2.0),\ 8.414213562373095);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2\ *\ 3\ +\ sqrt(x+1)\ +\ 1"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(0.0),\ 8.0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1.0),\ 8.414213562373095);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}2*3+sqrt(x+1)\ +\ 1"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(0.0),\ 8.0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1.0),\ 8.414213562373095);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}sqrt(x)\string^2"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1.0),\ 1.0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(2.0),\ 2.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}sin(x)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(0),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(1),\ 0.8414709848078965);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}sin(pi)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(),\ 0);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}cos(pi)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(),\ -\/1);}
+\DoxyCodeLine{\ \ \ \ equation\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}log(1)"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(equation(),\ 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ circle(\textcolor{stringliteral}{"{}r\string^2\ *\ pi"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(circle(1),\ 3.1415926535897932384626433832795028841971693993751058209749445923078164);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestDegree()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ eq(\textcolor{stringliteral}{"{}x\string^2"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_aa481dd44906c7a8682b043b82d8cc562}{degree}},\ 2);}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\string^1"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_aa481dd44906c7a8682b043b82d8cc562}{degree}},\ 1);}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\string^10"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_aa481dd44906c7a8682b043b82d8cc562}{degree}},\ 10);}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}3*x\string^3+5*y\string^5"{}});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_aa481dd44906c7a8682b043b82d8cc562}{degree}},\ 5);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGetString()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ eq(\textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ eq.\mbox{\hyperlink{classEquation_a5e5434dd97f523734bd6dc41db0ea79a}{GetString}}()\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_a5e5434dd97f523734bd6dc41db0ea79a}{GetString}}(),\ \textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x\string^2"{}});}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ eq.\mbox{\hyperlink{classEquation_a5e5434dd97f523734bd6dc41db0ea79a}{GetString}}()\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_a5e5434dd97f523734bd6dc41db0ea79a}{GetString}}(),\ \textcolor{stringliteral}{"{}x\string^2.000000"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x+1"{}});}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ eq.\mbox{\hyperlink{classEquation_a5e5434dd97f523734bd6dc41db0ea79a}{GetString}}()\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_a5e5434dd97f523734bd6dc41db0ea79a}{GetString}}(),\ \textcolor{stringliteral}{"{}x+1.000000"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}x*(y-\/1)\string^2"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ TODO:\ this\ is\ a\ false\ notation.}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq.\mbox{\hyperlink{classEquation_a5e5434dd97f523734bd6dc41db0ea79a}{GetString}}(),\ \textcolor{stringliteral}{"{}x*y+-\/1.000000\string^2.000000"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestSimplify()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ x-\/11}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classEquation}{Equation}}\ eq(\textcolor{stringliteral}{"{}1*3\ +\ x\ -\/\ 5\ *\ 3\ -\/\ 2\ +\ 3"{}});}
+\DoxyCodeLine{\ \ \ \ std::string\ expected\ =\ \textcolor{stringliteral}{"{}((3.000000+x)+-\/14.000000)\(\backslash\)n"{}};}
+\DoxyCodeLine{\ \ \ \ std::stringstream\ stream;}
+\DoxyCodeLine{\ \ \ \ eq.\mbox{\hyperlink{classEquation_a0b6d13c55c719fec5f2b2995ced8fa35}{Simplify}}();}
+\DoxyCodeLine{\ \ \ \ eq.\mbox{\hyperlink{classEquation_a97a934b003b26bdf3b5c0c1a8a73cf14}{Print}}(stream);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(expected,\ stream.str());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ eq\ =\ \mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}1*3\ +\ x\ -\/\ 5\ *\ 3\ -\/\ 2\ +\ 3"{}});}
+\DoxyCodeLine{\ \ \ \ eq.\mbox{\hyperlink{classEquation_a0b6d13c55c719fec5f2b2995ced8fa35}{Simplify}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{classEquation}{Equation}}(\textcolor{stringliteral}{"{}1*3\ +\ x\ -\/\ 5\ *\ 3\ -\/\ 2\ +\ 3"{}})(5),\ -\/6);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(eq(5),\ -\/6);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestDefaultSymbols()\ \{\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\ \ \ \ TestPower();}
+\DoxyCodeLine{\ \ \ \ TestMathematicalProperties();}
+\DoxyCodeLine{\ \ \ \ TestNegative();}
+\DoxyCodeLine{\ \ \ \ TestParentheses();}
+\DoxyCodeLine{\ \ \ \ TestFailsGracefully();}
+\DoxyCodeLine{\ \ \ \ TestGetRegex();}
+\DoxyCodeLine{\ \ \ \ TestGenerateOperator();}
+\DoxyCodeLine{\ \ \ \ TestChaining();}
+\DoxyCodeLine{\ \ \ \ TestFunctions();}
+\DoxyCodeLine{\ \ \ \ TestDefaultSymbols();}
+\DoxyCodeLine{\ \ \ \ TestSimplify();}
+\DoxyCodeLine{\ \ \ \ TestParser();}
+\DoxyCodeLine{\ \ \ \ TestDegree();}
+\DoxyCodeLine{\ \ \ \ TestGetString();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ SymbolicTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

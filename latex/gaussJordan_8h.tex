@@ -1,0 +1,45 @@
+\doxysection{include/math/numerics/lin\+\_\+alg/gauss\+Jordan.h File Reference}
+\hypertarget{gaussJordan_8h}{}\label{gaussJordan_8h}\index{include/math/numerics/lin\_alg/gaussJordan.h@{include/math/numerics/lin\_alg/gaussJordan.h}}
+{\ttfamily \#include "{}../../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../../matrix\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include "{}LU.\+h"{}}\newline
+{\ttfamily \#include "{}backward\+Sub.\+h"{}}\newline
+{\ttfamily \#include "{}forward\+Sub.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{gaussJordan_8h_a087b5645f23895d3500c37baa113cb9d}{gauss\+Jordan}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&A)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gaussian elimination to solve systems of linear equations. Uses column major pivot elements to reduce number of operations.
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <math/numerics/lin\_alg/gausseidel.h>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gaussJordan_8h_a087b5645f23895d3500c37baa113cb9d}\label{gaussJordan_8h_a087b5645f23895d3500c37baa113cb9d} 
+\index{gaussJordan.h@{gaussJordan.h}!gaussJordan@{gaussJordan}}
+\index{gaussJordan@{gaussJordan}!gaussJordan.h@{gaussJordan.h}}
+\doxysubsubsection{\texorpdfstring{gaussJordan()}{gaussJordan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ gauss\+Jordan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{A }\end{DoxyParamCaption})}
+
+Gauss-\/\+Jordan algorithm to calculate inverse of given squared matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & squared Coefficient matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$\$A\texorpdfstring{$^\wedge$}{\string^}\{-\/1\}\$\$ 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2lin_alg_2TestGaussSeidel_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+Gauss\+Seidel.\+cpp}}.\end{Desc}

@@ -1,0 +1,67 @@
+\doxysection{Random Class Reference}
+\hypertarget{classRandom}{}\label{classRandom}\index{Random@{Random}}
+
+
+{\ttfamily \#include $<$Random.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classRandom_aa2d76b6a87c5642871c11e781f8f34b0}{Set\+Seed}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{seed}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classRandom_a5e7703d9e1a4de62e6483748afe35243}{Get}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{l}}=0.\+0, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{r}}=1.\+0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classRandom_a1ded95446bdeffc95358e33de5d7de3b}{Init\+Time}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{use\+Seed}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RNG 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRandom_a5e7703d9e1a4de62e6483748afe35243}\label{classRandom_a5e7703d9e1a4de62e6483748afe35243} 
+\index{Random@{Random}!Get@{Get}}
+\index{Get@{Get}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Random\+::\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{l = {\ttfamily 0.0},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{r = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Getter for random number between (including borders) l and r 
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+{\em r} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{classRandom_a1ded95446bdeffc95358e33de5d7de3b}\label{classRandom_a1ded95446bdeffc95358e33de5d7de3b} 
+\index{Random@{Random}!InitTime@{InitTime}}
+\index{InitTime@{InitTime}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{InitTime()}{InitTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Random\+::\+Init\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}}]{use\+Seed = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+initialize and set seed 
+\begin{DoxyParams}{Parameters}
+{\em use\+Seed} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRandom_aa2d76b6a87c5642871c11e781f8f34b0}\label{classRandom_aa2d76b6a87c5642871c11e781f8f34b0} 
+\index{Random@{Random}!SetSeed@{SetSeed}}
+\index{SetSeed@{SetSeed}!Random@{Random}}
+\doxysubsubsection{\texorpdfstring{SetSeed()}{SetSeed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Random\+::\+Set\+Seed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+sets seed to given value 
+\begin{DoxyParams}{Parameters}
+{\em seed} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/\mbox{\hyperlink{Random_8h}{Random.\+h}}\end{DoxyCompactItemize}

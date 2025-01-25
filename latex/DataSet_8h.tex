@@ -1,0 +1,46 @@
+\doxysection{include/math/ds/\+Data\+Set.h File Reference}
+\hypertarget{DataSet_8h}{}\label{DataSet_8h}\index{include/math/ds/DataSet.h@{include/math/ds/DataSet.h}}
+{\ttfamily \#include "{}../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../format.\+h"{}}\newline
+{\ttfamily \#include "{}../matrix\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSet}{Set}}
+\item 
+class \mbox{\hyperlink{classDataSet}{Data\+Set}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95}{Normalizer\+Method}} \{ \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aa833163aabec0b8502288f07e10734ea}{SET\+\_\+\+MEAN}} = 0
+, \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aff671eea9cd628361f1a7713ed372ce8}{COL\+\_\+\+MEAN}} = 1
+, \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95afada0aad94a33b044fc15d463b814988}{ROW\+\_\+\+MEAN}} = 2
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95}\label{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95} 
+\index{DataSet.h@{DataSet.h}!NormalizerMethod@{NormalizerMethod}}
+\index{NormalizerMethod@{NormalizerMethod}!DataSet.h@{DataSet.h}}
+\doxysubsubsection{\texorpdfstring{NormalizerMethod}{NormalizerMethod}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{enum}} \mbox{\hyperlink{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95}{Normalizer\+Method}}}
+
+Flag map for normalizer methods \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SET\_MEAN@{SET\_MEAN}!DataSet.h@{DataSet.h}}\index{DataSet.h@{DataSet.h}!SET\_MEAN@{SET\_MEAN}}}\Hypertarget{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aa833163aabec0b8502288f07e10734ea}\label{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aa833163aabec0b8502288f07e10734ea} 
+SET\+\_\+\+MEAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COL\_MEAN@{COL\_MEAN}!DataSet.h@{DataSet.h}}\index{DataSet.h@{DataSet.h}!COL\_MEAN@{COL\_MEAN}}}\Hypertarget{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aff671eea9cd628361f1a7713ed372ce8}\label{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95aff671eea9cd628361f1a7713ed372ce8} 
+COL\+\_\+\+MEAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ROW\_MEAN@{ROW\_MEAN}!DataSet.h@{DataSet.h}}\index{DataSet.h@{DataSet.h}!ROW\_MEAN@{ROW\_MEAN}}}\Hypertarget{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95afada0aad94a33b044fc15d463b814988}\label{DataSet_8h_a8436cce5c4911a0849d9e3e6f6ac2d95afada0aad94a33b044fc15d463b814988} 
+ROW\+\_\+\+MEAN&\\
+\hline
+
+\end{DoxyEnumFields}

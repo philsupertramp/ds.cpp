@@ -1,0 +1,117 @@
+\doxysection{Image\+Data\+Set.\+h}
+\hypertarget{ImageDataSet_8h_source}{}\label{ImageDataSet_8h_source}\index{include/math/ds/ImageDataSet.h@{include/math/ds/ImageDataSet.h}}
+\mbox{\hyperlink{ImageDataSet_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DataSet_8h}{DataSet.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#if\ MATH\_IMAGE\_PROCESSING}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\ \ \#include\ <Magick++.h>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\ \ \#include\ <Magick++/Image.h>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <filesystem>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImageDataSet}{ImageDataSet}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classDataSet}{DataSet}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classImageDataSet_a6cb4942bbb5ce16e1ab67ccd550dc9e3}{ImageDataSet}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})}
+\DoxyCodeLine{00025\ \ \ \ \ :\ \mbox{\hyperlink{classDataSet}{DataSet}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{inputCount}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{outputCount}})\ \{\ \}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classImageDataSet_a9bbabe8ae4b48f1238be7828d6fe7233}{PrepareDirectory}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{filePath}})\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Moving\ files..."{}}\ <<\ std::flush;}
+\DoxyCodeLine{00035\ \ \ \ \ std::filesystem::remove\_all(\mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{trainDirectory}});}
+\DoxyCodeLine{00036\ \ \ \ \ std::filesystem::copy(}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{filePath}},}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{trainDirectory}},}
+\DoxyCodeLine{00039\ \ \ \ \ std::filesystem::copy\_options::update\_existing\ |\ std::filesystem::copy\_options::recursive);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{totalCount}}\ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}}\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{classImageDataSet_a948b82a4dc6b7594c6c8029909aa6b72}{classNames}}.clear();}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}\ :\ std::filesystem::directory\_iterator(\mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{trainDirectory}}))\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}.is\_directory())\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classImageDataSet_a948b82a4dc6b7594c6c8029909aa6b72}{classNames}}.push\_back(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}.path().filename());}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dirIter}}\ =\ std::filesystem::directory\_iterator(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{totalCount}}\ +=\ std::count\_if(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{begin}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dirIter}}),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{end}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dirIter}}),\ [](\textcolor{keyword}{auto}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{elem}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{elem}}.is\_regular\_file();\ \});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}}\ +=\ 1;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classImageDataSet_a323ec5719d39c362c77960656b65f571}{trainingCount}}\ \ \ \ \ =\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}})(\mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{totalCount}}\ *\ 0.8);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}{validationCount}}\ \ \ =\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}})(\mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{totalCount}}\ -\/\ \mbox{\hyperlink{classImageDataSet_a323ec5719d39c362c77960656b65f571}{trainingCount}});}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}}.\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}\ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{MatrixDS<double>}}(0,\ \mbox{\hyperlink{classImageDataSet_a323ec5719d39c362c77960656b65f571}{trainingCount}},\ \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{InputCount}});}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}}.\mbox{\hyperlink{structSet_abeb4570e7f558220e76e3fcb03551813}{Output}}\ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{MatrixDS<double>}}(0,\ \mbox{\hyperlink{classImageDataSet_a323ec5719d39c362c77960656b65f571}{trainingCount}},\ \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{OutputCount}});}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classDataSet_a83ba4064a6be64f1b1535de18005e270}{Validation}}.\mbox{\hyperlink{structSet_a05d1a42371080cffdd7851cf9c00f81b}{Input}}\ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{MatrixDS<double>}}(0,\ \mbox{\hyperlink{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}{validationCount}},\ \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{InputCount}});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{classDataSet_a83ba4064a6be64f1b1535de18005e270}{Validation}}.\mbox{\hyperlink{structSet_abeb4570e7f558220e76e3fcb03551813}{Output}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{MatrixDS<double>}}(0,\ \mbox{\hyperlink{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}{validationCount}},\ \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{OutputCount}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ index\ =\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}\ :\ std::filesystem::directory\_iterator(\mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{trainDirectory}}))\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}.is\_directory())\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{MatrixDS<bool>}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{elem}}(\textcolor{keyword}{false},\ 1,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{elem}}(0,\ index)\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classImageDataSet_a588cd839a8dcf3f9bbd487610347825e}{classes}}.push\_back(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{elem}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ index\ +=\ 1;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}done!\(\backslash\)nDirectory\ \(\backslash\)"{}"{}}\ <<\ \mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{trainDirectory}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)"{}\ ready."{}}\ <<\ std::endl;}
+\DoxyCodeLine{00069\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Found\ "{}}\ <<\ \mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{totalCount}}\ <<\ \textcolor{stringliteral}{"{}\ files\ belonging\ to\ "{}}\ <<\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}}\ <<\ \textcolor{stringliteral}{"{}\ classes.\(\backslash\)nUsing\ "{}}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}{validationCount}}\ <<\ \textcolor{stringliteral}{"{}\ files\ for\ validation\(\backslash\)n"{}}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ std::flush;}
+\DoxyCodeLine{00072\ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classImageDataSet_abe20e5992ddda25f736dfb0789d764a3}{Cache}}()\ \{}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#if\ MATH\_IMAGE\_PROCESSING}}
+\DoxyCodeLine{00087\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Resizing\ files\ and\ saving\ into\ memory..."{}}\ <<\ std::flush;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ count\ =\ 0,\ i\ =\ 0,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}}\ =\ 0;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{trainingIter}}\ =\ 0,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{validationIter}}\ =\ 0;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classDirectory}}\ :\ std::filesystem::directory\_iterator(\mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{trainDirectory}}))\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{hadEntry}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classDirectory}}.is\_directory()\ ||\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}}\ >=\ \mbox{\hyperlink{classImageDataSet_a588cd839a8dcf3f9bbd487610347825e}{classes}}.size())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}\ :\ std::filesystem::directory\_iterator(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classDirectory}}))\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}.is\_regular\_file())\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{hadEntry}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ Magick::Image\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image}};}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image}}.verbose(\mbox{\hyperlink{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596}{verbose}});}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image}}.magick(\textcolor{stringliteral}{"{}JPG"{}});}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image}}.read(std::string(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{entry}}.path()));}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PZ:\ we\ don't\ scale\ but\ resample,\ to\ enforce\ dimension\ width\ *\ height\ and\ ignore\ loss\ in\ content}}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image}}.resample(Magick::Point(\mbox{\hyperlink{classImageDataSet_a9ba02bb2e1b60de7f6835ace293809f9}{imageWidth}},\ \mbox{\hyperlink{classImageDataSet_ab83106b8cff6d5cc8359aa490d85d07e}{imageHeight}}));}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structSet}{Set}}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}};}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{is\_validation}}\ =}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{trainingIter}}\ >=\ \mbox{\hyperlink{classImageDataSet_a323ec5719d39c362c77960656b65f571}{trainingCount}}\ ||\ ((count\ \%\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}})\mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{totalCount}}\ *\ (\mbox{\hyperlink{classImageDataSet_a08ea2bd23adb1f8d45d888e820fe3e4d}{validationShare}}))\ ==\ 0\ \&\&\ count\ !=\ 0\ \&\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{validationIter}}\ <\ \mbox{\hyperlink{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}{validationCount}}));}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{is\_validation}}\ ?\ \&\mbox{\hyperlink{classDataSet_a83ba4064a6be64f1b1535de18005e270}{Validation}}\ :\ \&\mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}};}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ Magick::PixelData\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{pixelBlob}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image}},\ \textcolor{stringliteral}{"{}RGBA"{}},\ Magick::FloatPixel);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}\ =\ (\textcolor{keywordtype}{float}*)\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{pixelBlob}}.data();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{InputCount}};\ i++)\ \{\ (*target).Input[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{is\_validation}}\ ?\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{validationIter}}\ :\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{trainingIter}}][i]\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}[i];\ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{OutputCount}};\ i++)\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ (*target).Output[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{is\_validation}}\ ?\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{validationIter}}\ :\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{trainingIter}}][i]\ =\ \mbox{\hyperlink{classImageDataSet_a588cd839a8dcf3f9bbd487610347825e}{classes}}[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}}][0][i];}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{is\_validation}})\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{validationIter}}\ +=\ 1;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{trainingIter}}\ +=\ 1;}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ count\ +=\ 1;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{classCount}}\ +=\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{hadEntry}};}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00125\ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00129\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classImageDataSet_ab83106b8cff6d5cc8359aa490d85d07e}{imageHeight}}\ =\ 180;}
+\DoxyCodeLine{00131\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classImageDataSet_a9ba02bb2e1b60de7f6835ace293809f9}{imageWidth}}\ =\ 180;}
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classImageDataSet_a08ea2bd23adb1f8d45d888e820fe3e4d}{validationShare}}\ =\ 0.2;}
+\DoxyCodeLine{00135\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{trainDirectory}}\ =\ \textcolor{stringliteral}{"{}../../resources/image\_classification/training/"{}};}
+\DoxyCodeLine{00137\ \ \ std::vector<MatrixDS<bool>>\ \mbox{\hyperlink{classImageDataSet_a588cd839a8dcf3f9bbd487610347825e}{classes}};}
+\DoxyCodeLine{00139\ \ \ std::vector<std::string>\ \mbox{\hyperlink{classImageDataSet_a948b82a4dc6b7594c6c8029909aa6b72}{classNames}};}
+\DoxyCodeLine{00141\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{totalCount}}\ =\ 0;}
+\DoxyCodeLine{00143\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classImageDataSet_a323ec5719d39c362c77960656b65f571}{trainingCount}}\ =\ 0;}
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}{validationCount}}\ =\ 0;}
+\DoxyCodeLine{00146\ \};}
+
+\end{DoxyCode}

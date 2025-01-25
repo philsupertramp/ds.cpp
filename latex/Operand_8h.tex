@@ -1,0 +1,62 @@
+\doxysection{include/math/symb/\+Operand.h File Reference}
+\hypertarget{Operand_8h}{}\label{Operand_8h}\index{include/math/symb/Operand.h@{include/math/symb/Operand.h}}
+{\ttfamily \#include "{}Math\+Node.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+set$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classOperand}{Operand}}
+\item 
+class \mbox{\hyperlink{classSymbolic}{Symbolic}}
+\item 
+class \mbox{\hyperlink{classNumber}{Number}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{Operand_8h_ae9c1d0ee9dd7d56df829ae0e10aceb37}{is\+Constant}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{Operand_8h_afdd5c2fe6fafbe3afc7413b3c0162704}{has\+Symbol}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classSymbolic}{Symbolic}} $>$ $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{container}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classSymbolic}{Symbolic}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{sym}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::map}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classSymbolic}{Symbolic}} $>$ $>$ \mbox{\hyperlink{Operand_8h_aa4aad1c453d503a883b6a3a05252e5c2}{Default\+Symbols}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Operand_8h_afdd5c2fe6fafbe3afc7413b3c0162704}\label{Operand_8h_afdd5c2fe6fafbe3afc7413b3c0162704} 
+\index{Operand.h@{Operand.h}!hasSymbol@{hasSymbol}}
+\index{hasSymbol@{hasSymbol}!Operand.h@{Operand.h}}
+\doxysubsubsection{\texorpdfstring{hasSymbol()}{hasSymbol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} has\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classSymbolic}{Symbolic}} $>$ $>$ \&}]{container,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classSymbolic}{Symbolic}} $>$ \&}]{sym }\end{DoxyParamCaption})}
+
+\Hypertarget{Operand_8h_ae9c1d0ee9dd7d56df829ae0e10aceb37}\label{Operand_8h_ae9c1d0ee9dd7d56df829ae0e10aceb37} 
+\index{Operand.h@{Operand.h}!isConstant@{isConstant}}
+\index{isConstant@{isConstant}!Operand.h@{Operand.h}}
+\doxysubsubsection{\texorpdfstring{isConstant()}{isConstant()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} is\+Constant (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{in }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{Operand_8h_aa4aad1c453d503a883b6a3a05252e5c2}\label{Operand_8h_aa4aad1c453d503a883b6a3a05252e5c2} 
+\index{Operand.h@{Operand.h}!DefaultSymbols@{DefaultSymbols}}
+\index{DefaultSymbols@{DefaultSymbols}!Operand.h@{Operand.h}}
+\doxysubsubsection{\texorpdfstring{DefaultSymbols}{DefaultSymbols}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::map}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$\mbox{\hyperlink{classSymbolic}{Symbolic}}$>$ $>$ Default\+Symbols\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}pi"{}},\ std::make\_shared<Symbolic>(\textcolor{stringliteral}{"{}pi"{}},\ 3.1415926535897932384626433832795028841971693993751058209749445923078164)\ \},}
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}e"{}},\ std::make\_shared<Symbolic>(\textcolor{stringliteral}{"{}e"{}},\ 2.71828182845904523536028747135266249775724709369995957496696762772407663)\ \},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

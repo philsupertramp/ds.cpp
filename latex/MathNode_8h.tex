@@ -1,0 +1,133 @@
+\doxysection{include/math/symb/\+Math\+Node.h File Reference}
+\hypertarget{MathNode_8h}{}\label{MathNode_8h}\index{include/math/symb/MathNode.h@{include/math/symb/MathNode.h}}
+{\ttfamily \#include "{}../format.\+h"{}}\newline
+{\ttfamily \#include $<$cstdlib$>$}\newline
+{\ttfamily \#include $<$cstring$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMathNode}{Math\+Node}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefe}{Math\+Node\+Type}} \{ \newline
+\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea1c144f8bf59ab742c4408ec393602d02}{Node\+Type\+\_\+\+Operator}} = 0
+, \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea1e2b34bb3fd76d1773c0e739ab757f0b}{Node\+Type\+\_\+\+Symbolic}} = 1
+, \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefead04e2797598b259ea0d4a18142932f96}{Node\+Type\+\_\+\+Numeric}} = 2
+, \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefeabb22938ecb03779ebe89024bb122529a}{Node\+Type\+\_\+\+Parentheses}} = 3
+, \newline
+\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea521488c28905dded8d5866bbb41852df}{Node\+Type\+\_\+\+Functional}} = 4
+, \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea7a7d2ae2bbe12c843e2f13bf17233afe}{Node\+Type\+\_\+\+Default\+Symbol}} = 5
+, \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea33343182081eb115cca4d5655d15fe4d}{Node\+Type\+\_\+\+Any}} = 6
+, \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefeaa395cc2e4df7237a8e4cf83b2c175a59}{Node\+Type\+\_\+\+Operator\+\_\+or\+\_\+\+Parentheses}} = 7
+ \}
+\item 
+enum \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747ab}{Node\+Connection\+Type}} \{ \newline
+\mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747aba7e556deecd3a56edd17baf888f865259}{Connection\+Type\+\_\+\+Dual}} = 0
+, \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747abae8682481e267e0dcf54a590bb9b93f46}{Connection\+Type\+\_\+\+Left}} = 2
+, \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747aba39f57f9939ce7c3fe38fff24e2ac81d7}{Connection\+Type\+\_\+\+Right}} = 3
+, \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747aba9eeffc9e32035844d6c1ceb772b7a69c}{Connection\+Type\+\_\+\+None}} = 4
+, \newline
+\mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747abaca47e3381d314ac9ecf94b7bf69f580f}{Connection\+Type\+\_\+\+Unknown}} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::regex}} \mbox{\hyperlink{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c}{Get\+Regex}} (\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefe}{Math\+Node\+Type}} type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefe}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefe} 
+\index{MathNode.h@{MathNode.h}!MathNodeType@{MathNodeType}}
+\index{MathNodeType@{MathNodeType}!MathNode.h@{MathNode.h}}
+\doxysubsubsection{\texorpdfstring{MathNodeType}{MathNodeType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{enum}} \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefe}{Math\+Node\+Type}}}
+
+Node type representation \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_Operator@{NodeType\_Operator}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_Operator@{NodeType\_Operator}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefea1c144f8bf59ab742c4408ec393602d02}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefea1c144f8bf59ab742c4408ec393602d02} 
+Node\+Type\+\_\+\+Operator&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_Symbolic@{NodeType\_Symbolic}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_Symbolic@{NodeType\_Symbolic}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefea1e2b34bb3fd76d1773c0e739ab757f0b}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefea1e2b34bb3fd76d1773c0e739ab757f0b} 
+Node\+Type\+\_\+\+Symbolic&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_Numeric@{NodeType\_Numeric}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_Numeric@{NodeType\_Numeric}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefead04e2797598b259ea0d4a18142932f96}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefead04e2797598b259ea0d4a18142932f96} 
+Node\+Type\+\_\+\+Numeric&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_Parentheses@{NodeType\_Parentheses}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_Parentheses@{NodeType\_Parentheses}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefeabb22938ecb03779ebe89024bb122529a}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefeabb22938ecb03779ebe89024bb122529a} 
+Node\+Type\+\_\+\+Parentheses&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_Functional@{NodeType\_Functional}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_Functional@{NodeType\_Functional}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefea521488c28905dded8d5866bbb41852df}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefea521488c28905dded8d5866bbb41852df} 
+Node\+Type\+\_\+\+Functional&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_DefaultSymbol@{NodeType\_DefaultSymbol}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_DefaultSymbol@{NodeType\_DefaultSymbol}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefea7a7d2ae2bbe12c843e2f13bf17233afe}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefea7a7d2ae2bbe12c843e2f13bf17233afe} 
+Node\+Type\+\_\+\+Default\+Symbol&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_Any@{NodeType\_Any}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_Any@{NodeType\_Any}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefea33343182081eb115cca4d5655d15fe4d}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefea33343182081eb115cca4d5655d15fe4d} 
+Node\+Type\+\_\+\+Any&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeType\_Operator\_or\_Parentheses@{NodeType\_Operator\_or\_Parentheses}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!NodeType\_Operator\_or\_Parentheses@{NodeType\_Operator\_or\_Parentheses}}}\Hypertarget{MathNode_8h_af66185625ec6e66044e64693a29dfefeaa395cc2e4df7237a8e4cf83b2c175a59}\label{MathNode_8h_af66185625ec6e66044e64693a29dfefeaa395cc2e4df7237a8e4cf83b2c175a59} 
+Node\+Type\+\_\+\+Operator\+\_\+or\+\_\+\+Parentheses&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{MathNode_8h_ac3957c9768ee90555a77588a75a747ab}\label{MathNode_8h_ac3957c9768ee90555a77588a75a747ab} 
+\index{MathNode.h@{MathNode.h}!NodeConnectionType@{NodeConnectionType}}
+\index{NodeConnectionType@{NodeConnectionType}!MathNode.h@{MathNode.h}}
+\doxysubsubsection{\texorpdfstring{NodeConnectionType}{NodeConnectionType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{enum}} \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747ab}{Node\+Connection\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionType\_Dual@{ConnectionType\_Dual}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!ConnectionType\_Dual@{ConnectionType\_Dual}}}\Hypertarget{MathNode_8h_ac3957c9768ee90555a77588a75a747aba7e556deecd3a56edd17baf888f865259}\label{MathNode_8h_ac3957c9768ee90555a77588a75a747aba7e556deecd3a56edd17baf888f865259} 
+Connection\+Type\+\_\+\+Dual&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionType\_Left@{ConnectionType\_Left}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!ConnectionType\_Left@{ConnectionType\_Left}}}\Hypertarget{MathNode_8h_ac3957c9768ee90555a77588a75a747abae8682481e267e0dcf54a590bb9b93f46}\label{MathNode_8h_ac3957c9768ee90555a77588a75a747abae8682481e267e0dcf54a590bb9b93f46} 
+Connection\+Type\+\_\+\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionType\_Right@{ConnectionType\_Right}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!ConnectionType\_Right@{ConnectionType\_Right}}}\Hypertarget{MathNode_8h_ac3957c9768ee90555a77588a75a747aba39f57f9939ce7c3fe38fff24e2ac81d7}\label{MathNode_8h_ac3957c9768ee90555a77588a75a747aba39f57f9939ce7c3fe38fff24e2ac81d7} 
+Connection\+Type\+\_\+\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionType\_None@{ConnectionType\_None}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!ConnectionType\_None@{ConnectionType\_None}}}\Hypertarget{MathNode_8h_ac3957c9768ee90555a77588a75a747aba9eeffc9e32035844d6c1ceb772b7a69c}\label{MathNode_8h_ac3957c9768ee90555a77588a75a747aba9eeffc9e32035844d6c1ceb772b7a69c} 
+Connection\+Type\+\_\+\+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConnectionType\_Unknown@{ConnectionType\_Unknown}!MathNode.h@{MathNode.h}}\index{MathNode.h@{MathNode.h}!ConnectionType\_Unknown@{ConnectionType\_Unknown}}}\Hypertarget{MathNode_8h_ac3957c9768ee90555a77588a75a747abaca47e3381d314ac9ecf94b7bf69f580f}\label{MathNode_8h_ac3957c9768ee90555a77588a75a747abaca47e3381d314ac9ecf94b7bf69f580f} 
+Connection\+Type\+\_\+\+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c}\label{MathNode_8h_a85bcdf174a2e5f29fc70bab45310509c} 
+\index{MathNode.h@{MathNode.h}!GetRegex@{GetRegex}}
+\index{GetRegex@{GetRegex}!MathNode.h@{MathNode.h}}
+\doxysubsubsection{\texorpdfstring{GetRegex()}{GetRegex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::regex}} Get\+Regex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefe}{Math\+Node\+Type}}}]{type }\end{DoxyParamCaption})}
+
+regex factory for node types 
+\begin{DoxyParams}{Parameters}
+{\em type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+regex for given type 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{symb_2TestSymbolic_8cpp-example}{symb/\+Test\+Symbolic.\+cpp}}.\end{Desc}

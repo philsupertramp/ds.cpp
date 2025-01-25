@@ -1,0 +1,499 @@
+\doxysection{Test\+Matrix.\+cpp}
+\hypertarget{TestMatrix_8cpp-example}{}\label{TestMatrix_8cpp-example}This is an example on how to use the \doxylink{classMatrix}{Matrix} class.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Matrix_8h}{math/Matrix.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{matrix__utils_8h}{math/matrix\_utils.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MatrixTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMatrixMultiplication()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(1.0,\ 3,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(2.0,\ 2,\ 3);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C2(1.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ v\ =\ 2.0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ D\ \ \ =\ A\ *\ v;}
+\DoxyCodeLine{\ \ \ \ D.\mbox{\hyperlink{classMatrix_a7ff3adb55a7fcd61963647884d97cbd1}{assertSize}}(A);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ D.rows();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ D.columns();\ ++j)\ \{\ assert(D(i,\ j)\ ==\ 2.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ D\ =\ A;}
+\DoxyCodeLine{\ \ \ \ D\ *=\ v;}
+\DoxyCodeLine{\ \ \ \ D.\mbox{\hyperlink{classMatrix_a7ff3adb55a7fcd61963647884d97cbd1}{assertSize}}(A);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ D.rows();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ D.columns();\ ++j)\ \{\ assert(D(i,\ j)\ ==\ 2.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ B\ *\ C;\ <-\/\ not\ possible}}
+\DoxyCodeLine{\ \ \ \ C*\ C2;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C3;}
+\DoxyCodeLine{\ \ \ \ C3\ =\ C\ *\ C2;}
+\DoxyCodeLine{\ \ \ \ C3.\mbox{\hyperlink{classMatrix_a7ff3adb55a7fcd61963647884d97cbd1}{assertSize}}(C);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ C3.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ C3.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}();\ ++j)\ \{\ assert(C3(i,\ j)\ ==\ 4.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ E\ =\ A\ *\ B;}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ E;}}
+\DoxyCodeLine{\ \ \ \ assert(E.columns()\ ==\ 3);}
+\DoxyCodeLine{\ \ \ \ assert(E.rows()\ ==\ 3);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ E.rows();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ E.columns();\ ++j)\ \{\ assert(E(i,\ j)\ ==\ 4);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec(1.0,\ 10,\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2(2.0,\ 1,\ 10);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ resVec\ =\ vec\ *\ vec2;}
+\DoxyCodeLine{\ \ \ \ assert(resVec.rows()\ ==\ 10);}
+\DoxyCodeLine{\ \ \ \ assert(resVec.columns()\ ==\ 10);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ resVec2\ =\ vec2\ *\ vec;}
+\DoxyCodeLine{\ \ \ \ assert(resVec2.rows()\ ==\ 1);}
+\DoxyCodeLine{\ \ \ \ assert(resVec2.columns()\ ==\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2A(2.0,\ 2,\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2B(2.0,\ 1,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ mat2(1.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ mat2B(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2b(4.0,\ 2,\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ resA\ =\ mat2\ *\ vec2A;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ resB\ =\ mat2\ *\ vec2B;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(resA\ ==\ vec2b);}
+\DoxyCodeLine{\ \ \ \ assert(resB\ ==\ mat2B);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMatrixDivision()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(\{\ \{\ 2,\ 4,\ 8\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(\{\ \{\ .5,\ .25,\ .125\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(\{\ \{\ 1,\ 2,\ 4\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(1.0\ /\ A,\ B);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A\ /\ 2,\ C);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(1\ /\ A,\ B);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A\ /\ 2.0f,\ C);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ E\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(2,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ F\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(1,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(E\ /\ F,\ 2\ *\ E);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMatrixAddition()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ D\ =\ A\ +\ B;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ E(4.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ assert(D\ ==\ E);}
+\DoxyCodeLine{\ \ \ \ C\ +=\ A;}
+\DoxyCodeLine{\ \ \ \ assert(C\ ==\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2(1.0,\ 2,\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2b(1.0,\ 2,\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2c(2.0,\ 2,\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert((vec2\ +\ vec2b)\ ==\ vec2c);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Impossible}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ vec2\ +\ A;}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ foo\ =\ A\ +\ vec2;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ F(3.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(foo,\ F);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A\ +\ vec2c,\ E);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestHadamardMultiplication()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(1.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(2.015,\ 2,\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ C\ =\ A.\mbox{\hyperlink{classMatrix_a2d4d0c8533f97dff09e24f25a2c0d233}{HadamardMulti}}(B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(C\ ==\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ D(\{\ \{\ 0,\ 1\ \},\ \{\ 0,\ 0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ D2(\{\ \{\ 0,\ 1\ \},\ \{\ 0,\ 0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ E(5.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ resultA(\{\ \{\ 0,\ 5.0\ \},\ \{\ 0,\ 0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ resultB(\{\ \{\ 0,\ 25.0\ \},\ \{\ 0,\ 0\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(D.HadamardMulti(E)\ ==\ resultA);}
+\DoxyCodeLine{\ \ \ \ D.HadamardMulti(E);}
+\DoxyCodeLine{\ \ \ \ assert(D\ ==\ resultB);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ resD2E\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{HadamardMulti}}(D2,\ E);}
+\DoxyCodeLine{\ \ \ \ assert(resD2E\ ==\ resultA);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ Q1(10.0,\ 2,\ 5);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ Q2(10.0,\ 3,\ 5);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ Q3(10.0,\ 5,\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Impossible}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ Q1.HadamardMulti(Q2);}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ Q1.HadamardMulti(Q3);}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ HadamardMulti(Q1,\ Q2);}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestKroneckerMultiplication()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(1.0,\ 1,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(2.0,\ 2,\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(2.0,\ 2,\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ resA\ =\ A.\mbox{\hyperlink{classMatrix_aa28e57793db358ea0e4ea3ec590b24c1}{KroneckerMulti}}(B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(resA\ ==\ C);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A2(\{\ \{\ 1,\ 2\ \},\ \{\ 3,\ 4\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B2(\{\ \{\ 0,\ 5\ \},\ \{\ 6,\ 7\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C2(\{\ \{\ 0,\ 5,\ 0,\ 10\ \},\ \{\ 6,\ 7,\ 12,\ 14\ \},\ \{\ 0,\ 15,\ 0,\ 20\ \},\ \{\ 18,\ 21,\ 24,\ 28\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ resB\ =\ A2.\mbox{\hyperlink{classMatrix_aa28e57793db358ea0e4ea3ec590b24c1}{KroneckerMulti}}(B2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(resB\ ==\ C2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A3(\{\ \{\ 1,\ 2\ \},\ \{\ 3,\ 4\ \},\ \{\ 5,\ 6\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A32(\{\ \{\ 1,\ 2\ \},\ \{\ 3,\ 4\ \},\ \{\ 5,\ 6\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B3(\{\ \{\ 7,\ 8\ \},\ \{\ 9,\ 0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C3(}
+\DoxyCodeLine{\ \ \ \ \{\ \{\ 7,\ 8,\ 14,\ 16\ \},\ \{\ 9,\ 0,\ 18,\ 0\ \},\ \{\ 21,\ 24,\ 28,\ 32\ \},\ \{\ 27,\ 0,\ 36,\ 0\ \},\ \{\ 35,\ 40,\ 42,\ 48\ \},\ \{\ 45,\ 0,\ 54,\ 0\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ resC\ =\ A3.\mbox{\hyperlink{classMatrix_aa28e57793db358ea0e4ea3ec590b24c1}{KroneckerMulti}}(B3);}
+\DoxyCodeLine{\ \ \ \ assert(resC\ ==\ C3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ resC2\ =\ \mbox{\hyperlink{matrix__utils_8h_a93aa2d642177c606086b7ed35dbd634c}{KroneckerMulti}}(A32,\ B3);}
+\DoxyCodeLine{\ \ \ \ assert(resC2\ ==\ resC\ \&\&\ resC2\ ==\ C3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestHorizontalConcat()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(1.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A2(1.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(2.0,\ 2,\ 1);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(\{\ \{\ 1.0,\ 1.0,\ 2.0\ \},\ \{\ 1.0,\ 1.0,\ 2.0\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ res1\ =\ A.\mbox{\hyperlink{classMatrix_afde474f7be84eefe2e7603c3a924bfff}{HorizontalConcat}}(B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(res1\ ==\ C);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ res2\ =\ \mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(A2,\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(res2\ ==\ C);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMatrixCompare()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ D(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ E(2.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ F(\{\ \{\ 1,\ 0,\ 0\ \},\ \{\ 0,\ 1,\ 0\ \},\ \{\ 0,\ 0,\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ G(\{\ \{\ 1,\ 0,\ 0\ \},\ \{\ 0,\ 1,\ 1\ \},\ \{\ 0,\ 0,\ 1\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(A\ ==\ B);}
+\DoxyCodeLine{\ \ \ \ assert(A\ !=\ C);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ cannot\ be\ compared\ by\ implementation}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ assert(A\ !=\ D);}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ assert(A\ !=\ E);}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ assert(D\ ==\ E);}}
+\DoxyCodeLine{\ \ \ \ assert(F\ !=\ G);}
+\DoxyCodeLine{\ \ \ \ assert(F.Determinant()\ ==\ G.Determinant());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertTrue(A\ <\ B);}
+\DoxyCodeLine{\ \ \ \ AssertTrue(B\ <\ A);}
+\DoxyCodeLine{\ \ \ \ AssertTrue(A\ >\ B);}
+\DoxyCodeLine{\ \ \ \ AssertTrue(B\ >\ A);}
+\DoxyCodeLine{\ \ \ \ AssertTrue(A\ >\ C);}
+\DoxyCodeLine{\ \ \ \ AssertFalse(A\ <\ C);}
+\DoxyCodeLine{\ \ \ \ AssertTrue(C\ <\ A);}
+\DoxyCodeLine{\ \ \ \ AssertFalse(C\ >\ A);}
+\DoxyCodeLine{\ \ \ \ AssertTrue(G\ >\ F);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMatrixDeterminant()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(\{\ \{\ 1,\ 0,\ 0\ \},\ \{\ 0,\ 1,\ 0\ \},\ \{\ 0,\ 0,\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(\{\ \{\ -\/1,\ 0,\ 0\ \},\ \{\ 0,\ 1,\ 0\ \},\ \{\ 0,\ 0,\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(\{\ \{\ 3,\ 5,\ 2\ \},\ \{\ 8,\ 4,\ 8\ \},\ \{\ 2,\ 4,\ 7\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ D(\{\ \{\ 9,\ 5,\ 2,\ 5\ \},\ \{\ 9,\ 5,\ 3,\ 7\ \},\ \{\ 6,\ 5,\ 4,\ 8\ \},\ \{\ 1,\ 5,\ 3,\ 7\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ E(\{\ \{\ 1,\ 2\ \},\ \{\ 3,\ 4\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ assert(A.Determinant()\ ==\ 1.0);}
+\DoxyCodeLine{\ \ \ \ assert(B.Determinant()\ ==\ -\/1.0);}
+\DoxyCodeLine{\ \ \ \ assert(C.Determinant()\ ==\ -\/164);}
+\DoxyCodeLine{\ \ \ \ assert(D.Determinant()\ ==\ -\/40);}
+\DoxyCodeLine{\ \ \ \ assert(E.Determinant()\ ==\ -\/2);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMatrixTranspose()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Vector}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec(\{\ \{\ 1,\ 2,\ 3\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ vec2\ =\ vec.\mbox{\hyperlink{classMatrix_a054a03bcae4eb86d6f4ef84dc87840ef}{Transpose}}();}
+\DoxyCodeLine{\ \ \ \ assert(vec2.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}()\ ==\ vec.rows());}
+\DoxyCodeLine{\ \ \ \ assert(vec2.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}()\ ==\ vec.columns());}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 3;\ ++i)\ \{\ AssertEqual(vec(0,\ i),\ vec2(i,\ 0));\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Matrix}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(1,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A,\ A.\mbox{\hyperlink{classMatrix_a054a03bcae4eb86d6f4ef84dc87840ef}{Transpose}}());}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(\{\ \{\ 1,\ 1\ \},\ \{\ 2,\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(\{\ \{\ 1,\ 2\ \},\ \{\ 1,\ 2\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(B.Transpose(),\ C);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ D(\{\ \{\ 1,\ 1\ \},\ \{\ 2,\ 2\ \},\ \{\ 3,\ 3\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ E(\{\ \{\ 1,\ 2,\ 3\ \},\ \{\ 1,\ 2,\ 3\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(D.Transpose(),\ E);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMatrixInit()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<float>}}\ matrix;}
+\DoxyCodeLine{\ \ \ \ matrix.\mbox{\hyperlink{classMatrix_a9483215681a238c3da0e385c3a31fe16}{Resize}}(2,\ 2);}
+\DoxyCodeLine{\ \ \ \ assert(matrix.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}()\ ==\ 2);}
+\DoxyCodeLine{\ \ \ \ assert(matrix.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}()\ ==\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ m2(\{\ \{\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1\ \},\ \{\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ assert(m2.rows()\ ==\ 2);}
+\DoxyCodeLine{\ \ \ \ assert(m2.columns()\ ==\ 11);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ m3(\{\ \{\ 1\ \},\ \{\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ assert(m3.rows()\ ==\ 2);}
+\DoxyCodeLine{\ \ \ \ assert(m3.columns()\ ==\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ m5(\{\ \{\ 1.0,\ 1.0\ \},\ \{\ 1.0,\ 1.0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 2;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 2;\ j++)\ \{\ assert(m5(i,\ j)\ ==\ 1.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ m6(1.0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 2;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ 2;\ j++)\ \{\ assert(m6(i,\ j)\ ==\ 1.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ foo\ =\ \{\ \{\ 1.,\ 2.,\ 3.\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<float>}}\ bar\ \ =\ foo;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ baz\ \ \ \ =\ bar;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(foo(0,\ 1),\ 2.0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(bar(0,\ 1),\ 2.0f);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(baz(0,\ 2),\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(foo,\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(\&foo(0,\ 0),\ 3));}
+\DoxyCodeLine{\ \ \ \ AssertEqual(foo,\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}((\textcolor{keywordtype}{double}*)\&*foo,\ 3));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ const\_foo\ =\ foo;}
+\DoxyCodeLine{\ \ \ \ AssertEqual(const\_foo,\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(\&const\_foo(0,\ 0),\ 3));}
+\DoxyCodeLine{\ \ \ \ AssertEqual(const\_foo,\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}((\textcolor{keywordtype}{double}*)\&*const\_foo,\ 3));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestWhere()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(\{\ \{\ 0,\ 0\ \},\ \{\ 1,\ 1\ \},\ \{\ 0,\ 0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ std::function<bool(\textcolor{keywordtype}{double})>\ cond\ =\ [](\textcolor{keywordtype}{double}\ i)\ \{\ \textcolor{keywordflow}{return}\ bool(i\ ==\ 1);\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ B\ =\ \mbox{\hyperlink{matrix__utils_8h_afb3f7de2743f10b710460feb9c0f9009}{where}}(cond,\ A,\ \{\ \{\ 1,\ 1\ \},\ \{\ 1,\ 1\ \},\ \{\ 1,\ 1\ \}\ \},\ \{\ \{\ 0,\ 0\ \},\ \{\ 0,\ 0\ \},\ \{\ 0,\ 0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ B;}}
+\DoxyCodeLine{\ \ \ \ assert(B\ ==\ A);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGetIndex()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<bool>}}\ A(\textcolor{keyword}{false},\ 5,\ 5);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.\mbox{\hyperlink{classMatrix_ad5ef1c427af64e5c7b73d0ec9df21b6b}{GetIndex}}(4,\ 4),\ 24);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.\mbox{\hyperlink{classMatrix_ad5ef1c427af64e5c7b73d0ec9df21b6b}{GetIndex}}(0,\ 0),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.\mbox{\hyperlink{classMatrix_ad5ef1c427af64e5c7b73d0ec9df21b6b}{GetIndex}}(2,\ 2),\ 12);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.\mbox{\hyperlink{classMatrix_ad5ef1c427af64e5c7b73d0ec9df21b6b}{GetIndex}}(4,\ 0),\ 20);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.\mbox{\hyperlink{classMatrix_ad5ef1c427af64e5c7b73d0ec9df21b6b}{GetIndex}}(4,\ 2),\ 22);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(\{\ \{\ 1,\ 1\ \},\ \{\ 1,\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(B.GetIndex(0,\ 0),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(B.GetIndex(0,\ 1),\ 1);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(B.GetIndex(1,\ 0),\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(B.GetIndex(1,\ 1),\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C(\{\ \{\ \{\ 1,\ 1\ \},\ \{\ 1,\ 1\ \}\ \},\ \{\ \{\ 1,\ 1\ \},\ \{\ 1,\ 1\ \}\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(0,\ 0,\ 0),\ 0);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(0,\ 0,\ 1),\ 1);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(0,\ 1,\ 0),\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(0,\ 1,\ 1),\ 3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(1,\ 0,\ 0),\ 4);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(1,\ 0,\ 1),\ 5);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(1,\ 1,\ 0),\ 6);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetIndex(1,\ 1,\ 1),\ 7);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ assert(A.GetIndex(5,\ 2));\ //-\/>\ Index\ out\ of\ bounds}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestArgMinMax()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ A(\{\ \{\ 2,\ 3,\ 2,\ 2\ \},\ \{\ 2,\ 2,\ 1,\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ assert(\mbox{\hyperlink{matrix__utils_8h_a14c028e4d81577bbda70dd22db04afe8}{argmin}}(A)\ ==\ 6);}
+\DoxyCodeLine{\ \ \ \ assert(\mbox{\hyperlink{matrix__utils_8h_a2a01e8ac881ea58d279cd73ec1803444}{argmax}}(A)\ ==\ 1);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMax()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ A(\{\ \{\ 1,\ 2,\ 3,\ 4,\ 5,\ 6\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{matrix__utils_8h_adf917f83162312bfe4a7a861c6f0cbcb}{elemMax}}(A,\ 0),\ 6);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestCorr()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ A(\{\ \{\ 1,\ 2,\ 3,\ 4,\ 5\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ B(\{\ \{\ 5,\ 4,\ 3,\ 2,\ 1\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(\mbox{\hyperlink{matrix__utils_8h_a0a35c20e3d36bb16e1ae7e4dbaae29ce}{Corr}}(A,\ B)\ ==\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestRandom()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A\ =\ \mbox{\hyperlink{classMatrix_ab72c15d620fbe70b88578543b65e70ff}{Matrix<double>::Random}}(2,\ 2,\ 1,\ -\/100,\ 100);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B(0,\ 2,\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(\mbox{\hyperlink{matrix__utils_8h_a0a35c20e3d36bb16e1ae7e4dbaae29ce}{Corr}}(A,\ B)\ <\ 4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C\ =\ \mbox{\hyperlink{classMatrix_ab72c15d620fbe70b88578543b65e70ff}{Matrix<double>::Random}}(2,\ 2,\ 1);}
+\DoxyCodeLine{\ \ \ \ assert(\mbox{\hyperlink{matrix__utils_8h_a0a35c20e3d36bb16e1ae7e4dbaae29ce}{Corr}}(C,\ B)\ <\ 4);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFromVPtr()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{float}\ in[4]\ =\ \{\ 1,\ 2,\ 3,\ 4\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ A\ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_abcd4628e1dd87e594aa69c1e9e60cd19}{from\_vptr}}(in,\ \{\ 2,\ 2\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<float>}}\ B(\{\ \{\ 1,\ 2\ \},\ \{\ 3,\ 4\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ assert(A\ ==\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestVectorAccess()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ A(\{\ \{\ 1,\ 1,\ 1\ \},\ \{\ 2,\ 2,\ 2\ \},\ \{\ 3,\ 3,\ 3\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ B\ =\ A(0);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ C(\{\ \{\ 1,\ 1,\ 1\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ assert(B\ ==\ C);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGetSlice()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ A(\{\ \{\ 1,\ 1,\ 1\ \},\ \{\ 2,\ 2,\ 2\ \},\ \{\ 3,\ 3,\ 3\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ B(\{\ \{\ 2,\ 2\ \},\ \{\ 3,\ 3\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.GetSlice(1,\ 2,\ 1,\ 2),\ B);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.GetSlice(1,\ 2,\ 1),\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ C(\{\ \{\ 1,\ 2\ \},\ \{\ 3,\ 4\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ D(\{\ \{\ 1,\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ E(\{\ \{\ 3,\ 4\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ C(0)\ <<\ C(1);}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetSlice(0,\ 0),\ D);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetSlice(0,\ 0,\ 0),\ D);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetSlice(0,\ 0,\ 0,\ 1),\ D);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C(0),\ D);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetSlice(1,\ 1),\ E);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetSlice(1,\ 1,\ 0),\ E);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C.GetSlice(1,\ 1,\ 0,\ 1),\ E);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C(1),\ E);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestGetComponents()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(\{\ \{\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ 7,\ 8,\ 9\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.GetComponents(0),\ A);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestApply()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B\ =\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ D\ =\ 2\ *\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(2,\ 2);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ F\ =\ 4\ *\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(2,\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ C\ =\ A.\mbox{\hyperlink{classMatrix_ab6114bb3b048f92505d664efe4a10bfb}{Apply}}([](\textcolor{keywordtype}{double}\ val)\ \{\ \textcolor{keywordflow}{return}\ val\ *\ 2;\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ E\ =\ D.\mbox{\hyperlink{classMatrix_ab6114bb3b048f92505d664efe4a10bfb}{Apply}}([](\textcolor{keywordtype}{double}\ val)\ \{\ \textcolor{keywordflow}{return}\ val\ *\ val;\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A,\ B);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(C,\ D);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(E,\ F);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(2\ *\ D,\ E);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestUnique()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ A\ =\ \mbox{\hyperlink{classMatrix}{Matrix}}(\{\ \{\ 0,\ 1\ \},\ \{\ 0,\ 2\ \},\ \{\ 1,\ 1\ \},\ \{\ 1,\ 0\ \},\ \{\ 0,\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ B\ =\ \mbox{\hyperlink{classMatrix}{Matrix}}(\{\ \{\ 0,\ 1\ \},\ \{\ 0,\ 2\ \},\ \{\ 1,\ 1\ \},\ \{\ 1,\ 0\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ C\ =\ \mbox{\hyperlink{classMatrix}{Matrix}}(\{\ \{\ 0,\ 1,\ 2,\ 3,\ 4,\ 1,\ 2,\ 3,\ 4,\ 5\ \}\ \}).Transpose();}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<int>}}\ D\ =\ \mbox{\hyperlink{classMatrix}{Matrix}}(\{\ \{\ 0,\ 1,\ 2,\ 3,\ 4,\ 5\ \}\ \}).Transpose();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{matrix__utils_8h_af79386365c3901ef0bec8f116368ded2}{unique}}(A),\ B);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{matrix__utils_8h_af79386365c3901ef0bec8f116368ded2}{unique}}(C),\ D);}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestMean()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A\ =\ \{\ \{\ 0.,\ 1.\ \},\ \{\ 0.,\ 2.\ \},\ \{\ 1.,\ 1.\ \},\ \{\ 1.,\ 0.\ \},\ \{\ 0.,\ 1.\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B\ =\ \{\ \{\ 0.7\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ C\ =\ \{\ \{\ 0.4,\ 1.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ D\ =\ \{\ \{\ 0.5\ \},\ \{\ 1.0\ \},\ \{\ 1.0\ \},\ \{\ 0.5\ \},\ \{\ 0.5\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{matrix__utils_8h_a23bb7f728122a09c240223a4de6730a9}{mean}}(A),\ B);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{matrix__utils_8h_a23bb7f728122a09c240223a4de6730a9}{mean}}(A,\ 0),\ C);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{matrix__utils_8h_a23bb7f728122a09c240223a4de6730a9}{mean}}(A,\ 1),\ D);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{matrix__utils_8h_aaad7330b0e1e9c27b308a224210a14f9}{elemMean}}(A,\ 0),\ B(0,\ 0));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ TestMatrixInit();}
+\DoxyCodeLine{\ \ \ \ TestMatrixMultiplication();}
+\DoxyCodeLine{\ \ \ \ TestMatrixDivision();}
+\DoxyCodeLine{\ \ \ \ TestMatrixAddition();}
+\DoxyCodeLine{\ \ \ \ TestMatrixCompare();}
+\DoxyCodeLine{\ \ \ \ TestMatrixDeterminant();}
+\DoxyCodeLine{\ \ \ \ TestMatrixTranspose();}
+\DoxyCodeLine{\ \ \ \ TestHadamardMultiplication();}
+\DoxyCodeLine{\ \ \ \ TestKroneckerMultiplication();}
+\DoxyCodeLine{\ \ \ \ TestHorizontalConcat();}
+\DoxyCodeLine{\ \ \ \ TestWhere();}
+\DoxyCodeLine{\ \ \ \ TestGetIndex();}
+\DoxyCodeLine{\ \ \ \ TestArgMinMax();}
+\DoxyCodeLine{\ \ \ \ TestCorr();}
+\DoxyCodeLine{\ \ \ \ TestRandom();}
+\DoxyCodeLine{\ \ \ \ TestFromVPtr();}
+\DoxyCodeLine{\ \ \ \ TestVectorAccess();}
+\DoxyCodeLine{\ \ \ \ TestGetSlice();}
+\DoxyCodeLine{\ \ \ \ TestApply();}
+\DoxyCodeLine{\ \ \ \ TestUnique();}
+\DoxyCodeLine{\ \ \ \ TestMean();}
+\DoxyCodeLine{\ \ \ \ TestMax();}
+\DoxyCodeLine{\ \ \ \ TestGetComponents();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ MatrixTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

@@ -1,0 +1,94 @@
+\doxysection{Log\+Reg\+SGD.\+h}
+\hypertarget{LogRegSGD_8h_source}{}\label{LogRegSGD_8h_source}\index{include/math/ds/LogRegSGD.h@{include/math/ds/LogRegSGD.h}}
+\mbox{\hyperlink{LogRegSGD_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../Matrix.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Classifier_8h}{Classifier.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{SGD_8h}{SGD.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{numerics_2utils_8h}{utils.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLogRegSGD}{LogRegSGD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e}{shuffle}};}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}{randomState}};}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{classSGD}{SGD}}*\ \mbox{\hyperlink{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}{sgd}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23}{initialize\_weights}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{m}})\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}{randomState}})\ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}\ =\ \mbox{\hyperlink{classMatrix_ab72c15d620fbe70b88578543b65e70ff}{Matrix<double>::Random}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{m}},\ 1);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}\ =\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(0,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{m}},\ 1);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\_initialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00031\ \ \ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da}{update\_weights}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xi}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}})\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}}\ \ \ \ \ \ =\ \mbox{\hyperlink{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}{netInput}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xi}});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{error}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}}\ -\/\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{class1\_cost}}\ =\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}}\ *\ -\/1.0)\ *\ \mbox{\hyperlink{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4}{Log}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}});}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{class2\_cost}}\ =\ (\mbox{\hyperlink{classMatrix}{Matrix<double>}}(1,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}}.rows(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}}.columns())\ -\/\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}})}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\ \mbox{\hyperlink{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4}{Log}}(\mbox{\hyperlink{classMatrix}{Matrix<double>}}(1,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}}.rows(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}}.columns())\ -\/\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output}});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{auto}\ cost\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{class1\_cost}}\ -\/\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{class2\_cost}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gradient}}\ =\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xi}}.Transpose()\ *\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{error}})\ *\ \mbox{\hyperlink{classANNClassifier_a2e0e1ac7757c8cb67567c4dd4f42fef8}{eta}};}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gradient}}\ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gradient}}\ *\ (1.0\ /\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xi}}.rows());}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ this-\/>\mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}\ =\ this-\/>weights\ -\/\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gradient}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ cost.\mbox{\hyperlink{classMatrix_aef471f0c0ecfb23415e67032ca8bce67}{sumElements}}()\ /\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xi}}.rows();}
+\DoxyCodeLine{00054\ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4}{Log}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}.rows();\ i++)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}.columns();\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}++)\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{log}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}(i,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}));\ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}};}
+\DoxyCodeLine{00068\ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classLogRegSGD_afd641912a68b8c0b2981585fb2cfc068}{LogRegSGD}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\_eta}}\ =\ 0.01,\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{iter}}\ =\ 10,\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\_shuffle}}\ =\ \textcolor{keyword}{false},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\_randomState}}\ =\ 0)}
+\DoxyCodeLine{00079\ \ \ \ \ :\ \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\_eta}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{iter}})}
+\DoxyCodeLine{00080\ \ \ \ \ ,\ \mbox{\hyperlink{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e}{shuffle}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\_shuffle}})}
+\DoxyCodeLine{00081\ \ \ \ \ ,\ \mbox{\hyperlink{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}{randomState}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\_randomState}})\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}{randomState}}\ !=\ 0)\ \mbox{\hyperlink{classRandom_aa2d76b6a87c5642871c11e781f8f34b0}{Random::SetSeed}}(\mbox{\hyperlink{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}{randomState}});}
+\DoxyCodeLine{00083\ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd}{fit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ X,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}{sgd}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \mbox{\hyperlink{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}{sgd}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSGD}{SGD}}(}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \mbox{\hyperlink{classANNClassifier_a2e0e1ac7757c8cb67567c4dd4f42fef8}{eta}},}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \mbox{\hyperlink{classANNClassifier_aae9927c5e2e95d69ba5baa9842f36b02}{n\_iter}},}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \mbox{\hyperlink{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e}{shuffle}},}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ x,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\ \{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da}{update\_weights}}(x,\ y);\ \},}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ x)\ \{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}{netInput}}(x);\ \});}
+\DoxyCodeLine{00099\ \ \ \ \ \}}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23}{initialize\_weights}}(X.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}());}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}{sgd}}-\/>\mbox{\hyperlink{classSGD_ac1c260b0af030ec1016eb21c18a32952}{fit}}(X,\ y,\ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}});}
+\DoxyCodeLine{00102\ \ \ \}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogRegSGD_a7e21cee4236b4f144cf507396849110f}{partial\_fit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ X,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\_initialized}})\ \{\ \mbox{\hyperlink{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23}{initialize\_weights}}(X.\mbox{\hyperlink{classMatrix_a710d9b6934a24229fe06789f65ed0571}{columns}}());\ \}}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}{sgd}}-\/>\mbox{\hyperlink{classSGD_a45c2d880b888167941d996ddf1b39b0b}{partial\_fit}}(X,\ y,\ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}});}
+\DoxyCodeLine{00113\ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}{netInput}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ X)\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{ds_2utils_8h_ac662603ed4244e6d87f968e911f020f9}{Sigmoid}}(X\ *\ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}});\ \}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00128\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87}{activation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ X)\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}{netInput}}(X);\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00135\ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67}{predict}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ X)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{00136\ \ \ \ \ std::function<\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}(\textcolor{keywordtype}{double})>\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{condition}}\ =\ [](\textcolor{keywordtype}{double}\ x)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}(x\ >=\ \mbox{\hyperlink{numerics_2utils_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}});\ \};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_afb3f7de2743f10b710460feb9c0f9009}{where}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{condition}},\ \mbox{\hyperlink{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87}{activation}}(X),\ \{\ \{\ 1\ \}\ \},\ \{\ \{\ -\/1\ \}\ \});}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ return\ activation(X);}}
+\DoxyCodeLine{00139\ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classLogRegSGD_a31bce949b842722348434559d7219586}{costFunction}}([[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maybe\_unused}}]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}})\textcolor{keyword}{\ override\ }\{\ \textcolor{keywordflow}{return}\ 0;\ \}}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ }
+
+\end{DoxyCode}

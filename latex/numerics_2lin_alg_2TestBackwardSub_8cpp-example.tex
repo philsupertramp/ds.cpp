@@ -1,0 +1,59 @@
+\doxysection{numerics/lin\+\_\+alg/\+Test\+Backward\+Sub.\+cpp}
+\hypertarget{numerics_2lin_alg_2TestBackwardSub_8cpp-example}{}\label{numerics_2lin_alg_2TestBackwardSub_8cpp-example}This is an example on how to use backward\+Sub.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{backwardSub_8h}{math/numerics/lin\_alg/backwardSub.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }BackwardSubTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestBackwardSub()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ R\ =\ \{\ \{\ 15.0,\ 2.0\ \},\ \{\ 16.0,\ 46.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ b\ =\ \{\ \{\ 2.0\ \},\ \{\ 3.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ x\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}{backwardSub}}(R,\ b);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ LsgX\ =\ \{\ 0.1246376811594203,\ 0.0652173913043478\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 2;\ i++)\ \{\ AssertEqual(x(i,\ 0),\ LsgX[i]);\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ R\ =\ \{\ \{\ 4,\ 2,\ 3\ \},\ \{\ 0,\ 1,\ -\/0.5\ \},\ \{\ 0,\ 0,\ 1\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ b\ =\ \{\ \{\ 2\ \},\ \{\ 0\ \},\ \{\ 1\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ x\ =\ \mbox{\hyperlink{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}{backwardSub}}(R,\ b);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ LsgX\ =\ \{\ -\/0.5,\ 0.5,\ 1.0\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 3;\ i++)\ \{\ AssertEqual(x(i,\ 0),\ LsgX[i]);\ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestErrors()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ R\ =\ \{\ \{\ 15.0\ \},\ \{\ 16.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ b\ =\ \{\ \{\ 2.0\ \},\ \{\ 3.0\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ x\ =\ \mbox{\hyperlink{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}{backwardSub}}(R,\ b);}
+\DoxyCodeLine{\ \ \ \ assert(x.rows()\ ==\ 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ R2\ =\ \{\ \{\ 15.0,\ 1.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ b2\ =\ \{\ \{\ 2.0\ \},\ \{\ 3.0\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ x2\ =\ \mbox{\hyperlink{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}{backwardSub}}(R2,\ b2);}
+\DoxyCodeLine{\ \ \ \ assert(x2.rows()\ ==\ 0);}
+\DoxyCodeLine{\ \ \ \ assert(x2.columns()\ ==\ 0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ TestBackwardSub();}
+\DoxyCodeLine{\ \ \ \ TestErrors();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{\ BackwardSubTestCase().run();\ \}}
+
+\end{DoxyCodeInclude}
+ 

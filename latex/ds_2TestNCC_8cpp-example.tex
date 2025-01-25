@@ -1,0 +1,65 @@
+\doxysection{ds/\+Test\+NCC.\+cpp}
+\hypertarget{ds_2TestNCC_8cpp-example}{}\label{ds_2TestNCC_8cpp-example}This is an example on how to use the \doxylink{classNCC}{NCC} class for classification.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{NCC_8h}{math/ds/NCC.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }NCCTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestConstructor()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ =\ \mbox{\hyperlink{classNCC}{NCC}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFit()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ input\_data(}
+\DoxyCodeLine{\ \ \ \ \{\ \{\ 2,\ 1\ \},\ \{\ 4,\ 1\ \},\ \{\ 2,\ 3\ \},\ \{\ 4,\ 3\ \},\ \{\ 8,\ 6\ \},\ \{\ 10,\ 8\ \},\ \{\ 2,\ 12\ \},\ \{\ 2,\ 14\ \},\ \{\ 4,\ 14\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ labels(\{\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 1\ \},\ \{\ 1\ \},\ \{\ 2\ \},\ \{\ 2\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_weights(\{\ \{\ 3,\ 2\ \},\ \{\ 9,\ 7\ \},\ \{\ 8.\ /\ 3,\ 40.\ /\ 3\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ =\ \mbox{\hyperlink{classNCC}{NCC}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.weights,\ expected\_weights);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ clf\ =\ \mbox{\hyperlink{classNCC}{NCC}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.weights,\ expected\_weights);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestPredict()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ input\_data(}
+\DoxyCodeLine{\ \ \ \ \{\ \{\ 2,\ 1\ \},\ \{\ 4,\ 1\ \},\ \{\ 2,\ 3\ \},\ \{\ 4,\ 3\ \},\ \{\ 8,\ 6\ \},\ \{\ 10,\ 8\ \},\ \{\ 2,\ 12\ \},\ \{\ 2,\ 14\ \},\ \{\ 4,\ 14\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ labels(\{\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 1\ \},\ \{\ 1\ \},\ \{\ 2\ \},\ \{\ 2\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ test\_data(\{\ \{\ 1,\ 0\ \},\ \{\ 8,\ 8\ \},\ \{\ 0,\ 1\ \},\ \{\ 3,\ 16\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_labels(\{\ \{\ 0\ \},\ \{\ 1\ \},\ \{\ 0\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ =\ \mbox{\hyperlink{classNCC}{NCC}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.predict(test\_data),\ expected\_labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\ \ \ \ TestConstructor();}
+\DoxyCodeLine{\ \ \ \ TestFit();}
+\DoxyCodeLine{\ \ \ \ TestPredict();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ NCCTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

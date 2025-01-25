@@ -1,0 +1,333 @@
+\doxysection{Plot Class Reference}
+\hypertarget{classPlot}{}\label{classPlot}\index{Plot@{Plot}}
+
+
+{\ttfamily \#include $<$Plot.\+h$>$}
+
+Inheritance diagram for Plot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPlot}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPlot_ad5c4ae2e4201841f833c2d6968681c0a}{Plot}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}="{}"{})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_abb8ae168887076ca5dc5205b34d1fa95}{clear\+\_\+file}} ()
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&title)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_a71b26c829f6b3f4cf64957a3e323517f}{x\+Axis}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_a56e462e8d1c707986dc1e4335a633b24}{y\+Axis}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_ab1ca4b31fc51ed85c65f1c8fcf786134}{point\+Size}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_a6030621e36e58f3119a7c81e4a9fbd31}{line\+Width}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{Add\+Data}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}, \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{data\+Type}}=\mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{Data\+Types\+::\+NONE}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{character}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_a5c575449a118081b0ea67f0f14bc65ba}{Add\+Data}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}, \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{data\+Type\+Name}}=\mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{Data\+Types\+::\+NONE}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{point\+Char}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dimensions}}=2)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_afa0e8f10d7a0d4bd2b90037ec4ca3029}{operator()}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPlot_a9bfd80c27c96636efaaec19b2d2b4b13}{write\+Attributes}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{data\+File\+Name}}
+\begin{DoxyCompactList}\small\item\em data storage file name \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPlot_a84d0108c396f7665f228340fce807992}{plot\+Type\+Name}}
+\begin{DoxyCompactList}\small\item\em representation of plot type \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPlot_a77875f7b918ccd9a43f72b189b2e102d}{plot\+Type}} = "{}plot"{}
+\begin{DoxyCompactList}\small\item\em representation of plot type \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storage\+File}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}
+\begin{DoxyCompactList}\small\item\em data storage file \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPlotAttributes}{Plot\+Attributes}} \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}} = \{\}
+\begin{DoxyCompactList}\small\item\em attributes for plot \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classPlot_a1617d33546bbcfe4458899bc00eeb0ef}{num\+Elements}} = 0
+\begin{DoxyCompactList}\small\item\em number elements within the plot \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPlotBoundary}{Plot\+Boundary}} \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}} \{\}
+\begin{DoxyCompactList}\small\item\em x-\/axis boundaries for the resulting plot \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPlotBoundary}{Plot\+Boundary}} \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}} \{\}
+\begin{DoxyCompactList}\small\item\em y-\/axis boundaries for the resulting plot \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPlotBoundary}{Plot\+Boundary}} \mbox{\hyperlink{classPlot_abdbf7c37362b8b8b739b62ceb00a9b70}{get\+Boundaries}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a data plot, using gnuplot.
+
+Add data using the Add\+Data methods. After you are done, call the plot to display the results.
+
+\DoxyHorRuler{0}
+ Examples\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classPlot}{Plot}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{plot}}(\textcolor{stringliteral}{"{}My\ plot"{}});}
+\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{plot}}.AddData(\{\{1,\ 2\},\ \{2,\ 3\}\},\ \textcolor{stringliteral}{"{}Some\ points"{}},\ DataType::POINT);}
+\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{plot}}();}
+
+\end{DoxyCode}
+ \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}, \mbox{\hyperlink{numerics_2lin_alg_2TestSVD_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+SVD.\+cpp}}, and \mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPlot_ad5c4ae2e4201841f833c2d6968681c0a}\label{classPlot_ad5c4ae2e4201841f833c2d6968681c0a} 
+\index{Plot@{Plot}!Plot@{Plot}}
+\index{Plot@{Plot}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{Plot()}{Plot()}}
+{\footnotesize\ttfamily Plot\+::\+Plot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&}]{title = {\ttfamily "{}"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+default constructor. Prepares context for adding data. 
+\begin{DoxyParams}{Parameters}
+{\em title} & desired title for plot \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPlot_a5c575449a118081b0ea67f0f14bc65ba}\label{classPlot_a5c575449a118081b0ea67f0f14bc65ba} 
+\index{Plot@{Plot}!AddData@{AddData}}
+\index{AddData@{AddData}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{AddData()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::\+Add\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{mat,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}}}]{data\+Type\+Name = {\ttfamily \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{Data\+Types\+::\+NONE}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}}]{point\+Char = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{dimensions = {\ttfamily 2} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Appends data to the storage file 
+\begin{DoxyParams}{Parameters}
+{\em mat} & matrix containing dataset \\
+\hline
+{\em name} & name of data set \\
+\hline
+{\em data\+Type\+Name} & desired plot type \\
+\hline
+{\em dimensions} & indicator for dimension of dataset \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPlot_a3f3bea871eaf966d7d458c641873d278}\label{classPlot_a3f3bea871eaf966d7d458c641873d278} 
+\index{Plot@{Plot}!AddData@{AddData}}
+\index{AddData@{AddData}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{AddData()}{AddData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::\+Add\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&}]{name,  }\item[{\mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{Data\+Types}}}]{data\+Type = {\ttfamily \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{Data\+Types\+::\+NONE}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}}]{character = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Helper to add pair-\/wise elements to plot context
+
+concatenates given X and Y and forwards new matrix to Add\+Data with single matrix argument 
+\begin{DoxyParams}{Parameters}
+{\em x} & x values \\
+\hline
+{\em y} & y values \\
+\hline
+{\em name} & name of dataset \\
+\hline
+{\em data\+Type} & plot data type \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}, \mbox{\hyperlink{numerics_2lin_alg_2TestSVD_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+SVD.\+cpp}}, and \mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+\Hypertarget{classPlot_abb8ae168887076ca5dc5205b34d1fa95}\label{classPlot_abb8ae168887076ca5dc5205b34d1fa95} 
+\index{Plot@{Plot}!clear\_file@{clear\_file}}
+\index{clear\_file@{clear\_file}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{clear\_file()}{clear\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::clear\+\_\+file (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classPlot_abdbf7c37362b8b8b739b62ceb00a9b70}\label{classPlot_abdbf7c37362b8b8b739b62ceb00a9b70} 
+\index{Plot@{Plot}!getBoundaries@{getBoundaries}}
+\index{getBoundaries@{getBoundaries}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{getBoundaries()}{getBoundaries()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPlotBoundary}{Plot\+Boundary}} Plot\+::get\+Boundaries (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+calculates boundaries of given matrix (min and max values) 
+\begin{DoxyParams}{Parameters}
+{\em x} & input vector to calculate boundaries of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boundaries of input 
+\end{DoxyReturn}
+\Hypertarget{classPlot_a6030621e36e58f3119a7c81e4a9fbd31}\label{classPlot_a6030621e36e58f3119a7c81e4a9fbd31} 
+\index{Plot@{Plot}!lineWidth@{lineWidth}}
+\index{lineWidth@{lineWidth}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{lineWidth()}{lineWidth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::line\+Width (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter for line width of plot data 
+\begin{DoxyParams}{Parameters}
+{\em size} & desired line size \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPlot_afa0e8f10d7a0d4bd2b90037ec4ca3029}\label{classPlot_afa0e8f10d7a0d4bd2b90037ec4ca3029} 
+\index{Plot@{Plot}!operator()@{operator()}}
+\index{operator()@{operator()}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+execution using call operator
+
+Forwards data to gnuplot 
+
+Reimplemented in \mbox{\hyperlink{classSurfacePlot_aa040cc2c1301dc37cb942a80647cde95}{Surface\+Plot}}.
+
+\Hypertarget{classPlot_ab1ca4b31fc51ed85c65f1c8fcf786134}\label{classPlot_ab1ca4b31fc51ed85c65f1c8fcf786134} 
+\index{Plot@{Plot}!pointSize@{pointSize}}
+\index{pointSize@{pointSize}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{pointSize()}{pointSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::point\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+setter for point size of plot data 
+\begin{DoxyParams}{Parameters}
+{\em size} & desired point size \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+\Hypertarget{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}\label{classPlot_afa4a5f262e9b00bfa393c54fccb3449a} 
+\index{Plot@{Plot}!title@{title}}
+\index{title@{title}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{title()}{title()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::title (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&}]{title }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter for title label 
+\begin{DoxyParams}{Parameters}
+{\em title} & desired plot title \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPlot_a9bfd80c27c96636efaaec19b2d2b4b13}\label{classPlot_a9bfd80c27c96636efaaec19b2d2b4b13} 
+\index{Plot@{Plot}!writeAttributes@{writeAttributes}}
+\index{writeAttributes@{writeAttributes}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{writeAttributes()}{writeAttributes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::write\+Attributes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}} \texorpdfstring{$\ast$}{*}}]{gnuplot }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+helper to write attributes to gnuplot context 
+\begin{DoxyParams}{Parameters}
+{\em gnuplot} & pointer to gnuplot stream \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPlot_a71b26c829f6b3f4cf64957a3e323517f}\label{classPlot_a71b26c829f6b3f4cf64957a3e323517f} 
+\index{Plot@{Plot}!xAxis@{xAxis}}
+\index{xAxis@{xAxis}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{xAxis()}{xAxis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::x\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter for x-\/axis label 
+\begin{DoxyParams}{Parameters}
+{\em name} & desired label name \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+\Hypertarget{classPlot_a56e462e8d1c707986dc1e4335a633b24}\label{classPlot_a56e462e8d1c707986dc1e4335a633b24} 
+\index{Plot@{Plot}!yAxis@{yAxis}}
+\index{yAxis@{yAxis}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{yAxis()}{yAxis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Plot\+::y\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Setter for y-\/axis label 
+\begin{DoxyParams}{Parameters}
+{\em name} & desired label name \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classPlot_adccf50e0f1dde033486c08da47fb8c3e}\label{classPlot_adccf50e0f1dde033486c08da47fb8c3e} 
+\index{Plot@{Plot}!attributes@{attributes}}
+\index{attributes@{attributes}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPlotAttributes}{Plot\+Attributes}} Plot\+::attributes = \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+attributes for plot 
+
+\Hypertarget{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}\label{classPlot_a954fcb23b76680d6d0148f3f7af02f4c} 
+\index{Plot@{Plot}!bX@{bX}}
+\index{bX@{bX}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{bX}{bX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPlotBoundary}{Plot\+Boundary}} Plot\+::bX \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+y-\/axis boundaries for the resulting plot 
+
+\Hypertarget{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}\label{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a} 
+\index{Plot@{Plot}!bY@{bY}}
+\index{bY@{bY}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{bY}{bY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPlotBoundary}{Plot\+Boundary}} Plot\+::bY \{\}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+x-\/axis boundaries for the resulting plot 
+
+\Hypertarget{classPlot_ac5c21369cb37d1e74741766bf26123ec}\label{classPlot_ac5c21369cb37d1e74741766bf26123ec} 
+\index{Plot@{Plot}!dataFileName@{dataFileName}}
+\index{dataFileName@{dataFileName}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{dataFileName}{dataFileName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+::data\+File\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+data storage file name 
+
+\Hypertarget{classPlot_a1617d33546bbcfe4458899bc00eeb0ef}\label{classPlot_a1617d33546bbcfe4458899bc00eeb0ef} 
+\index{Plot@{Plot}!numElements@{numElements}}
+\index{numElements@{numElements}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{numElements}{numElements}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Plot\+::num\+Elements = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+number elements within the plot 
+
+\Hypertarget{classPlot_a77875f7b918ccd9a43f72b189b2e102d}\label{classPlot_a77875f7b918ccd9a43f72b189b2e102d} 
+\index{Plot@{Plot}!plotType@{plotType}}
+\index{plotType@{plotType}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{plotType}{plotType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+::plot\+Type = "{}plot"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+representation of plot type 
+
+\Hypertarget{classPlot_a84d0108c396f7665f228340fce807992}\label{classPlot_a84d0108c396f7665f228340fce807992} 
+\index{Plot@{Plot}!plotTypeName@{plotTypeName}}
+\index{plotTypeName@{plotTypeName}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{plotTypeName}{plotTypeName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+::plot\+Type\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+representation of plot type 
+
+\Hypertarget{classPlot_a80885621943f0e082328be034f1478f3}\label{classPlot_a80885621943f0e082328be034f1478f3} 
+\index{Plot@{Plot}!storageFile@{storageFile}}
+\index{storageFile@{storageFile}!Plot@{Plot}}
+\doxysubsubsection{\texorpdfstring{storageFile}{storageFile}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}}\texorpdfstring{$\ast$}{*} Plot\+::storage\+File = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+data storage file 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/visualization/\mbox{\hyperlink{Plot_8h}{Plot.\+h}}\end{DoxyCompactItemize}

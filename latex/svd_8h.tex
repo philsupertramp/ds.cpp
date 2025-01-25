@@ -1,0 +1,34 @@
+\doxysection{include/math/numerics/lin\+\_\+alg/svd.h File Reference}
+\hypertarget{svd_8h}{}\label{svd_8h}\index{include/math/numerics/lin\_alg/svd.h@{include/math/numerics/lin\_alg/svd.h}}
+{\ttfamily \#include "{}../../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}gauss\+Jordan.\+h"{}}\newline
+{\ttfamily \#include "{}qr.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ $>$ \mbox{\hyperlink{svd_8h_a3b139aaaee48ddeff126b386e555cee0}{svd}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&A, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{k}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{epsilon}}=0.\+1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/4)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{svd_8h_a3b139aaaee48ddeff126b386e555cee0}\label{svd_8h_a3b139aaaee48ddeff126b386e555cee0} 
+\index{svd.h@{svd.h}!svd@{svd}}
+\index{svd@{svd}!svd.h@{svd.h}}
+\doxysubsubsection{\texorpdfstring{svd()}{svd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ $>$ svd (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{A,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \&}]{k,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{epsilon = {\ttfamily 0.1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/4} }\end{DoxyParamCaption})}
+
+Calculates SVD (Singular Value Decomposition) of given \doxylink{classMatrix}{Matrix} A for k Dimensions 
+\begin{DoxyParams}{Parameters}
+{\em A} & \doxylink{classMatrix}{Matrix} to operate with \\
+\hline
+{\em k} & dimensions to calculate. If = 0 calculate all \\
+\hline
+{\em epsilon} & squared error tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SVD of A 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2lin_alg_2TestSVD_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+SVD.\+cpp}}.\end{Desc}

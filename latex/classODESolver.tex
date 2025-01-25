@@ -1,0 +1,120 @@
+\doxysection{ODESolver Class Reference}
+\hypertarget{classODESolver}{}\label{classODESolver}\index{ODESolver@{ODESolver}}
+
+
+{\ttfamily \#include $<$ODESolver.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} \mbox{\hyperlink{classODESolver_a3ec6a0d320d62e8374abeead40a4927c}{ode\+Exp\+Euler}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t\+Interval}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{y0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{option}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} \mbox{\hyperlink{classODESolver_a40f49bf4336f370033bce634a40f30d3}{ode45}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t\+Interval}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{y0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{option}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} \mbox{\hyperlink{classODESolver_adb48f8bc9533b290a1cb560b3dea2c8b}{ode\+Trapez}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t\+Interval}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{y0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{option}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} \mbox{\hyperlink{classODESolver_a6e1e2b2a40e7f022da050975d475b33a}{ode\+BDF2}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t\+Interval}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{y0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{option}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Proxy interface class for ODE solvers with static member functions as bridge to solvers. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classODESolver_a40f49bf4336f370033bce634a40f30d3}\label{classODESolver_a40f49bf4336f370033bce634a40f30d3} 
+\index{ODESolver@{ODESolver}!ode45@{ode45}}
+\index{ode45@{ode45}!ODESolver@{ODESolver}}
+\doxysubsubsection{\texorpdfstring{ode45()}{ode45()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} ODESolver\+::ode45 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t\+Interval,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&}]{option }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+proxy to ODE45 
+\begin{DoxyParams}{Parameters}
+{\em fun} & ode to approximate \\
+\hline
+{\em t\+Interval} & interval to perform approximation on \\
+\hline
+{\em y0} & start value \\
+\hline
+{\em option} & solver options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{ode45_8h_a88090203efe19f71864a54a7158c36b4}{ODE45}(fun, t\+Interval, y0, option.\+h) 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestODE45_8cpp-example}{numerics/ode/\+Test\+ODE45.\+cpp}}.\end{Desc}
+\Hypertarget{classODESolver_a6e1e2b2a40e7f022da050975d475b33a}\label{classODESolver_a6e1e2b2a40e7f022da050975d475b33a} 
+\index{ODESolver@{ODESolver}!odeBDF2@{odeBDF2}}
+\index{odeBDF2@{odeBDF2}!ODESolver@{ODESolver}}
+\doxysubsubsection{\texorpdfstring{odeBDF2()}{odeBDF2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} ODESolver\+::ode\+BDF2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t\+Interval,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&}]{option }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+proxy to ODEBDF2 
+\begin{DoxyParams}{Parameters}
+{\em fun} & ode to approximate \\
+\hline
+{\em t\+Interval} & interval to perform approximation on \\
+\hline
+{\em y0} & start value \\
+\hline
+{\em option} & solver options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ODEBDF2(fun, t\+Interval, y0, option) 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestODEBDF2_8cpp-example}{numerics/ode/\+Test\+ODEBDF2.\+cpp}}.\end{Desc}
+\Hypertarget{classODESolver_a3ec6a0d320d62e8374abeead40a4927c}\label{classODESolver_a3ec6a0d320d62e8374abeead40a4927c} 
+\index{ODESolver@{ODESolver}!odeExpEuler@{odeExpEuler}}
+\index{odeExpEuler@{odeExpEuler}!ODESolver@{ODESolver}}
+\doxysubsubsection{\texorpdfstring{odeExpEuler()}{odeExpEuler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} ODESolver\+::ode\+Exp\+Euler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t\+Interval,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&}]{option }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+proxy to ODEExp\+Euler 
+\begin{DoxyParams}{Parameters}
+{\em fun} & ode to approximate \\
+\hline
+{\em t\+Interval} & interval to perform approximation on \\
+\hline
+{\em y0} & start value \\
+\hline
+{\em option} & solver options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{ExplicitEuler_8h_af98076bc70f573a584428cf3fe528af3}{ODEExp\+Euler}(fun, t\+Interval, y0, option.\+h) 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestExplicitEuler_8cpp-example}{numerics/ode/\+Test\+Explicit\+Euler.\+cpp}}.\end{Desc}
+\Hypertarget{classODESolver_adb48f8bc9533b290a1cb560b3dea2c8b}\label{classODESolver_adb48f8bc9533b290a1cb560b3dea2c8b} 
+\index{ODESolver@{ODESolver}!odeTrapez@{odeTrapez}}
+\index{odeTrapez@{odeTrapez}!ODESolver@{ODESolver}}
+\doxysubsubsection{\texorpdfstring{odeTrapez()}{odeTrapez()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{structODEResult}{ODEResult}} ODESolver\+::ode\+Trapez (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t\+Interval,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&}]{option }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+proxy to ODETrapez 
+\begin{DoxyParams}{Parameters}
+{\em fun} & ode to approximate \\
+\hline
+{\em t\+Interval} & interval to perform approximation on \\
+\hline
+{\em y0} & start value \\
+\hline
+{\em option} & solver options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ODETrapez(fun, t\+Interval, y0, option) 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestODETrapez_8cpp-example}{numerics/ode/\+Test\+ODETrapez.\+cpp}}.\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/ode/\mbox{\hyperlink{ODESolver_8h}{ODESolver.\+h}}\end{DoxyCompactItemize}

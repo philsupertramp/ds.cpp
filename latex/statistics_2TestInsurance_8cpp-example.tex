@@ -1,0 +1,88 @@
+\doxysection{statistics/\+Test\+Insurance.\+cpp}
+\hypertarget{statistics_2TestInsurance_8cpp-example}{}\label{statistics_2TestInsurance_8cpp-example}This is an example on how to use the \doxylink{Insurance_8h}{Insurance.\+h} file.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Insurance_8h}{math/statistics/Insurance.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }InsuranceTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestCompoundingFactor()\ \{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_a1445808f741ac180ac8352c230f9cc14}{compoundingFactor}}(0.01),\ 1.01);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_a1445808f741ac180ac8352c230f9cc14}{compoundingFactor}}(1.01),\ 2.01);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestDiscountFactor()\ \{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_a7447721e5975127c235fe6daa2ce95f9}{discountFactor}}(1.0),\ 0.5);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_a7447721e5975127c235fe6daa2ce95f9}{discountFactor}}(0.1),\ 1.\ /\ 1.1);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFundamentalValue()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structInterest}{Interest}}\ I\ =\ \{\ 0.06,\ 100,\ 1,\ 10,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 10\ *\ 1.06\string^(-\/100)}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_a4c101853644e44b2a6a4dc2688ecd77d}{fundamentalValue}}(I),\ 0.029472262287399215);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestEndValue()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structInterest}{Interest}}\ I\ =\ \{\ 0.06,\ 100,\ 1,\ 10,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ 1\ *\ 1.06\string^(100)}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_af892d3aae9541cb537e1f5df275ef7d9}{endValue}}(I),\ 339.3020835144872);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestTermInPeriods()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ (log(10)-\/log(1))/log(1.05)}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structInterest}{Interest}}\ I\ =\ \{\ 0.06,\ 100,\ 1,\ 10,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_ab3a10a3059c77a0707926c42d8d72650}{termInPeriods}}(I),\ 39.516530635771536208682805631274488204856495225826522986578631731);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFundamentalValueOfAnnuityInAdvance()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structInterest}{Interest}}\ I\ =\ \{\ 0.06,\ 100,\ 1,\ 10,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ (1-\/pow(1/1.06,\ 100))/(1-\/1/1.06)}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{Insurance_8h_a39e7cd069b9d37942e201e0a1992fce5}{fundamentalValueOfAnnuityInAdvance}}(I),\ 17.614599003292261124646315796916331824982312779861072540295575993);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestEndValueOfAnnuityInAdvance()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structInterest}{Interest}}\ I\ =\ \{\ 0.06,\ 100,\ 1,\ 10,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ (pow(1.06,\ 100)-\/1)/(1-\/1/1.06)}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_ac0f07314aa361d844f287efcfbe46ed1}{endValueOfAnnuityInAdvance}}(I),\ 5976.6701420892436797668612701763787396284937497058441484295690490);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFundamentalValueOfAnnuityToArrear()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structInterest}{Interest}}\ I\ =\ \{\ 0.06,\ 100,\ 1,\ 10,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ (1-\/pow(1/1.06,\ 100))/(0.06)}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{Insurance_8h_a9425f6005e68c3c2a41871b7edc133d4}{fundamentalValueOfAnnuityInArrear}}(I),}
+\DoxyCodeLine{\ \ \ \ 16.617546229521001060987090374449369646209729037604785415373184899351288068383264304267210888801306835712115089689784848248668120);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestEndValueOfAnnuityInArrear()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structInterest}{Interest}}\ I\ =\ \{\ 0.06,\ 100,\ 1,\ 10,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ (1-\/pow(1/1.06,\ 100))/(0.06)\ *\ pow(1.06,\ 100)}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Insurance_8h_a2de394211d124f7a8f05041cf45547c7}{endValueOfAnnuityInArrear}}(I),\ 5638.3680585747581884593030850720554147438620280243812721033670274);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\ \ \ \ TestCompoundingFactor();}
+\DoxyCodeLine{\ \ \ \ TestDiscountFactor();}
+\DoxyCodeLine{\ \ \ \ TestFundamentalValue();}
+\DoxyCodeLine{\ \ \ \ TestEndValue();}
+\DoxyCodeLine{\ \ \ \ TestTermInPeriods();}
+\DoxyCodeLine{\ \ \ \ TestFundamentalValueOfAnnuityInAdvance();}
+\DoxyCodeLine{\ \ \ \ TestEndValueOfAnnuityInAdvance();}
+\DoxyCodeLine{\ \ \ \ TestFundamentalValueOfAnnuityToArrear();}
+\DoxyCodeLine{\ \ \ \ TestEndValueOfAnnuityInArrear();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ InsuranceTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

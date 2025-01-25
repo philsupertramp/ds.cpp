@@ -1,0 +1,142 @@
+\doxysection{Mandelbrot Class Reference}
+\hypertarget{classMandelbrot}{}\label{classMandelbrot}\index{Mandelbrot@{Mandelbrot}}
+
+
+{\ttfamily \#include $<$Fractals.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMandelbrot_aab7bca81a362bcbfabeae26c3e7fa562}{Mandelbrot}} ()
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classMandelbrot_a95b6d736a10be7dc60b87afb53923e91}{operator()}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classMandelbrot_a02ac592d77e906df905626032b9af8aa}{max\+Iters}} = 125
+\begin{DoxyCompactList}\small\item\em max number iterations for approximation of single value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classMandelbrot_aaa65ca8561039deb5e74acc4cd2f920f}{startX}} = -\/2.\+5
+\begin{DoxyCompactList}\small\item\em start and end value on x-\/axis \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classMandelbrot_afdd6e8a3720164279b7b999011ad41d5}{endX}} = 1.\+0
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classMandelbrot_af75cb6f92b971fdc1159248675c03e00}{startY}} = -\/1.\+0
+\begin{DoxyCompactList}\small\item\em start and end value on y-\/axis \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classMandelbrot_a8722229646bd702577b94eb03fd9dcd2}{endY}} = 1.\+0
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classMandelbrot_a09a174794619b9f2a13010b4af19d498}{detail}} = 500
+\begin{DoxyCompactList}\small\item\em detail factor for approximation \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classMandelbrot_a6b86afb4db2158631df99a45e9821574}{fun}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{real\+\_\+c}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{img\+\_\+c}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classMandelbrot}{Mandelbrot} fractal \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2TestFractals_8cpp-example}{numerics/\+Test\+Fractals.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMandelbrot_aab7bca81a362bcbfabeae26c3e7fa562}\label{classMandelbrot_aab7bca81a362bcbfabeae26c3e7fa562} 
+\index{Mandelbrot@{Mandelbrot}!Mandelbrot@{Mandelbrot}}
+\index{Mandelbrot@{Mandelbrot}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{Mandelbrot()}{Mandelbrot()}}
+{\footnotesize\ttfamily Mandelbrot\+::\+Mandelbrot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+default constructor 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMandelbrot_a6b86afb4db2158631df99a45e9821574}\label{classMandelbrot_a6b86afb4db2158631df99a45e9821574} 
+\index{Mandelbrot@{Mandelbrot}!fun@{fun}}
+\index{fun@{fun}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{fun()}{fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Mandelbrot\+::fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{real\+\_\+c,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{img\+\_\+c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Evaluates mandelbrot at given point 
+\begin{DoxyParams}{Parameters}
+{\em real\+\_\+c} & real part of C (chose from \mbox{[}-\/2.\+5, 1\mbox{]}) \\
+\hline
+{\em img\+\_\+c} & imaginary part of C (chose from \mbox{[}-\/1, 1\mbox{]}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+iterations needed to evaluate for given values 
+\end{DoxyReturn}
+\Hypertarget{classMandelbrot_a95b6d736a10be7dc60b87afb53923e91}\label{classMandelbrot_a95b6d736a10be7dc60b87afb53923e91} 
+\index{Mandelbrot@{Mandelbrot}!operator()@{operator()}}
+\index{operator()@{operator()}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Mandelbrot\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Evaluates mandelbrot for given view. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMandelbrot_a09a174794619b9f2a13010b4af19d498}\label{classMandelbrot_a09a174794619b9f2a13010b4af19d498} 
+\index{Mandelbrot@{Mandelbrot}!detail@{detail}}
+\index{detail@{detail}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{detail}{detail}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Mandelbrot\+::detail = 500}
+
+
+
+detail factor for approximation 
+
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2TestFractals_8cpp-example}{numerics/\+Test\+Fractals.\+cpp}}.\end{Desc}
+\Hypertarget{classMandelbrot_afdd6e8a3720164279b7b999011ad41d5}\label{classMandelbrot_afdd6e8a3720164279b7b999011ad41d5} 
+\index{Mandelbrot@{Mandelbrot}!endX@{endX}}
+\index{endX@{endX}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{endX}{endX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Mandelbrot\+::endX = 1.\+0}
+
+\Hypertarget{classMandelbrot_a8722229646bd702577b94eb03fd9dcd2}\label{classMandelbrot_a8722229646bd702577b94eb03fd9dcd2} 
+\index{Mandelbrot@{Mandelbrot}!endY@{endY}}
+\index{endY@{endY}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{endY}{endY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Mandelbrot\+::endY = 1.\+0}
+
+\Hypertarget{classMandelbrot_a02ac592d77e906df905626032b9af8aa}\label{classMandelbrot_a02ac592d77e906df905626032b9af8aa} 
+\index{Mandelbrot@{Mandelbrot}!maxIters@{maxIters}}
+\index{maxIters@{maxIters}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{maxIters}{maxIters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Mandelbrot\+::max\+Iters = 125}
+
+
+
+max number iterations for approximation of single value 
+
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2TestFractals_8cpp-example}{numerics/\+Test\+Fractals.\+cpp}}.\end{Desc}
+\Hypertarget{classMandelbrot_aaa65ca8561039deb5e74acc4cd2f920f}\label{classMandelbrot_aaa65ca8561039deb5e74acc4cd2f920f} 
+\index{Mandelbrot@{Mandelbrot}!startX@{startX}}
+\index{startX@{startX}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{startX}{startX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Mandelbrot\+::startX = -\/2.\+5}
+
+
+
+start and end value on x-\/axis 
+
+\Hypertarget{classMandelbrot_af75cb6f92b971fdc1159248675c03e00}\label{classMandelbrot_af75cb6f92b971fdc1159248675c03e00} 
+\index{Mandelbrot@{Mandelbrot}!startY@{startY}}
+\index{startY@{startY}!Mandelbrot@{Mandelbrot}}
+\doxysubsubsection{\texorpdfstring{startY}{startY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Mandelbrot\+::startY = -\/1.\+0}
+
+
+
+start and end value on y-\/axis 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/\mbox{\hyperlink{Fractals_8h}{Fractals.\+h}}\end{DoxyCompactItemize}

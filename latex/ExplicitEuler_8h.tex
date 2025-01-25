@@ -1,0 +1,47 @@
+\doxysection{include/math/numerics/ode/\+Explicit\+Euler.h File Reference}
+\hypertarget{ExplicitEuler_8h}{}\label{ExplicitEuler_8h}\index{include/math/numerics/ode/ExplicitEuler.h@{include/math/numerics/ode/ExplicitEuler.h}}
+{\ttfamily \#include "{}../utils.\+h"{}}\newline
+{\ttfamily \#include "{}ode.\+h"{}}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structODEResult}{ODEResult}} \mbox{\hyperlink{ExplicitEuler_8h_af98076bc70f573a584428cf3fe528af3}{ODEExp\+Euler}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t\+Interval}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{y0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} h=0.\+0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements explicit Euler-\/\+Method to solve ordinary differential equations.
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ExplicitEuler_8h}{math/numerics/ode/ExplicitEuler.h}}>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ExplicitEuler_8h_af98076bc70f573a584428cf3fe528af3}\label{ExplicitEuler_8h_af98076bc70f573a584428cf3fe528af3} 
+\index{ExplicitEuler.h@{ExplicitEuler.h}!ODEExpEuler@{ODEExpEuler}}
+\index{ODEExpEuler@{ODEExpEuler}!ExplicitEuler.h@{ExplicitEuler.h}}
+\doxysubsubsection{\texorpdfstring{ODEExpEuler()}{ODEExpEuler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structODEResult}{ODEResult}} ODEExp\+Euler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t\+Interval,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{h = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+implementation of explicit euler method 
+\begin{DoxyParams}{Parameters}
+{\em fun} & ode to approximate \\
+\hline
+{\em t\+Interval} & interval to perform approximation on \\
+\hline
+{\em y0} & start value \\
+\hline
+{\em h} & stepwith, \$\$h = t\+\_\+\{i+1\} -\/ t\+\_\+i\$\$ \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestExplicitEuler_8cpp-example}{numerics/ode/\+Test\+Explicit\+Euler.\+cpp}}.\end{Desc}

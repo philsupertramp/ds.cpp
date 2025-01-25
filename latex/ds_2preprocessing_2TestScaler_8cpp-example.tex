@@ -1,0 +1,153 @@
+\doxysection{ds/preprocessing/\+Test\+Scaler.\+cpp}
+\hypertarget{ds_2preprocessing_2TestScaler_8cpp-example}{}\label{ds_2preprocessing_2TestScaler_8cpp-example}This is an example on how to use the Scaler classes
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Scaler_8h}{math/ds/preprocessing/Scaler.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }StandardScalerTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestConstructor()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ =\ \mbox{\hyperlink{classStandardScaler}{StandardScaler}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFit()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ input\_data(}
+\DoxyCodeLine{\ \ \ \ \{\ \{\ 2,\ 1\ \},\ \{\ 4,\ 1\ \},\ \{\ 2,\ 3\ \},\ \{\ 4,\ 3\ \},\ \{\ 8,\ 6\ \},\ \{\ 10,\ 8\ \},\ \{\ 2,\ 12\ \},\ \{\ 2,\ 14\ \},\ \{\ 4,\ 14\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ labels(\{\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 1\ \},\ \{\ 1\ \},\ \{\ 2\ \},\ \{\ 2\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_weights\ =\ \{\ \{\ 38.0\ /\ 9.0,\ 62.0\ /\ 9.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_sds\ \ \ \ \ =\ \{\ \{\ 2.739739556875101,\ 5.043024763515652\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classStandardScaler}{StandardScaler}}();}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.means,\ expected\_weights);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.std\_deviations,\ expected\_sds);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ clf\ =\ \mbox{\hyperlink{classStandardScaler}{StandardScaler}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.means,\ \mbox{\hyperlink{numerics_2utils_8h_af5994908a659705a385de5bee89039fc}{zeros}}(1,\ input\_data.columns()));}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.std\_deviations,\ expected\_sds);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ clf\ =\ \mbox{\hyperlink{classStandardScaler}{StandardScaler}}(\textcolor{keyword}{true},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.means,\ expected\_weights);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.std\_deviations,\ \mbox{\hyperlink{numerics_2utils_8h_aaf883b485905c5bcd46724b44a12e094}{ones}}(1,\ input\_data.columns()));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ clf\ =\ \mbox{\hyperlink{classStandardScaler}{StandardScaler}}(\textcolor{keyword}{false},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.means,\ \mbox{\hyperlink{numerics_2utils_8h_af5994908a659705a385de5bee89039fc}{zeros}}(1,\ input\_data.columns()));}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.std\_deviations,\ \mbox{\hyperlink{numerics_2utils_8h_aaf883b485905c5bcd46724b44a12e094}{ones}}(1,\ input\_data.columns()));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestTransform()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ input\_data(}
+\DoxyCodeLine{\ \ \ \ \{\ \{\ 2,\ 1\ \},\ \{\ 4,\ 1\ \},\ \{\ 2,\ 3\ \},\ \{\ 4,\ 3\ \},\ \{\ 8,\ 6\ \},\ \{\ 10,\ 8\ \},\ \{\ 2,\ 12\ \},\ \{\ 2,\ 14\ \},\ \{\ 4,\ 14\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ labels(\{\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 1\ \},\ \{\ 1\ \},\ \{\ 2\ \},\ \{\ 2\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ test\_data(\{\ \{\ 1,\ 0\ \},\ \{\ 8,\ 8\ \},\ \{\ 0,\ 1\ \},\ \{\ 3,\ 16\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_input(\{\ \{\ -\/0.81110711,\ -\/1.16772952\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.08111071,\ -\/1.16772952\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.81110711,\ -\/0.77114214\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.08111071,\ -\/0.77114214\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 1.37888208,\ -\/0.17626106\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 2.10887847,\ 0.22032632\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.81110711,\ 1.01350109\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.81110711,\ 1.41008848\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.08111071,\ 1.41008848\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_test\_data\ =\ \{\ \{\ -\/1.1761053031980284,\ -\/1.3660232126416183\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 1.3788820796114813,\ 0.2203263246196158\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/1.541103500742244,\ -\/1.1677295204839642\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.446108908109597,\ 1.8066758618808498\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classStandardScaler}{StandardScaler}}();}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ transformations\ =\ clf.transform(test\_data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(transformations,\ expected\_test\_data);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.transform(input\_data),\ expected\_input);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\ \ \ \ TestConstructor();}
+\DoxyCodeLine{\ \ \ \ TestFit();}
+\DoxyCodeLine{\ \ \ \ TestTransform();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MinMaxScalerTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestConstructor()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ =\ \mbox{\hyperlink{classStandardScaler}{StandardScaler}}();}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestFit()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ input\_data(}
+\DoxyCodeLine{\ \ \ \ \{\ \{\ 2,\ 1\ \},\ \{\ 4,\ 1\ \},\ \{\ 2,\ 3\ \},\ \{\ 4,\ 3\ \},\ \{\ 8,\ 6\ \},\ \{\ 10,\ 8\ \},\ \{\ 2,\ 12\ \},\ \{\ 2,\ 14\ \},\ \{\ 4,\ 14\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ labels(\{\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 1\ \},\ \{\ 1\ \},\ \{\ 2\ \},\ \{\ 2\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ =\ \mbox{\hyperlink{classMinMaxScaler}{MinMaxScaler}}();}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestTransform()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ input\_data(}
+\DoxyCodeLine{\ \ \ \ \{\ \{\ 2,\ 1\ \},\ \{\ 4,\ 1\ \},\ \{\ 2,\ 3\ \},\ \{\ 4,\ 3\ \},\ \{\ 8,\ 6\ \},\ \{\ 10,\ 8\ \},\ \{\ 2,\ 12\ \},\ \{\ 2,\ 14\ \},\ \{\ 4,\ 14\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ labels(\{\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 0\ \},\ \{\ 1\ \},\ \{\ 1\ \},\ \{\ 2\ \},\ \{\ 2\ \},\ \{\ 2\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ test\_data(\{\ \{\ 1,\ 0\ \},\ \{\ 8,\ 8\ \},\ \{\ 0,\ 1\ \},\ \{\ 3,\ 16\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_input(\{}
+\DoxyCodeLine{\ \ \ \ \{\ 0.,\ 0.\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.25,\ 0.\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.0,\ 0.1538461538461539\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.25,\ 0.1538461538461539\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.75,\ 0.3846153846153846\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 1.0,\ 0.5384615384615385\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.0,\ 0.8461538461538463\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.0,\ 1.0000000000000002\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.25,\ 1.0000000000000002\ \},}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ expected\_test\_data\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 0.125,\ 0.0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 1.0,\ 0.5\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 0.0,\ 0.0625\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 0.375,\ 1.0\ \},}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ clf\ =\ \mbox{\hyperlink{classMinMaxScaler}{MinMaxScaler}}();}
+\DoxyCodeLine{\ \ \ \ clf.fit(input\_data,\ labels);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ transformations\ =\ clf.transform(test\_data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ transformations\ <<\ std::endl;}
+\DoxyCodeLine{\ \ \ \ AssertEqual(transformations,\ expected\_test\_data);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(clf.transform(input\_data),\ expected\_input);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\ \ \ \ TestConstructor();}
+\DoxyCodeLine{\ \ \ \ TestFit();}
+\DoxyCodeLine{\ \ \ \ TestTransform();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ StandardScalerTestCase().run();}
+\DoxyCodeLine{\ \ MinMaxScalerTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

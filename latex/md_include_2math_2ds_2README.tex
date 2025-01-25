@@ -1,0 +1,45 @@
+\chapter{ds (Data science)-\/submodule}
+\hypertarget{md_include_2math_2ds_2README}{}\label{md_include_2math_2ds_2README}\index{ds (Data science)-\/submodule@{ds (Data science)-\/submodule}}
+\label{md_include_2math_2ds_2README_autotoc_md1}%
+\Hypertarget{md_include_2math_2ds_2README_autotoc_md1}%
+{\ttfamily MATH\+\_\+\+EXTENSION=ds}
+
+Used for machine learning and data science tasks\hypertarget{md_include_2math_2ds_2README_autotoc_md2}{}\doxysection{\texorpdfstring{Dependencies}{Dependencies}}\label{md_include_2math_2ds_2README_autotoc_md2}
+In case you want to use {\ttfamily \doxylink{classImageDataSet}{Image\+Data\+Set}} you need to add the compile flag {\ttfamily MATH\+\_\+\+IMAGE\+\_\+\+PROCESSING=1} to your build process as well as having the following libraries installed on your machine\+:
+\begin{DoxyItemize}
+\item Image\+Magick/\+Magick++{\ttfamily \texorpdfstring{$>$}{>}=7.\+0.\+10-\/45} ~\newline
+ Ubuntu\+: {\ttfamily sudo apt-\/get install libgraphicsmagick1-\/dev} ~\newline
+ Arch\+: {\ttfamily sudo pacman -\/S imagemagick}
+\end{DoxyItemize}
+
+For Mac\+OS/\+Windows build add 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{InitializeMagick}}(*\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{argv}});}
+
+\end{DoxyCode}
+ to your main to initialize {\ttfamily Magick++} ~\newline
+ {\bfseries{Note\+:}} unnecessary for UNIX systems\hypertarget{md_include_2math_2ds_2README_autotoc_md3}{}\doxysection{\texorpdfstring{TOC}{TOC}}\label{md_include_2math_2ds_2README_autotoc_md3}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ File   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\cellcolor{\tableheadbgcolor}\textbf{ File   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Usage    }\\\cline{1-2}
+\endhead
+{\bfseries{Data Science}}   &\\\cline{1-2}
+{\ttfamily \doxylink{DataSet_8h}{Data\+Set.\+h}}   &Represents a dataset    \\\cline{1-2}
+{\ttfamily \doxylink{ImageDataSet_8h}{Image\+Data\+Set.\+h}}   &Represents a dataset of image files    \\\cline{1-2}
+{\bfseries{Machine Learning}}   &\\\cline{1-2}
+{\itshape Linear Classifiers}   &\\\cline{1-2}
+{\ttfamily \doxylink{NCC_8h}{NCC.\+h}}   &Nearest Centroid \doxylink{classClassifier}{Classifier}    \\\cline{1-2}
+{\itshape Non-\/linear Classifiers}   &\\\cline{1-2}
+{\ttfamily \doxylink{KNN_8h}{KNN.\+h}}   &K Nearest Neighbor \doxylink{classClassifier}{Classifier}    \\\cline{1-2}
+{\itshape Neuronal Networks}   &\\\cline{1-2}
+{\ttfamily \doxylink{Perceptron_8h}{Perceptron.\+h}}   &\doxylink{classPerceptron}{Perceptron} classifier    \\\cline{1-2}
+{\ttfamily \doxylink{AdalineGD_8h}{Adaline\+GD.\+h}}   &Adaline Neuron classifier trained using the gradient decent method    \\\cline{1-2}
+{\ttfamily \doxylink{AdalineSGD_8h}{Adaline\+SGD.\+h}}   &Adaline Neuron classifier trained using the statistical gradient decent method   \\\cline{1-2}
+\end{longtabu}

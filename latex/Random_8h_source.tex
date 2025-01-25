@@ -1,0 +1,34 @@
+\doxysection{Random.\+h}
+\hypertarget{Random_8h_source}{}\label{Random_8h_source}\index{include/math/Random.h@{include/math/Random.h}}
+\mbox{\hyperlink{Random_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <ctime>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{Random_8h_ab42db4aac140e420fc17228b0da5ec77}{TimeInitialized}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00007\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Random_8h_a682a5d05601724697eb6d443f4f6f8c0}{RandomSeed}}\ \ \ \ \ \ \ =\ 2;}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRandom}{Random}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRandom_a1ded95446bdeffc95358e33de5d7de3b}{InitTime}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{useSeed}}\ =\ \textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ std::srand(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{useSeed}}\ ?\ \mbox{\hyperlink{Random_8h_a682a5d05601724697eb6d443f4f6f8c0}{RandomSeed}}\ :\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}})\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{time}}(0));}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{Random_8h_ab42db4aac140e420fc17228b0da5ec77}{TimeInitialized}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00020\ \ \ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRandom_aa2d76b6a87c5642871c11e781f8f34b0}{SetSeed}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{seed}})\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{Random_8h_a682a5d05601724697eb6d443f4f6f8c0}{RandomSeed}}\ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{seed}};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{Random_8h_ab42db4aac140e420fc17228b0da5ec77}{TimeInitialized}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \}}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classRandom_a5e7703d9e1a4de62e6483748afe35243}{Get}}(\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{l}}\ =\ 0.0,\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{r}}\ =\ 1.0)\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{Random_8h_ab42db4aac140e420fc17228b0da5ec77}{TimeInitialized}})\ \mbox{\hyperlink{classRandom_a1ded95446bdeffc95358e33de5d7de3b}{InitTime}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ std::random\_device\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{rd}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ create\ object\ for\ seeding}}
+\DoxyCodeLine{00041\ \ \ \ \ std::mt19937\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gen}}\{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{rd}}()\ \};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ create\ engine\ and\ seed\ it}}
+\DoxyCodeLine{00042\ \ \ \ \ std::uniform\_real\_distribution<>\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dist}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{l}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{r}});\ \textcolor{comment}{//\ create\ distribution\ for\ integers\ with\ [1;\ 9]\ range}}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dist}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gen}});}
+\DoxyCodeLine{00044\ \ \ \}}
+\DoxyCodeLine{00045\ \};}
+
+\end{DoxyCode}

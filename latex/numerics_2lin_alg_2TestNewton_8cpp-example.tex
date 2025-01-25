@@ -1,0 +1,36 @@
+\doxysection{numerics/lin\+\_\+alg/\+Test\+Newton.\+cpp}
+\hypertarget{numerics_2lin_alg_2TestNewton_8cpp-example}{}\label{numerics_2lin_alg_2TestNewton_8cpp-example}This is an example on how to use newton.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{newton_8h}{math/numerics/lin\_alg/newton.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }NewtonTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestNewton()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ f\ \ =\ [](\mbox{\hyperlink{classMatrix}{Matrix<double>}}\ x)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(\{\ \{\ cos(x(0,\ 0))\ -\/\ x(0,\ 0)\ \}\ \});\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ Df\ =\ [](\mbox{\hyperlink{classMatrix}{Matrix<double>}}\ x)\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}(\{\ \{\ (-\/sin(x(0,\ 0))\ -\/\ 1)\ \}\ \});\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ maxIter\ =\ 100;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ TOL\ \ =\ 1e-\/16;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ x0(\{\ \{\ 1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ res\ =\ \mbox{\hyperlink{newton_8h_aacc26d9c74d7d171569d8fed83c6a967}{newton}}(f,\ Df,\ x0,\ TOL,\ maxIter);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ xExpt\ =\ \{\ 0.73908513321516067\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 1;\ ++i)\ \{\ AssertEqual(res.first(i,\ 0),\ xExpt[i]);\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{\ TestNewton();\ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{\ NewtonTestCase().run();\ \}}
+
+\end{DoxyCodeInclude}
+ 

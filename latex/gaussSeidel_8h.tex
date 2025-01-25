@@ -1,0 +1,49 @@
+\doxysection{include/math/numerics/lin\+\_\+alg/gauss\+Seidel.h File Reference}
+\hypertarget{gaussSeidel_8h}{}\label{gaussSeidel_8h}\index{include/math/numerics/lin\_alg/gaussSeidel.h@{include/math/numerics/lin\_alg/gaussSeidel.h}}
+{\ttfamily \#include "{}../../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../../matrix\+\_\+utils.\+h"{}}\newline
+{\ttfamily \#include "{}LU.\+h"{}}\newline
+{\ttfamily \#include "{}backward\+Sub.\+h"{}}\newline
+{\ttfamily \#include "{}forward\+Sub.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{gaussSeidel_8h_a7bb1e3f545d858ee2a450500c711f471}{gauss\+Seidel}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&A, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gaussian elimination to solve systems of linear equations. Uses column major pivot elements to reduce number of operations.
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <math/numerics/lin\_alg/gausseidel.h>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{gaussSeidel_8h_a7bb1e3f545d858ee2a450500c711f471}\label{gaussSeidel_8h_a7bb1e3f545d858ee2a450500c711f471} 
+\index{gaussSeidel.h@{gaussSeidel.h}!gaussSeidel@{gaussSeidel}}
+\index{gaussSeidel@{gaussSeidel}!gaussSeidel.h@{gaussSeidel.h}}
+\doxysubsubsection{\texorpdfstring{gaussSeidel()}{gaussSeidel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ gauss\+Seidel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{A,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Gauss-\/\+Seidel algorithm to evaluate system of linear equations.
+
+\$\$\+Ax = b\$\$
+
+
+\begin{DoxyParams}{Parameters}
+{\em A} & Coefficient matrix \\
+\hline
+{\em b} & resulting vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\$\$x\$\$ 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2lin_alg_2TestGaussSeidel_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+Gauss\+Seidel.\+cpp}}.\end{Desc}

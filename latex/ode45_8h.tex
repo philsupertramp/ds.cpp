@@ -1,0 +1,55 @@
+\doxysection{include/math/numerics/ode/ode45.h File Reference}
+\hypertarget{ode45_8h}{}\label{ode45_8h}\index{include/math/numerics/ode/ode45.h@{include/math/numerics/ode/ode45.h}}
+{\ttfamily \#include "{}../utils.\+h"{}}\newline
+{\ttfamily \#include "{}ode.\+h"{}}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structODEResult}{ODEResult}} \mbox{\hyperlink{ode45_8h_a88090203efe19f71864a54a7158c36b4}{ODE45}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t\+Interval}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{y0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} h=0.\+0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ODE Solver implementation based on Dormand-\/\+Prince Method to solve ordinary differential equations \href{https://en.wikipedia.org/wiki/Dormand\%E2\%80\%93Prince_method}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Dormand\%\+E2\%80\%93\+Prince\+\_\+method}}
+
+Current state\+:
+\begin{DoxyItemize}
+\item implemented 7 function evaluations
+\item using 6/7 evaluations for 5th order RK
+\end{DoxyItemize}
+
+TODO\+: use calculated error of 5th order -\/ 4th order to alter step width {\ttfamily h} dynamically to fully implement dp-\/method.
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ode45_8h}{math/numerics/ode/ode45.h}}>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ode45_8h_a88090203efe19f71864a54a7158c36b4}\label{ode45_8h_a88090203efe19f71864a54a7158c36b4} 
+\index{ode45.h@{ode45.h}!ODE45@{ODE45}}
+\index{ODE45@{ODE45}!ode45.h@{ode45.h}}
+\doxysubsubsection{\texorpdfstring{ODE45()}{ODE45()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structODEResult}{ODEResult}} ODE45 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t\+Interval,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{h = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+Implementation of 5th order Runge-\/\+Kutta-\/\+Method 
+\begin{DoxyParams}{Parameters}
+{\em fun} & ode to approximate \\
+\hline
+{\em t\+Interval} & interval to perform approximation on \\
+\hline
+{\em y0} & start value \\
+\hline
+{\em h} & step width for time values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated values 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestODE45_8cpp-example}{numerics/ode/\+Test\+ODE45.\+cpp}}.\end{Desc}

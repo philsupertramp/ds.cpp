@@ -1,0 +1,255 @@
+\doxysection{Adaline\+SGD Class Reference}
+\hypertarget{classAdalineSGD}{}\label{classAdalineSGD}\index{AdalineSGD@{AdalineSGD}}
+
+
+{\ttfamily \#include $<$Adaline\+SGD.\+h$>$}
+
+Inheritance diagram for Adaline\+SGD\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classAdalineSGD}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAdalineSGD_a2f9c051f06bab810b1d7e92be9e8cfd8}{Adaline\+SGD}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+eta}}=0.\+01, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{iter}}=10, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+shuffle}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+random\+State}}=0)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classAdalineSGD_a8b97d260bc04aa8cd6d02436fb5f3c76}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classAdalineSGD_a1e6915753b8004c988d4241af8c30fd8}{partial\+\_\+fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classAdalineSGD_a74a5c439e3594a88812d565708e9adfe}{net\+Input}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classAdalineSGD_a7a65df1059ac4b19e8c69c166f76caef}{cost\+Function}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classAdalineSGD_a86476c65a84a1985800ac57d619fccc6}{activation}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classAdalineSGD_a2bd7bc8ce36bdc2d9372f9bfbe9d4d8c}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classANNClassifier_af6e0a151d0d20cfff2abedca49c617ab}{ANNClassifier}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+eta}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+n\+\_\+iter}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classClassifier_ae6132b100c96a4f3d8ad3885b5acb28e}{Classifier}} ()
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Rows}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Columns}}=1)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{update}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{delta}})
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classAdalineSGD_a2272921984f8d5a13dc75e60c5d006be}{shuffle}}
+\begin{DoxyCompactList}\small\item\em signalizes whether given dataset should be shuffled while fitting \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classAdalineSGD_a7930ffb33b513fec12a6503191fa89a3}{random\+State}}
+\begin{DoxyCompactList}\small\item\em initialize weights with random state \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSGD}{SGD}} \mbox{\hyperlink{classAdalineSGD_aea1fdb9d477c9d44016ef13e5bc2342f}{sgd}}
+\begin{DoxyCompactList}\small\item\em algorithmic object to represent fitting algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
+\begin{DoxyCompactList}\small\item\em Vector holding weights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
+\begin{DoxyCompactList}\small\item\em Vector holding classification error per epoch. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classANNClassifier_a2e0e1ac7757c8cb67567c4dd4f42fef8}{eta}}
+\begin{DoxyCompactList}\small\item\em Learning rate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classANNClassifier_aae9927c5e2e95d69ba5baa9842f36b02}{n\+\_\+iter}}
+\begin{DoxyCompactList}\small\item\em number epochs \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+\begin{DoxyCompactList}\small\item\em flag to initialize weights only once \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adaline linear neuron implementation using statistic gradient decent for training of a vector of weights and a single bias.
+
+weights\+: shape \mbox{[}N+1 x 1\mbox{]} bias\+: shape \mbox{[}1, 1\mbox{]}, first element of weights
+
+Note\+: only allows binary classification and uses a single layer of weights see the description here \mbox{[}1\mbox{]} I found it very easy to understand and implement.
+
+
+\begin{DoxyItemize}
+\item \mbox{[}1\mbox{]} \href{http://rasbt.github.io/mlxtend/user_guide/classifier/Adaline/}{\texttt{ http\+://rasbt.\+github.\+io/mlxtend/user\+\_\+guide/classifier/\+Adaline/}} 
+\end{DoxyItemize}\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{ds_2TestAdalineSGD_8cpp-example}{ds/\+Test\+Adaline\+SGD.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAdalineSGD_a2f9c051f06bab810b1d7e92be9e8cfd8}\label{classAdalineSGD_a2f9c051f06bab810b1d7e92be9e8cfd8} 
+\index{AdalineSGD@{AdalineSGD}!AdalineSGD@{AdalineSGD}}
+\index{AdalineSGD@{AdalineSGD}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{AdalineSGD()}{AdalineSGD()}}
+{\footnotesize\ttfamily Adaline\+SGD\+::\+Adaline\+SGD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{\+\_\+eta = {\ttfamily 0.01},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{iter = {\ttfamily 10},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}}]{\+\_\+shuffle = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{\+\_\+random\+State = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+default constructor 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+eta} & learning rate \\
+\hline
+{\em iter} & number of learning iterations \\
+\hline
+{\em \+\_\+shuffle} & use shuffled data \\
+\hline
+{\em \+\_\+random\+State} & seed of random state \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAdalineSGD_a86476c65a84a1985800ac57d619fccc6}\label{classAdalineSGD_a86476c65a84a1985800ac57d619fccc6} 
+\index{AdalineSGD@{AdalineSGD}!activation@{activation}}
+\index{activation@{activation}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{activation()}{activation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Adaline\+SGD\+::activation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+activates given input 
+\begin{DoxyParams}{Parameters}
+{\em X} & input values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+activated input values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classANNClassifier_af1d25129fd2594d89a08a025b03dfd62}{ANNClassifier}}.
+
+\Hypertarget{classAdalineSGD_a7a65df1059ac4b19e8c69c166f76caef}\label{classAdalineSGD_a7a65df1059ac4b19e8c69c166f76caef} 
+\index{AdalineSGD@{AdalineSGD}!costFunction@{costFunction}}
+\index{costFunction@{costFunction}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{costFunction()}{costFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Adaline\+SGD\+::cost\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Do not use 
+\begin{DoxyParams}{Parameters}
+{\em X} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classANNClassifier_aa5a6c1d789eed4f0a6a501dc08e420ce}{ANNClassifier}}.
+
+\Hypertarget{classAdalineSGD_a8b97d260bc04aa8cd6d02436fb5f3c76}\label{classAdalineSGD_a8b97d260bc04aa8cd6d02436fb5f3c76} 
+\index{AdalineSGD@{AdalineSGD}!fit@{fit}}
+\index{fit@{fit}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{fit()}{fit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Adaline\+SGD\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+fit weights using sgd member 
+\begin{DoxyParams}{Parameters}
+{\em X} & array-\/like with the shape\+: \mbox{[}n\+\_\+samples, n\+\_\+features\mbox{]} \\
+\hline
+{\em y} & array-\/like with shape\+: \mbox{[}n\+\_\+samples, 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
+
+\Hypertarget{classAdalineSGD_a74a5c439e3594a88812d565708e9adfe}\label{classAdalineSGD_a74a5c439e3594a88812d565708e9adfe} 
+\index{AdalineSGD@{AdalineSGD}!netInput@{netInput}}
+\index{netInput@{netInput}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{netInput()}{netInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Adaline\+SGD\+::net\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+alias for sdg.\+net\+Input 
+\begin{DoxyParams}{Parameters}
+{\em X} & input values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classANNClassifier_a8236348bfd0b4a4907c2ea2ca2b5d71a}{ANNClassifier}}.
+
+\Hypertarget{classAdalineSGD_a1e6915753b8004c988d4241af8c30fd8}\label{classAdalineSGD_a1e6915753b8004c988d4241af8c30fd8} 
+\index{AdalineSGD@{AdalineSGD}!partial\_fit@{partial\_fit}}
+\index{partial\_fit@{partial\_fit}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{partial\_fit()}{partial\_fit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Adaline\+SGD\+::partial\+\_\+fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+partially fits the model 
+\begin{DoxyParams}{Parameters}
+{\em X} & input values \\
+\hline
+{\em y} & target output values \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classAdalineSGD_a2bd7bc8ce36bdc2d9372f9bfbe9d4d8c}\label{classAdalineSGD_a2bd7bc8ce36bdc2d9372f9bfbe9d4d8c} 
+\index{AdalineSGD@{AdalineSGD}!predict@{predict}}
+\index{predict@{predict}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Adaline\+SGD\+::predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+predict output class of given input 
+\begin{DoxyParams}{Parameters}
+{\em X} & input values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+predicted output 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}{Predictor}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classAdalineSGD_a7930ffb33b513fec12a6503191fa89a3}\label{classAdalineSGD_a7930ffb33b513fec12a6503191fa89a3} 
+\index{AdalineSGD@{AdalineSGD}!randomState@{randomState}}
+\index{randomState@{randomState}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{randomState}{randomState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Adaline\+SGD\+::random\+State}
+
+
+
+initialize weights with random state 
+
+\Hypertarget{classAdalineSGD_aea1fdb9d477c9d44016ef13e5bc2342f}\label{classAdalineSGD_aea1fdb9d477c9d44016ef13e5bc2342f} 
+\index{AdalineSGD@{AdalineSGD}!sgd@{sgd}}
+\index{sgd@{sgd}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{sgd}{sgd}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSGD}{SGD}} Adaline\+SGD\+::sgd}
+
+
+
+algorithmic object to represent fitting algorithm 
+
+\Hypertarget{classAdalineSGD_a2272921984f8d5a13dc75e60c5d006be}\label{classAdalineSGD_a2272921984f8d5a13dc75e60c5d006be} 
+\index{AdalineSGD@{AdalineSGD}!shuffle@{shuffle}}
+\index{shuffle@{shuffle}!AdalineSGD@{AdalineSGD}}
+\doxysubsubsection{\texorpdfstring{shuffle}{shuffle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} Adaline\+SGD\+::shuffle}
+
+
+
+signalizes whether given dataset should be shuffled while fitting 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/ds/\mbox{\hyperlink{AdalineSGD_8h}{Adaline\+SGD.\+h}}\end{DoxyCompactItemize}

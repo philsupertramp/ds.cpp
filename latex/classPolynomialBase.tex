@@ -1,0 +1,114 @@
+\doxysection{Polynomial\+Base Class Reference}
+\hypertarget{classPolynomialBase}{}\label{classPolynomialBase}\index{PolynomialBase@{PolynomialBase}}
+
+
+{\ttfamily \#include $<$Support\+Values.\+h$>$}
+
+Inheritance diagram for Polynomial\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classPolynomialBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPolynomialBase_a35c1b1f74053833dcd865908c93e8f24}{Polynomial\+Base}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&Y)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classPolynomialBase_a7bbf28d9cc1bd42019c07c8af297563b}{Evaluate}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} =0
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string \mbox{\hyperlink{classPolynomialBase_a7c5cff1055e525bd01ab24cf39bf9ed5}{Function}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classPolynomialBase_a0a3e6ca070c8235939977431fd120f5b}{operator$<$$<$}} (std\+::ostream \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{ostr}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classPolynomialBase}{Polynomial\+Base}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{base}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+function approximation and interpolation using support values
+
+see \href{https://wiki.godesteem.de/wiki/interpolation-and-approximation/}{\texttt{ https\+://wiki.\+godesteem.\+de/wiki/interpolation-\/and-\/approximation/}}
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{SupportValues_8h}{math/numerics/analysis/SupportValues.h}}>}}
+
+\end{DoxyCode}
+ Template class for polynomial base representation.
+\begin{DoxyItemize}
+\item \doxylink{classMonomBase}{Monom\+Base}
+\item \doxylink{classLagrangeBase}{Lagrange\+Base}
+\item \doxylink{classNewtonBase}{Newton\+Base} 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPolynomialBase_a35c1b1f74053833dcd865908c93e8f24}\label{classPolynomialBase_a35c1b1f74053833dcd865908c93e8f24} 
+\index{PolynomialBase@{PolynomialBase}!PolynomialBase@{PolynomialBase}}
+\index{PolynomialBase@{PolynomialBase}!PolynomialBase@{PolynomialBase}}
+\doxysubsubsection{\texorpdfstring{PolynomialBase()}{PolynomialBase()}}
+{\footnotesize\ttfamily Polynomial\+Base\+::\+Polynomial\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{Y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em X} & support values \$\$x\+\_\+i\$\$ \\
+\hline
+{\em Y} & evaluated support values \$\$y\+\_\+i\$\$ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPolynomialBase_a7bbf28d9cc1bd42019c07c8af297563b}\label{classPolynomialBase_a7bbf28d9cc1bd42019c07c8af297563b} 
+\index{PolynomialBase@{PolynomialBase}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!PolynomialBase@{PolynomialBase}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Polynomial\+Base\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Evaluate a given vector based on the approximation, computes p(x) for given x \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classLagrangeBase_ace572df22ab5e6cda086aec10cd3fbe4}{Lagrange\+Base}}, \mbox{\hyperlink{classMonomBase_ac8795cc57f64d4e834aefc6074388632}{Monom\+Base}}, and \mbox{\hyperlink{classNewtonBase_adc0ff93bb2460cac720680102a6ac83f}{Newton\+Base}}.
+
+\Hypertarget{classPolynomialBase_a7c5cff1055e525bd01ab24cf39bf9ed5}\label{classPolynomialBase_a7c5cff1055e525bd01ab24cf39bf9ed5} 
+\index{PolynomialBase@{PolynomialBase}!Function@{Function}}
+\index{Function@{Function}!PolynomialBase@{PolynomialBase}}
+\doxysubsubsection{\texorpdfstring{Function()}{Function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string Polynomial\+Base\+::\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+string representation of interpolated polynomial
+
+Don\textquotesingle{}t overthink this. simply return some kind of equation one can copy into wolframalpha and simplify \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classMonomBase_a4e86d536f746f544318c18c08c12b99f}{Monom\+Base}}, \mbox{\hyperlink{classLagrangeBase_a56f2ac80cd5872fc9438283ae5460ed2}{Lagrange\+Base}}, and \mbox{\hyperlink{classNewtonBase_af59cf5892ed772c87c830ceb701160dd}{Newton\+Base}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classPolynomialBase_a0a3e6ca070c8235939977431fd120f5b}\label{classPolynomialBase_a0a3e6ca070c8235939977431fd120f5b} 
+\index{PolynomialBase@{PolynomialBase}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!PolynomialBase@{PolynomialBase}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{operator}}$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classPolynomialBase}{Polynomial\+Base}} \&}]{base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+std\+::cout operator 
+\begin{DoxyParams}{Parameters}
+{\em ostr} & \\
+\hline
+{\em base} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/analysis/\mbox{\hyperlink{SupportValues_8h}{Support\+Values.\+h}}\end{DoxyCompactItemize}

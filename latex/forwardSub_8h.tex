@@ -1,0 +1,42 @@
+\doxysection{include/math/numerics/lin\+\_\+alg/forward\+Sub.h File Reference}
+\hypertarget{forwardSub_8h}{}\label{forwardSub_8h}\index{include/math/numerics/lin\_alg/forwardSub.h@{include/math/numerics/lin\_alg/forwardSub.h}}
+{\ttfamily \#include "{}../utils.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{forwardSub_8h_a2004e88ef01c16e0c9c5d99a45a208cf}{forward\+Sub}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{L}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Regular forward substitution. Calculates result given lower left triangular matrix \$\$ b=L\textbackslash{}cdot c \textbackslash{}\+Rightarrow L\texorpdfstring{$^\wedge$}{\string^}\{-\/1\}\textbackslash{}cdot b = c \$\$
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{forwardSub_8h}{math/numerics/lin\_alg/forwardSub.h}}>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{forwardSub_8h_a2004e88ef01c16e0c9c5d99a45a208cf}\label{forwardSub_8h_a2004e88ef01c16e0c9c5d99a45a208cf} 
+\index{forwardSub.h@{forwardSub.h}!forwardSub@{forwardSub}}
+\index{forwardSub@{forwardSub}!forwardSub.h@{forwardSub.h}}
+\doxysubsubsection{\texorpdfstring{forwardSub()}{forwardSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ forward\+Sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{L,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Forward-\/substitution 
+\begin{DoxyParams}{Parameters}
+{\em L} & Coefficient \doxylink{classMatrix}{Matrix} \\
+\hline
+{\em b} & resulting vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+c 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2lin_alg_2TestForwardSub_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+Forward\+Sub.\+cpp}}.\end{Desc}

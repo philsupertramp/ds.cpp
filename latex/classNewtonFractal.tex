@@ -1,0 +1,181 @@
+\doxysection{Newton\+Fractal Class Reference}
+\hypertarget{classNewtonFractal}{}\label{classNewtonFractal}\index{NewtonFractal@{NewtonFractal}}
+
+
+{\ttfamily \#include $<$Fractals.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNewtonFractal_a3aa83a453f1e9132c3bea3b75769125d}{Newton\+Fractal}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{detail\+Factor}}=1, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+min}}=-\/1.\+0, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+max}}=1.\+0, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+max\+Iter}}=100, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+tol}}=1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/5)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classNewtonFractal_a6cf1dfbd662be4a8ae272020a8edf82d}{operator()}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classNewtonFractal_ac78021b076c2d3a5d3c8b3177ea44bea}{detail}}
+\begin{DoxyCompactList}\small\item\em detail factor for approximation \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classNewtonFractal_ab61b91764458edf714b5fbf636ee8800}{x\+Min}} = -\/1.\+0
+\begin{DoxyCompactList}\small\item\em start and end value on x-\/axis \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classNewtonFractal_ac710ac326aa58002987217f7fd6198c4}{x\+Max}} = 1.\+0
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classNewtonFractal_af442f7377e1fa72f5a9431f7536815f7}{y\+Min}} = -\/1.\+0
+\begin{DoxyCompactList}\small\item\em start and end value on y-\/axis \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classNewtonFractal_a10bdd859b70e53a4e5bebbf947e4f814}{y\+Max}} = 1.\+0
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classNewtonFractal_a1725f679c603cdc4630e7b5aa164f94e}{max\+Iter}} = 100
+\begin{DoxyCompactList}\small\item\em max number iterations for newton algorithm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classNewtonFractal_a6b85a65f2ee58b68f24783615f202263}{tol}} = 1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/5
+\begin{DoxyCompactList}\small\item\em tolerance used for newton algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classNewtonFractal_a7b5e57d09efeaebe88ccd017220d3e78}{fun}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classNewtonFractal_a60e62d9f1cc691d006ef6ea3436f4b33}{jac}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Newton fractals \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2TestFractals_8cpp-example}{numerics/\+Test\+Fractals.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classNewtonFractal_a3aa83a453f1e9132c3bea3b75769125d}\label{classNewtonFractal_a3aa83a453f1e9132c3bea3b75769125d} 
+\index{NewtonFractal@{NewtonFractal}!NewtonFractal@{NewtonFractal}}
+\index{NewtonFractal@{NewtonFractal}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{NewtonFractal()}{NewtonFractal()}}
+{\footnotesize\ttfamily Newton\+Fractal\+::\+Newton\+Fractal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{detail\+Factor = {\ttfamily 1},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{\+\_\+min = {\ttfamily -\/1.0},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{\+\_\+max = {\ttfamily 1.0},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{\+\_\+max\+Iter = {\ttfamily 100},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{\+\_\+tol = {\ttfamily 1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/5} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em detail\+Factor} & determines how detailed the fractal is displayed \\
+\hline
+{\em \+\_\+min} & min value (chose from \mbox{[}-\/1, 1\mbox{]}) \\
+\hline
+{\em \+\_\+max} & max value (chose from \mbox{[}-\/1, 1\mbox{]}) \\
+\hline
+{\em \+\_\+max\+Iter} & number maximum iterations for newton algorithm \\
+\hline
+{\em \+\_\+tol} & tolerance used for newton algoirthm \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classNewtonFractal_a7b5e57d09efeaebe88ccd017220d3e78}\label{classNewtonFractal_a7b5e57d09efeaebe88ccd017220d3e78} 
+\index{NewtonFractal@{NewtonFractal}!fun@{fun}}
+\index{fun@{fun}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{fun()}{fun()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Newton\+Fractal\+::fun (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+Newton fractal function
+
+\$\$ \textbackslash{}begin\{pmatrix\} x\+\_\+0\texorpdfstring{$^\wedge$}{\string^}3 -\/ 3x\+\_\+0 \textbackslash{}cdot x\+\_\+1\texorpdfstring{$^\wedge$}{\string^}2 -\/ 1 \textbackslash{}\textbackslash{} -\/x\+\_\+1\texorpdfstring{$^\wedge$}{\string^}3 + 3x\+\_\+0\texorpdfstring{$^\wedge$}{\string^}2 \textbackslash{}cdot x\+\_\+1 \textbackslash{}end\{pmatrix\} \$\$ 
+\begin{DoxyParams}{Parameters}
+{\em x} & point to evaluate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+evaluated value 
+\end{DoxyReturn}
+\Hypertarget{classNewtonFractal_a60e62d9f1cc691d006ef6ea3436f4b33}\label{classNewtonFractal_a60e62d9f1cc691d006ef6ea3436f4b33} 
+\index{NewtonFractal@{NewtonFractal}!jac@{jac}}
+\index{jac@{jac}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{jac()}{jac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Newton\+Fractal\+::jac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+Helper, jacobian matrix of fun
+
+\$\$ \textbackslash{}begin\{pmatrix\} 3 x\+\_\+0\texorpdfstring{$^\wedge$}{\string^}2 x\+\_\+1\texorpdfstring{$^\wedge$}{\string^}2 \& -\/6 x\+\_\+0x\+\_\+1\textbackslash{}\textbackslash{} 6 x\+\_\+0 x\+\_\+1 \& 3 x\+\_\+0\texorpdfstring{$^\wedge$}{\string^}2 -\/ 3x\+\_\+1\texorpdfstring{$^\wedge$}{\string^}2 \textbackslash{}end\{pmatrix\} \$\$ 
+\begin{DoxyParams}{Parameters}
+{\em x} & current value (2 dimensional) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2 by 2 jacobian matrix evaluated in x 
+\end{DoxyReturn}
+\Hypertarget{classNewtonFractal_a6cf1dfbd662be4a8ae272020a8edf82d}\label{classNewtonFractal_a6cf1dfbd662be4a8ae272020a8edf82d} 
+\index{NewtonFractal@{NewtonFractal}!operator()@{operator()}}
+\index{operator()@{operator()}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Newton\+Fractal\+::operator() (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Approximates newton fractal given by \doxylink{classNewtonFractal_a7b5e57d09efeaebe88ccd017220d3e78}{Newton\+Fractal\+::fun} and \doxylink{classNewtonFractal_a60e62d9f1cc691d006ef6ea3436f4b33}{Newton\+Fractal\+::jac}.
+
+\begin{DoxyReturn}{Returns}
+Classified roots, meaning pixels approximated with same roots hold same values 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classNewtonFractal_ac78021b076c2d3a5d3c8b3177ea44bea}\label{classNewtonFractal_ac78021b076c2d3a5d3c8b3177ea44bea} 
+\index{NewtonFractal@{NewtonFractal}!detail@{detail}}
+\index{detail@{detail}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{detail}{detail}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Newton\+Fractal\+::detail}
+
+
+
+detail factor for approximation 
+
+\Hypertarget{classNewtonFractal_a1725f679c603cdc4630e7b5aa164f94e}\label{classNewtonFractal_a1725f679c603cdc4630e7b5aa164f94e} 
+\index{NewtonFractal@{NewtonFractal}!maxIter@{maxIter}}
+\index{maxIter@{maxIter}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{maxIter}{maxIter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Newton\+Fractal\+::max\+Iter = 100}
+
+
+
+max number iterations for newton algorithm 
+
+\Hypertarget{classNewtonFractal_a6b85a65f2ee58b68f24783615f202263}\label{classNewtonFractal_a6b85a65f2ee58b68f24783615f202263} 
+\index{NewtonFractal@{NewtonFractal}!tol@{tol}}
+\index{tol@{tol}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{tol}{tol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Newton\+Fractal\+::tol = 1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/5}
+
+
+
+tolerance used for newton algorithm 
+
+\Hypertarget{classNewtonFractal_ac710ac326aa58002987217f7fd6198c4}\label{classNewtonFractal_ac710ac326aa58002987217f7fd6198c4} 
+\index{NewtonFractal@{NewtonFractal}!xMax@{xMax}}
+\index{xMax@{xMax}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{xMax}{xMax}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Newton\+Fractal\+::x\+Max = 1.\+0}
+
+\Hypertarget{classNewtonFractal_ab61b91764458edf714b5fbf636ee8800}\label{classNewtonFractal_ab61b91764458edf714b5fbf636ee8800} 
+\index{NewtonFractal@{NewtonFractal}!xMin@{xMin}}
+\index{xMin@{xMin}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{xMin}{xMin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Newton\+Fractal\+::x\+Min = -\/1.\+0}
+
+
+
+start and end value on x-\/axis 
+
+\Hypertarget{classNewtonFractal_a10bdd859b70e53a4e5bebbf947e4f814}\label{classNewtonFractal_a10bdd859b70e53a4e5bebbf947e4f814} 
+\index{NewtonFractal@{NewtonFractal}!yMax@{yMax}}
+\index{yMax@{yMax}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{yMax}{yMax}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Newton\+Fractal\+::y\+Max = 1.\+0}
+
+\Hypertarget{classNewtonFractal_af442f7377e1fa72f5a9431f7536815f7}\label{classNewtonFractal_af442f7377e1fa72f5a9431f7536815f7} 
+\index{NewtonFractal@{NewtonFractal}!yMin@{yMin}}
+\index{yMin@{yMin}!NewtonFractal@{NewtonFractal}}
+\doxysubsubsection{\texorpdfstring{yMin}{yMin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Newton\+Fractal\+::y\+Min = -\/1.\+0}
+
+
+
+start and end value on y-\/axis 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/\mbox{\hyperlink{Fractals_8h}{Fractals.\+h}}\end{DoxyCompactItemize}

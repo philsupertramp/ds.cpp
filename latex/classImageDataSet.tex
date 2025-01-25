@@ -1,0 +1,229 @@
+\doxysection{Image\+Data\+Set Class Reference}
+\hypertarget{classImageDataSet}{}\label{classImageDataSet}\index{ImageDataSet@{ImageDataSet}}
+
+
+only include Magick++ if needed  
+
+
+
+
+{\ttfamily \#include $<$Image\+Data\+Set.\+h$>$}
+
+Inheritance diagram for Image\+Data\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classImageDataSet}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classImageDataSet_a6cb4942bbb5ce16e1ab67ccd550dc9e3}{Image\+Data\+Set}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{input\+Count}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output\+Count}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classImageDataSet_a9bbabe8ae4b48f1238be7828d6fe7233}{Prepare\+Directory}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{file\+Path}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classImageDataSet_abe20e5992ddda25f736dfb0789d764a3}{Cache}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classDataSet}{Data\+Set}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataSet_a06a0a03f65d1ed5a3b9102242e761639}{Data\+Set}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{file\+Path}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{input\+Count}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output\+Count}})
+\item 
+\mbox{\hyperlink{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb}{Data\+Set}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{input\+Count}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output\+Count}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classImageDataSet_ab83106b8cff6d5cc8359aa490d85d07e}{image\+Height}} = 180
+\begin{DoxyCompactList}\small\item\em desired image height \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classImageDataSet_a9ba02bb2e1b60de7f6835ace293809f9}{image\+Width}} = 180
+\begin{DoxyCompactList}\small\item\em desired image width \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classImageDataSet_a08ea2bd23adb1f8d45d888e820fe3e4d}{validation\+Share}} = 0.\+2
+\begin{DoxyCompactList}\small\item\em percentage of validation data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}{train\+Directory}} = "{}../../resources/\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image\+\_\+classification}}/\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{training}}/"{}
+\begin{DoxyCompactList}\small\item\em target directory for training \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Matrix\+DS}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} $>$ $>$ \mbox{\hyperlink{classImageDataSet_a588cd839a8dcf3f9bbd487610347825e}{classes}}
+\begin{DoxyCompactList}\small\item\em representation of all classes \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classImageDataSet_a948b82a4dc6b7594c6c8029909aa6b72}{class\+Names}}
+\begin{DoxyCompactList}\small\item\em representation of all class names \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}{total\+Count}} = 0
+\begin{DoxyCompactList}\small\item\em total number of data records \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classImageDataSet_a323ec5719d39c362c77960656b65f571}{training\+Count}} = 0
+\begin{DoxyCompactList}\small\item\em number of training data records \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}{validation\+Count}} = 0
+\begin{DoxyCompactList}\small\item\em number of validation data records \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classDataSet}{Data\+Set}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{Input\+Count}}
+\begin{DoxyCompactList}\small\item\em number input elements \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{Output\+Count}}
+\begin{DoxyCompactList}\small\item\em number output elements \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSet}{Set}} \mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}}
+\begin{DoxyCompactList}\small\item\em set for training \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSet}{Set}} \mbox{\hyperlink{classDataSet_a83ba4064a6be64f1b1535de18005e270}{Validation}}
+\begin{DoxyCompactList}\small\item\em set for validation of training \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structSet}{Set}} \mbox{\hyperlink{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b}{Test}}
+\begin{DoxyCompactList}\small\item\em set to test after training \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57}{max\+Epoch}} = 1000
+\begin{DoxyCompactList}\small\item\em number of epochs while training \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3}{stop\+Threshold}} = 0.\+001
+\begin{DoxyCompactList}\small\item\em threshold for loss to prevent over-\/fitting \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDataSet_a5e96a7989e932a765382ec05df96f02e}{eta}} = 0.\+0051
+\begin{DoxyCompactList}\small\item\em learning rate \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classDataSet_a72f424eb8039147514fe51fbd2e0948b}{batch\+Size}} = 5
+\begin{DoxyCompactList}\small\item\em number of elements per batch \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596}{verbose}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+\begin{DoxyCompactList}\small\item\em use verbose output during fitting \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+only include Magick++ if needed 
+
+Image data set representation 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classImageDataSet_a6cb4942bbb5ce16e1ab67ccd550dc9e3}\label{classImageDataSet_a6cb4942bbb5ce16e1ab67ccd550dc9e3} 
+\index{ImageDataSet@{ImageDataSet}!ImageDataSet@{ImageDataSet}}
+\index{ImageDataSet@{ImageDataSet}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{ImageDataSet()}{ImageDataSet()}}
+{\footnotesize\ttfamily Image\+Data\+Set\+::\+Image\+Data\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{input\+Count,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{output\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+default constructor 
+\begin{DoxyParams}{Parameters}
+{\em input\+Count} & \\
+\hline
+{\em output\+Count} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classImageDataSet_abe20e5992ddda25f736dfb0789d764a3}\label{classImageDataSet_abe20e5992ddda25f736dfb0789d764a3} 
+\index{ImageDataSet@{ImageDataSet}!Cache@{Cache}}
+\index{Cache@{Cache}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{Cache()}{Cache()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Image\+Data\+Set\+::\+Cache (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+loads data set into memory
+
+we split the dataset into
+\begin{DoxyItemize}
+\item 80\% training
+\item 20\% validation
+\item 0\% test
+\end{DoxyItemize}
+
+Example\+: 100 images =\texorpdfstring{$>$}{>} 80 training, 20 validation, 0 test \Hypertarget{classImageDataSet_a9bbabe8ae4b48f1238be7828d6fe7233}\label{classImageDataSet_a9bbabe8ae4b48f1238be7828d6fe7233} 
+\index{ImageDataSet@{ImageDataSet}!PrepareDirectory@{PrepareDirectory}}
+\index{PrepareDirectory@{PrepareDirectory}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{PrepareDirectory()}{PrepareDirectory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Image\+Data\+Set\+::\+Prepare\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+prepares a new set of data based on passed file\+Path 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & path name of directory to prepare \\
+\hline
+\end{DoxyParams}
+identifies "{}classes"{} as files in nested directories
+
+Reimplemented from \mbox{\hyperlink{classDataSet_ab55020328d9b53265bfece0e16696baf}{Data\+Set}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classImageDataSet_a588cd839a8dcf3f9bbd487610347825e}\label{classImageDataSet_a588cd839a8dcf3f9bbd487610347825e} 
+\index{ImageDataSet@{ImageDataSet}!classes@{classes}}
+\index{classes@{classes}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{classes}{classes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Matrix\+DS}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}$>$ $>$ Image\+Data\+Set\+::classes}
+
+
+
+representation of all classes 
+
+\Hypertarget{classImageDataSet_a948b82a4dc6b7594c6c8029909aa6b72}\label{classImageDataSet_a948b82a4dc6b7594c6c8029909aa6b72} 
+\index{ImageDataSet@{ImageDataSet}!classNames@{classNames}}
+\index{classNames@{classNames}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{classNames}{classNames}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Image\+Data\+Set\+::class\+Names}
+
+
+
+representation of all class names 
+
+\Hypertarget{classImageDataSet_ab83106b8cff6d5cc8359aa490d85d07e}\label{classImageDataSet_ab83106b8cff6d5cc8359aa490d85d07e} 
+\index{ImageDataSet@{ImageDataSet}!imageHeight@{imageHeight}}
+\index{imageHeight@{imageHeight}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{imageHeight}{imageHeight}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Image\+Data\+Set\+::image\+Height = 180}
+
+
+
+desired image height 
+
+\Hypertarget{classImageDataSet_a9ba02bb2e1b60de7f6835ace293809f9}\label{classImageDataSet_a9ba02bb2e1b60de7f6835ace293809f9} 
+\index{ImageDataSet@{ImageDataSet}!imageWidth@{imageWidth}}
+\index{imageWidth@{imageWidth}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{imageWidth}{imageWidth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Image\+Data\+Set\+::image\+Width = 180}
+
+
+
+desired image width 
+
+\Hypertarget{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7}\label{classImageDataSet_a9a266deb825dec0a9bdaa6f7105c4da7} 
+\index{ImageDataSet@{ImageDataSet}!totalCount@{totalCount}}
+\index{totalCount@{totalCount}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{totalCount}{totalCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Image\+Data\+Set\+::total\+Count = 0}
+
+
+
+total number of data records 
+
+\Hypertarget{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8}\label{classImageDataSet_ae16e22c23b4185379e5f3d60143092b8} 
+\index{ImageDataSet@{ImageDataSet}!trainDirectory@{trainDirectory}}
+\index{trainDirectory@{trainDirectory}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{trainDirectory}{trainDirectory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Image\+Data\+Set\+::train\+Directory = "{}../../resources/\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{image\+\_\+classification}}/\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{training}}/"{}}
+
+
+
+target directory for training 
+
+\Hypertarget{classImageDataSet_a323ec5719d39c362c77960656b65f571}\label{classImageDataSet_a323ec5719d39c362c77960656b65f571} 
+\index{ImageDataSet@{ImageDataSet}!trainingCount@{trainingCount}}
+\index{trainingCount@{trainingCount}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{trainingCount}{trainingCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Image\+Data\+Set\+::training\+Count = 0}
+
+
+
+number of training data records 
+
+\Hypertarget{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648}\label{classImageDataSet_a30efac5c5eb0ec2eb29ba294ddbc2648} 
+\index{ImageDataSet@{ImageDataSet}!validationCount@{validationCount}}
+\index{validationCount@{validationCount}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{validationCount}{validationCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Image\+Data\+Set\+::validation\+Count = 0}
+
+
+
+number of validation data records 
+
+\Hypertarget{classImageDataSet_a08ea2bd23adb1f8d45d888e820fe3e4d}\label{classImageDataSet_a08ea2bd23adb1f8d45d888e820fe3e4d} 
+\index{ImageDataSet@{ImageDataSet}!validationShare@{validationShare}}
+\index{validationShare@{validationShare}!ImageDataSet@{ImageDataSet}}
+\doxysubsubsection{\texorpdfstring{validationShare}{validationShare}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Image\+Data\+Set\+::validation\+Share = 0.\+2}
+
+
+
+percentage of validation data 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/ds/\mbox{\hyperlink{ImageDataSet_8h}{Image\+Data\+Set.\+h}}\end{DoxyCompactItemize}

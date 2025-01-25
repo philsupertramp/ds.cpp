@@ -1,0 +1,82 @@
+\doxysection{numerics/ode/\+Test\+Explicit\+Euler.\+cpp}
+\hypertarget{numerics_2ode_2TestExplicitEuler_8cpp-example}{}\label{numerics_2ode_2TestExplicitEuler_8cpp-example}This is an example on how to use ODEExp\+Euler.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ODESolver_8h}{math/numerics/ode/ODESolver.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }ODEExplicitEulerTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestExplicitEuler()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ ode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ []([[maybe\_unused]]\ \textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\ \{\ \textcolor{keywordflow}{return}\ y;\ \};}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ tInterval\ =\ \{\ 0.0,\ 5.0\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ y0\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{\ \{\ 5.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1.0;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structODEOption}{ODEOption}}\ option\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{\ h\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structODEResult}{ODEResult}}\ foo\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{classODESolver_a3ec6a0d320d62e8374abeead40a4927c}{ODESolver::odeExpEuler}}(ode,\ tInterval,\ y0,\ option);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ yResult\ =\ foo.\mbox{\hyperlink{structODEResult_aaef028566259040421ab1b73443c6f3b}{Y}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ tResult\ =\ foo.\mbox{\hyperlink{structODEResult_ac40ab376951caf83d2688d284efeb7db}{T}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ tExpected[6]\ =\ \{\ 0,\ 1,\ 2,\ 3,\ 4,\ 5\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ yExpected[6]\ =\ \{\ 5,\ 10,\ 20,\ 40,\ 80,\ 160\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(tExpected[i],\ tResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(yExpected[i],\ yResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestExplicitEulerRB()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ ode\ =\ []([[maybe\_unused]]\ \textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ result(0,\ y.rows(),\ y.columns(),\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ alpha\ =\ 0.25;}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ beta\ \ =\ -\/0.01;}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ gamma\ =\ -\/1.0;}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ delta\ =\ 0.01;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ result(0,\ 0)\ =\ alpha\ *\ y(0,\ 0)\ +\ beta\ *\ y(0,\ 0)\ *\ y(0,\ 1);}
+\DoxyCodeLine{\ \ \ \ \ \ result(0,\ 1)\ =\ gamma\ *\ y(0,\ 1)\ +\ delta\ *\ y(0,\ 0)\ *\ y(0,\ 1);}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ tInterval\ =\ \{\ 0.0,\ 5.0\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ y0\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{\ \{\ 80,\ 30\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1.0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ foo\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{ExplicitEuler_8h_af98076bc70f573a584428cf3fe528af3}{ODEExpEuler}}(ode,\ tInterval,\ y0,\ h);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ yResult\ =\ foo.Y;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ tResult\ =\ foo.T;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ yExpected[6][2]\ =\ \{\ \{\ 80.0000,\ 30.0000\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 76.0000,\ 24.0000\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 76.759999999999991,\ 18.240000000000002\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 81.948975999999988,\ 14.001024000000001\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 90.962524202485753,\ 11.473695797514239\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 103.26639193637371,\ 10.436763316733479\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ tExpected[6]\ \ \ \ =\ \{\ 0,\ 1,\ 2,\ 3,\ 4,\ 5\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(tExpected[i],\ tResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(yExpected[i][0],\ yResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(yExpected[i][1],\ yResult(i,\ 1));}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ TestExplicitEuler();}
+\DoxyCodeLine{\ \ \ \ TestExplicitEulerRB();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ ODEExplicitEulerTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

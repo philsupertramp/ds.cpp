@@ -1,0 +1,188 @@
+\doxysection{Plot\+Attributes Struct Reference}
+\hypertarget{structPlotAttributes}{}\label{structPlotAttributes}\index{PlotAttributes@{PlotAttributes}}
+
+
+{\ttfamily \#include $<$Plot.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}}
+\begin{DoxyCompactList}\small\item\em title label \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{x\+Axis}}
+\begin{DoxyCompactList}\small\item\em x-\/axis label \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{y\+Axis}}
+\begin{DoxyCompactList}\small\item\em y-\/axis label \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{structPlotAttributes_a84595caf0d1f946b36c8c4b5280830eb}{point\+Strength}}
+\begin{DoxyCompactList}\small\item\em point strength \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{structPlotAttributes_a9c108066e425622ee8ee97a85cf31523}{line\+Strength}}
+\begin{DoxyCompactList}\small\item\em line strength \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{structPlotAttributes_a653cff4fb1567e4547763924cad62178}{is3D}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+\begin{DoxyCompactList}\small\item\em signalizes 3D plot \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{structPlotAttributes_a6617bc812d985c05ae7f30dbf189bdc2}{is2D}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+\begin{DoxyCompactList}\small\item\em signalizes 2D plot \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{unsigned}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{structPlotAttributes_ac6910d9ebfe2403059d206fe29fc4dc2}{is\+Stat\+Plot}}
+\begin{DoxyCompactList}\small\item\em identifier for statistical plots for value comparison \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structPlotAttributes_ad1aad84439cf5fbc865d07694e523f27}{color}}
+\begin{DoxyCompactList}\small\item\em color used to plot elements \end{DoxyCompactList}\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structPlotAttributes_a8738b4d86a5db807f0128370bc167043}{color\+Palette}}
+\begin{DoxyCompactList}\small\item\em color used to plot elements \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639}{plot\+Names}}
+\begin{DoxyCompactList}\small\item\em vector representing data series \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{structPlotAttributes_a366b5a4078cb55cc358dc956bf3fef88}{plot\+Types}}
+\begin{DoxyCompactList}\small\item\em vector representing data series types \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{structPlotAttributes_ae5161ea3b86d4407c38b5da9903f168b}{characters}}
+\begin{DoxyCompactList}\small\item\em vector representing characters to use to display points per data series \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{structPlotIndex}{Plot\+Index}} $>$ \mbox{\hyperlink{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}{plot\+Indices}}
+\begin{DoxyCompactList}\small\item\em vector containing dataset indices in the storage file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+struct representing attributes of a plot 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structPlotAttributes_ae5161ea3b86d4407c38b5da9903f168b}\label{structPlotAttributes_ae5161ea3b86d4407c38b5da9903f168b} 
+\index{PlotAttributes@{PlotAttributes}!characters@{characters}}
+\index{characters@{characters}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{characters}{characters}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*}$>$ Plot\+Attributes\+::characters}
+
+
+
+vector representing characters to use to display points per data series 
+
+\Hypertarget{structPlotAttributes_ad1aad84439cf5fbc865d07694e523f27}\label{structPlotAttributes_ad1aad84439cf5fbc865d07694e523f27} 
+\index{PlotAttributes@{PlotAttributes}!color@{color}}
+\index{color@{color}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+Attributes\+::color}
+
+
+
+color used to plot elements 
+
+\Hypertarget{structPlotAttributes_a8738b4d86a5db807f0128370bc167043}\label{structPlotAttributes_a8738b4d86a5db807f0128370bc167043} 
+\index{PlotAttributes@{PlotAttributes}!colorPalette@{colorPalette}}
+\index{colorPalette@{colorPalette}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{colorPalette}{colorPalette}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+Attributes\+::color\+Palette}
+
+
+
+color used to plot elements 
+
+\Hypertarget{structPlotAttributes_a6617bc812d985c05ae7f30dbf189bdc2}\label{structPlotAttributes_a6617bc812d985c05ae7f30dbf189bdc2} 
+\index{PlotAttributes@{PlotAttributes}!is2D@{is2D}}
+\index{is2D@{is2D}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{is2D}{is2D}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} Plot\+Attributes\+::is2D = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}}
+
+
+
+signalizes 2D plot 
+
+\Hypertarget{structPlotAttributes_a653cff4fb1567e4547763924cad62178}\label{structPlotAttributes_a653cff4fb1567e4547763924cad62178} 
+\index{PlotAttributes@{PlotAttributes}!is3D@{is3D}}
+\index{is3D@{is3D}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{is3D}{is3D}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} Plot\+Attributes\+::is3D = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}}
+
+
+
+signalizes 3D plot 
+
+\Hypertarget{structPlotAttributes_ac6910d9ebfe2403059d206fe29fc4dc2}\label{structPlotAttributes_ac6910d9ebfe2403059d206fe29fc4dc2} 
+\index{PlotAttributes@{PlotAttributes}!isStatPlot@{isStatPlot}}
+\index{isStatPlot@{isStatPlot}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{isStatPlot}{isStatPlot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{unsigned}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Plot\+Attributes\+::is\+Stat\+Plot}
+
+
+
+identifier for statistical plots for value comparison 
+
+\Hypertarget{structPlotAttributes_a9c108066e425622ee8ee97a85cf31523}\label{structPlotAttributes_a9c108066e425622ee8ee97a85cf31523} 
+\index{PlotAttributes@{PlotAttributes}!lineStrength@{lineStrength}}
+\index{lineStrength@{lineStrength}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{lineStrength}{lineStrength}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Plot\+Attributes\+::line\+Strength}
+
+
+
+line strength 
+
+\Hypertarget{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}\label{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e} 
+\index{PlotAttributes@{PlotAttributes}!plotIndices@{plotIndices}}
+\index{plotIndices@{plotIndices}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{plotIndices}{plotIndices}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structPlotIndex}{Plot\+Index}}$>$ Plot\+Attributes\+::plot\+Indices}
+
+
+
+vector containing dataset indices in the storage file 
+
+\Hypertarget{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639}\label{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639} 
+\index{PlotAttributes@{PlotAttributes}!plotNames@{plotNames}}
+\index{plotNames@{plotNames}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{plotNames}{plotNames}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*}$>$ Plot\+Attributes\+::plot\+Names}
+
+
+
+vector representing data series 
+
+\Hypertarget{structPlotAttributes_a366b5a4078cb55cc358dc956bf3fef88}\label{structPlotAttributes_a366b5a4078cb55cc358dc956bf3fef88} 
+\index{PlotAttributes@{PlotAttributes}!plotTypes@{plotTypes}}
+\index{plotTypes@{plotTypes}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{plotTypes}{plotTypes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*}$>$ Plot\+Attributes\+::plot\+Types}
+
+
+
+vector representing data series types 
+
+\Hypertarget{structPlotAttributes_a84595caf0d1f946b36c8c4b5280830eb}\label{structPlotAttributes_a84595caf0d1f946b36c8c4b5280830eb} 
+\index{PlotAttributes@{PlotAttributes}!pointStrength@{pointStrength}}
+\index{pointStrength@{pointStrength}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{pointStrength}{pointStrength}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Plot\+Attributes\+::point\+Strength}
+
+
+
+point strength 
+
+\Hypertarget{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}\label{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978} 
+\index{PlotAttributes@{PlotAttributes}!title@{title}}
+\index{title@{title}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{title}{title}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+Attributes\+::title}
+
+
+
+title label 
+
+\Hypertarget{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}\label{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea} 
+\index{PlotAttributes@{PlotAttributes}!xAxis@{xAxis}}
+\index{xAxis@{xAxis}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{xAxis}{xAxis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+Attributes\+::x\+Axis}
+
+
+
+x-\/axis label 
+
+\Hypertarget{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}\label{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95} 
+\index{PlotAttributes@{PlotAttributes}!yAxis@{yAxis}}
+\index{yAxis@{yAxis}!PlotAttributes@{PlotAttributes}}
+\doxysubsubsection{\texorpdfstring{yAxis}{yAxis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}\texorpdfstring{$\ast$}{*} Plot\+Attributes\+::y\+Axis}
+
+
+
+y-\/axis label 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/visualization/\mbox{\hyperlink{Plot_8h}{Plot.\+h}}\end{DoxyCompactItemize}

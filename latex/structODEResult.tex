@@ -1,0 +1,103 @@
+\doxysection{ODEResult Struct Reference}
+\hypertarget{structODEResult}{}\label{structODEResult}\index{ODEResult@{ODEResult}}
+
+
+{\ttfamily \#include $<$ode.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structODEResult_a72f05e781d0ed06badfc17672d1bbeb4}{ODEResult}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t}})
+\item 
+\mbox{\hyperlink{structODEResult_adbcb8f8febde8078041bdc293bb3c708}{ODEResult}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{iter}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{structODEResult_aaef028566259040421ab1b73443c6f3b}{Y}}
+\begin{DoxyCompactList}\small\item\em Y-\/values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{structODEResult_ac40ab376951caf83d2688d284efeb7db}{T}}
+\begin{DoxyCompactList}\small\item\em T-\/values (mostly time) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} $>$ \mbox{\hyperlink{structODEResult_a2c6a9c94926cc37485e885eed6c3fddc}{Iterations}}
+\begin{DoxyCompactList}\small\item\em number iterations per time step \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representation of ODE result \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestExplicitEuler_8cpp-example}{numerics/ode/\+Test\+Explicit\+Euler.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structODEResult_a72f05e781d0ed06badfc17672d1bbeb4}\label{structODEResult_a72f05e781d0ed06badfc17672d1bbeb4} 
+\index{ODEResult@{ODEResult}!ODEResult@{ODEResult}}
+\index{ODEResult@{ODEResult}!ODEResult@{ODEResult}}
+\doxysubsubsection{\texorpdfstring{ODEResult()}{ODEResult()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ODEResult\+::\+ODEResult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor without iterations 
+\begin{DoxyParams}{Parameters}
+{\em y} & y-\/values \\
+\hline
+{\em t} & t-\/values \\
+\hline
+\end{DoxyParams}
+\Hypertarget{structODEResult_adbcb8f8febde8078041bdc293bb3c708}\label{structODEResult_adbcb8f8febde8078041bdc293bb3c708} 
+\index{ODEResult@{ODEResult}!ODEResult@{ODEResult}}
+\index{ODEResult@{ODEResult}!ODEResult@{ODEResult}}
+\doxysubsubsection{\texorpdfstring{ODEResult()}{ODEResult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ODEResult\+::\+ODEResult (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} $>$ \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+full element constructor 
+\begin{DoxyParams}{Parameters}
+{\em y} & y-\/values \\
+\hline
+{\em t} & t-\/values \\
+\hline
+{\em iter} & iteration-\/values \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structODEResult_a2c6a9c94926cc37485e885eed6c3fddc}\label{structODEResult_a2c6a9c94926cc37485e885eed6c3fddc} 
+\index{ODEResult@{ODEResult}!Iterations@{Iterations}}
+\index{Iterations@{Iterations}!ODEResult@{ODEResult}}
+\doxysubsubsection{\texorpdfstring{Iterations}{Iterations}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}$>$ ODEResult\+::\+Iterations}
+
+
+
+number iterations per time step 
+
+\Hypertarget{structODEResult_ac40ab376951caf83d2688d284efeb7db}\label{structODEResult_ac40ab376951caf83d2688d284efeb7db} 
+\index{ODEResult@{ODEResult}!T@{T}}
+\index{T@{T}!ODEResult@{ODEResult}}
+\doxysubsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ ODEResult\+::T}
+
+
+
+T-\/values (mostly time) 
+
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestExplicitEuler_8cpp-example}{numerics/ode/\+Test\+Explicit\+Euler.\+cpp}}.\end{Desc}
+\Hypertarget{structODEResult_aaef028566259040421ab1b73443c6f3b}\label{structODEResult_aaef028566259040421ab1b73443c6f3b} 
+\index{ODEResult@{ODEResult}!Y@{Y}}
+\index{Y@{Y}!ODEResult@{ODEResult}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ ODEResult\+::Y}
+
+
+
+Y-\/values. 
+
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2ode_2TestExplicitEuler_8cpp-example}{numerics/ode/\+Test\+Explicit\+Euler.\+cpp}}, and \mbox{\hyperlink{numerics_2ode_2TestODE45_8cpp-example}{numerics/ode/\+Test\+ODE45.\+cpp}}.\end{Desc}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/ode/\mbox{\hyperlink{ode_2ode_8h}{ode.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,158 @@
+\doxysection{Lagrange\+Base Class Reference}
+\hypertarget{classLagrangeBase}{}\label{classLagrangeBase}\index{LagrangeBase@{LagrangeBase}}
+
+
+{\ttfamily \#include $<$Support\+Values.\+h$>$}
+
+Inheritance diagram for Lagrange\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLagrangeBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLagrangeBase_adb915a64f04cdb3326d82830a041abde}{Lagrange\+Base}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&Y)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classLagrangeBase_a4a8130da124cbc7cde51567d2c109f26}{Get\+Coefficient}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xk}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} i) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classLagrangeBase_ace572df22ab5e6cda086aec10cd3fbe4}{Evaluate}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\item 
+std\+::string \mbox{\hyperlink{classLagrangeBase_acb4a6981c7e2b32a38b0922af4051314}{build\+Lx}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} i) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string \mbox{\hyperlink{classLagrangeBase_a56f2ac80cd5872fc9438283ae5460ed2}{Function}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPolynomialBase}{Polynomial\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPolynomialBase_a35c1b1f74053833dcd865908c93e8f24}{Polynomial\+Base}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&Y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classLagrangeBase_aa2ab424392d5406ff753233818e20fc6}{x}}
+\begin{DoxyCompactList}\small\item\em \$\$x\+\_\+i\$\$ Support values \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classLagrangeBase_aabccb7239c0da02245eb9a9f5e4ce243}{y}}
+\begin{DoxyCompactList}\small\item\em \$\$y\+\_\+i\$\$ Support values evaluated with the function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lagrange-\/\+Base using lagrange coefficients to build the polynomial
+
+\href{https://wiki.godesteem.de/wiki/interpolation-and-approximation/\#Lagrange-Base}{\texttt{ https\+://wiki.\+godesteem.\+de/wiki/interpolation-\/and-\/approximation/\#\+Lagrange-\/\+Base}} \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestSupportValues_8cpp-example}{numerics/analysis/\+Test\+Support\+Values.\+cpp}}, and \mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLagrangeBase_adb915a64f04cdb3326d82830a041abde}\label{classLagrangeBase_adb915a64f04cdb3326d82830a041abde} 
+\index{LagrangeBase@{LagrangeBase}!LagrangeBase@{LagrangeBase}}
+\index{LagrangeBase@{LagrangeBase}!LagrangeBase@{LagrangeBase}}
+\doxysubsubsection{\texorpdfstring{LagrangeBase()}{LagrangeBase()}}
+{\footnotesize\ttfamily Lagrange\+Base\+::\+Lagrange\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{Y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em X} & \$\$x\+\_\+i\$\$ \\
+\hline
+{\em Y} & \$\$y\+\_\+i\$\$ \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLagrangeBase_acb4a6981c7e2b32a38b0922af4051314}\label{classLagrangeBase_acb4a6981c7e2b32a38b0922af4051314} 
+\index{LagrangeBase@{LagrangeBase}!buildLx@{buildLx}}
+\index{buildLx@{buildLx}!LagrangeBase@{LagrangeBase}}
+\doxysubsubsection{\texorpdfstring{buildLx()}{buildLx()}}
+{\footnotesize\ttfamily std\+::string Lagrange\+Base\+::build\+Lx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+builds lagrange coefficient \$\$\+L\+\_\+i\$\$ string representation 
+\begin{DoxyParams}{Parameters}
+{\em i} & index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coefficient representation 
+\end{DoxyReturn}
+\Hypertarget{classLagrangeBase_ace572df22ab5e6cda086aec10cd3fbe4}\label{classLagrangeBase_ace572df22ab5e6cda086aec10cd3fbe4} 
+\index{LagrangeBase@{LagrangeBase}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!LagrangeBase@{LagrangeBase}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Lagrange\+Base\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Evaluates the lagrange base 
+\begin{DoxyParams}{Parameters}
+{\em in} & values to evaluate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+interpolated values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPolynomialBase_a7bbf28d9cc1bd42019c07c8af297563b}{Polynomial\+Base}}.
+
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+\Hypertarget{classLagrangeBase_a56f2ac80cd5872fc9438283ae5460ed2}\label{classLagrangeBase_a56f2ac80cd5872fc9438283ae5460ed2} 
+\index{LagrangeBase@{LagrangeBase}!Function@{Function}}
+\index{Function@{Function}!LagrangeBase@{LagrangeBase}}
+\doxysubsubsection{\texorpdfstring{Function()}{Function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string Lagrange\+Base\+::\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+Builds string representation in lagrange base \begin{DoxyReturn}{Returns}
+representational string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPolynomialBase_a7c5cff1055e525bd01ab24cf39bf9ed5}{Polynomial\+Base}}.
+
+\Hypertarget{classLagrangeBase_a4a8130da124cbc7cde51567d2c109f26}\label{classLagrangeBase_a4a8130da124cbc7cde51567d2c109f26} 
+\index{LagrangeBase@{LagrangeBase}!GetCoefficient@{GetCoefficient}}
+\index{GetCoefficient@{GetCoefficient}!LagrangeBase@{LagrangeBase}}
+\doxysubsubsection{\texorpdfstring{GetCoefficient()}{GetCoefficient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Lagrange\+Base\+::\+Get\+Coefficient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{xk,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Computes i-\/th coefficient
+
+\$\$\+L\+\_\+i(x) = \textbackslash{}prod\+\_\+\{j=0, j\textbackslash{}neq i\}\texorpdfstring{$^\wedge$}{\string^}\{n\} \textbackslash{}frac\{x-\/x\+\_\+j\}\{x\+\_\+i-\/x\+\_\+j\}, \textbackslash{}forall i=0, \textbackslash{}dots, n\$\$ 
+\begin{DoxyParams}{Parameters}
+{\em xk} & current value \$\$x\+\_\+k\$\$ \\
+\hline
+{\em i} & index i \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coefficient value 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classLagrangeBase_aa2ab424392d5406ff753233818e20fc6}\label{classLagrangeBase_aa2ab424392d5406ff753233818e20fc6} 
+\index{LagrangeBase@{LagrangeBase}!x@{x}}
+\index{x@{x}!LagrangeBase@{LagrangeBase}}
+\doxysubsubsection{\texorpdfstring{x}{x}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ Lagrange\+Base\+::x\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\$\$x\+\_\+i\$\$ Support values 
+
+\Hypertarget{classLagrangeBase_aabccb7239c0da02245eb9a9f5e4ce243}\label{classLagrangeBase_aabccb7239c0da02245eb9a9f5e4ce243} 
+\index{LagrangeBase@{LagrangeBase}!y@{y}}
+\index{y@{y}!LagrangeBase@{LagrangeBase}}
+\doxysubsubsection{\texorpdfstring{y}{y}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ Lagrange\+Base\+::y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\$\$y\+\_\+i\$\$ Support values evaluated with the function 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/analysis/\mbox{\hyperlink{SupportValues_8h}{Support\+Values.\+h}}\end{DoxyCompactItemize}

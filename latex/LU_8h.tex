@@ -1,0 +1,42 @@
+\doxysection{include/math/numerics/lin\+\_\+alg/\+LU.h File Reference}
+\hypertarget{LU_8h}{}\label{LU_8h}\index{include/math/numerics/lin\_alg/LU.h@{include/math/numerics/lin\_alg/LU.h}}
+{\ttfamily \#include "{}../../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::pair}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{unsigned}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} $>$ $>$ \mbox{\hyperlink{LU_8h_a038dcb2cb21184a74721f04644287d16}{LU}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&A)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+implements LU decomposition, places L and U in resulting matrix
+
+\$\$ A = L \textbackslash{}cdot U \$\$ \$\$ L = \textbackslash{}begin\{pmatrix\} 1\& 0\& 0\& ... \textbackslash{}\textbackslash{} l\+\_\+\{2,1\}\& 1\& 0\& ... \textbackslash{}\textbackslash{} l\+\_\+\{3,1\}\& l\+\_\+\{3,2\}\& 1, ... \textbackslash{}\textbackslash{} ... \textbackslash{}\textbackslash{} l\+\_\+\{m,1\}\& ... \textbackslash{}end\{pmatrix\} \$\$ \$\$ U = \textbackslash{}begin\{pmatrix\} 0\& u\+\_\+\{1,2\}\& u\+\_\+\{1,3\}\& ...\& u\+\_\+\{1,n\}\textbackslash{}\textbackslash{} 0\& 0\& u\+\_\+\{2,3\}\& ...\& u\+\_\+\{2,n\}\textbackslash{}\textbackslash{} 0\& ...\& 0\& u\+\_\+\{m-\/1, n\}\textbackslash{}\textbackslash{} 0\& ...\& 0 \textbackslash{}end\{pmatrix\} \$\$ Result\+: \$\$L + U\$\$ LU decomposition
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{LU_8h}{math/numerics/lin\_alg/LU.h}}>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{LU_8h_a038dcb2cb21184a74721f04644287d16}\label{LU_8h_a038dcb2cb21184a74721f04644287d16} 
+\index{LU.h@{LU.h}!LU@{LU}}
+\index{LU@{LU}!LU.h@{LU.h}}
+\doxysubsubsection{\texorpdfstring{LU()}{LU()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::pair}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{unsigned}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} $>$ $>$ LU (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{A }\end{DoxyParamCaption})}
+
+LU-\/decomposition of A 
+\begin{DoxyParams}{Parameters}
+{\em A} & matrix to decompose \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+in-\/place decomposed matrix L+U 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2lin_alg_2TestLU_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+LU.\+cpp}}.\end{Desc}

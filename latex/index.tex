@@ -1,0 +1,134 @@
+\chapter{ds-\/cpp}
+\hypertarget{index}{}\label{index}\index{ds-\/cpp@{ds-\/cpp}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+C++ library for mathematical algorithms. ~\newline
+\hypertarget{index_autotoc_md18}{}\doxysection{\texorpdfstring{Current feature support}{Current feature support}}\label{index_autotoc_md18}
+
+\begin{DoxyItemize}
+\item Numerical Methods (extension {\ttfamily numerics})
+\begin{DoxyItemize}
+\item Solver for initial value problems of (stiff) ordinary differential equations (ode.\+h)
+\begin{DoxyItemize}
+\item Unified class for solvers (\doxylink{classODESolver}{ODESolver})
+\item Explicit Euler Method (\doxylink{ExplicitEuler_8h}{Explicit\+Euler.\+h})
+\item Explicit 5 step Runge-\/\+Kutta-\/\+Method (\doxylink{ode45_8h}{ode45.\+h})
+\item Trapezoid rule for odes (\doxylink{odeTrapez_8h}{ode\+Trapez.\+h})
+\item Backward differential formula (\doxylink{odeBDF2_8h}{ode\+BDF2.\+h})
+\end{DoxyItemize}
+\item Solver for systems of linear equations (\doxylink{gaussSeidel_8h}{gauss\+Seidel.\+h})
+\item Gauss-\/\+Jordan method to calculate inverse matrices (\doxylink{gaussJordan_8h}{gauss\+Jordan.\+h})
+\item QR-\/\+Decomposition of matrices (\doxylink{qr_8h}{qr.\+h})
+\item Singular Value Decomposition (SVD) (\doxylink{svd_8h}{svd.\+h})
+\item Fractals using numerical approximations (\doxylink{Fractals_8h}{Fractals.\+h})
+\begin{DoxyItemize}
+\item \doxylink{classNewtonFractal}{Newton\+Fractal}
+\item \doxylink{classMandelbrot}{Mandelbrot}
+\end{DoxyItemize}
+\item Newton method to approximate the zero-\/value for a given function based on an initial value \doxylink{newton_8h}{newton.\+h}
+\item \doxylink{classFunction}{Function} Interpolation/\+Approximation
+\begin{DoxyItemize}
+\item 1D Interpolation
+\begin{DoxyItemize}
+\item Polynomial Interpolation (\doxylink{classPolynomialBase}{Polynomial\+Base})
+\begin{DoxyItemize}
+\item \doxylink{classMonomBase}{Monom\+Base}
+\item \doxylink{classLagrangeBase}{Lagrange\+Base}
+\item \doxylink{classNewtonBase}{Newton\+Base}
+\end{DoxyItemize}
+\item \doxylink{classSpline}{Spline} Interpolation
+\begin{DoxyItemize}
+\item \doxylink{classSpline}{Spline}\+: implements Natural cubic spline, as well as a B-\/\+Spline capable of interpolating 3D values
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item 2D/3D Interpolation
+\begin{DoxyItemize}
+\item see \doxylink{classSpline}{Spline}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Differential calculus (\doxylink{Differentiation_8h}{Differentiation.\+h})
+\item Numerical Integration (\doxylink{Integration_8h}{Integration.\+h})
+\end{DoxyItemize}
+\item (classic) Statistics\+:
+\begin{DoxyItemize}
+\item \doxylink{Probability_8h}{Probability.\+h}
+\item \doxylink{Insurance_8h}{Insurance.\+h}
+\end{DoxyItemize}
+\item \doxylink{classPlot}{Plot} support (uses/requires gnuplot see \doxylink{include_2math_2visualization_2README_8md}{include/math/visualization/\+README.\+md} or \doxylink{Plot_8h}{Plot.\+h})
+\item Data Science\+:
+\begin{DoxyItemize}
+\item Classification\+:
+\begin{DoxyItemize}
+\item \doxylink{classNCC}{NCC}\+: Nearest Centroid \doxylink{classClassifier}{Classifier} (linear classifier) (\doxylink{NCC_8h}{NCC.\+h})
+\item \doxylink{classKNN}{KNN}\+: K Nearest Neighbor \doxylink{classClassifier}{Classifier} (non-\/linear classifier) (\doxylink{KNN_8h}{KNN.\+h})
+\end{DoxyItemize}
+\item Neural networks
+\begin{DoxyItemize}
+\item Feed Forward NNs
+\begin{DoxyItemize}
+\item \doxylink{classPerceptron}{Perceptron} classifier ({\ttfamily \doxylink{classPerceptron}{Perceptron}})
+\item Adaline Neuron \doxylink{classClassifier}{Classifier}
+\begin{DoxyItemize}
+\item using gradient decent method ({\ttfamily \doxylink{classAdalineGD}{Adaline\+GD}})
+\item using statistics gradient decent method ({\ttfamily \doxylink{classAdalineSGD}{Adaline\+SGD}})
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{index_autotoc_md19}{}\doxyparagraph{\texorpdfstring{Build requirements}{Build requirements}}\label{index_autotoc_md19}
+{\ttfamily gcc, cmake, clang}\hypertarget{index_autotoc_md20}{}\doxysection{\texorpdfstring{Installation}{Installation}}\label{index_autotoc_md20}
+
+\begin{DoxyEnumerate}
+\item Download repository {\ttfamily git clone git@github.\+com\+:/philsupertramp/ds.cpp}
+\item Integration into your project
+\end{DoxyEnumerate}
+
+{\bfseries{Only CMake fully tested}} \hypertarget{index_autotoc_md21}{}\doxysubsubsection{\texorpdfstring{cmake\+:}{cmake:}}\label{index_autotoc_md21}
+in your {\ttfamily CMake\+Lists.\+txt} add 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{link\_libraries(math-\/lib)}
+\DoxyCodeLine{include\_directories(math/include)}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md22}{}\doxysection{\texorpdfstring{Usage}{Usage}}\label{index_autotoc_md22}
+After linking the library correctly one is able to include the main \doxylink{classMatrix}{Matrix} class 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Matrix_8h}{math/Matrix.h}}>}}
+
+\end{DoxyCode}
+ Specific implementations of algorithms are nested in subdirectories and can be imported on demand 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ++}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{KNN_8h}{math/ds/KNN.h}}>}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md23}{}\doxysection{\texorpdfstring{Extensions}{Extensions}}\label{index_autotoc_md23}
+The library is split into multiple content seperated module. Each module is nested in the root directory \href{/include/math}{\texttt{ {\ttfamily math/}}}. ~\newline
+ Each sub-\/directory contains a README file with instructions how to use the module and if it has dependencies.\hypertarget{index_autotoc_md24}{}\doxysubsubsection{\texorpdfstring{Adding extensions to library}{Adding extensions to library}}\label{index_autotoc_md24}
+To activate modules use the {\ttfamily MATH\+\_\+\+EXTENSIONS} compile argument.
+
+Example build command adding {\ttfamily numerics} module and building test suite\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir\ -\/p\ build}
+\DoxyCodeLine{cmake\ -\/DMATH\_EXTENSIONS=numerics\ -\/-\/build\ math/build\ -\/-\/\ -\/j\ 3\ .}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md25}{}\doxysection{\texorpdfstring{Development}{Development}}\label{index_autotoc_md25}
+Feel free to contribute to the project!\hypertarget{index_autotoc_md26}{}\doxysubsubsection{\texorpdfstring{How to contribute}{How to contribute}}\label{index_autotoc_md26}
+
+\begin{DoxyItemize}
+\item first time contributors
+\begin{DoxyItemize}
+\item fork the project
+\item create a PR based on your repository
+\end{DoxyItemize}
+\item known contributors
+\begin{DoxyItemize}
+\item create PR based on {\ttfamily master} branch
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+{\bfseries{NOTE\+: please run {\ttfamily make lint} prior to submitting your code!}} ~\newline
+ This requires {\ttfamily clang-\/format\texorpdfstring{$>$}{>}=11.\+0.\+0}\hypertarget{index_autotoc_md27}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md27}
+The project is under {\ttfamily MIT}-\/License see {\ttfamily LICENSE} for more\hypertarget{index_autotoc_md28}{}\doxysubsection{\texorpdfstring{Acknowledgements}{Acknowledgements}}\label{index_autotoc_md28}

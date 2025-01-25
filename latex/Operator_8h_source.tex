@@ -1,0 +1,106 @@
+\doxysection{Operator.\+h}
+\hypertarget{Operator_8h_source}{}\label{Operator_8h_source}\index{include/math/symb/Operator.h@{include/math/symb/Operator.h}}
+\mbox{\hyperlink{Operator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MathNode_8h}{MathNode.h}}"{}}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}{OperatorPriority}}\ \{}
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a16fb5a99927a6fe55a41cd184a41c55b}{OPClassUnknown}}\ \ \ \ \ =\ 0,}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a14a7e4e3f29c74875a1560a628f7e560}{OPClassLine}}\ \ \ \ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7ad2cb6f029c9332ded1b1359c5021aea5}{OPClassDot}}\ \ \ \ \ \ \ \ \ =\ 2,}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a39530fd3bfb1fee73f2d1f8e08b26078}{OPClassPow}}\ \ \ \ \ \ \ \ \ =\ 3,}
+\DoxyCodeLine{00020\ \ \ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7acb85e0b74531a7513ce7efbd0982e893}{OPClassParentheses}}\ =\ 4,}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a48873ec61a22f8057aeeb35a848e52da}{OPClassFunction}}\ \ \ \ =\ 5,}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{OperatorType}}\ \{}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576}{TYPE\_ADDITION}}\ \ \ \ \ \ \ \ \ \ =\ 0,\ \textcolor{comment}{//\ ConnectionType\_Dual}}
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a7637e5c33286f4e519ec1622c113e273}{TYPE\_SUBTRACTION}}\ \ \ \ \ \ \ =\ 1,\ \textcolor{comment}{//\ ConnectionType\_Dual}}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40c6b3a7d7ccf0fb358be439f7a969d9}{TYPE\_MULTIPLICATION}}\ \ \ \ =\ 2,\ \textcolor{comment}{//\ ConnectionType\_Dual}}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40d27ed340959efbbe20f81dc93028fb}{TYPE\_DIVISION}}\ \ \ \ \ \ \ \ \ \ =\ 3,\ \textcolor{comment}{//\ ConnectionType\_Dual}}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a234eaa29e4af2f0d4711216c296a6445}{TYPE\_POWER}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 4,\ \textcolor{comment}{//\ ConnectionType\_Dual}}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117adb06169322e6eae6db269eab60a12117}{TYPE\_PARENTHESES\_OPEN}}\ \ =\ 5,\ \textcolor{comment}{//\ ConnectionType\_None}}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117aca16c2cd01b23b65503c291f19a8235c}{TYPE\_PARENTHESES\_CLOSE}}\ =\ 6,\ \textcolor{comment}{//\ ConnectionType\_None}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2e}{OperatorValue}}\ :\ \textcolor{keywordtype}{char}\ \{}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea0f0b1eeb14adb11a5f39fb471f3ac52c}{VALUE\_ADDITION}}\ =\ \textcolor{charliteral}{'+'},}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2eab7eb88eb1f8cc909905bd1890b093599}{VALUE\_SUBTRACTION}}\ =\ \textcolor{charliteral}{'-\/'},}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4206b2e10138126515fc5c585fd39912}{VALUE\_MULTIPLICATION}}\ =\ \textcolor{charliteral}{'*'},}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{//\ l\ /\ r}}
+\DoxyCodeLine{00048\ \ \ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea63579227fd6e6d1bb6ee75015b18eb56}{VALUE\_DIVISION}}\ =\ \textcolor{charliteral}{'/'},}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea2826b73297c6ccf5e8f8b74f3ce39f6b}{VALUE\_POWER}}\ =\ \textcolor{charliteral}{'\string^'},}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4e1a812af2c01c4dc422c5bbd055caa9}{VALUE\_PARENTHESES\_OPEN}}\ =\ \textcolor{charliteral}{'('},}
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea28e6bebd88b6bb7db193e4e0e2624b13}{VALUE\_PARENTHESES\_CLOSE}}\ =\ \textcolor{charliteral}{')'},}
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classOperator}{Operator}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classMathNode}{MathNode}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ std::function<\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double})>\ \mbox{\hyperlink{classOperator_aa1053c93ac197de3d97d527ce54c6992}{op}};}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}{OperatorPriority}}\ \mbox{\hyperlink{classOperator_aac3650047650adcb082c21b2a5bdfb1c}{priority}};}
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{classOperator_ad483de0fdafcc9ff8b060b07a0bc41ba}{Operator}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}},\ std::function<\textcolor{keywordtype}{double}(\textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double})>\ fun,\ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}{OperatorPriority}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{operatorPriority}})}
+\DoxyCodeLine{00074\ \ \ \ \ :\ \mbox{\hyperlink{classMathNode}{MathNode}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})}
+\DoxyCodeLine{00075\ \ \ \ \ ,\ \mbox{\hyperlink{classOperator_aa1053c93ac197de3d97d527ce54c6992}{op}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std}}::\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{move}}(fun))}
+\DoxyCodeLine{00076\ \ \ \ \ ,\ \mbox{\hyperlink{classOperator_aac3650047650adcb082c21b2a5bdfb1c}{priority}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{operatorPriority}})\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classMathNode_ab70eeffac4cad37de01dc063eeb93d8c}{type}}\ =\ \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea1c144f8bf59ab742c4408ec393602d02}{MathNodeType::NodeType\_Operator}};}
+\DoxyCodeLine{00078\ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{classOperator_ad091ebe59393f33035c648995c331799}{Operator}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classOperator}{Operator}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{other}})}
+\DoxyCodeLine{00085\ \ \ \ \ :\ \mbox{\hyperlink{classMathNode}{MathNode}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{other}})\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{classOperator_aa1053c93ac197de3d97d527ce54c6992}{op}}\ \ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{other}}.op;}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{classOperator_aac3650047650adcb082c21b2a5bdfb1c}{priority}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{other}}.priority;}
+\DoxyCodeLine{00088\ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ [[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nodiscard}}]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classOperator_ab60d42c50454ab1e8b21aabc03bd04e3}{Evaluate}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classOperator_aac3650047650adcb082c21b2a5bdfb1c}{priority}}\ ==\ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7acb85e0b74531a7513ce7efbd0982e893}{OPClassParentheses}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMathNode_a7246ecf47bdb68471202f2c725cb41e4}{left}}-\/>Evaluate();\ \}}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{assert}}(\mbox{\hyperlink{classMathNode_a7246ecf47bdb68471202f2c725cb41e4}{left}}\ !=\ \textcolor{keyword}{nullptr}\ \&\&\ \mbox{\hyperlink{classMathNode_af81f7d62cd9008544aa999c6a1c55934}{right}}\ !=\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classOperator_aa1053c93ac197de3d97d527ce54c6992}{op}}(\mbox{\hyperlink{classMathNode_a7246ecf47bdb68471202f2c725cb41e4}{left}}-\/>Evaluate(),\ \mbox{\hyperlink{classMathNode_af81f7d62cd9008544aa999c6a1c55934}{right}}-\/>Evaluate());}
+\DoxyCodeLine{00098\ \ \ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00106\ std::shared\_ptr<Operator>\ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{GenerateOperator}}(\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{OperatorType}}\ type);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFunction}{Function}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classOperator}{Operator}}}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{classFunction_aed501e2ece820e5e66a513486958dcc6}{Function}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}},\ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{double}(\textcolor{keywordtype}{double})>\&\ fun)}
+\DoxyCodeLine{00126\ \ \ \ \ :\ \mbox{\hyperlink{classOperator}{Operator}}(}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}},\ [fun](\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}},\ [[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{maybe\_unused}}]]\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}\ b)\ \{\ \textcolor{keywordflow}{return}\ fun(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \},\ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a48873ec61a22f8057aeeb35a848e52da}{OperatorPriority::OPClassFunction}})\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{classMathNode_af971f001f9f6b2478dd28d9fa752c5e9}{connectionType}}\ =\ \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747abae8682481e267e0dcf54a590bb9b93f46}{NodeConnectionType::ConnectionType\_Left}};}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{classMathNode_ab70eeffac4cad37de01dc063eeb93d8c}{type}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea521488c28905dded8d5866bbb41852df}{MathNodeType::NodeType\_Functional}};}
+\DoxyCodeLine{00130\ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00139\ \ \ \mbox{\hyperlink{classFunction_abb23d3b78d3d3e49f8ec7fd8279af6ca}{Function}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}},\ \textcolor{keyword}{const}\ std::function<\textcolor{keywordtype}{double}(\textcolor{keywordtype}{double},\ \textcolor{keywordtype}{double})>\&\ fun)}
+\DoxyCodeLine{00140\ \ \ \ \ :\ \mbox{\hyperlink{classOperator}{Operator}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}},\ fun,\ \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}{OperatorPriority}}::\mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a48873ec61a22f8057aeeb35a848e52da}{OPClassFunction}})\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{classMathNode_af971f001f9f6b2478dd28d9fa752c5e9}{connectionType}}\ =\ \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747aba7e556deecd3a56edd17baf888f865259}{NodeConnectionType::ConnectionType\_Dual}};}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{classMathNode_ab70eeffac4cad37de01dc063eeb93d8c}{type}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefea521488c28905dded8d5866bbb41852df}{MathNodeType::NodeType\_Functional}};}
+\DoxyCodeLine{00143\ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}This\ can't\ be\ parsed\ yet!!!!!!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00144\ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ [[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nodiscard}}]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classFunction_a519eb048f3d3431d14fee138fcae67a6}{Evaluate}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classMathNode_af971f001f9f6b2478dd28d9fa752c5e9}{connectionType}}\ ==\ \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747abae8682481e267e0dcf54a590bb9b93f46}{NodeConnectionType::ConnectionType\_Left}})\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classOperator_aa1053c93ac197de3d97d527ce54c6992}{op}}(\mbox{\hyperlink{classMathNode_a7246ecf47bdb68471202f2c725cb41e4}{left}}-\/>Evaluate(),\ 0.0);}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{NAN}};}
+\DoxyCodeLine{00154\ \ \ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \textcolor{comment}{//\ TODO:\ add\ beautified\ string\ representation}}
+\DoxyCodeLine{00157\ \};}
+\DoxyCodeLine{00161\ \textcolor{keyword}{const}\ std::map<std::string,\ std::shared\_ptr<Function>>\ \mbox{\hyperlink{Operator_8h_a99dcd69d67fa481b0e277d8e9fd68e09}{DefaultFunctions}}\ =\ \{}
+\DoxyCodeLine{00162\ \ \ \{\ \textcolor{stringliteral}{"{}sqrt"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}sqrt"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{sqrt}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
+\DoxyCodeLine{00163\ \ \ \{\ \textcolor{stringliteral}{"{}log"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}log"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{log}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
+\DoxyCodeLine{00164\ \ \ \{\ \textcolor{stringliteral}{"{}sin"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}sin"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{sin}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
+\DoxyCodeLine{00165\ \ \ \{\ \textcolor{stringliteral}{"{}cos"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}cos"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{cos}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
+\DoxyCodeLine{00166\ \};}
+\DoxyCodeLine{00172\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{Operator_8h_aa26df455b0a2615c65df309cb038167f}{isFunction}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}});}
+\DoxyCodeLine{00173\ }
+
+\end{DoxyCode}

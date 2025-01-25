@@ -1,0 +1,112 @@
+\doxysection{numerics/ode/\+Test\+ODE45.\+cpp}
+\hypertarget{numerics_2ode_2TestODE45_8cpp-example}{}\label{numerics_2ode_2TestODE45_8cpp-example}This is an example on how to use ODE45.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{ODESolver_8h}{math/numerics/ode/ODESolver.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }ODE45TestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestOde45()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ ode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ []([[maybe\_unused]]\ \textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\ \{\ \textcolor{keywordflow}{return}\ y;\ \};}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ tInterval\ =\ \{\ 0.0,\ 2.0\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ y0\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{\ \{\ 1.0\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0.1;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ foo\ =\ \mbox{\hyperlink{classODESolver_a40f49bf4336f370033bce634a40f30d3}{ODESolver::ode45}}(ode,\ tInterval,\ y0,\ \{\ h\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ yResult\ =\ foo.\mbox{\hyperlink{structODEResult_aaef028566259040421ab1b73443c6f3b}{Y}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ tResult\ =\ foo.T;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ yResult;}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ tExpected[21]\ =\ \{\ 0.0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.100000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.200000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.300000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.400000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.500000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.600000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.700000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.800000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.900000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.000000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.100000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.200000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.300000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.400000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.500000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.600000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.700000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.800000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1.900000000000000,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2.000000000000000\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ yExpected[21]\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ 1.000000000000000,\ 1.105170918333333,\ 1.221402758729743,\ 1.349858808520217,\ 1.491824699032628,\ 1.648721272622238,}
+\DoxyCodeLine{\ \ \ \ \ \ 1.822118802939620,\ 2.013752710757214,\ 2.225540932643790,\ 2.459603116318360,\ 2.718281834797091,\ 3.004166031651519,}
+\DoxyCodeLine{\ \ \ \ \ \ 3.320116932026115,\ 3.669296678741350,\ 4.055199980082028,\ 4.481689086012570,\ 4.953032442872989,\ 5.473947413424735,}
+\DoxyCodeLine{\ \ \ \ \ \ 6.049647489802989,\ 6.685894471898514,\ 7.389056133387838,}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 21;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(tExpected[i],\ tResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(yExpected[i],\ yResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestOde45RB()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ ode\ =\ []([[maybe\_unused]]\ \textcolor{keywordtype}{double}\ t,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ result(0,\ y.rows(),\ y.columns());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ alpha\ =\ 0.25;}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ beta\ \ =\ -\/0.01;}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ gamma\ =\ -\/1.0;}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keyword}{auto}\ delta\ =\ 0.01;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ result(0,\ 0)\ =\ alpha\ *\ y(0,\ 0)\ +\ beta\ *\ y(0,\ 0)\ *\ y(0,\ 1);}
+\DoxyCodeLine{\ \ \ \ \ \ result(0,\ 1)\ =\ gamma\ *\ y(0,\ 1)\ +\ delta\ *\ y(0,\ 0)\ *\ y(0,\ 1);}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ std::vector<double>\ tInterval\ =\ \{\ 0.0,\ 5.0\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ y0\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{\ \{\ 80,\ 30\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1.0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ foo\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{ode45_8h_a88090203efe19f71864a54a7158c36b4}{ODE45}}(ode,\ tInterval,\ y0,\ h);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ yResult\ =\ foo.Y;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ tResult\ =\ foo.T;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ yExpected[6][2]\ =\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 80.0000,\ 30.0000\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 78.360998725243107,\ 24.268754512660799\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 80.847619520187592,\ 19.730492689186242\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 86.622395662576622,\ 16.728217389452837\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 94.917043272614094,\ 15.226418795854334\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \{\ 104.81087505230401,\ 15.192897445498955\ \},}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ tExpected[6]\ =\ \{\ 0,\ 1,\ 2,\ 3,\ 4,\ 5\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 6;\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(tExpected[i],\ tResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(yExpected[i][0],\ yResult(i,\ 0));}
+\DoxyCodeLine{\ \ \ \ \ \ AssertEqual(yExpected[i][1],\ yResult(i,\ 1));}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ TestOde45();}
+\DoxyCodeLine{\ \ \ \ TestOde45RB();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ ODE45TestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

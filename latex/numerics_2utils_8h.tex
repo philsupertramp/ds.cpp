@@ -1,0 +1,280 @@
+\doxysection{include/math/numerics/utils.h File Reference}
+\hypertarget{numerics_2utils_8h}{}\label{numerics_2utils_8h}\index{include/math/numerics/utils.h@{include/math/numerics/utils.h}}
+{\ttfamily \#include "{}../\+Matrix.\+h"{}}\newline
+{\ttfamily \#include "{}../sorting.\+h"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{define}} \mbox{\hyperlink{numerics_2utils_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}{EPS}}~1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/8
+\begin{DoxyCompactList}\small\item\em accuracy of calculated results \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350}{linspace}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} start, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{end}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{unsigned}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{long}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+\_\+elements}})
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{numerics_2utils_8h_af5994908a659705a385de5bee89039fc}{zeros}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} rows, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} columns, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} elements=1)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{numerics_2utils_8h_ae4d3442586cdfc0c5468be49ff561bcd}{zerosV}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} rows)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{numerics_2utils_8h_aaf883b485905c5bcd46724b44a12e094}{ones}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} rows, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} columns=1, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} elements=1)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} rows, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} columns=0)
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{numerics_2utils_8h_aa7eb7984fa32d548f6a24b4d440c919a}{tridiag}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} rows, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} columns, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} left, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{center}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} right)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{numerics_2utils_8h_aa1a08a76ee49f8a9717e4aa127984987}{norm}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{numerics_2utils_8h_a62b90f37912a0050991dfb3098e1f645}{norm}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{axis}})
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} $>$ \mbox{\hyperlink{numerics_2utils_8h_a3941c57711e2df110722731c03ceb7b5}{argsort}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} $>$ \mbox{\hyperlink{numerics_2utils_8h_a7f1911548355817103d492232e6eaa8d}{nonzero}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::function}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&)$>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{validation}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x)
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T $>$ }\\\mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{numerics_2utils_8h_a32df81a2d10f9099cacedbbd378873bb}{diag}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{numerics_2utils_8h}{math/numerics/utils.h}}>}}
+
+\end{DoxyCode}
+
+
+Numerical helper methods.
+
+This header includes numerical methods used to simplify computation of numerical algorithms. It mostly contains generator like functions to generate a specific kind of {\ttfamily \doxylink{classMatrix}{Matrix}} 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{numerics_2utils_8h_a6ebf6899d6c1c8b7b9d09be872c05aae}\label{numerics_2utils_8h_a6ebf6899d6c1c8b7b9d09be872c05aae} 
+\index{utils.h@{utils.h}!EPS@{EPS}}
+\index{EPS@{EPS}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{EPS}{EPS}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{define}} EPS~1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/8}
+
+
+
+accuracy of calculated results 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{numerics_2utils_8h_a3941c57711e2df110722731c03ceb7b5}\label{numerics_2utils_8h_a3941c57711e2df110722731c03ceb7b5} 
+\index{utils.h@{utils.h}!argsort@{argsort}}
+\index{argsort@{argsort}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{argsort()}{argsort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} $>$ argsort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in }\end{DoxyParamCaption})}
+
+Computes indices of ordered vector. Orders vector, than builds resulting vector by selecting indices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & given matrix to sort \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+indices of sorted version of given matrix 
+\end{DoxyReturn}
+\Hypertarget{numerics_2utils_8h_a32df81a2d10f9099cacedbbd378873bb}\label{numerics_2utils_8h_a32df81a2d10f9099cacedbbd378873bb} 
+\index{utils.h@{utils.h}!diag@{diag}}
+\index{diag@{diag}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{diag()}{diag()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T $>$ \\
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ diag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \&}]{in }\end{DoxyParamCaption})}
+
+Method to extract diagonal elements of given matrix into dedicated vector
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & given matrix to extract diagonal elements from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of diagonal elements 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2lin_alg_2TestSVD_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+SVD.\+cpp}}.\end{Desc}
+\Hypertarget{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}\label{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01} 
+\index{utils.h@{utils.h}!eye@{eye}}
+\index{eye@{eye}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{eye()}{eye()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ eye (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{rows,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{columns = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+creates unit matrix of dimension rows, columns 
+\begin{DoxyParams}{Parameters}
+{\em rows} & \\
+\hline
+{\em columns} & if 0, then columns = rows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{TestMatrix_8cpp-example}{Test\+Matrix.\+cpp}}, \mbox{\hyperlink{numerics_2TestUtils_8cpp-example}{numerics/\+Test\+Utils.\+cpp}}, \mbox{\hyperlink{numerics_2lin_alg_2TestGaussSeidel_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+Gauss\+Seidel.\+cpp}}, and \mbox{\hyperlink{numerics_2lin_alg_2TestSVD_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+SVD.\+cpp}}.\end{Desc}
+\Hypertarget{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350}\label{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350} 
+\index{utils.h@{utils.h}!linspace@{linspace}}
+\index{linspace@{linspace}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{linspace()}{linspace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ linspace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{start,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{end,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{unsigned}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{long}}}]{num\+\_\+elements }\end{DoxyParamCaption})}
+
+generates a vector with equidistant values, \mbox{[}start\+:(end-\/start)/num\+\_\+elements\+:end\mbox{]} 
+\begin{DoxyParams}{Parameters}
+{\em start} & start value \\
+\hline
+{\em end} & end value \\
+\hline
+{\em num\+\_\+elements} & number of elements within the resulting vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of equidistant values from start to end 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2TestUtils_8cpp-example}{numerics/\+Test\+Utils.\+cpp}}, \mbox{\hyperlink{numerics_2analysis_2TestDifferentiation_8cpp-example}{numerics/analysis/\+Test\+Differentiation.\+cpp}}, \mbox{\hyperlink{numerics_2analysis_2TestSupportValues_8cpp-example}{numerics/analysis/\+Test\+Support\+Values.\+cpp}}, \mbox{\hyperlink{numerics_2lin_alg_2TestSVD_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+SVD.\+cpp}}, and \mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+\Hypertarget{numerics_2utils_8h_a7f1911548355817103d492232e6eaa8d}\label{numerics_2utils_8h_a7f1911548355817103d492232e6eaa8d} 
+\index{utils.h@{utils.h}!nonzero@{nonzero}}
+\index{nonzero@{nonzero}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{nonzero()}{nonzero()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} $>$ nonzero (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::function}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&)$>$ \&}]{validation,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x }\end{DoxyParamCaption})}
+
+Index-\/\+Getter for validated values
+
+Examples\+: validation function x\texorpdfstring{$<$}{<}=0 returns indices of values \texorpdfstring{$<$}{<}= 0
+
+
+\begin{DoxyParams}{Parameters}
+{\em validation} & validation function, this method validates your data \\
+\hline
+{\em x} & vector to test \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index vectors of values true to the validation function 
+\end{DoxyReturn}
+\Hypertarget{numerics_2utils_8h_aa1a08a76ee49f8a9717e4aa127984987}\label{numerics_2utils_8h_aa1a08a76ee49f8a9717e4aa127984987} 
+\index{utils.h@{utils.h}!norm@{norm}}
+\index{norm@{norm}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in }\end{DoxyParamCaption})}
+
+Calculates the p=2-\/Norm for a given matrix
+
+\[
+ \sqrt{\sum x_i^2}
+\]
+
+In 2D this is equal to the pythagorean theorem.
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input matrix to calculate norm of \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2-\/norm of given matrix 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2TestUtils_8cpp-example}{numerics/\+Test\+Utils.\+cpp}}, and \mbox{\hyperlink{statistics_2TestProbability_8cpp-example}{statistics/\+Test\+Probability.\+cpp}}.\end{Desc}
+\Hypertarget{numerics_2utils_8h_a62b90f37912a0050991dfb3098e1f645}\label{numerics_2utils_8h_a62b90f37912a0050991dfb3098e1f645} 
+\index{utils.h@{utils.h}!norm@{norm}}
+\index{norm@{norm}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{norm()}{norm()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ norm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{axis }\end{DoxyParamCaption})}
+
+Helper method to calculate 2-\/Norm on given axis
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input matrix to calculate norm(s) of \\
+\hline
+{\em axis} & along which to calculate norm on (options\+: 0 (row-\/wise), 1 (column-\/wise)) @returnss norm on given axis \\
+\hline
+\end{DoxyParams}
+\Hypertarget{numerics_2utils_8h_aaf883b485905c5bcd46724b44a12e094}\label{numerics_2utils_8h_aaf883b485905c5bcd46724b44a12e094} 
+\index{utils.h@{utils.h}!ones@{ones}}
+\index{ones@{ones}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{ones()}{ones()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ ones (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{rows,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{columns = {\ttfamily 1},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{elements = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Generates a matrix with each element = 1 for given size 
+\begin{DoxyParams}{Parameters}
+{\em rows} & number rows for resulting matrix \\
+\hline
+{\em columns} & number columns for resulting matrix \\
+\hline
+{\em elements} & number of elements per cell \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rows x columns-\/\+Matrix with 1 as each value 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{ds_2preprocessing_2TestScaler_8cpp-example}{ds/preprocessing/\+Test\+Scaler.\+cpp}}, \mbox{\hyperlink{numerics_2TestUtils_8cpp-example}{numerics/\+Test\+Utils.\+cpp}}, \mbox{\hyperlink{numerics_2lin_alg_2TestSVD_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+SVD.\+cpp}}, and \mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+\Hypertarget{numerics_2utils_8h_aa7eb7984fa32d548f6a24b4d440c919a}\label{numerics_2utils_8h_aa7eb7984fa32d548f6a24b4d440c919a} 
+\index{utils.h@{utils.h}!tridiag@{tridiag}}
+\index{tridiag@{tridiag}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{tridiag()}{tridiag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ tridiag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{rows,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{columns,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{left,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{center,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{right }\end{DoxyParamCaption})}
+
+creates tri-\/diagonal-\/matrix with given values and dimensions 
+\begin{DoxyParams}{Parameters}
+{\em rows} & row dimension \\
+\hline
+{\em columns} & column dimension \\
+\hline
+{\em left} & left/lower diagonal element value \\
+\hline
+{\em center} & diagonal element value \\
+\hline
+{\em right} & right/upper diagonal element value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+tri-\/diagonal-\/matrix 
+\end{DoxyReturn}
+\Hypertarget{numerics_2utils_8h_af5994908a659705a385de5bee89039fc}\label{numerics_2utils_8h_af5994908a659705a385de5bee89039fc} 
+\index{utils.h@{utils.h}!zeros@{zeros}}
+\index{zeros@{zeros}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ zeros (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{rows,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{columns,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{elements = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+Generates a matrix with each element = 0 for given size 
+\begin{DoxyParams}{Parameters}
+{\em rows} & number rows for resulting matrix \\
+\hline
+{\em columns} & number columns for resulting matrix \\
+\hline
+{\em elements} & number of elements per cell \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+rows x columns-\/\+Matrix with 0 as each value 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{ds_2preprocessing_2TestScaler_8cpp-example}{ds/preprocessing/\+Test\+Scaler.\+cpp}}, \mbox{\hyperlink{numerics_2TestUtils_8cpp-example}{numerics/\+Test\+Utils.\+cpp}}, and \mbox{\hyperlink{plot_2TestPlot_8cpp-example}{plot/\+Test\+Plot.\+cpp}}.\end{Desc}
+\Hypertarget{numerics_2utils_8h_ae4d3442586cdfc0c5468be49ff561bcd}\label{numerics_2utils_8h_ae4d3442586cdfc0c5468be49ff561bcd} 
+\index{utils.h@{utils.h}!zerosV@{zerosV}}
+\index{zerosV@{zerosV}!utils.h@{utils.h}}
+\doxysubsubsection{\texorpdfstring{zerosV()}{zerosV()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ zerosV (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{rows }\end{DoxyParamCaption})}
+
+Generates a matrix with each element = 0 for given size 
+\begin{DoxyParams}{Parameters}
+{\em rows} & number of rows in resulting vetor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+zero-\/vector of size rows 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2TestUtils_8cpp-example}{numerics/\+Test\+Utils.\+cpp}}.\end{Desc}

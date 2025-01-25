@@ -1,0 +1,255 @@
+\doxysection{Decision\+Tree Class Reference}
+\hypertarget{classDecisionTree}{}\label{classDecisionTree}\index{DecisionTree@{DecisionTree}}
+
+
+{\ttfamily \#include $<$Decision\+Tree.\+h$>$}
+
+Inheritance diagram for Decision\+Tree\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classDecisionTree}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDecisionTree_af04b0eacf726e5ad4acb2a195c61aea6}{Decision\+Tree}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{min\+\_\+samples\+\_\+per\+\_\+split}}=2, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{max\+\_\+depth}}=10, \mbox{\hyperlink{DecisionTree_8h_ad27b83d37741cc5afd32dab8738e4a79}{Impurity\+Measure}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{decision\+\_\+method}}=\mbox{\hyperlink{DecisionTree_8h_ad27b83d37741cc5afd32dab8738e4a79ad98fff1a06cd7c914cb9c4776045a6c2}{Impurity\+Measure\+::\+GINI}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDecisionTree_ab5bdd809891b26afecb2906e51e56f3c}{impurity}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDecisionTree_a70b5fdacbf9ac8757a02529721231e82}{information\+\_\+gain}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{parent}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{left\+\_\+child}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{right\+\_\+child}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{struct}} \mbox{\hyperlink{structDataSplit}{Data\+Split}} \mbox{\hyperlink{classDecisionTree_aae7f14b073a786531e6c09922f9880b4}{best\+\_\+split}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\item 
+\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDecisionTree_a569b48c520eb5b72a857170fccc791af}{Get\+Root\+Node}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classDecisionTree_ac4a9745f215b98d1d1e99bfada4f892d}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classDecisionTree_a5be795faaf93df472927196e01b6e505}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classDecisionTree_a8a6df0f826c735c1bf8cd3af1d9b0615}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDecisionTree_a821f49ab54e910f33941360a891b67fc}{build\+\_\+tree}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{depth}}=0)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDecisionTree_ad6d9caca64c5ff9d73e710e86b52ed46}{\+\_\+predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{node}})
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classDecisionTree_adb478af2bbf745ff208a4e666ef2b957}{render\+\_\+node}} (std\+::ostream \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{ostr}}, \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{node}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{side}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{depth}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{DecisionTree_8h_ad27b83d37741cc5afd32dab8738e4a79}{Impurity\+Measure}} \mbox{\hyperlink{classDecisionTree_ac63504a08dc5485319f740609dff4604}{\+\_\+decision\+\_\+method}}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classDecisionTree_abeb807ae76aa21e06a39b693aeed7310}{\+\_\+max\+\_\+depth}} = 10
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classDecisionTree_aac47d5728383a34fe42eb9e4fdf0ff83}{\+\_\+min\+\_\+samples\+\_\+per\+\_\+split}} = 2
+\item 
+\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDecisionTree_af11dfd0fec8b8c40236b072fd43c10e6}{base\+\_\+node}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classDecisionTree_a35aa0df69484f7d6194caef5b61219f6}{operator$<$$<$}} (std\+::ostream \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{ostr}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classDecisionTree}{Decision\+Tree}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{tree}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Decision (Bi-\/)Tree implementation
+\begin{DoxyItemize}
+\item The constructor allows providing a decision\+\_\+method for the impurity measure that is used when selecting a good split
+\item The {\itshape information\+\_\+gain(parent, left\+\_\+child, right\+\_\+child) calculates the information gain value of a split between a parent and two children}
+\item {\itshape The \+\_\+best\+\_\+split(\+X, y) function calculates the best splitting parameters for input features X and a target variable y
+\begin{DoxyItemize}
+\item It does so by iterating over every column in X and every thresold value in every column to find the optimal split using information gain
+\end{DoxyItemize}}
+\item {\itshape The \+\_\+build(\+X, y, depth) function recursively builds a decision tree until the data is \+\_\+non splittable}
+\item The fit(\+X, y) function calls the \doxylink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+build()} function and stores the built tree to the constructor
+\item The \+\_\+predict(x) function traverses the tree to classify a single instance
+\item The predict(\+X) function applies the \doxylink{classDecisionTree_ad6d9caca64c5ff9d73e710e86b52ed46}{\+\_\+predict()} function to every instance in matrix X 
+\end{DoxyItemize}
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDecisionTree_af04b0eacf726e5ad4acb2a195c61aea6}\label{classDecisionTree_af04b0eacf726e5ad4acb2a195c61aea6} 
+\index{DecisionTree@{DecisionTree}!DecisionTree@{DecisionTree}}
+\index{DecisionTree@{DecisionTree}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{DecisionTree()}{DecisionTree()}}
+{\footnotesize\ttfamily Decision\+Tree\+::\+Decision\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{min\+\_\+samples\+\_\+per\+\_\+split = {\ttfamily 2},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{max\+\_\+depth = {\ttfamily 10},  }\item[{\mbox{\hyperlink{DecisionTree_8h_ad27b83d37741cc5afd32dab8738e4a79}{Impurity\+Measure}}}]{decision\+\_\+method = {\ttfamily \mbox{\hyperlink{DecisionTree_8h_ad27b83d37741cc5afd32dab8738e4a79ad98fff1a06cd7c914cb9c4776045a6c2}{Impurity\+Measure\+::\+GINI}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDecisionTree_ad6d9caca64c5ff9d73e710e86b52ed46}\label{classDecisionTree_ad6d9caca64c5ff9d73e710e86b52ed46} 
+\index{DecisionTree@{DecisionTree}!\_predict@{\_predict}}
+\index{\_predict@{\_predict}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{\_predict()}{\_predict()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Decision\+Tree\+::\+\_\+predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Method to recursively traverse the tree to perform a prediction
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & input value(s) \\
+\hline
+{\em node} & the current node to evaluate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: prediction for given node 
+\end{DoxyReturn}
+\Hypertarget{classDecisionTree_aae7f14b073a786531e6c09922f9880b4}\label{classDecisionTree_aae7f14b073a786531e6c09922f9880b4} 
+\index{DecisionTree@{DecisionTree}!best\_split@{best\_split}}
+\index{best\_split@{best\_split}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{best\_split()}{best\_split()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{struct}} \mbox{\hyperlink{structDataSplit}{Data\+Split}} Decision\+Tree\+::best\+\_\+split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDecisionTree_a821f49ab54e910f33941360a891b67fc}\label{classDecisionTree_a821f49ab54e910f33941360a891b67fc} 
+\index{DecisionTree@{DecisionTree}!build\_tree@{build\_tree}}
+\index{build\_tree@{build\_tree}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{build\_tree()}{build\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} Decision\+Tree\+::build\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{depth = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+Method to recursively build decision tree nodes.
+
+Uses pruning to decide to split the data further. Class-\/\+Hyperparameters\+:
+\begin{DoxyItemize}
+\item max\+\_\+depth
+\item min\+\_\+samples\+\_\+per\+\_\+split
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & input data of current node \\
+\hline
+{\em y} & related class labels \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: A \doxylink{classDecisionNode}{Decision\+Node} instance holding the next node. 
+\end{DoxyReturn}
+\Hypertarget{classDecisionTree_ac4a9745f215b98d1d1e99bfada4f892d}\label{classDecisionTree_ac4a9745f215b98d1d1e99bfada4f892d} 
+\index{DecisionTree@{DecisionTree}!fit@{fit}}
+\index{fit@{fit}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{fit()}{fit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Decision\+Tree\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implements training algorithm 
+\begin{DoxyParams}{Parameters}
+{\em X} & array-\/like with the shape\+: \mbox{[}n\+\_\+samples, n\+\_\+features\mbox{]} \\
+\hline
+{\em y} & array-\/like with shape\+: \mbox{[}n\+\_\+samples, 1\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
+
+\Hypertarget{classDecisionTree_a569b48c520eb5b72a857170fccc791af}\label{classDecisionTree_a569b48c520eb5b72a857170fccc791af} 
+\index{DecisionTree@{DecisionTree}!GetRootNode@{GetRootNode}}
+\index{GetRootNode@{GetRootNode}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{GetRootNode()}{GetRootNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} Decision\+Tree\+::\+Get\+Root\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDecisionTree_ab5bdd809891b26afecb2906e51e56f3c}\label{classDecisionTree_ab5bdd809891b26afecb2906e51e56f3c} 
+\index{DecisionTree@{DecisionTree}!impurity@{impurity}}
+\index{impurity@{impurity}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{impurity()}{impurity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Decision\+Tree\+::impurity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{classDecisionTree_a70b5fdacbf9ac8757a02529721231e82}\label{classDecisionTree_a70b5fdacbf9ac8757a02529721231e82} 
+\index{DecisionTree@{DecisionTree}!information\_gain@{information\_gain}}
+\index{information\_gain@{information\_gain}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{information\_gain()}{information\_gain()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Decision\+Tree\+::information\+\_\+gain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{parent,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{left\+\_\+child,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{right\+\_\+child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Calculates the information gain of a set of values given a split of two children.
+
+Note\+: Pass your labels in here, not your input data!
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & super set of label values \\
+\hline
+{\em left\+\_\+child} & left split of parent set \\
+\hline
+{\em right\+\_\+child} & right split of parent set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+information gain of given split 
+\end{DoxyReturn}
+\Hypertarget{classDecisionTree_a5be795faaf93df472927196e01b6e505}\label{classDecisionTree_a5be795faaf93df472927196e01b6e505} 
+\index{DecisionTree@{DecisionTree}!predict@{predict}}
+\index{predict@{predict}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{predict()}{predict()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Decision\+Tree\+::predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Makes prediction for given input \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}{Predictor}}.
+
+\Hypertarget{classDecisionTree_adb478af2bbf745ff208a4e666ef2b957}\label{classDecisionTree_adb478af2bbf745ff208a4e666ef2b957} 
+\index{DecisionTree@{DecisionTree}!render\_node@{render\_node}}
+\index{render\_node@{render\_node}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{render\_node()}{render\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Decision\+Tree\+::render\+\_\+node (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}}]{node,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}}]{side,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{depth }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+\Hypertarget{classDecisionTree_a8a6df0f826c735c1bf8cd3af1d9b0615}\label{classDecisionTree_a8a6df0f826c735c1bf8cd3af1d9b0615} 
+\index{DecisionTree@{DecisionTree}!transform@{transform}}
+\index{transform@{transform}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{transform()}{transform()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Decision\+Tree\+::transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classPredictor_a341a4d9fc8af8f53a07089100b213a73}{Predictor}}.
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classDecisionTree_a35aa0df69484f7d6194caef5b61219f6}\label{classDecisionTree_a35aa0df69484f7d6194caef5b61219f6} 
+\index{DecisionTree@{DecisionTree}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{operator}}$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{ostr,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classDecisionTree}{Decision\+Tree}} \&}]{tree }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDecisionTree_ac63504a08dc5485319f740609dff4604}\label{classDecisionTree_ac63504a08dc5485319f740609dff4604} 
+\index{DecisionTree@{DecisionTree}!\_decision\_method@{\_decision\_method}}
+\index{\_decision\_method@{\_decision\_method}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{\_decision\_method}{\_decision\_method}}
+{\footnotesize\ttfamily \mbox{\hyperlink{DecisionTree_8h_ad27b83d37741cc5afd32dab8738e4a79}{Impurity\+Measure}} Decision\+Tree\+::\+\_\+decision\+\_\+method\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDecisionTree_abeb807ae76aa21e06a39b693aeed7310}\label{classDecisionTree_abeb807ae76aa21e06a39b693aeed7310} 
+\index{DecisionTree@{DecisionTree}!\_max\_depth@{\_max\_depth}}
+\index{\_max\_depth@{\_max\_depth}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{\_max\_depth}{\_max\_depth}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Decision\+Tree\+::\+\_\+max\+\_\+depth = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDecisionTree_aac47d5728383a34fe42eb9e4fdf0ff83}\label{classDecisionTree_aac47d5728383a34fe42eb9e4fdf0ff83} 
+\index{DecisionTree@{DecisionTree}!\_min\_samples\_per\_split@{\_min\_samples\_per\_split}}
+\index{\_min\_samples\_per\_split@{\_min\_samples\_per\_split}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{\_min\_samples\_per\_split}{\_min\_samples\_per\_split}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Decision\+Tree\+::\+\_\+min\+\_\+samples\+\_\+per\+\_\+split = 2\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{classDecisionTree_af11dfd0fec8b8c40236b072fd43c10e6}\label{classDecisionTree_af11dfd0fec8b8c40236b072fd43c10e6} 
+\index{DecisionTree@{DecisionTree}!base\_node@{base\_node}}
+\index{base\_node@{base\_node}!DecisionTree@{DecisionTree}}
+\doxysubsubsection{\texorpdfstring{base\_node}{base\_node}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDecisionNode}{Decision\+Node}}\texorpdfstring{$\ast$}{*} Decision\+Tree\+::base\+\_\+node\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/ds/\mbox{\hyperlink{DecisionTree_8h}{Decision\+Tree.\+h}}\end{DoxyCompactItemize}

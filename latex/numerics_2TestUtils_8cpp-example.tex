@@ -1,0 +1,111 @@
+\doxysection{numerics/\+Test\+Utils.\+cpp}
+\hypertarget{numerics_2TestUtils_8cpp-example}{}\label{numerics_2TestUtils_8cpp-example}This is an example on how to use the utils.\+h file.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{numerics_2utils_8h}{math/numerics/utils.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }NumUtilsTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestLinspace()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ vec\ =\ \mbox{\hyperlink{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350}{linspace}}(0,\ 1,\ 3);}
+\DoxyCodeLine{\ \ \ \ assert(vec(0,\ 0)\ ==\ 0);}
+\DoxyCodeLine{\ \ \ \ assert(vec(0,\ 1)\ ==\ 0.5);}
+\DoxyCodeLine{\ \ \ \ assert(vec(0,\ 2)\ ==\ 1.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ vec\ =\ \mbox{\hyperlink{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350}{linspace}}(1,\ 2,\ 3);}
+\DoxyCodeLine{\ \ \ \ assert(vec(0,\ 0)\ ==\ 1.0);}
+\DoxyCodeLine{\ \ \ \ assert(vec(0,\ 1)\ ==\ 1.5);}
+\DoxyCodeLine{\ \ \ \ assert(vec(0,\ 2)\ ==\ 2.0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestZeros()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_af5994908a659705a385de5bee89039fc}{zeros}}(2,\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.rows(),\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.columns(),\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ A.rows();\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ A.columns();\ ++j)\ \{\ AssertEqual(A(i,\ j),\ 0.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestOnes()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_aaf883b485905c5bcd46724b44a12e094}{ones}}(2,\ 3);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ A.rows();\ i++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ A.columns();\ ++j)\ \{\ AssertEqual(A(i,\ j),\ 1.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestZerosV()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_ae4d3442586cdfc0c5468be49ff561bcd}{zerosV}}(3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.rows(),\ 3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.columns(),\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ A.rows();\ i++)\ \{\ AssertEqual(A(i,\ 0),\ 0.0);\ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestEye()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ testEye\ =\ [\textcolor{keyword}{this}](\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ B)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ B.rows();\ ++i)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ j\ =\ 0;\ j\ <\ B.columns();\ ++j)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ ==\ j)\ this-\/>AssertEqual(B(i,\ j),\ 1.0);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ this-\/>AssertEqual(B(i,\ j),\ 0.0);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(3,\ 2);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.rows(),\ 3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.columns(),\ 2);}
+\DoxyCodeLine{\ \ \ \ testEye(A);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(2,\ 3);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.rows(),\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.columns(),\ 3);}
+\DoxyCodeLine{\ \ \ \ testEye(A);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ A\ =\ \mbox{\hyperlink{numerics_2utils_8h_a9d6daf45f94f1c1f482d7abfdde9dd01}{eye}}(3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.rows(),\ 3);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A.columns(),\ 3);}
+\DoxyCodeLine{\ \ \ \ testEye(A);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestNorm()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(0,\ 2,\ 2);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{numerics_2utils_8h_aa1a08a76ee49f8a9717e4aa127984987}{norm}}(A),\ 0.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ A\ =\ \{\ \{\ 1,\ 1,\ 1,\ 1\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{numerics_2utils_8h_aa1a08a76ee49f8a9717e4aa127984987}{norm}}(A),\ 2.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ A\ =\ \{\ \{\ 1e-\/16,\ 1e-\/16,\ 1e-\/16\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{numerics_2utils_8h_aa1a08a76ee49f8a9717e4aa127984987}{norm}}(A),\ 0.0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\ \ \ \ TestEye();}
+\DoxyCodeLine{\ \ \ \ TestOnes();}
+\DoxyCodeLine{\ \ \ \ TestZeros();}
+\DoxyCodeLine{\ \ \ \ TestZerosV();}
+\DoxyCodeLine{\ \ \ \ TestNorm();}
+\DoxyCodeLine{\ \ \ \ TestLinspace();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ NumUtilsTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

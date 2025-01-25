@@ -1,0 +1,61 @@
+\doxysection{numerics/lin\+\_\+alg/\+Test\+LU.\+cpp}
+\hypertarget{numerics_2lin_alg_2TestLU_8cpp-example}{}\label{numerics_2lin_alg_2TestLU_8cpp-example}This is an example on how to use LU.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{LU_8h}{math/numerics/lin\_alg/LU.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{numerics_2utils_8h}{math/numerics/utils.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }LUTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestLU()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A\ =\ \{\ \{\ 4,\ 2,\ 3\ \},\ \{\ 2,\ 2,\ 1\ \},\ \{\ 2,\ 2,\ 2\ \}\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B\ =\ \{\ \{\ 4,\ 2,\ 3\ \},\ \{\ 2,\ 2,\ 1\ \},\ \{\ 2,\ 2,\ 2\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{LU_8h_a038dcb2cb21184a74721f04644287d16}{LU}}(A);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ A\ stays\ A}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(A,\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<unsigned\ int>\ p\ =\ \{\ 0,\ 1,\ 2\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ LR\ \ \ \ \ \ \ \ \ \ \ =\ \{\ \{\ 4.0,\ 2.0,\ 3.0\ \},\ \{\ 0.5,\ 1.0,\ -\/0.5\ \},\ \{\ 0.5,\ 1.0,\ 1.0\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ 3;\ col++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ assert(result.second[col]\ ==\ p[col]);}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ 3;\ row++)\ \{\ AssertEqual(result.first(col,\ row),\ LR(col,\ row));\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestLUPivot()\ \{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A\ =\ \{\ \{\ 2,\ 2,\ 1\ \},\ \{\ 4,\ 2,\ 3\ \},\ \{\ 2,\ 2,\ 2\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ result\ =\ \mbox{\hyperlink{LU_8h_a038dcb2cb21184a74721f04644287d16}{LU}}(A);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ std::vector<unsigned\ int>\ p\ =\ \{\ 1,\ 0,\ 2\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ LR\ \ \ \ \ \ \ \ \ \ \ =\ \{\ \{\ 4.0,\ 2.0,\ 3.0\ \},\ \{\ 0.5,\ 1.0,\ -\/0.5\ \},\ \{\ 0.5,\ 1.0,\ 1.0\ \}\ \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ col\ =\ 0;\ col\ <\ 3;\ col++)\ \{}
+\DoxyCodeLine{\ \ \ \ \ \ assert(result.second[col]\ ==\ p[col]);}
+\DoxyCodeLine{\ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ row\ =\ 0;\ row\ <\ 3;\ row++)\ \{\ AssertEqual(result.first(col,\ row),\ LR(col,\ row));\ \}}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ TestLU();}
+\DoxyCodeLine{\ \ \ \ TestLUPivot();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ LUTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

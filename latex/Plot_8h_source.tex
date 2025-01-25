@@ -1,0 +1,306 @@
+\doxysection{Plot.\+h}
+\hypertarget{Plot_8h_source}{}\label{Plot_8h_source}\index{include/math/visualization/Plot.h@{include/math/visualization/Plot.h}}
+\mbox{\hyperlink{Plot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}../Matrix.h"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}../matrix\_utils.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../numerics/utils.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{DataTypes}}\ \{}
+\DoxyCodeLine{00014\ \ \ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ab023460c84f774a219d46ccf4665994c}{LINE}}\ =\ 1,}
+\DoxyCodeLine{00016\ \ \ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DOTS}}\ =\ 2,}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}\ =\ -\/1,}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{Plot_8h_aabdee3e53fca620b2e7929e0f29d41b4}{GetPlotDataTypeName}}(\mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{DataTypes}}\ type)\ \{}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordflow}{switch}(type)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ab023460c84f774a219d46ccf4665994c}{LINE}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}lines\ ls\ 1"{}};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DOTS}}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}points\ ls\ 2"{}};\ \textcolor{comment}{//\ pointtype\ 5\ pointsize\ 1.5"{};}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{NONE}}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{default}:\ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}none"{}};}
+\DoxyCodeLine{00032\ \ \ \}}
+\DoxyCodeLine{00033\ \}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlotBoundary}{PlotBoundary}}\ \{}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}};}
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlotIndex}{PlotIndex}}\ \{}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlotIndex_adf5d747c854473c22634f06718f8d1c2}{start}}\ =\ -\/1;}
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlotIndex_a0ea32d0e0e56a4a5eb07705676fb1b1e}{stop}}\ =\ -\/1;}
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structPlotAttributes}{PlotAttributes}}\ \{}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}};}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}};}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}};}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlotAttributes_a84595caf0d1f946b36c8c4b5280830eb}{pointStrength}};}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlotAttributes_a9c108066e425622ee8ee97a85cf31523}{lineStrength}};}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structPlotAttributes_a653cff4fb1567e4547763924cad62178}{is3D}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structPlotAttributes_a6617bc812d985c05ae7f30dbf189bdc2}{is2D}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structPlotAttributes_ac6910d9ebfe2403059d206fe29fc4dc2}{isStatPlot}};}
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structPlotAttributes_ad1aad84439cf5fbc865d07694e523f27}{color}};}
+\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structPlotAttributes_a8738b4d86a5db807f0128370bc167043}{colorPalette}};}
+\DoxyCodeLine{00080\ \ \ std::vector<const\ char*>\ \mbox{\hyperlink{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639}{plotNames}};}
+\DoxyCodeLine{00082\ \ \ std::vector<const\ char*>\ \mbox{\hyperlink{structPlotAttributes_a366b5a4078cb55cc358dc956bf3fef88}{plotTypes}};}
+\DoxyCodeLine{00084\ \ \ std::vector<const\ char*>\ \mbox{\hyperlink{structPlotAttributes_ae5161ea3b86d4407c38b5da9903f168b}{characters}};}
+\DoxyCodeLine{00086\ \ \ std::vector<PlotIndex>\ \mbox{\hyperlink{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}{plotIndices}};}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlot}{Plot}}}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00111\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classPlot_ad5c4ae2e4201841f833c2d6968681c0a}{Plot}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}\ =\ \textcolor{stringliteral}{"{}"{}})\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}line\_plot\_data.txt"{}};}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{classPlot_a84d0108c396f7665f228340fce807992}{plotTypeName}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}lines"{}};}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a84595caf0d1f946b36c8c4b5280830eb}{pointStrength}}\ =\ 0;}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a9c108066e425622ee8ee97a85cf31523}{lineStrength}}\ \ =\ 10;}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ac6910d9ebfe2403059d206fe29fc4dc2}{isStatPlot}}\ \ \ \ =\ 0;}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ad1aad84439cf5fbc865d07694e523f27}{color}}\ \ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}\#008080"{}};}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}}\ \ \ \ \ \ \ \ \ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.size()\ +\ 1];}
+\DoxyCodeLine{00119\ \ \ \ \ std::copy(\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.begin(),\ \mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.end(),\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}});}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}}[\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.size()]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{classPlot_abb8ae168887076ca5dc5205b34d1fa95}{clear\_file}}();}
+\DoxyCodeLine{00122\ \ \ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_abb8ae168887076ca5dc5205b34d1fa95}{clear\_file}}()\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{comment}{//\ create\ file\ and\ empty\ it}}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fopen}}(\mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}},\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\(\backslash\)0"{}});}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fclose}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}});}
+\DoxyCodeLine{00129\ \ \ \}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00135\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}})\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.size()\ +\ 1];}
+\DoxyCodeLine{00137\ \ \ \ \ std::copy(\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.begin(),\ \mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.end(),\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}});}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}}[\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}.size()]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00139\ \ \ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_a71b26c829f6b3f4cf64957a3e323517f}{xAxis}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.size()\ +\ 1];}
+\DoxyCodeLine{00147\ \ \ \ \ std::copy(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.begin(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.end(),\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}});}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}}[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.size()]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00149\ \ \ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00155\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_a56e462e8d1c707986dc1e4335a633b24}{yAxis}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.size()\ +\ 1];}
+\DoxyCodeLine{00157\ \ \ \ \ std::copy(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.begin(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.end(),\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}});}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}}[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.size()]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00159\ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_ab1ca4b31fc51ed85c65f1c8fcf786134}{pointSize}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}})\ \{\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a84595caf0d1f946b36c8c4b5280830eb}{pointStrength}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}};\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00171\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_a6030621e36e58f3119a7c81e4a9fbd31}{lineWidth}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}})\ \{\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a9c108066e425622ee8ee97a85cf31523}{lineStrength}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}};\ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00182\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(}
+\DoxyCodeLine{00183\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ x,}
+\DoxyCodeLine{00184\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ y,}
+\DoxyCodeLine{00185\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}},}
+\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{DataTypes}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataType}}\ \ \ \ =\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{DataTypes::NONE}},}
+\DoxyCodeLine{00187\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{character}}\ =\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ x.\mbox{\hyperlink{classMatrix_a7ff3adb55a7fcd61963647884d97cbd1}{assertSize}}(y);}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(\mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(x,\ y),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataType}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{character}});}
+\DoxyCodeLine{00190\ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00199\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_a5c575449a118081b0ea67f0f14bc65ba}{AddData}}(}
+\DoxyCodeLine{00200\ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}},}
+\DoxyCodeLine{00201\ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}},}
+\DoxyCodeLine{00202\ \ \ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22}{DataTypes}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataTypeName}}\ =\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{DataTypes::NONE}},}
+\DoxyCodeLine{00203\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{pointChar}}\ \ =\ \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{00204\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dimensions}}\ \ \ \ \ \ \ \ \ =\ 2)\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dimensions}}\ <=\ 3)\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \textcolor{comment}{//\ calculate\ boundaries}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bX}}\ =\ \mbox{\hyperlink{classPlot_abdbf7c37362b8b8b739b62ceb00a9b70}{getBoundaries}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.GetSlice(0,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.rows()\ -\/\ 1,\ 0,\ 0));}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bY}}\ =\ \mbox{\hyperlink{classPlot_abdbf7c37362b8b8b739b62ceb00a9b70}{getBoundaries}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.GetSlice(0,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.rows()\ -\/\ 1,\ 1,\ 1));}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}}\ =\ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}}\ >\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bX}}.min\ ?\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bX}}.min\ :\ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}};}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}}\ =\ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}}\ <\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bX}}.max\ ?\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bX}}.max\ :\ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}}\ =\ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}}\ >\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bY}}.min\ ?\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bY}}.min\ :\ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}};}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}}\ =\ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}}\ <\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bY}}.max\ ?\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{new\_bY}}.max\ :\ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}};}
+\DoxyCodeLine{00215\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}}\ =\ 0;}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a3a9ad8401fcf0035091fdc94c3f09c36}{min}}\ =\ 0;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.columns();}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}.\mbox{\hyperlink{structPlotBoundary_a7383471ba4ac63f8bd967831dc140a37}{max}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.columns();}
+\DoxyCodeLine{00220\ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{comment}{//\ append\ storage\ file}}
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fopen}}(\mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}},\ \textcolor{stringliteral}{"{}a"{}});}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}}\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \textcolor{comment}{//\ error}}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00227\ \ \ \ \ \}}
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\#\ "{}});}
+\DoxyCodeLine{00229\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}});}
+\DoxyCodeLine{00230\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.columns();\ i\ +=\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dimensions}})\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\#\ X\ Y\ Z\(\backslash\)n"{}});}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}}\ <\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.rows();\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}})\ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{k}}\ =\ 0;\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{k}}\ <\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dimensions}};\ ++\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{k}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\%g\ "{}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{j}},\ i\ +\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{k}}));\ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}},\ \textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fclose}}(\mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}});}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newName}};}
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newName}}\ =\ \textcolor{keyword}{new}\ \textcolor{keywordtype}{char}[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.size()\ +\ 1];}
+\DoxyCodeLine{00244\ \ \ \ \ std::copy(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.begin(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.end(),\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newName}});}
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newName}}[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}.size()]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{structPlotIndex}{PlotIndex}}\ index\ \ \ \ \ \ =\ \{\ 0,\ -\/1\ \};}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordflow}{if}(!\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}{plotIndices}}.empty())\ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ index\ =\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}{plotIndices}}[\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}{plotIndices}}.size()\ -\/\ 1];}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ index.\mbox{\hyperlink{structPlotIndex_adf5d747c854473c22634f06718f8d1c2}{start}}++;}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}{plotIndices}}.push\_back(index);}
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639}{plotNames}}.push\_back(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{newName}});}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a366b5a4078cb55cc358dc956bf3fef88}{plotTypes}}.push\_back(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataTypeName}}\ ==\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{DataTypes::NONE}}\ ?\ \mbox{\hyperlink{classPlot_a84d0108c396f7665f228340fce807992}{plotTypeName}}\ :\ \mbox{\hyperlink{Plot_8h_aabdee3e53fca620b2e7929e0f29d41b4}{GetPlotDataTypeName}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{dataTypeName}}));}
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ae5161ea3b86d4407c38b5da9903f168b}{characters}}.push\_back(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{pointChar}});}
+\DoxyCodeLine{00256\ \ \ \ \ \mbox{\hyperlink{classPlot_a1617d33546bbcfe4458899bc00eeb0ef}{numElements}}++;}
+\DoxyCodeLine{00257\ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00264\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_afa0e8f10d7a0d4bd2b90037ec4ca3029}{operator()}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00265\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{popen}}(\textcolor{stringliteral}{"{}gnuplot\ -\/-\/persist"{}},\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{classPlot_a9bfd80c27c96636efaaec19b2d2b4b13}{writeAttributes}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}});}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{classPlot_a1617d33546bbcfe4458899bc00eeb0ef}{numElements}};\ ++i)\ \{}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(i\ ==\ 0)\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{classPlot_a77875f7b918ccd9a43f72b189b2e102d}{plotType}});\ \}}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}'\%s'"{}},\ \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}});}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \textcolor{keyword}{auto}\ index\ =\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ab52812aea2de2730dbccf423d5f4797e}{plotIndices}}[i];}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(index.stop\ !=\ -\/1)\ \{}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\ index\ \%d:\%d\ with\ "{}},\ index.start,\ index.stop);}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\ index\ \%d\ with\ "{}},\ index.start);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a366b5a4078cb55cc358dc956bf3fef88}{plotTypes}}[i]);}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ae5161ea3b86d4407c38b5da9903f168b}{characters}}[i]\ !=\ \textcolor{keyword}{nullptr})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}pt\ '\%s'"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ae5161ea3b86d4407c38b5da9903f168b}{characters}}[i]);\ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\ title\ '\%s'"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639}{plotNames}}[i]);}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ i\ ==\ (\mbox{\hyperlink{classPlot_a1617d33546bbcfe4458899bc00eeb0ef}{numElements}}\ -\/\ 1)\ ?\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ :\ \textcolor{stringliteral}{"{},"{}});}
+\DoxyCodeLine{00280\ \ \ \ \ \}}
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fclose}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}});}
+\DoxyCodeLine{00283\ \ \ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00291\ \ \ [[\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nodiscard}}]]\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structPlotBoundary}{PlotBoundary}}\ \mbox{\hyperlink{classPlot_abdbf7c37362b8b8b739b62ceb00a9b70}{getBoundaries}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ x)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00293\ \textcolor{comment}{\ \ \ \ \ *\ determines\ the\ boundaries\ of\ an\ array}}
+\DoxyCodeLine{00294\ \textcolor{comment}{\ \ \ \ \ *\ returns:\ boundary(min,\ max)}}
+\DoxyCodeLine{00295\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keywordtype}{double}\ startX\ =\ \mbox{\hyperlink{matrix__utils_8h_a4bb73e4029612f323f406f1ecfc2ed57}{min}}(x);}
+\DoxyCodeLine{00297\ \ \ \ \ \textcolor{comment}{//startX\ =\ startX\ -\/\ pow\_(10,\ getExponent(startX)\ -\/\ 1);}}
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{double}\ endX\ =\ \mbox{\hyperlink{matrix__utils_8h_a8dd66fbac5097923b2ecf481b0ae77e5}{max}}(x);}
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{comment}{//endX\ =\ endX\ -\/\ pow\_(10,\ getExponent(endX)\ -\/\ 1);}}
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{structPlotBoundary}{PlotBoundary}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bond}}\ =\ \{\ startX,\ endX\ \};}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bond}};}
+\DoxyCodeLine{00302\ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00307\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}};}
+\DoxyCodeLine{00309\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classPlot_a84d0108c396f7665f228340fce807992}{plotTypeName}};}
+\DoxyCodeLine{00311\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{classPlot_a77875f7b918ccd9a43f72b189b2e102d}{plotType}}\ =\ \textcolor{stringliteral}{"{}plot"{}};}
+\DoxyCodeLine{00313\ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}}*\ \mbox{\hyperlink{classPlot_a80885621943f0e082328be034f1478f3}{storageFile}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00315\ \ \ \mbox{\hyperlink{structPlotAttributes}{PlotAttributes}}\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}\ =\ \{\};}
+\DoxyCodeLine{00317\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classPlot_a1617d33546bbcfe4458899bc00eeb0ef}{numElements}}\ =\ 0;}
+\DoxyCodeLine{00319\ \ \ \mbox{\hyperlink{structPlotBoundary}{PlotBoundary}}\ \mbox{\hyperlink{classPlot_aa8a4a800b93ba4d22b4e4c01eacc583a}{bY}}\{\};}
+\DoxyCodeLine{00321\ \ \ \mbox{\hyperlink{structPlotBoundary}{PlotBoundary}}\ \mbox{\hyperlink{classPlot_a954fcb23b76680d6d0148f3f7af02f4c}{bX}}\{\};}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00327\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlot_a9bfd80c27c96636efaaec19b2d2b4b13}{writeAttributes}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}})\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}})\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{titleExtension}}[105];}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}}\ \&\&\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}}\ \&\&\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ac6910d9ebfe2403059d206fe29fc4dc2}{isStatPlot}})\ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{strcpy}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{titleExtension}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}});}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{strcat}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{strcat}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{titleExtension}},\ \textcolor{stringliteral}{"{}\ vs.\ "{}}),\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}});}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}set\ title\ '\%s"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_afc67539c9ac0c8af95f00aa5c6e30978}{title}});}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_ac6910d9ebfe2403059d206fe29fc4dc2}{isStatPlot}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{titleExtension}});\ \}}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}'\(\backslash\)n"{}});}
+\DoxyCodeLine{00337\ \ \ \ \ \}}
+\DoxyCodeLine{00338\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}set\ style\ line\ 1\ lt\ 2\ lc\ rgb\ \(\backslash\)"{}red\(\backslash\)"{}\ lw\ 3;\(\backslash\)nset\ style\ line\ 1\ lt\ 2\ lc\ rgb\ \(\backslash\)"{}orange\(\backslash\)"{}\ lw\ 3;\(\backslash\)n"{}});}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}set\ xlabel\ '\%s'\(\backslash\)n"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a80a3dec051e0195255ff3471fa7ea9ea}{xAxis}});\ \}}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}set\ ylabel\ '\%s'\(\backslash\)n"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a59b064dd22efe8ac933dec0665533c95}{yAxis}});\ \}}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a653cff4fb1567e4547763924cad62178}{is3D}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}set\ hidden3d\(\backslash\)nset\ dgrid3d\ 30,30\ qnorm\ 1\(\backslash\)n"{}});\ \}}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a8738b4d86a5db807f0128370bc167043}{colorPalette}})\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}load\ '\%s'\(\backslash\)n"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a8738b4d86a5db807f0128370bc167043}{colorPalette}});\ \}}
+\DoxyCodeLine{00343\ \ \ \}}
+\DoxyCodeLine{00344\ \};}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00349\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classScatterPlot}{ScatterPlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlot}{Plot}}}
+\DoxyCodeLine{00350\ \{}
+\DoxyCodeLine{00351\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00356\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classScatterPlot_a4a9e0b7bea99f5007e33b0ad65189e43}{ScatterPlot}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00357\ \ \ \ \ :\ \mbox{\hyperlink{classPlot}{Plot}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})\ \{}
+\DoxyCodeLine{00358\ \ \ \ \ \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}}\ =\ \textcolor{stringliteral}{"{}point\_plot\_data.txt"{}};}
+\DoxyCodeLine{00359\ \ \ \ \ \mbox{\hyperlink{classPlot_a84d0108c396f7665f228340fce807992}{plotTypeName}}\ =\ \textcolor{stringliteral}{"{}points"{}};}
+\DoxyCodeLine{00360\ \ \ \ \ \mbox{\hyperlink{classPlot_abb8ae168887076ca5dc5205b34d1fa95}{clear\_file}}();}
+\DoxyCodeLine{00361\ \ \ \}}
+\DoxyCodeLine{00362\ \};}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00367\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFunctionPlot}{FunctionPlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlot}{Plot}}}
+\DoxyCodeLine{00368\ \{}
+\DoxyCodeLine{00370\ \ \ std::function<\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&)>\ \mbox{\hyperlink{classFunctionPlot_a16148c2b8c06689ceaabfb48a302cb44}{Function}};}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00378\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classFunctionPlot_acf609f64cac77f3e556747b73e70fbc1}{FunctionPlot}}(std::function<\textcolor{keywordtype}{double}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&)>\ fun,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}}\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00379\ \ \ \ \ :\ \mbox{\hyperlink{classPlot}{Plot}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})}
+\DoxyCodeLine{00380\ \ \ \ \ ,\ \mbox{\hyperlink{classFunction}{Function}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std}}::\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{move}}(fun))\ \{\ \}}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00389\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFunctionPlot_a6bea42610ef9f96447b91d622e918bc3}{AddData}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ start,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{end}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stepSize}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}}\ \ \ \ \ \ \ \ \ =\ (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}})((\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{end}}\ -\/\ start)\ /\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{stepSize}})\ +\ 2;}
+\DoxyCodeLine{00391\ \ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ X\ =\ \mbox{\hyperlink{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350}{linspace}}(start,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{end}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size}});}
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keyword}{auto}\ Y\ \ \ \ \ \ \ \ \ \ \ =\ X.\mbox{\hyperlink{classMatrix_ab6114bb3b048f92505d664efe4a10bfb}{Apply}}(\mbox{\hyperlink{classFunction}{Function}});}
+\DoxyCodeLine{00393\ \ \ \ \ \mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{Plot::AddData}}(X,\ Y,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}});}
+\DoxyCodeLine{00394\ \ \ \}}
+\DoxyCodeLine{00395\ \};}
+\DoxyCodeLine{00396\ }
+\DoxyCodeLine{00400\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSurfacePlot}{SurfacePlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlot}{Plot}}}
+\DoxyCodeLine{00401\ \{}
+\DoxyCodeLine{00402\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00407\ \ \ \mbox{\hyperlink{classSurfacePlot_a7b88520f3e3935c0d32dba727bbd73b2}{SurfacePlot}}(\textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}}\ =\ \textcolor{stringliteral}{"{}"{}})}
+\DoxyCodeLine{00408\ \ \ \ \ :\ \mbox{\hyperlink{classPlot}{Plot}}(\mbox{\hyperlink{classPlot_afa4a5f262e9b00bfa393c54fccb3449a}{title}})\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \mbox{\hyperlink{classPlot_a77875f7b918ccd9a43f72b189b2e102d}{plotType}}\ \ \ \ \ \ \ \ =\ \textcolor{stringliteral}{"{}splot"{}};}
+\DoxyCodeLine{00410\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a653cff4fb1567e4547763924cad62178}{is3D}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00411\ \ \ \}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00418\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSurfacePlot_aa040cc2c1301dc37cb942a80647cde95}{operator()}}()\textcolor{keyword}{\ const\ override\ }\{}
+\DoxyCodeLine{00419\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}}\ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{popen}}(\textcolor{stringliteral}{"{}gnuplot\ -\/-\/persist"{}},\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00420\ \ \ \ \ \mbox{\hyperlink{classPlot_a9bfd80c27c96636efaaec19b2d2b4b13}{writeAttributes}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}});}
+\DoxyCodeLine{00421\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{classPlot_a77875f7b918ccd9a43f72b189b2e102d}{plotType}});}
+\DoxyCodeLine{00422\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\ '\%s'\ with\ lines"{}},\ \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}});}
+\DoxyCodeLine{00423\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\ title\ '\%s'"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639}{plotNames}}[0]);}
+\DoxyCodeLine{00424\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00425\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fclose}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}});}
+\DoxyCodeLine{00426\ \ \ \}}
+\DoxyCodeLine{00427\ \};}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00433\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classImagePlot}{ImagePlot}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classPlot}{Plot}}}
+\DoxyCodeLine{00434\ \{}
+\DoxyCodeLine{00435\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00441\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classImagePlot_ac58ba6ab6c1ad8223934403858497b03}{ImagePlot}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})}
+\DoxyCodeLine{00442\ \ \ \ \ :\ \mbox{\hyperlink{classPlot}{Plot}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})\ \{}
+\DoxyCodeLine{00443\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a6617bc812d985c05ae7f30dbf189bdc2}{is2D}}\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00444\ \ \ \}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00451\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classImagePlot_abcc293f8ea2f73b54d184baeb742b820}{AddData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})\ \{}
+\DoxyCodeLine{00452\ \ \ \ \ \mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{Plot::AddData}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}},\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2}{DataTypes::NONE}},\ \textcolor{keyword}{nullptr},\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}.columns());}
+\DoxyCodeLine{00453\ \ \ \}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00460\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classImagePlot_a0cb62df79fa5639015ad55a539e0bf6e}{operator()}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ colorPalette\ =\ \textcolor{stringliteral}{"{}magma.pal"{}})\ \{}
+\DoxyCodeLine{00461\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{FILE}}*\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}}\ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{popen}}(\textcolor{stringliteral}{"{}gnuplot\ -\/-\/persist"{}},\ \textcolor{stringliteral}{"{}w"{}});}
+\DoxyCodeLine{00462\ \ \ \ \ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_a8738b4d86a5db807f0128370bc167043}{colorPalette}}\ =\ colorPalette;}
+\DoxyCodeLine{00463\ \ \ \ \ \mbox{\hyperlink{classPlot_a9bfd80c27c96636efaaec19b2d2b4b13}{writeAttributes}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}});}
+\DoxyCodeLine{00464\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}plot\ '\%s'\ matrix\ with\ image"{}},\ \mbox{\hyperlink{classPlot_ac5c21369cb37d1e74741766bf26123ec}{dataFileName}});}
+\DoxyCodeLine{00465\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\ title\ '\%s'"{}},\ \mbox{\hyperlink{classPlot_adccf50e0f1dde033486c08da47fb8c3e}{attributes}}.\mbox{\hyperlink{structPlotAttributes_af1fbc2faf45c17722017f841f3e92639}{plotNames}}[0]);}
+\DoxyCodeLine{00466\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fprintf}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}},\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00467\ \ \ \ \ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fclose}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{gnuplot}});}
+\DoxyCodeLine{00468\ \ \ \}}
+\DoxyCodeLine{00469\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,63 @@
+\doxysection{ds/\+Test\+Log\+Reg\+SGD.\+cpp}
+\hypertarget{ds_2TestLogRegSGD_8cpp-example}{}\label{ds_2TestLogRegSGD_8cpp-example}This is an example on how to use the \doxylink{classLogRegSGD}{Log\+Reg\+SGD} class for regression classification.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{LogRegSGD_8h}{math/ds/LogRegSGD.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }LogRegSGDTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestLogReg()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ logRegSgd\ =\ \mbox{\hyperlink{classLogRegSGD}{LogRegSGD}}(0.15,\ 25);}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ Matrix<double>\ A\ =\ Matrix<double>::Random(10,\ 1,\ 1,\ -\/1,\ 1);}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ A(\{}
+\DoxyCodeLine{\ \ \ \ \{\ 0.29651885541310041\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.64581698997155579\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.73420390202980546\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.33842438014317311\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.73079510849631024\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.90637656297433933\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.58136213318226426\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.12520400256483499\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.41344311936636324\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.0089382791988343868\ \},}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ std::cout\ <<\ A;}}
+\DoxyCodeLine{\ \ \ \ std::function<bool(\textcolor{keywordtype}{double})>\ condition\ =\ [](\textcolor{keywordtype}{double}\ x)\ \{\ \textcolor{keywordflow}{return}\ bool(x\ >=\ 0.0);\ \};}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ B\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_afb3f7de2743f10b710460feb9c0f9009}{where}}(condition,\ A,\ \{\ \{\ 1\ \}\ \},\ \{\ \{\ -\/1\ \}\ \});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ maxVal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_a8dd66fbac5097923b2ecf481b0ae77e5}{max}}(A);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ minVal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{matrix__utils_8h_a4bb73e4029612f323f406f1ecfc2ed57}{min}}(A);}
+\DoxyCodeLine{\ \ \ \ A\ =\ A.Apply([minVal,\ maxVal](\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ in)\ \{\ \textcolor{keywordflow}{return}\ (in\ -\/\ minVal)\ /\ (maxVal\ -\/\ minVal);\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ logRegSgd.fit(A,\ B);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ val\ \ =\ logRegSgd.predict(\{\ \{\ -\/1.0\ \}\ \})(0,\ 0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ val2\ =\ logRegSgd.predict(\{\ \{\ 2.0\ \}\ \})(0,\ 0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(val,\ 1);\ \ \ \textcolor{comment}{//\ ==\ 1}}
+\DoxyCodeLine{\ \ \ \ AssertEqual(val2,\ -\/1);\ \textcolor{comment}{//\ ==\ -\/1}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestNoCost()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ logRegSgd\ =\ \mbox{\hyperlink{classLogRegSGD}{LogRegSGD}}(0.15,\ 25);}
+\DoxyCodeLine{\ \ \ \ AssertEqual(logRegSgd.costFunction(\{\ \{\ 1\ \}\ \}),\ 0.0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ run()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ TestLogReg();}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ TestNoCost();}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ LogRegSGDTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

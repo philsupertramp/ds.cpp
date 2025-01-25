@@ -1,0 +1,110 @@
+\doxysection{Monom\+Base Class Reference}
+\hypertarget{classMonomBase}{}\label{classMonomBase}\index{MonomBase@{MonomBase}}
+
+
+{\ttfamily \#include $<$Support\+Values.\+h$>$}
+
+Inheritance diagram for Monom\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classMonomBase}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMonomBase_a47e7386045d2d95bf51b08e45dc316a1}{Monom\+Base}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&Y)
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classMonomBase_ac8795cc57f64d4e834aefc6074388632}{Evaluate}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\item 
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string \mbox{\hyperlink{classMonomBase_a4e86d536f746f544318c18c08c12b99f}{Function}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPolynomialBase}{Polynomial\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPolynomialBase_a35c1b1f74053833dcd865908c93e8f24}{Polynomial\+Base}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&Y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classMonomBase_a7e8455277c9d45cf6d4a108f7421bad0}{A}}
+\begin{DoxyCompactList}\small\item\em Coefficient matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Monom-\/\+Base\+:
+
+\$\$y\+\_\+i = p(x\+\_\+i) = a\+\_\+0 + a\+\_\+1x\+\_\+i + ... + a\+\_\+nx\+\_\+i\texorpdfstring{$^\wedge$}{\string^}n, \textbackslash{}forall i = 0, \textbackslash{}dots, n\$\$ \href{https://wiki.godesteem.de/wiki/interpolation-and-approximation/\#Monom-Base}{\texttt{ https\+://wiki.\+godesteem.\+de/wiki/interpolation-\/and-\/approximation/\#\+Monom-\/\+Base}} \begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestSupportValues_8cpp-example}{numerics/analysis/\+Test\+Support\+Values.\+cpp}}.\end{Desc}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMonomBase_a47e7386045d2d95bf51b08e45dc316a1}\label{classMonomBase_a47e7386045d2d95bf51b08e45dc316a1} 
+\index{MonomBase@{MonomBase}!MonomBase@{MonomBase}}
+\index{MonomBase@{MonomBase}!MonomBase@{MonomBase}}
+\doxysubsubsection{\texorpdfstring{MonomBase()}{MonomBase()}}
+{\footnotesize\ttfamily Monom\+Base\+::\+Monom\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{Y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Default constructor 
+\begin{DoxyParams}{Parameters}
+{\em X} & \$\$x\+\_\+i\$\$ support values \\
+\hline
+{\em Y} & \$\$y\+\_\+i\$\$ support values evaluated with function \\
+\hline
+\end{DoxyParams}
+quick test if everything is right, if det(out) = 1 we made some mistake computing the vandermonde-\/matrix per definition it\textquotesingle{}s determinant is always \textbackslash{}neq 0!
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMonomBase_ac8795cc57f64d4e834aefc6074388632}\label{classMonomBase_ac8795cc57f64d4e834aefc6074388632} 
+\index{MonomBase@{MonomBase}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!MonomBase@{MonomBase}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Monom\+Base\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+iterative evaluation, nothing special 
+\begin{DoxyParams}{Parameters}
+{\em X} & evaluation values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPolynomialBase_a7bbf28d9cc1bd42019c07c8af297563b}{Polynomial\+Base}}.
+
+\Hypertarget{classMonomBase_a4e86d536f746f544318c18c08c12b99f}\label{classMonomBase_a4e86d536f746f544318c18c08c12b99f} 
+\index{MonomBase@{MonomBase}!Function@{Function}}
+\index{Function@{Function}!MonomBase@{MonomBase}}
+\doxysubsubsection{\texorpdfstring{Function()}{Function()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string Monom\+Base\+::\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+String representation getter \begin{DoxyReturn}{Returns}
+string representation in monom base 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classPolynomialBase_a7c5cff1055e525bd01ab24cf39bf9ed5}{Polynomial\+Base}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMonomBase_a7e8455277c9d45cf6d4a108f7421bad0}\label{classMonomBase_a7e8455277c9d45cf6d4a108f7421bad0} 
+\index{MonomBase@{MonomBase}!A@{A}}
+\index{A@{A}!MonomBase@{MonomBase}}
+\doxysubsubsection{\texorpdfstring{A}{A}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ Monom\+Base\+::A}
+
+
+
+Coefficient matrix. 
+
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2analysis_2TestSupportValues_8cpp-example}{numerics/analysis/\+Test\+Support\+Values.\+cpp}}.\end{Desc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/numerics/analysis/\mbox{\hyperlink{SupportValues_8h}{Support\+Values.\+h}}\end{DoxyCompactItemize}

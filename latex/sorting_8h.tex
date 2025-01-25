@@ -1,0 +1,76 @@
+\doxysection{include/math/sorting.h File Reference}
+\hypertarget{sorting_8h}{}\label{sorting_8h}\index{include/math/sorting.h@{include/math/sorting.h}}
+{\ttfamily \#include "{}Matrix.\+h"{}}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T , \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}}  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+arithmetic$<$\+T$>$\+::value, T$>$\+::type$>$ }\\\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{sorting_8h_a796e0a1fdb1816ce8086aaf73bce409c}{insertion\+\_\+sort}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} T \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{elem}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ T $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{vec}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{current\+\_\+index}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T , \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}}  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+arithmetic$<$\+T$>$\+::value, T$>$\+::type$>$ }\\\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ T $>$ \mbox{\hyperlink{sorting_8h_ad3d28c133882ced8b95545bb5fba55d0}{sort}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ T $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T $>$ }\\\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{sorting_8h_a681ff9816420cb51176ffbdcadaec45e}{insertion\+\_\+sort}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} T \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{elem}}, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{out}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{current\+\_\+index}})
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T $>$ }\\\mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \mbox{\hyperlink{sorting_8h_ad1815e9d6318975279185a2f767064d5}{sort}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sorting_8h_a681ff9816420cb51176ffbdcadaec45e}\label{sorting_8h_a681ff9816420cb51176ffbdcadaec45e} 
+\index{sorting.h@{sorting.h}!insertion\_sort@{insertion\_sort}}
+\index{insertion\_sort@{insertion\_sort}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{insertion\_sort()}{insertion\_sort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T $>$ \\
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} insertion\+\_\+sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} T \&}]{elem,  }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \&}]{out,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&}]{current\+\_\+index }\end{DoxyParamCaption})}
+
+\Hypertarget{sorting_8h_a796e0a1fdb1816ce8086aaf73bce409c}\label{sorting_8h_a796e0a1fdb1816ce8086aaf73bce409c} 
+\index{sorting.h@{sorting.h}!insertion\_sort@{insertion\_sort}}
+\index{insertion\_sort@{insertion\_sort}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{insertion\_sort()}{insertion\_sort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T , \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}}  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+arithmetic$<$\+T$>$\+::value, T$>$\+::type$>$ \\
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} insertion\+\_\+sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} T \&}]{elem,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ T $>$ \&}]{vec,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \&}]{current\+\_\+index }\end{DoxyParamCaption})}
+
+Insertion sort for numerical vectors of type T 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & input value type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em elem} & element to insert into given vector \\
+\hline
+{\em vec} & given vector to add the element to \\
+\hline
+{\em current\+\_\+index} & vector index of last element \\
+\hline
+\end{DoxyParams}
+\Hypertarget{sorting_8h_ad1815e9d6318975279185a2f767064d5}\label{sorting_8h_ad1815e9d6318975279185a2f767064d5} 
+\index{sorting.h@{sorting.h}!sort@{sort}}
+\index{sort@{sort}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T $>$ \\
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ T $>$ \&}]{in }\end{DoxyParamCaption})}
+
+\Hypertarget{sorting_8h_ad3d28c133882ced8b95545bb5fba55d0}\label{sorting_8h_ad3d28c133882ced8b95545bb5fba55d0} 
+\index{sorting.h@{sorting.h}!sort@{sort}}
+\index{sort@{sort}!sorting.h@{sorting.h}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} T , \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}}  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+arithmetic$<$\+T$>$\+::value, T$>$\+::type$>$ \\
+\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ T $>$ sort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ T $>$ \&}]{in }\end{DoxyParamCaption})}
+
+Sort given vector of elements of numerical type T
+
+currently using insertion sort, might change at some point 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & element type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em in} & input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sorted vector with ascending values 
+\end{DoxyReturn}

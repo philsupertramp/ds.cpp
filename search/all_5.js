@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['data_20science_20submodule_0',['ds (Data science)-submodule',['../md_include_2math_2ds_2README.html',1,'']]],
+  ['datafilename_1',['dataFileName',['../classPlot.html#ac5c21369cb37d1e74741766bf26123ec',1,'Plot']]],
+  ['dataset_2',['dataset',['../classDataSet.html',1,'DataSet'],['../classDataSet.html#ad398cb9b594f7fc99ebec3e2fb227ebb',1,'DataSet::DataSet(size_t inputCount, size_t outputCount)'],['../classDataSet.html#a06a0a03f65d1ed5a3b9102242e761639',1,'DataSet::DataSet(const char *filePath, size_t inputCount, size_t outputCount)']]],
+  ['dataset_2eh_3',['DataSet.h',['../DataSet_8h.html',1,'']]],
+  ['datasplit_4',['datasplit',['../structDataSplit.html',1,'DataSplit'],['../DecisionTree_8h.html#ac84740c7a17992784f99022306049dc4',1,'DataSplit:&#160;DecisionTree.h']]],
+  ['datatypes_5',['DataTypes',['../Plot_8h.html#afb6eb4f28419b652027fad41104a6d22',1,'Plot.h']]],
+  ['decision_6',['DECISION',['../DecisionTree_8h.html#aa7e8eeb6e645374f861a868ea569d360a0d31cd90b1053f89cbae83cfc8b2ed4e',1,'DecisionTree.h']]],
+  ['decisionnode_7',['decisionnode',['../classDecisionNode.html#a1b6aadd701a106ea0596806f3b0345d5',1,'DecisionNode::DecisionNode()'],['../classDecisionNode.html#a58abd8501fc1f0cc4d6895eeea605c17',1,'DecisionNode::DecisionNode(double val)'],['../classDecisionNode.html#a505bb5ac9db74e250341b0fda527bd12',1,'DecisionNode::DecisionNode(int feat, double thresh, double ig, DecisionNode *left, DecisionNode *right)'],['../classDecisionNode.html',1,'DecisionNode']]],
+  ['decisionnodetype_8',['DecisionNodeType',['../DecisionTree_8h.html#aa7e8eeb6e645374f861a868ea569d360',1,'DecisionTree.h']]],
+  ['decisiontree_9',['decisiontree',['../classDecisionTree.html#af04b0eacf726e5ad4acb2a195c61aea6',1,'DecisionTree::DecisionTree()'],['../classDecisionTree.html',1,'DecisionTree']]],
+  ['decisiontree_2eh_10',['DecisionTree.h',['../DecisionTree_8h.html',1,'']]],
+  ['defaultfunctions_11',['DefaultFunctions',['../Operator_8h.html#a99dcd69d67fa481b0e277d8e9fd68e09',1,'Operator.h']]],
+  ['defaultsymbols_12',['DefaultSymbols',['../Operand_8h.html#aa4aad1c453d503a883b6a3a05252e5c2',1,'Operand.h']]],
+  ['degree_13',['degree',['../classEquation.html#aa481dd44906c7a8682b043b82d8cc562',1,'Equation']]],
+  ['dependencies_14',['dependencies',['../md_include_2math_2visualization_2README.html#autotoc_md13',1,'Dependencies'],['../md_include_2math_2ds_2README.html#autotoc_md2',1,'Dependencies']]],
+  ['detail_15',['detail',['../classMandelbrot.html#a09a174794619b9f2a13010b4af19d498',1,'Mandelbrot::detail'],['../classNewtonFractal.html#ac78021b076c2d3a5d3c8b3177ea44bea',1,'NewtonFractal::detail']]],
+  ['determinant_16',['Determinant',['../classMatrix.html#a5f91e3755bfb6eb7b8aa5d49d8fbadb2',1,'Matrix']]],
+  ['development_17',['Development',['../index.html#autotoc_md25',1,'']]],
+  ['diag_18',['diag',['../numerics_2utils_8h.html#a32df81a2d10f9099cacedbbd378873bb',1,'utils.h']]],
+  ['diag_5felements_19',['diag_elements',['../matrix__utils_8h.html#a2e19f18bb0d422da0e75d5d0f6753331',1,'matrix_utils.h']]],
+  ['differentiation_2eh_20',['Differentiation.h',['../Differentiation_8h.html',1,'']]],
+  ['discountfactor_21',['discountFactor',['../Insurance_8h.html#a7447721e5975127c235fe6daa2ce95f9',1,'Insurance.h']]],
+  ['dots_22',['DOTS',['../Plot_8h.html#afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49',1,'Plot.h']]],
+  ['ds_20cpp_23',['ds-cpp',['../index.html',1,'']]],
+  ['ds_20data_20science_20submodule_24',['ds (Data science)-submodule',['../md_include_2math_2ds_2README.html',1,'']]]
+];

@@ -1,0 +1,42 @@
+\doxysection{include/math/numerics/lin\+\_\+alg/backward\+Sub.h File Reference}
+\hypertarget{backwardSub_8h}{}\label{backwardSub_8h}\index{include/math/numerics/lin\_alg/backwardSub.h@{include/math/numerics/lin\_alg/backwardSub.h}}
+{\ttfamily \#include "{}../utils.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}{backward\+Sub}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&R, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&b)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Regular backward substitution. Calculates result given upper right triangular matrix \$\$ z=R\textbackslash{}cdot b \textbackslash{}\+Rightarrow R\texorpdfstring{$^\wedge$}{\string^}\{-\/1\}\textbackslash{}cdot b = z \$\$
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{backwardSub_8h}{math/numerics/lin\_alg/backwardSub.h}}>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}\label{backwardSub_8h_ae28539a00e471c9e01480c2d00874049} 
+\index{backwardSub.h@{backwardSub.h}!backwardSub@{backwardSub}}
+\index{backwardSub@{backwardSub}!backwardSub.h@{backwardSub.h}}
+\doxysubsubsection{\texorpdfstring{backwardSub()}{backwardSub()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ backward\+Sub (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{R,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{b }\end{DoxyParamCaption})}
+
+Backward-\/substitution 
+\begin{DoxyParams}{Parameters}
+{\em R} & Coefficient matrix \\
+\hline
+{\em b} & result vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+z 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples]\par
+\mbox{\hyperlink{numerics_2lin_alg_2TestBackwardSub_8cpp-example}{numerics/lin\+\_\+alg/\+Test\+Backward\+Sub.\+cpp}}.\end{Desc}

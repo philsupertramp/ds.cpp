@@ -1,0 +1,154 @@
+\doxysection{numerics/analysis/\+Test\+Differentiation.\+cpp}
+\hypertarget{numerics_2analysis_2TestDifferentiation_8cpp-example}{}\label{numerics_2analysis_2TestDifferentiation_8cpp-example}This is an example on how to use the Differentiation file.
+
+
+\begin{DoxyCodeInclude}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}../../Test.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Differentiation_8h}{math/numerics/analysis/Differentiation.h}}>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{Plot_8h}{math/visualization/Plot.h}}>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class\ }DifferentiationTestCase\ :\ \textcolor{keyword}{public}\ Test}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{int}\ m\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 10;}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{double}\ a\ \ \ \ \ \ \ \ \ \ =\ 0;}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{double}\ b\ \ \ \ \ \ \ \ \ \ =\ 2\ *\ M\_PI;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ xk\ =\ \mbox{\hyperlink{numerics_2utils_8h_af9dcfd52b7832ac134ae73f568a90350}{linspace}}(a,\ b,\ m).\mbox{\hyperlink{classMatrix_a054a03bcae4eb86d6f4ef84dc87840ef}{Transpose}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ f(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ in)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ in.\mbox{\hyperlink{classMatrix_ab6114bb3b048f92505d664efe4a10bfb}{Apply}}([](\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ val)\ \{\ \textcolor{keywordflow}{return}\ cos(val);\ \});}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ df(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ in)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ in.\mbox{\hyperlink{classMatrix_ab6114bb3b048f92505d664efe4a10bfb}{Apply}}([](\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ val)\ \{\ \textcolor{keywordflow}{return}\ -\/sin(val);\ \});}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestDiffs()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ expected\ =\ df(xk);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ f\_xk\ \ \ \ \ =\ f(xk);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classPlot}{Plot}}\ plot(\textcolor{stringliteral}{"{}diffs"{}});}
+\DoxyCodeLine{\ \ \ \ plot.\mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(\mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(xk,\ expected),\ \textcolor{stringliteral}{"{}Analytical\ result"{}});}
+\DoxyCodeLine{\ \ \ \ plot.\mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(\mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(xk,\ \mbox{\hyperlink{Differentiation_8h_a03b7286d06d466aedafd5fe7e2fcb636}{forwardDiff}}(xk,\ f(xk))),\ \textcolor{stringliteral}{"{}forward"{}},\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DataTypes::DOTS}},\ \textcolor{stringliteral}{"{}x"{}});}
+\DoxyCodeLine{\ \ \ \ plot.\mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(\mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(xk,\ \mbox{\hyperlink{Differentiation_8h_a0d1f10df297acbf012f59dbe025a4d85}{backwardDiff}}(xk,\ f(xk))),\ \textcolor{stringliteral}{"{}backward"{}},\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DataTypes::DOTS}},\ \textcolor{stringliteral}{"{}o"{}});}
+\DoxyCodeLine{\ \ \ \ plot.\mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(\mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(xk,\ \mbox{\hyperlink{Differentiation_8h_a491c1ed77a5dc36d6e7a2656a0c7a436}{centralDiff}}(xk,\ f(xk))),\ \textcolor{stringliteral}{"{}centralDiff"{}},\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DataTypes::DOTS}},\ \textcolor{stringliteral}{"{}+"{}});}
+\DoxyCodeLine{\ \ \ \ plot.\mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(\mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(xk,\ \mbox{\hyperlink{Differentiation_8h_ad0138b0a17dd2be7243b310c3cf5a1f1}{backwardDiff2}}(xk,\ f(xk))),\ \textcolor{stringliteral}{"{}backward2"{}},\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DataTypes::DOTS}},\ \textcolor{stringliteral}{"{}-\/"{}});}
+\DoxyCodeLine{\ \ \ \ plot.\mbox{\hyperlink{classPlot_a3f3bea871eaf966d7d458c641873d278}{AddData}}(\mbox{\hyperlink{matrix__utils_8h_a1f9177b021b6f3a2ec3a4f0b26797b8e}{HorizontalConcat}}(xk,\ \mbox{\hyperlink{Differentiation_8h_a29c9f611b1a069da1d521c96b5d817fc}{centralDiff4}}(xk,\ f(xk))),\ \textcolor{stringliteral}{"{}centralDiff4"{}},\ \mbox{\hyperlink{Plot_8h_afb6eb4f28419b652027fad41104a6d22a3482666ed13eb44c92df895adbb91e49}{DataTypes::DOTS}},\ \textcolor{stringliteral}{"{}\#"{}});}
+\DoxyCodeLine{\ \ \ \ plot();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestBackwardDiffs()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ expected\ =\ df(xk);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ f\_xk\ \ \ \ \ =\ f(xk);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ backward(\{}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.33511665007288566\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.84854514524284763\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.9649299364248537\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.6298132863519682\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.62981328635196787\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.9649299364248537\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.84854514524284785\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.33511665007288594\ \},}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Differentiation_8h_a0d1f10df297acbf012f59dbe025a4d85}{backwardDiff}}(xk,\ f\_xk),\ backward);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestForwardDiffs()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ expected\ =\ df(xk);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ f\_xk\ \ \ \ \ =\ f(xk);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ forward(\{}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.33511665007288566\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.84854514524284763\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.9649299364248537\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.6298132863519682\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.62981328635196787\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.9649299364248537\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.84854514524284785\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.33511665007288594\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Differentiation_8h_a03b7286d06d466aedafd5fe7e2fcb636}{forwardDiff}}(xk,\ f\_xk),\ forward);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestCentralDiffs()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ expected\ =\ df(xk);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ f\_xk\ \ \ \ \ =\ f(xk);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ central(\{}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.59183089765786667\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.90673754083385083\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.79737161138841095\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.31490664317598421\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.31490664317598377\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.79737161138841095\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.90673754083385083\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.59183089765786689\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Differentiation_8h_a491c1ed77a5dc36d6e7a2656a0c7a436}{centralDiff}}(xk,\ f\_xk),\ central);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestBackwardDiffs2()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ expected\ =\ df(xk);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ f\_xk\ \ \ \ \ =\ f(xk);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ backward2(\{}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/1.1052593928278287\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/1.0231223320158569\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ -\/0.46225496131552568\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.31490664317598388\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.94471992952795147\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 1.132488261461297\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.79035274965184488\ \},}
+\DoxyCodeLine{\ \ \ \ \{\ 0.078402402487904935\ \},}
+\DoxyCodeLine{\ \ \ \ \});}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Differentiation_8h_ad0138b0a17dd2be7243b310c3cf5a1f1}{backwardDiff2}}(xk,\ f\_xk),\ backward2);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{bool}\ TestCentralDiffs4()\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ expected\ =\ df(xk);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{auto}\ f\_xk\ \ \ \ \ =\ f(xk);}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ central4(\{\ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.97744963627075465\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.85955478451624223\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ -\/0.33946469619924124\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.33946469619924052\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.8595547845162419\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0.9774496362707551\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0\ \},}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ 0\ \}\ \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ AssertEqual(\mbox{\hyperlink{Differentiation_8h_a29c9f611b1a069da1d521c96b5d817fc}{centralDiff4}}(xk,\ f\_xk),\ central4);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{\ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ run()\ \{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#if\ USE\_VIS}}
+\DoxyCodeLine{\ \ \ \ TestDiffs();}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\ \ \ \ TestBackwardDiffs();}
+\DoxyCodeLine{\ \ \ \ TestBackwardDiffs2();}
+\DoxyCodeLine{\ \ \ \ TestForwardDiffs();}
+\DoxyCodeLine{\ \ \ \ TestCentralDiffs();}
+\DoxyCodeLine{\ \ \ \ TestCentralDiffs4();}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ DifferentiationTestCase().run();}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCodeInclude}
+ 

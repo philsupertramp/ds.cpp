@@ -1,0 +1,45 @@
+\doxysection{include/math/numerics/ode/ode\+BDF2.h File Reference}
+\hypertarget{odeBDF2_8h}{}\label{odeBDF2_8h}\index{include/math/numerics/ode/odeBDF2.h@{include/math/numerics/ode/odeBDF2.h}}
+{\ttfamily \#include "{}../lin\+\_\+alg/newton.\+h"{}}\newline
+{\ttfamily \#include "{}../utils.\+h"{}}\newline
+{\ttfamily \#include "{}ode.\+h"{}}\newline
+{\ttfamily \#include "{}ode\+Trapez.\+h"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structODEResult}{ODEResult}} \mbox{\hyperlink{odeBDF2_8h_ab764bfc2dd89c4010e8acba6559b055c}{ODEBDF2}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&fun, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{t\+Interval}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{y0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{option}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements BDF(2)-\/Method to solve systems of ordinary differential equations
+
+Requires\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{odeBDF2_8h}{math/numerics/ode/odeBDF2.h}}>}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{odeBDF2_8h_ab764bfc2dd89c4010e8acba6559b055c}\label{odeBDF2_8h_ab764bfc2dd89c4010e8acba6559b055c} 
+\index{odeBDF2.h@{odeBDF2.h}!ODEBDF2@{ODEBDF2}}
+\index{ODEBDF2@{ODEBDF2}!odeBDF2.h@{odeBDF2.h}}
+\doxysubsubsection{\texorpdfstring{ODEBDF2()}{ODEBDF2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structODEResult}{ODEResult}} ODEBDF2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{ode_2ode_8h_ad676feada87db8725ebe89248f5f3379}{ODE}} \&}]{fun,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{t\+Interval,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{structODEOption}{ODEOption}} \&}]{option }\end{DoxyParamCaption})}
+
+BDF(2) solver implementation 
+\begin{DoxyParams}{Parameters}
+{\em fun} & ode to approximate \\
+\hline
+{\em t\+Interval} & interval to perform approximation on \\
+\hline
+{\em y0} & start value \\
+\hline
+{\em option} & solver options \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+approximated values 
+\end{DoxyReturn}
