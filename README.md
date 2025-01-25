@@ -1,5 +1,5 @@
 # ds-cpp
-C++ library for data science.  
+C++ library for mathematical algorithms.  
 
 # Current feature support
 - Numerical Methods (extension `numerics`)
