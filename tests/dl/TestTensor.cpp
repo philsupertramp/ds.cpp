@@ -19,31 +19,31 @@ public:
 
     AssertEqual(t1->dimensions, 1);
     AssertEqual(t1->number_elements[0], 10);
-    AssertEqual(t1->nb[1], 10 * sizeof(float));
+    AssertEqual(t1->number_bytes[1], 10 * sizeof(float));
 
     AssertEqual(t2->dimensions, 2);
     AssertEqual(t2->number_elements[0], 10);
     AssertEqual(t2->number_elements[1], 20);
-    AssertEqual(t2->nb[1], 10 * sizeof(float));
-    AssertEqual(t2->nb[2], 10 * 20 * sizeof(float));
+    AssertEqual(t2->number_bytes[1], 10 * sizeof(float));
+    AssertEqual(t2->number_bytes[2], 10 * 20 * sizeof(float));
 
     AssertEqual(t3->dimensions, 3);
     AssertEqual(t3->number_elements[0], 10);
     AssertEqual(t3->number_elements[1], 20);
     AssertEqual(t3->number_elements[2], 30);
-    AssertEqual(t3->nb[1], 10 * sizeof(float));
-    AssertEqual(t3->nb[2], 10 * 20 * sizeof(float));
-    AssertEqual(t3->nb[3], 10 * 20 * 30 * sizeof(float));
+    AssertEqual(t3->number_bytes[1], 10 * sizeof(float));
+    AssertEqual(t3->number_bytes[2], 10 * 20 * sizeof(float));
+    AssertEqual(t3->number_bytes[3], 10 * 20 * 30 * sizeof(float));
 
     AssertEqual(t4->dimensions, 4);
     AssertEqual(t4->number_elements[0], 1);
     AssertEqual(t4->number_elements[1], 2);
     AssertEqual(t4->number_elements[2], 3);
     AssertEqual(t4->number_elements[3], 4);
-    AssertEqual(t4->nb[1], 1 * sizeof(float));
-    AssertEqual(t4->nb[2], 1 * 2 * sizeof(float));
-    AssertEqual(t4->nb[3], 1 * 2 * 3 * sizeof(float));
-    AssertEqual(t4->nb[4], 1 * 2 * 3 * 4 * sizeof(float));
+    AssertEqual(t4->number_bytes[1], 1 * sizeof(float));
+    AssertEqual(t4->number_bytes[2], 1 * 2 * sizeof(float));
+    AssertEqual(t4->number_bytes[3], 1 * 2 * 3 * sizeof(float));
+    AssertEqual(t4->number_bytes[4], 1 * 2 * 3 * 4 * sizeof(float));
 
     tensor_free(ctx0);
   }

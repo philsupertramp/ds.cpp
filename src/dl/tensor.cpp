@@ -64,7 +64,7 @@ struct context * tensor_init(struct init_params params){
   }
 
   if(ctx == NULL){
-    // didn't find context, all context' used.
+    // didn't find context, all contexts used.
     return NULL;
   }
 
@@ -145,7 +145,7 @@ static struct tensor * new_tensor_impl(
     .dtype = type,
     .dimensions=n_dims,
     .number_elements={1, 1, 1, 1},
-    .nb={0, 0, 0, 0},
+    .number_bytes={0, 0, 0, 0},
     //.op=OP_NONE,
     //.is_param=false,
     //.grad=NULL,
@@ -155,16 +155,16 @@ static struct tensor * new_tensor_impl(
     //.perf_runs=0,
     //.perf_cycles=0,
     //.perf_time_us=0,
-    .data=data==NULL?(void *)(result + 1) : data,
+    .data=data==NULL ? (void *)(result + 1) : data,
     .pad={ 0 },
   };
 
   for(int i = 0; i < n_dims; ++i){
     result->number_elements[i] = ne[i];
   }
-  result->nb[0] = TYPE_SIZE[type];
-  for(int i = 1; i < MAX_DIMS; ++i){
-    result->nb[i] = result->nb[i - 1] * result->number_elements[i - 1];
+  result->number_bytes[0] = TYPE_SIZE[type];
+  for(int i = 1; i <= MAX_DIMS; ++i){
+    result->number_bytes[i] = result->number_bytes[i - 1] * result->number_elements[i - 1];
   }
   return result;
 }

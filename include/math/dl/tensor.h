@@ -1,7 +1,7 @@
 #pragma once
 
 #define MEM_ALIGN 16
-#define MAX_DIMS 5
+#define MAX_DIMS 4
 #define MAX_NODES 1024
 #define MAX_CONTEXTS 32   // The number of contexts that are allowed to exist in parallel
 
@@ -32,7 +32,7 @@ struct tensor {
 
   int dimensions;
   int number_elements[MAX_DIMS];
-  int nb[MAX_DIMS];
+  int number_bytes[MAX_DIMS];
 
   void *data;
   char *pad[4];
