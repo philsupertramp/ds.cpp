@@ -4,7 +4,24 @@
 
 class TensorTestCase : public Test {
 public:
-  void run() {
+  /*
+   * %TODO:
+   * - nrows
+   * - dup
+   * - dup_inplace
+   * - set_param
+   * - set_f32
+   * - get_f32_1d
+   * - add
+   * - add_inplace
+   * - print_objects
+   * - print_object
+   * - vec_set_i32
+   * - vec_set_f32
+   * - vec_set_d32
+   */
+
+  bool TestConstructors() {
     struct init_params params = {
       .mem_size = 128 * 1024 * 1024,
       .mem_buffer = NULL,
@@ -46,6 +63,53 @@ public:
     AssertEqual(t4->number_bytes[4], 1 * 2 * 3 * 4 * sizeof(float));
 
     tensor_free(ctx0);
+    return true;
+  }
+
+  bool TestAddition(){
+    struct init_params params = {
+      .mem_size = 128 * 1024 * 1024,
+      .mem_buffer = NULL,
+    };
+
+    struct context* ctx0 = tensor_init(params);
+    struct tensor * x = new_tensor_1d(ctx0, datatypes::FLOAT32, 1);
+
+    set_param(ctx0, x);
+
+    struct tensor * a = new_tensor_1d(ctx0, datatypes::FLOAT32, 1);
+
+    // a + x
+    struct tensor * res = add(ctx0, a, x);
+
+    print_objects(ctx0);
+
+    // gf = g(x) = a + x
+    struct cgraph gf = build_forward(res);
+    // gb = g(x)' = 1.0
+    struct cgraph gb = build_backward(ctx0, &gf, false);
+
+    set_f32(x, 2.0f);
+    set_f32(a, 5.0f);
+
+    graph_reset(&gf);
+
+    // (a + x)' == 1.0
+    set_f32(res->grad, 1.0f);
+
+    graph_compute(ctx0, &gb);
+
+    printf("f     = %f\n", get_f32_1d(res, 0));
+    printf("df/dx = %f\n", get_f32_1d(x->grad, 0));
+
+    // assertions
+
+    return true;
+  }
+
+  void run(){
+    TestConstructors();
+    TestAddition();
   }
 };
 

@@ -1,5 +1,30 @@
 #include "../../include/math/dl/tensor.h"
+#include <cassert>
 #include <stdexcept>
+#include <cstdio>
+
+#define DL_DEBUG 1
+
+#if (DL_DEBUG >= 1)
+#define DL_PRINT_DEBUG(...) printf(__VA_ARGS__)
+#else
+#define DL_PRINT_DEBUG(...)
+#endif
+
+#if (DL_DEBUG >= 5)
+#define DL_PRINT_DEBUG_5(...) printf(__VA_ARGS__)
+#else
+#define DL_PRINT_DEBUG_5(...)
+#endif
+
+#if (DL_DEBUG >= 10)
+#define DL_PRINT_DEBUG_10(...) printf(__VA_ARGS__)
+#else
+#define DL_PRINT_DEBUG_10(...)
+#endif
+
+#define DL_PRINT(...) printf(__VA_ARGS__)
+
 
 const size_t TYPE_SIZE[TYPE_COUNT] = {
     sizeof(int),
@@ -42,6 +67,29 @@ struct state {
 
 struct state global_state;
 
+// data type conversions
+inline static void vec_set_i32(const int n, int *x, const int v){ for (int i = 0; i < n; ++i) x[i] = v; }
+inline static void vec_set_f32(const int n, float *x, const float v){ for (int i = 0; i < n; ++i) x[i] = v; }
+inline static void vec_set_d32(const int n, double *x, const double v){ for (int i = 0; i < n; ++i) x[i] = v; }
+
+
+
+void print_object(const struct object * obj){
+  DL_PRINT(" - object: offset = %zu, size = %zu, next = %p\n",
+           obj->offset, obj->size, (const void*) obj->next);
+}
+void print_objects(const struct context * ctx){
+  struct object * obj = ctx->begin;
+
+  DL_PRINT("%s: objects in context %p:\n", __func__, (const void*) ctx);
+
+  while (obj != NULL){
+    print_object(obj);
+    obj = obj->next;
+  }
+
+  DL_PRINT("%s: --- end ---\n", __func__);
+}
 
 struct context * tensor_init(struct init_params params){
   struct context * ctx = NULL;
@@ -146,11 +194,11 @@ static struct tensor * new_tensor_impl(
     .dimensions=n_dims,
     .number_elements={1, 1, 1, 1},
     .number_bytes={0, 0, 0, 0},
-    //.op=OP_NONE,
-    //.is_param=false,
-    //.grad=NULL,
-    //.src0=NULL,
-    //.src1=NULL,
+    .op=ops::OP_NONE,
+    .is_param=false,
+    .grad=NULL,
+    .src0=NULL,
+    .src1=NULL,
     //.n_tasks=0,
     //.perf_runs=0,
     //.perf_cycles=0,
@@ -168,7 +216,6 @@ static struct tensor * new_tensor_impl(
   }
   return result;
 }
-
 
 struct tensor* new_tensor(
   struct context * ctx,
@@ -213,5 +260,167 @@ struct tensor* new_tensor_4d(
   return new_tensor(ctx, type, 4, ne);
 }
 
+// Getters
+int nrows(
+  struct tensor *t){
+  return t->number_elements[1] * t->number_elements[2] * t->number_elements[3];
+}
+
+// Move
+struct tensor *view_tensor(
+  struct context * ctx,
+  struct tensor *t){
+  return new_tensor_impl(ctx, t->dtype, t->dimensions, t->number_elements, t->data);
+}
+
+
+
+struct tensor *dup_impl(
+  struct context * ctx,
+  struct tensor *t,
+  bool inplace){
+  bool is_node = false;
+
+  if(!inplace && t->grad){
+    is_node = true;
+  }
+
+  struct tensor * result = inplace ? view_tensor(ctx, t) : dup_tensor(ctx, t);
+
+  result->op = ops::OP_DUP;
+  result->grad = is_node ? dup_tensor(ctx, result) : NULL;
+  result->src0 = t;
+  result->src1 = NULL;
+  return result;
+}
+
+struct tensor *dup_tensor(
+  struct context * ctx,
+  struct tensor *t){
+  return new_tensor_impl(ctx, t->dtype, t->dimensions, t->number_elements, NULL);
+}
+
+void set_param(
+  struct context *ctx,
+  struct tensor *t){
+  t->is_param = true;
+
+  assert(t->grad == NULL);
+  t->grad = dup_tensor(ctx, t);
+}
+float get_f32_1d(
+  const struct tensor *t,
+  size_t index){
+  switch(t->dtype){
+    case datatypes::FLOAT32:
+      {
+        assert(t->number_bytes[0] == sizeof(float));
+        return ((float *)t->data)[index];
+      }
+      break;
+    case datatypes::DOUBLE:
+      {
+        assert(t->number_bytes[0] == sizeof(double));
+        return ((double *)t->data)[index];
+      }
+      break;
+    case datatypes::INT:
+      {
+        assert(t->number_bytes[0] == sizeof(int));
+        return ((int *)t->data)[index];
+      }
+      break;
+    case datatypes::TYPE_COUNT:
+      {
+        assert(false);
+      }
+      break;
+  }
+  assert(false);
+  return 0.0f;
+}
+
+struct tensor * set_f32(
+  struct tensor *t,
+  float value){
+  const int n = nrows(t);
+  const int nc = t->number_elements[0];
+  const size_t n1 = t->number_bytes[1];
+
+  char *const data = (char *)t->data;
+
+  switch(t->dtype){
+    case datatypes::FLOAT32:
+      {
+        // assert(t->number_bytes[0] == sizeof(float));
+        for(int i = 0; i < n; i++){
+          vec_set_f32(nc, (float*)(data+i*n1), value);
+        }
+      }
+      break;
+    case datatypes::INT:
+      {
+        assert(t->number_bytes[0] == sizeof(int));
+        for(int i = 0; i < n; i++){
+          vec_set_i32(nc, (int*)(data + i * n1), value);
+        }
+      }
+      break;
+    case datatypes::DOUBLE:
+      {
+        assert(t->number_bytes[0] == sizeof(double));
+        for(int i = 0; i < n; i++){
+          vec_set_d32(nc, (double*)(data + i * n1), value);
+        }
+      }
+      break;
+    case datatypes::TYPE_COUNT:
+      {
+        assert(false);
+        // shouldn't happen
+      }
+      break;
+  }
+  return t;
+}
+
+// Math
+
+// Addition
+struct tensor * add_impl(
+  struct context * ctx,
+  struct tensor * a,
+  struct tensor * b,
+  bool inplace){
+  //same_shape(a, b);
+  bool is_node = false;
+
+  if(!inplace && (a->grad||b->grad)){
+    is_node = true;
+  }
+
+  struct tensor * result = inplace ? view_tensor(ctx, a) : dup_tensor(ctx, a);
+
+  result->op  = ops::OP_ADD;
+  result->grad = is_node ? dup_tensor(ctx, result) : NULL;
+  result->src0 = a;
+  result->src1 = b;
+
+  return result;
+}
+
+struct tensor * add(
+  struct context * ctx,
+  struct tensor *a,
+  struct tensor *b){
+  return add_impl(ctx, a, b, false);
+}
+
+struct tensor * add_inplace(
+  struct context * ctx,
+  struct tensor *a,
+  struct tensor *b){
+  return add_impl(ctx, a, b, true);
+}
 
 
