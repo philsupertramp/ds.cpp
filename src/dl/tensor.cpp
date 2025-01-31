@@ -514,7 +514,7 @@ struct cgraph build_backward(
     }
   }
 
-  for(int i = graph->n_nodes - 1; i >= 0: i--){
+  for(int i = graph->n_nodes - 1; i >= 0; i--){
     struct tensor *node = graph->nodes[i];
 
     if(node->grad){
