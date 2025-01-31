@@ -423,4 +423,115 @@ struct tensor * add_inplace(
   return add_impl(ctx, a, b, true);
 }
 
+void visit_parents(struct cgraph* graph, struct tensor* node){
+  if(node->grad == NULL){
+    if(node->op != OP_NONE){
+
+    }
+  }
+
+  for(int i = 0; i < graph->n_nodes; i++){
+    if(graph->nodes[i] == node){
+      return;
+    }
+  }
+
+  for(int i = 0; i < graph->n_leafs; i++){
+    if(graph->leafs[i] == node){
+      return;
+    }
+  }
+
+  if(node->src0){
+    visit_parents(graph, node->src0);
+  }
+  if(node->src1){
+    visit_parents(graph, node->src1);
+  }
+
+  
+}
+
+void build_forward_impl(
+  struct cgraph* graph,
+  struct tensor* t,
+  bool expand){
+  if(!expand){
+    graph->n_nodes = 0;
+    graph->n_leafs = 0;
+  }
+
+  const int n0 = graph->n_nodes;
+
+  // UNUSED(n0);
+
+  visit_parents(graph, t);
+
+  const int n_new = graph->n_nodes - n0;
+  DL_PRINT_DEBUG("%s: visited %d new nodes\n", __func__, n_new);
+
+  if(n_new > 0){
+    assert(graph->nodes[graph->n_nodes - 1] == t);
+  }
+}
+
+struct cgraph build_forward(
+  struct tensor *t){
+  struct cgraph res = {
+    .n_nodes=0,
+    .n_leafs=0,
+    .nodes={ NULL },
+    .grads={ NULL },
+    .leafs={ NULL }
+  };
+  build_forward_impl(&res, t, false);
+  return res;
+}
+void build_forward_expand(
+  struct cgraph* graph,
+  struct tensor *t){
+  build_forward_impl(graph, t, false);
+}
+
+struct cgraph build_backward(
+  struct context* ctx,
+  struct cgraph* graph,
+  bool keep){
+  struct cgraph res = *graph;
+
+  // otherwise it doesn't make much sense
+  assert(graph->n_nodes > 0);
+
+  // keep: maintain the original graph -> detach gradient nodes
+  if(keep) {
+    for(int i = 0; i < graph->n_nodes; i++){
+      struct tensor* node = graph->nodes[i];
+
+      if(node->grad){
+        node->grad = dup_tensor(ctx, node);
+        graph->grads[i] = node->grad;
+      }
+    }
+  }
+
+  for(int i = graph->n_nodes - 1; i >= 0: i--){
+    struct tensor *node = graph->nodes[i];
+
+    if(node->grad){
+      compute_backward(ctx, node, keep);
+    }
+  }
+
+  for(int i = graph->n_nodes - 1; i >= 0; i--){
+    struct tensor *node = graph->nodes[i];
+
+    if (node->is_param){
+      DL_PRINT_DEBUG("%s: found root node %p\n", __func__, (void*)node);
+      build_forward_impl(&res, node->grad, true);
+    }
+  }
+
+  return res;
+}
+
 

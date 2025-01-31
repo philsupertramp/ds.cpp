@@ -66,6 +66,8 @@ struct cgraph {
   int n_leafs;
 
   struct tensor * nodes[MAX_NODES];
+  struct tensor * grads[MAX_NODES];
+  struct tensor * leafs[MAX_NODES];
 
 };
 
@@ -141,10 +143,6 @@ struct tensor *dup_tensor(
   struct tensor *t);
 
 
-void set_param(
-  struct context * ctx,
-  struct tensor *t);
-
 struct tensor * set_f32(
   struct tensor *t,
   float val);
@@ -175,6 +173,28 @@ struct tensor * add_inplace(
   struct tensor * b);
 
 
+// Compute Graph
+
+void set_param(
+  struct context * ctx,
+  struct tensor *t);
+
+void build_forward_impl(
+  struct cgraph* graph,
+  struct tensor* t,
+  bool expand);
+
+struct cgraph build_forward(
+  struct tensor *t);
+
+void build_forward_expand(
+  struct cgraph* graph,
+  struct tensor *t);
+
+struct cgraph build_backward(
+  struct tensor* t,
+  struct cgraph* graph,
+  bool keep);
 
 #ifndef __cplusplus
 } // extern C
