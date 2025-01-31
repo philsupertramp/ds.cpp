@@ -3,6 +3,8 @@ lint:
 
 test:
 	./build.sh cmake-debug-coverage --test -o="MATH_EXTENSIONS=ds,numerics,symb,stat";
+test-standalone:
+	./build.sh cmake-debug-coverage-so --test;
 
 test-release:
 	./build.sh cmake-release-coverage --test -t=Release -o="MATH_EXTENSIONS=ds,numerics,symb,stat";

@@ -2,6 +2,17 @@
 #include <math/Matrix.h>
 #include <math/matrix_utils.h>
 
+Matrix<double> zeros(size_t rows, size_t columns, size_t elements) {
+  return Matrix<double>(0, rows, columns, elements);
+}
+
+Matrix<double> eye(size_t rows, size_t columns) {
+  auto realCols = columns;
+  if(columns == 0) realCols = rows;
+  auto out = zeros(rows, realCols);
+  for(size_t i = 0; i < rows && i < realCols; ++i) { out(i, i) = 1.0; }
+  return out;
+}
 
 class MatrixTestCase : public Test
 {
