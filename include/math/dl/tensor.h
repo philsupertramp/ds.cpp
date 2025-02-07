@@ -1,201 +1,233 @@
 #pragma once
 
-#define MEM_ALIGN 16
+#include <cstddef>
+#include <cstdlib>
+#include <cassert>
+
+
 #define MAX_DIMS 4
 #define MAX_NODES 1024
-#define MAX_CONTEXTS 32   // The number of contexts that are allowed to exist in parallel
+#define MEM_ALIGN 16
 
-
-#include <memory>
-#include <cstddef>
-#include <cstdint>
-#ifndef __cplusplus
-extern "C" {
-#endif
-
-#include <stdint.h>
-#include <stddef.h>
-#include <stdbool.h>
-
-struct objects;
-struct context;
 
 enum datatypes {
-  INT,
-  FLOAT32,
-  DOUBLE,
+  TYPE_FLOAT = 0,
+  TYPE_INT,
   TYPE_COUNT
 };
 
 enum ops {
-  OP_NONE = 0,
-  // internal
-  OP_DUP,
-
-  // math
   OP_ADD,
+
+  OP_NONE,
 };
 
-struct tensor {
-  enum datatypes dtype;
-
-  int dimensions;
-  int number_elements[MAX_DIMS];
-
-  /* Number of bytes
-   * number_bytes[0] = sizeof(dtype)
-   * number_bytes[1] = number_bytes[0]     * number_elements[0]     + padding
-   * number_bytes[i] = number_bytes[i - 1] * number_elements[i - 1]
-   */
-  int number_bytes[MAX_DIMS];
-
-  enum ops op;
-
-  bool is_param;
-
-  tensor *grad;
-  tensor *src0;
-  tensor *src1;
-
-  void *data;
-  char *pad[4];
+const size_t TYPE_SIZE[TYPE_COUNT] = {
+  sizeof(float),
+  sizeof(int),
 };
 
-struct cgraph {
-  int n_nodes;
-  int n_leafs;
 
-  struct tensor * nodes[MAX_NODES];
-  struct tensor * grads[MAX_NODES];
-  struct tensor * leafs[MAX_NODES];
+class CGraph;
 
+
+class Tensor
+{
+private:
+  enum datatypes dtype_;
+  int dims_;
+
+  size_t num_elem_[MAX_DIMS];
+  size_t num_bytes_[MAX_DIMS];
+
+  enum ops op_;
+
+  bool is_param_;
+
+  Tensor *grad_;
+  Tensor *srcL_;
+  Tensor *srcR_;
+
+  void *data_;
+  char *pad_[MAX_DIMS];
+
+  bool used_ = false;
+
+public:
+  Tensor()
+  {}
+
+  Tensor(size_t dims, const size_t *num_elements, void* data, enum datatypes type)
+  : dtype_(type), dims_(dims)
+  {
+    size_t required_size = 0;
+    if(data == NULL){
+      required_size += TYPE_SIZE[type];
+      for(size_t i = 0; i < dims; ++i){
+        required_size *= num_elements[i];
+      }
+
+      required_size = ((required_size + MEM_ALIGN - 1) / MEM_ALIGN) * MEM_ALIGN;
+      required_size += sizeof(Tensor);
+    }
+
+    for (size_t i = 0; i < MAX_DIMS; ++i) {
+      num_elem_[i] = i < dims ? num_elements[i] : 1;
+    }
+    num_bytes_[0] = TYPE_SIZE[type];
+    for(size_t i = 1; i <= MAX_DIMS; ++i){
+      num_bytes_[i] = num_bytes_[i - 1] * num_elem_[i - 1];
+    }
+
+    data_ = (data == NULL ? (void *)(malloc(required_size)) : data);
+    grad_ = NULL;
+    srcL_ = NULL;
+    srcR_ = NULL;
+    op_ = ops::OP_NONE;
+    is_param_ = false;
+    used_ = (data == NULL);
+    pad_[0] = 0;
+  }
+
+  ~Tensor(){
+    if(used_){
+      free(data_);
+      used_ = false;
+    }
+  }
+
+  [[nodiscard]] inline size_t nrows() const {
+    return num_elem_[1] * num_elem_[2] * num_elem_[3];
+  }
+
+  [[nodiscard]] inline bool hasGrad() const { return this->grad_ != NULL; }
+
+  // attribute getters
+  Tensor * srcL(){ return srcL_; }
+  Tensor * srcR(){ return srcR_; }
+  Tensor * grad(){ return grad_; }
+
+
+  Tensor* view(){
+    auto t = new Tensor(dims_, num_elem_, data_, dtype_);
+    return t;
+  }
+
+  Tensor* dup(){
+    auto t = new Tensor(dims_, num_elem_, NULL, dtype_);
+    return t;
+  }
+
+  friend Tensor* add(Tensor*, Tensor*, bool);
+  friend Tensor* add(Tensor*, Tensor*);
+
+  friend void visit_parents(CGraph*, Tensor *);
+  friend CGraph build_backward(CGraph* graph, bool keep);
 };
 
-struct init_params {
-  size_t mem_size;
-  void* mem_buffer;
+class CGraph
+{
+  size_t n_nodes;
+  size_t n_leafs;
+
+  Tensor* nodes[MAX_NODES];
+  Tensor* grads[MAX_NODES];
+  Tensor* leafs[MAX_NODES];
+public:
+  CGraph() = default;
+
+
+  friend void build_forward_impl(CGraph*, Tensor *, bool);
+  friend void visit_parents(CGraph*, Tensor*);
+  friend CGraph build_backward(CGraph* graph, bool keep);
+  friend void compute_backward(Tensor*, bool);
 };
+void compute_backward(Tensor* t, bool keep){
 
-void print_object(const struct object * obj);
-void print_objects(const struct context * ctx);
+}
 
+void visit_parents(CGraph* graph, Tensor* node){
+  if(node->grad_ == NULL){
+    if(node->op_ != OP_NONE){}
+  }
 
-struct context * tensor_init(struct init_params params);
-void tensor_free(struct context * ctx);
+  for(size_t i = 0; i < graph->n_nodes; i++){
+    if(graph->nodes[i] == node){
+      return;
+    }
+  }
+  for(size_t i = 0; i < graph->n_leafs; i++){
+    if(graph->nodes[i] == node){
+      return;
+    }
+  }
 
-// Factory methods
+  if(node->srcL_){
+    visit_parents(graph, node->srcL_);
+  }
+  if(node->srcR_){
+    visit_parents(graph, node->srcR_);
+  }
+}
 
-struct tensor* new_tensor(
-  struct context * ctx,
-  enum datatypes type,
-  int n_dims,
-  const int *ne);
+void build_forward_impl(CGraph* graph, Tensor* t, bool expand){
+  if(!expand){
+    graph->n_nodes = 0;
+    graph->n_leafs = 0;
+  }
 
-struct tensor * new_tensor_1d(
-        struct context * ctx,
-        enum   datatypes type,
-        int    ne0);
+  const size_t n0 = graph->n_nodes;
 
-struct tensor * new_tensor_2d(
-        struct context * ctx,
-        enum   datatypes type,
-        int    ne0,
-        int    ne1);
+  visit_parents(graph, t);
 
-struct tensor * new_tensor_3d(
-        struct context * ctx,
-        enum   datatypes type,
-        int    ne0,
-        int    ne1,
-        int    ne2);
+  const size_t n_new = graph->n_nodes - n0;
 
-struct tensor * new_tensor_4d(
-        struct context * ctx,
-        enum   datatypes type,
-        int    ne0,
-        int    ne1,
-        int    ne2,
-        int    ne3);
+  if(n_new > 0){
+    assert(graph->nodes[graph->n_nodes - 1] == t);
+  }
+}
 
-// Getters
-int nrows(
-  struct tensor* t);
+CGraph build_forward(Tensor* t){
+  CGraph res;
+  build_forward_impl(&res, t, false);
+  return res;
+}
 
-// Move operators
-struct tensor *view_tensor(
-  struct context * ctx,
-  struct tensor *t);
+CGraph build_forward_expand(Tensor *t){
+  CGraph res;
+  build_forward_impl(&res, t, true);
+  return res;
+}
 
-struct tensor *dup_impl(
-  struct context * ctx,
-  struct tensor *t,
-  bool inplace);
-struct tensor *dup(
-  struct context * ctx,
-  struct tensor *t);
-struct tensor *dup_inplace(
-  struct context * ctx,
-  struct tensor *t);
+CGraph build_backward(CGraph* graph, bool keep=true){
+  CGraph res = *graph;
 
+  assert(graph->n_nodes > 0);
 
-struct tensor *dup_tensor(
-  struct context * ctx,
-  struct tensor *t);
+  if(keep){
+    for(size_t i = 0; i < graph->n_nodes; i++){
+      Tensor* t = graph->nodes[i];
 
+      if(t->grad_){
+        t->grad_ = t;
+        graph->grads[i] = t->grad_;
+      }
+    }
+  }
 
-struct tensor * set_f32(
-  struct tensor *t,
-  float val);
+  for(int i = graph->n_nodes - 1; i >= 0; i--){
+    Tensor* t = graph->nodes[i];
+    if(t->grad_){
+      compute_backward(t, keep);
+    }
+  }
+  for(int i = graph->n_nodes - 1; i >= 0; i--){
+    Tensor* t = graph->nodes[i];
+    if(t->is_param_){
+      build_forward_impl(&res, t->grad_, true);
+    }
+  }
 
-float get_f32_1d(
-  const struct tensor *t,
-  size_t index);
+  return res;
+}
 
-
-
-// Math
-
-// Addition
-struct tensor * add_impl(
-  struct context * ctx,
-  struct tensor * a,
-  struct tensor * b,
-  bool inplace);
-
-struct tensor * add(
-  struct context * ctx,
-  struct tensor * a,
-  struct tensor * b);
-
-struct tensor * add_inplace(
-  struct context * ctx,
-  struct tensor * a,
-  struct tensor * b);
-
-
-// Compute Graph
-
-void set_param(
-  struct context * ctx,
-  struct tensor *t);
-
-void build_forward_impl(
-  struct cgraph* graph,
-  struct tensor* t,
-  bool expand);
-
-struct cgraph build_forward(
-  struct tensor *t);
-
-void build_forward_expand(
-  struct cgraph* graph,
-  struct tensor *t);
-
-struct cgraph build_backward(
-  struct tensor* t,
-  struct cgraph* graph,
-  bool keep);
-
-#ifndef __cplusplus
-} // extern C
-#endif
