@@ -40,6 +40,7 @@ endfunction()
 add_test_source(TestMatrix.cpp)
 add_test_source(dl/TestTensor.cpp)
 add_test_source(dl/nn/TestEngine.cpp)
+add_test_source(dl/nn/TestNN.cpp)
 
 if (MATH_EXTENSIONS MATCHES "(numerics)")
     add_test_source(numerics/TestUtils.cpp)

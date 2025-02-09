@@ -36,7 +36,7 @@ public:
     Value<T> act(0.0);
     size_t i = 0;
     for(auto xi : x){
-      act += (w[i] * xi) + b;
+      act += (*w[i].get() * xi) + b;
       i += 1;
     }
     return act.tanh();
