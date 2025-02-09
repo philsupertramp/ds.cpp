@@ -16,6 +16,22 @@ enum datatypes {
   TYPE_COUNT
 };
 
+enum task_type {
+  TASK_INIT = 0,
+  TASK_COMPUTE,
+  TASK_FINALIZE,
+};
+
+struct ComputeParams {
+  enum task_type type;
+
+  int ith, nth;
+
+  // worker buffer
+  size_t wsize;
+  void *wdata;
+};
+
 enum ops {
   OP_ADD,
 
@@ -33,6 +49,7 @@ class CGraph;
 
 class Tensor
 {
+  friend CGraph;
 private:
   enum datatypes dtype_;
   int dims_;
@@ -123,6 +140,10 @@ public:
 
   friend void visit_parents(CGraph*, Tensor *);
   friend CGraph build_backward(CGraph* graph, bool keep);
+  friend void compute_forward_add_f32(const ComputeParams*, const Tensor*, const Tensor*, Tensor*);
+  friend void compute_forward_add(const ComputeParams*, const Tensor*, const Tensor*, Tensor*);
+  friend void compute_forward(const ComputeParams*, Tensor*);
+  friend void compute_backward(Tensor*, bool);
 };
 
 class CGraph
@@ -141,93 +162,6 @@ public:
   friend void visit_parents(CGraph*, Tensor*);
   friend CGraph build_backward(CGraph* graph, bool keep);
   friend void compute_backward(Tensor*, bool);
+  friend void compute_forward(ComputeParams*, Tensor*);
 };
-void compute_backward(Tensor* t, bool keep){
-
-}
-
-void visit_parents(CGraph* graph, Tensor* node){
-  if(node->grad_ == NULL){
-    if(node->op_ != OP_NONE){}
-  }
-
-  for(size_t i = 0; i < graph->n_nodes; i++){
-    if(graph->nodes[i] == node){
-      return;
-    }
-  }
-  for(size_t i = 0; i < graph->n_leafs; i++){
-    if(graph->nodes[i] == node){
-      return;
-    }
-  }
-
-  if(node->srcL_){
-    visit_parents(graph, node->srcL_);
-  }
-  if(node->srcR_){
-    visit_parents(graph, node->srcR_);
-  }
-}
-
-void build_forward_impl(CGraph* graph, Tensor* t, bool expand){
-  if(!expand){
-    graph->n_nodes = 0;
-    graph->n_leafs = 0;
-  }
-
-  const size_t n0 = graph->n_nodes;
-
-  visit_parents(graph, t);
-
-  const size_t n_new = graph->n_nodes - n0;
-
-  if(n_new > 0){
-    assert(graph->nodes[graph->n_nodes - 1] == t);
-  }
-}
-
-CGraph build_forward(Tensor* t){
-  CGraph res;
-  build_forward_impl(&res, t, false);
-  return res;
-}
-
-CGraph build_forward_expand(Tensor *t){
-  CGraph res;
-  build_forward_impl(&res, t, true);
-  return res;
-}
-
-CGraph build_backward(CGraph* graph, bool keep=true){
-  CGraph res = *graph;
-
-  assert(graph->n_nodes > 0);
-
-  if(keep){
-    for(size_t i = 0; i < graph->n_nodes; i++){
-      Tensor* t = graph->nodes[i];
-
-      if(t->grad_){
-        t->grad_ = t;
-        graph->grads[i] = t->grad_;
-      }
-    }
-  }
-
-  for(int i = graph->n_nodes - 1; i >= 0; i--){
-    Tensor* t = graph->nodes[i];
-    if(t->grad_){
-      compute_backward(t, keep);
-    }
-  }
-  for(int i = graph->n_nodes - 1; i >= 0; i--){
-    Tensor* t = graph->nodes[i];
-    if(t->is_param_){
-      build_forward_impl(&res, t->grad_, true);
-    }
-  }
-
-  return res;
-}
 

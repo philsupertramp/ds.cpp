@@ -23,6 +23,8 @@ set(LIB_HEADERS
       include/math/sorting.h
       include/math/matrix_utils.h
     include/math/dl/tensor.h
+    include/math/dl/nn/engine.h
+    include/math/dl/nn/nn.h
 )
 
 set(LIB_SOURCES

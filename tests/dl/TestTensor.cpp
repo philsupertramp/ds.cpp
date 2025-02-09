@@ -50,6 +50,12 @@ public:
     auto newT = add(&T, &T2);
     AssertEqual(*newT->srcL(), T);
     AssertEqual(*newT->srcR(), T2);
+
+
+    const struct ComputeParams params = {
+
+    };
+
     return true;
   }
 
