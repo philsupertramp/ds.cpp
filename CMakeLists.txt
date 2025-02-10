@@ -22,7 +22,6 @@ set(LIB_HEADERS
       include/math/Random.h
       include/math/sorting.h
       include/math/matrix_utils.h
-    include/math/dl/tensor.h
     include/math/dl/nn/engine.h
     include/math/dl/nn/nn.h
 )
@@ -31,8 +30,6 @@ set(LIB_SOURCES
 
     src/Matrix.cpp
     src/format.cpp
-    src/dl/tensor.cpp
-
 )
 if(MATH_EXTENSIONS MATCHES "(numerics)")
     set(LIB_HEADERS

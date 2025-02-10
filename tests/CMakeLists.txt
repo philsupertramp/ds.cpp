@@ -38,7 +38,6 @@ endfunction()
 
 
 add_test_source(TestMatrix.cpp)
-add_test_source(dl/TestTensor.cpp)
 add_test_source(dl/nn/TestEngine.cpp)
 add_test_source(dl/nn/TestNN.cpp)
 

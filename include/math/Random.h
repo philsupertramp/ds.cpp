@@ -4,30 +4,33 @@
 #include <random>
 
 static bool TimeInitialized = false;
-static int RandomSeed       = 2;
+static int RandomSeed = 2;
+static std::mt19937 rng; // Mersenne Twister engine
+
 /**
  * RNG
  */
 class Random
 {
   /**
-   * initialize and set seed
+   * Initialize and set seed
    * @param useSeed
    */
   static void InitTime(bool useSeed = true) {
-    std::srand(useSeed ? RandomSeed : (int)time(0));
+    rng.seed(useSeed ? RandomSeed : static_cast<int>(time(0)));
     TimeInitialized = true;
   }
 
 public:
   /**
-   * sets seed to given value
+   * Sets seed to given value
    * @param seed
    */
   static void SetSeed(int seed) {
-    RandomSeed      = seed;
+    RandomSeed = seed;
     TimeInitialized = false;
   }
+
   /**
    * Getter for random number between (including borders) l and r
    * @param l
@@ -35,12 +38,10 @@ public:
    * @returns
    */
   static double Get(double l = 0.0, double r = 1.0) {
-    if(!TimeInitialized) InitTime(false);
+    if (!TimeInitialized) InitTime(true);
 
-    std::random_device rd;                       // create object for seeding
-    std::mt19937 gen{ rd() };                    // create engine and seed it
-    std::uniform_real_distribution<> dist(l, r); // create distribution for integers with [1; 9] range
-    return dist(gen);
+    std::uniform_real_distribution<> dist(l, r);
+    return dist(rng);
   }
 };
 /**
