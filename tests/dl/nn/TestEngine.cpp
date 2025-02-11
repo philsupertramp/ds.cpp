@@ -1,5 +1,6 @@
 #include "../../Test.h"
 #include <math/dl/nn/engine.h>
+#include <math/Random.h>
 #include <memory>
 
 
@@ -150,6 +151,44 @@ public:
     return true;
   }
 
+  bool TestExample(){
+    
+    std::vector<std::shared_ptr<Value<float>>> vals = {
+      std::make_shared<Value<float>>(0.f),
+      std::make_shared<Value<float>>(2.f),
+      std::make_shared<Value<float>>(3.5f),
+      std::make_shared<Value<float>>(5.f),
+      std::make_shared<Value<float>>(12.4f),
+      std::make_shared<Value<float>>(13.f),
+    };
+    std::vector<std::shared_ptr<Value<float>>> labels = {
+      std::make_shared<Value<float>>(10.f),
+      std::make_shared<Value<float>>(15.f),
+      std::make_shared<Value<float>>(17.5f),
+      std::make_shared<Value<float>>(19.5f),
+      std::make_shared<Value<float>>(21.13f),
+      std::make_shared<Value<float>>(25.f),
+    };
+
+    std::shared_ptr<Value<float>> W = std::make_shared<Value<float>>((float)Random::Get());
+    std::shared_ptr<Value<float>> b = std::make_shared<Value<float>>((float)Random::Get());
+
+    std::shared_ptr<Value<float>> val;
+
+    std::cout << "##########################################" << std::endl << std::endl << "Optimizing baby!" << std::endl << "##################################" << std::endl << std::endl;
+
+    for(auto x : vals){
+      val = x * W + b;
+      val->backward();
+      std::cout << val << std::endl;
+    }
+    std::cout << std::endl << std::endl << "##########################################" << std::endl << "##################################" << std::endl << std::endl;
+    //auto l1 = labels[0] * W + b;
+
+    std::cout << "We out!!! " << *val << std::endl;
+    return true;
+  }
+
   void run(){
     TestAddition();
     TestMultiplication();
@@ -161,6 +200,8 @@ public:
     TestReLU();
 
     TestBackward();
+
+    TestExample();
   }
 };
 

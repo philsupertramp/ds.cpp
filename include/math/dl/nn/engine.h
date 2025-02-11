@@ -7,8 +7,9 @@
 #include <functional>
 #include <vector>
 #include <algorithm>
+#include "../../format.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 #if (DEBUG > 0)
 #define DEBUG_PRINT(...) printf(__VA_ARGS__)
@@ -262,7 +263,9 @@ public:
           build_topo(child);
         }
         topo.push_back(v);
-        std::cout << "Added node " << *v <<std::endl;
+        std::ostringstream ss;
+        ss << *v;
+        DEBUG_PRINT("Added node %s\n", ss.str().c_str());
       }
     };
     build_topo(this->shared_from_this());
@@ -322,7 +325,7 @@ std::ostream& operator<<(std::ostream& ostr, const Value<T>& val){
   }
   std::string childStr = stringStream.str();
   
-  DEBUG_PRINT(
+  ostr << format(
     "Value[%p](data=%f, label=%s, op=%d, grad=%f, children=%s)",
     (void*)&val,
     val.data,

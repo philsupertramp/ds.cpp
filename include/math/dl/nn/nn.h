@@ -31,7 +31,7 @@ public:
     }
   }
 
-  virtual std::shared_ptr<Value<T>> operator()(const std::vector<std::shared_ptr<Value<T>>>&) = 0;
+  virtual std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) = 0;
   virtual std::vector<std::shared_ptr<Value<T>>> parameters() = 0;
 };
 
@@ -52,18 +52,24 @@ public:
     b = std::make_shared<Value<T>>(static_cast<T>(1.0));
   }
 
-  std::shared_ptr<Value<T>> operator()(const std::vector<std::shared_ptr<Value<T>>>& xx) override {
-    auto act = std::make_shared<Value<T>>(0.0f);
-    size_t i = 0;
-    DEBUG_PRINT("casting input...\n");
-    
-    DEBUG_PRINT("Input converted\n");
-    for(auto p : xx){
-      DEBUG_PRINT("Elem %f -> %f\n", p->data, act->data);
-      act = act + ((w[i] * p) + b);
-      i += 1;
+  std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) override {
+    std::vector<std::shared_ptr<Value<T>>> out;
+
+    for(auto xx : X){
+      auto act = std::make_shared<Value<T>>(0.0f);
+      size_t i = 0;
+      DEBUG_PRINT("casting input...\n");
+      
+      DEBUG_PRINT("Input converted\n");
+      for(auto p : xx){
+        DEBUG_PRINT("Elem %f -> %f\n", p->data, act->data);
+        act = act + ((w[i] * p) + b);
+        i += 1;
+      }
+      auto final = (*act).tanh();
+      out.push_back(final);
     }
-    return (*act).tanh();
+    return {out};
   }
 
   std::vector<std::shared_ptr<Value<T>>> parameters() override {
@@ -113,12 +119,12 @@ public:
     }
   }
 
-  virtual std::shared_ptr<Value<T>> operator()(const std::vector<std::shared_ptr<Value<T>>>& xx){
-    std::vector<std::shared_ptr<Value<T>>> out;
+  std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) override {
+    std::vector<std::vector<std::shared_ptr<Value<T>>>> out;
     for(auto neuron : neurons){
-      out.push_back((*neuron)(xx));
+      out.push_back((*neuron)(X)[0]);
     }
-    return out[0];
+    return out;
   }
   std::vector<std::shared_ptr<Value<T>>> parameters() {
     std::vector<std::shared_ptr<Value<T>>> params;
@@ -148,3 +154,57 @@ std::ostream& operator<<(std::ostream& ostr, const Layer<C>& val){
   }
   return ostr;
 }
+
+
+template<typename T>
+class MLP
+: public Module<T>
+{
+  std::vector<std::shared_ptr<Layer<T>>> layers;
+public:
+  MLP(size_t num_inputs, const std::vector<size_t>& hidden, int seed=420)
+  {
+    std::vector<size_t> layerSizes = {num_inputs};
+    layerSizes.insert(layerSizes.end(), hidden.begin(), hidden.end());
+    for(size_t i = 0; i < hidden.size(); ++i){
+      layers.push_back(std::make_shared<Layer<T>>(layerSizes[i], layerSizes[i+1], seed));
+    }
+  }
+  std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) override {
+    std::vector<std::vector<std::shared_ptr<Value<T>>>> out = X;
+    for(auto layer : layers){
+      out = (*layer)(out);
+    }
+    return out;
+  }
+  std::vector<std::shared_ptr<Value<T>>> parameters() {
+    std::vector<std::shared_ptr<Value<T>>> params;
+    for(auto layer : layers){
+      auto p = layer->parameters();
+      params.insert(params.end(), p.begin(), p.end());
+    }
+    return params;
+  }
+  const std::vector<std::shared_ptr<Value<T>>> parameters() const {
+    std::vector<std::shared_ptr<Value<T>>> params;
+    for(auto layer : layers){
+      auto p = layer->parameters();
+      params.insert(params.end(), p.begin(), p.end());
+    }
+    return params;
+  }
+  template<typename C>
+  friend std::ostream& operator<<(std::ostream& ostr, const MLP<C>& val);
+
+};
+
+template<typename C>
+std::ostream& operator<<(std::ostream& ostr, const MLP<C>& val){
+  ostr << "MLP(";
+  for(auto layer : val.layers){
+    ostr << layer << std::endl;
+  }
+  ostr << ")";
+  return ostr;
+}
+
