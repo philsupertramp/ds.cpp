@@ -27,3 +27,6 @@ image_processing/training/
 image_classification/
 in.png
 out.png
+
+logs.txt
+

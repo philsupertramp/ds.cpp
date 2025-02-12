@@ -47,29 +47,31 @@ public:
     Random::SetSeed(seed);
     // set seed
     for(size_t i = 0; i < num_inputs; i++){
-      w.push_back(std::make_shared<Value<T>>(static_cast<T>(Random::Get())));
+      w.push_back(std::make_shared<Value<T>>(static_cast<T>(Random::Get(-1.0, 1.0))));
     }
-    b = std::make_shared<Value<T>>(static_cast<T>(1.0));
+    b = std::make_shared<Value<T>>(static_cast<T>(Random::Get(-1.0, 1.0)));
   }
 
   std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) override {
-    std::vector<std::shared_ptr<Value<T>>> out;
+    std::vector<std::vector<std::shared_ptr<Value<T>>>> out;
 
     for(auto xx : X){
+      if(xx.size() != w.size()){
+        throw std::invalid_argument("Input vector does not match shape of weights.\n");
+      }
       auto act = std::make_shared<Value<T>>(0.0f);
       size_t i = 0;
-      DEBUG_PRINT("casting input...\n");
-      
-      DEBUG_PRINT("Input converted\n");
       for(auto p : xx){
-        DEBUG_PRINT("Elem %f -> %f\n", p->data, act->data);
-        act = act + ((w[i] * p) + b);
+        DEBUG_PRINT_2("Elem %f -> %f\n", p->data, act->data);
+        act = act + (w[i] * p);
         i += 1;
       }
+      act = act + b;
+
       auto final = (*act).tanh();
-      out.push_back(final);
+      out.push_back({final});
     }
-    return {out};
+    return out;
   }
 
   std::vector<std::shared_ptr<Value<T>>> parameters() override {
@@ -114,6 +116,7 @@ class Layer
 public:
   Layer(size_t num_inputs, size_t num_outputs, int seed=420)
   {
+    std::cout << "Creating layer.... With " << num_inputs << " #inputs and " << num_outputs << " #outputs." << std::endl;
     for(size_t i = 0; i < num_outputs; i++){
       neurons.push_back(std::make_shared<Neuron<T>>(num_inputs, seed));
     }
@@ -121,8 +124,17 @@ public:
 
   std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) override {
     std::vector<std::vector<std::shared_ptr<Value<T>>>> out;
-    for(auto neuron : neurons){
-      out.push_back((*neuron)(X)[0]);
+    //size_t i = 0;
+    //std::cout << "Running layer..." << std::endl;
+    for(auto xx : X){
+      std::vector<std::shared_ptr<Value<T>>> res;
+      auto met = [xx](const std::shared_ptr<Neuron<T>>& n){
+        return ((*n)({xx}))[0][0];
+      };
+      for(auto n : neurons){
+        res.push_back(met(n));
+      }
+      out.push_back(res);
     }
     return out;
   }
@@ -172,8 +184,10 @@ public:
   }
   std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) override {
     std::vector<std::vector<std::shared_ptr<Value<T>>>> out = X;
+    //size_t i = 0;
     for(auto layer : layers){
       out = (*layer)(out);
+      //std::cout << "Layer " << i++ << " done." << std::endl;
     }
     return out;
   }
@@ -200,9 +214,9 @@ public:
 
 template<typename C>
 std::ostream& operator<<(std::ostream& ostr, const MLP<C>& val){
-  ostr << "MLP(";
+  ostr << "MLP(" << std::endl;
   for(auto layer : val.layers){
-    ostr << layer << std::endl;
+    ostr << *layer << std::endl;
   }
   ostr << ")";
   return ostr;

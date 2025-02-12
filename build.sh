@@ -95,7 +95,7 @@ else
   mkdir -p ${DIR_NAME}
   (
     cd ${DIR_NAME};
-    cmake ${BUILD_OPTIONS} -G "CodeBlocks - Unix Makefiles" ..
+    cmake ${BUILD_OPTIONS} ..
     cmake --build . ${TARGET} -- -j 3;
     if [ ${WITH_BENCHMARKS} -eq 1 ]
     then

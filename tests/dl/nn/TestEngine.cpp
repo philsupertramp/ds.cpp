@@ -20,8 +20,8 @@ public:
     std::cout << *foo << std::endl;
 
     AssertEqual(foo->grad, 1.0f);
-    AssertEqual(foo->prev[0]->grad, 2.0f);
-    AssertEqual(foo->prev[1]->grad, 2.0f);
+    AssertEqual(foo->left->grad, 2.0f);
+    AssertEqual(foo->right->grad, 2.0f);
 
     return true;
   }
@@ -39,10 +39,8 @@ public:
     foo->backward();
 
     AssertEqual(foo->grad, 1.f);
-    AssertEqual(foo->prev[0]->grad, 16.0f);
-    AssertEqual(foo->prev[1]->grad, 2.0f);
-
-
+    AssertEqual(foo->left->grad, 16.0f);
+    AssertEqual(foo->right->grad, 2.0f);
     return true;
   }
 
@@ -59,6 +57,9 @@ public:
     foo->backward();
     std::cout << *foo << std::endl;
 
+    AssertEqual(foo->grad, 1.0f);
+    AssertEqual(foo->left->grad, 1.0f);
+    AssertEqual(foo->right->grad, -1.0f);
     return true;
   }
 
@@ -74,6 +75,12 @@ public:
     AssertEqual(foo->data, 2.0f);
     AssertEqual((int)foo->op, (int)OP::OP_DIV);
 
+    foo->backward();
+
+    AssertEqual(foo->grad, 1.0f);
+    AssertEqual(foo->left->grad, 1.0f/2.);
+    AssertEqual(foo->right->grad, -1.0f);
+
     return true;
   }
 
@@ -81,10 +88,18 @@ public:
     float data = 2.0f;
     auto val = std::make_shared<Value<float>>(data);
 
-    auto foo = val->pow(16.0);
+    auto foo = val->pow(4.0);
 
-    AssertEqual(foo->data, /* 2^16 */ 65536.f);
+    AssertEqual(foo->data, /* 2^16 */ 16.f);
     AssertEqual((int)foo->op, (int)OP::OP_POW);
+
+    foo->backward();
+
+    std::cout << "POW: " << *foo << std::endl << *(foo->left) << std::endl;
+
+    AssertEqual(foo->grad, 1.0f);
+    AssertEqual(foo->left->grad, 32.0f);
+
     return true;
   }
 
@@ -96,6 +111,12 @@ public:
 
     AssertEqual(foo->data, /* exp(5.0) */ 148.413162f);
 
+
+    foo->backward();
+
+    AssertEqual(foo->grad, 1.0f);
+    AssertEqual(foo->left->grad, 148.413162f);
+
     return true;
   }
 
@@ -106,6 +127,11 @@ public:
     auto foo = val->tanh();
 
     AssertEqual(foo->data, /* tanh(5.0) */ 0.9999092f);
+
+    foo->backward();
+
+    AssertEqual(foo->grad, 1.0f);
+    AssertEqual(foo->left->grad, 0.00018154751199999999);
 
     return true;
   }
@@ -120,6 +146,11 @@ public:
     AssertEqual(foo->data, 5.0f);
     AssertEqual(bar->data, 0.0f);
 
+    foo->backward();
+
+    AssertEqual(foo->grad, 1.0f);
+    AssertEqual(foo->left->grad, 1.0f);
+
     return true;
   }
 
@@ -133,7 +164,7 @@ public:
     std::cout << *b << "]" << std::endl;
     std::cout << "Computing C = A[" << *a <<"] * B[" << *b << "]" << std::endl;
     auto c = a * b;
-    std::cout << "Computing D = C->ReLU() [" << *c << ": " << c->prev[0] << " & " << c->prev[1] <<"]" << std::endl;
+    std::cout << "Computing D = C->ReLU() [" << *c << ": " << c->left << " & " << c->right <<"]" << std::endl;
     auto d = c->relu();
     std::cout << "Computing D backward() [" << *d << "]" << std::endl;
     d->backward();
