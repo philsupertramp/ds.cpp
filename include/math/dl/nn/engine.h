@@ -9,7 +9,7 @@
 #include <algorithm>
 #include "../../format.h"
 
-#define DEBUG 1
+#define DEBUG 2
 
 #if (DEBUG < 1)
 #define RESET ""

@@ -2,6 +2,7 @@
 
 #include <cassert>
 #include <cmath>
+#include <memory>
 #include <iostream>
 #include <math/numerics/utils.h>
 #include <math/format.h>
@@ -14,6 +15,16 @@ class Test
 public:
   bool extended      = false;
   virtual void run() = 0;
+
+  template<typename T>
+  void AssertEqual(const std::shared_ptr<T>& a, const std::shared_ptr<T>& b){
+    assert(a.get() == b.get());
+  }
+
+  template<typename T>
+  void AssertEqual(std::shared_ptr<T>& a, std::shared_ptr<T>& b) {
+    assert(a.get() == b.get());
+  }
 
   template<
   typename U,

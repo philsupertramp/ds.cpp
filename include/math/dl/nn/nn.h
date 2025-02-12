@@ -83,13 +83,12 @@ public:
     return params;
   }
 
-  const std::vector<std::shared_ptr<Value<T>>> parameters() const {
-    std::vector<std::shared_ptr<Value<T>>> params;
+  void printParams(std::ostream& ostr) const {
+    ostr << "NN[w = {";
     for(auto elem : w){
-      params.push_back(elem);
+      ostr << *elem << ", ";
     }
-    params.push_back(b);
-    return params;
+    ostr << "}, b = " << *b << "}]";
   }
 
   template<typename C>
@@ -98,12 +97,7 @@ public:
 
 template<typename T>
 std::ostream& operator<<(std::ostream& ostr, const Neuron<T>& val){
-  auto params = val.parameters();
-  ostr << "[";
-  for(auto param : params){
-    ostr << *param << ", ";
-  }
-  ostr << "]";
+  val.printParams(ostr);
   return ostr;
 }
 
@@ -139,14 +133,6 @@ public:
     return out;
   }
   std::vector<std::shared_ptr<Value<T>>> parameters() {
-    std::vector<std::shared_ptr<Value<T>>> params;
-    for(auto neuron : neurons){
-      auto p = neuron->parameters();
-      params.insert(params.end(), p.begin(), p.end());
-    }
-    return params;
-  }
-  const std::vector<std::shared_ptr<Value<T>>> parameters() const {
     std::vector<std::shared_ptr<Value<T>>> params;
     for(auto neuron : neurons){
       auto p = neuron->parameters();
@@ -199,14 +185,7 @@ public:
     }
     return params;
   }
-  const std::vector<std::shared_ptr<Value<T>>> parameters() const {
-    std::vector<std::shared_ptr<Value<T>>> params;
-    for(auto layer : layers){
-      auto p = layer->parameters();
-      params.insert(params.end(), p.begin(), p.end());
-    }
-    return params;
-  }
+
   template<typename C>
   friend std::ostream& operator<<(std::ostream& ostr, const MLP<C>& val);
 

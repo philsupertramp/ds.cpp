@@ -201,22 +201,34 @@ public:
       std::make_shared<Value<float>>(25.f),
     };
 
-    std::shared_ptr<Value<float>> W = std::make_shared<Value<float>>((float)Random::Get());
-    std::shared_ptr<Value<float>> b = std::make_shared<Value<float>>((float)Random::Get());
+    std::shared_ptr<Value<float>> W = std::make_shared<Value<float>>((float)0.1);
+    std::shared_ptr<Value<float>> b = std::make_shared<Value<float>>((float)1.0);
 
     std::shared_ptr<Value<float>> val;
 
-    std::cout << "##########################################" << std::endl << std::endl << "Optimizing baby!" << std::endl << "##################################" << std::endl << std::endl;
-
     for(auto x : vals){
-      val = x * W + b;
-      val->backward();
-      std::cout << val << std::endl;
+      val = (x * x) * W + b;
+      AssertEqual(val->data, (x->data * x->data) * W->data + b->data);
     }
-    std::cout << std::endl << std::endl << "##########################################" << std::endl << "##################################" << std::endl << std::endl;
-    //auto l1 = labels[0] * W + b;
 
-    std::cout << "We out!!! " << *val << std::endl;
+    auto x = vals[0];
+
+    val = x * W + b;
+    val->backward();
+
+    AssertEqual(val->right, b);
+    AssertEqual(val->left->right, W);
+    AssertEqual(val->left->left, x);
+
+    val = (x * x) * W + b;
+
+    val->printGraph(val);
+
+    AssertEqual(val->right, b);
+    AssertEqual(val->left->right, W);
+    AssertEqual(val->left->left->left, x);
+    AssertEqual(val->left->left->right, x);
+
     return true;
   }
 
