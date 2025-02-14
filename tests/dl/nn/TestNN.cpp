@@ -113,7 +113,7 @@ public:
     std::vector<size_t> hidden = {1};
     auto n = MLP<float>(3, hidden);
 
-    size_t EPOCH = 1;
+    size_t EPOCH = 10;
     float learning_rate = 0.01;
 
     for(size_t epoch = 0; epoch < EPOCH; ++epoch){
@@ -156,7 +156,7 @@ public:
   }
 
   void run(){
-    //TestOperator();
+    TestOperator();
     TestTrain();
   }
 
@@ -233,7 +233,7 @@ public:
     std::vector<size_t> hidden = {512, 32, 10};
     auto n = MLP<float>(values[0].size(), hidden);
 
-    size_t EPOCH = 0;
+    size_t EPOCH = 5;
     float learning_rate = 0.01;
 
     int batch_size = 16;
@@ -284,7 +284,7 @@ int main() {
   NeuronTestCase().run();
   LayerTestCase().run();
   MLPTestCase().run();
-  //MNISTTest().run();
+  MNISTTest().run();
   return 0;
 }
 

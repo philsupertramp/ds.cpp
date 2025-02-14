@@ -9,7 +9,7 @@
 #include <algorithm>
 #include "../../format.h"
 
-#define DEBUG 2
+#define DEBUG 1
 
 #if (DEBUG < 1)
 #define RESET ""
@@ -77,11 +77,6 @@ enum OP {
   OP_TANH,
   OP_RELU,
   OP_NONE
-};
-
-enum datatype {
-  FLOAT_32 = 0,
-  TYPE_COUNT
 };
 
 
@@ -337,6 +332,7 @@ public:
     std::set<std::shared_ptr<Value<T>>> visited;
     std::function<void(std::shared_ptr<Value<T>>)> build_topo = [&](std::shared_ptr<Value<T>> v) {
       if (visited.find(v) == visited.end()) {
+        v->grad= static_cast<T>(0.0);
         visited.insert(v);
         if(v->left != nullptr) {
           build_topo(v->left);

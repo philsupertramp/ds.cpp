@@ -35,6 +35,11 @@ public:
   virtual std::vector<std::shared_ptr<Value<T>>> parameters() = 0;
 };
 
+enum Activation {
+    TANH = 0,
+    RELU,
+    SIGMOID
+};
 template<typename T>
 class Neuron
 : public Module<T>
@@ -53,6 +58,11 @@ public:
   }
 
   std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X) override {
+    return (*this)(X, Activation::TANH);
+  }
+
+
+  std::vector<std::vector<std::shared_ptr<Value<T>>>> operator()(const std::vector<std::vector<std::shared_ptr<Value<T>>>>& X, enum Activation act_fn) {
     std::vector<std::vector<std::shared_ptr<Value<T>>>> out;
 
     for(auto xx : X){
@@ -68,8 +78,8 @@ public:
       }
       act = act + b;
 
-      auto final = (*act).tanh();
-      out.push_back({final});
+      auto final_out = act_fn == TANH ? (*act).tanh() : (*act).relu();
+      out.push_back({final_out});
     }
     return out;
   }
