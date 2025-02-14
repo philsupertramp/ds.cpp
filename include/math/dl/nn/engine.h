@@ -182,8 +182,8 @@ public:
     DEBUG_PRINT("%sASSIGN%s\n", BOLDRED, RESET);
     if (this != &other) {
       data = other.data;
-      left = other->left,
-      right = other->right,
+      left = other.left;
+      right = other.right;
       op = other.op;
       label = other.label;
       grad = other.grad;
@@ -342,7 +342,7 @@ public:
           build_topo(v->left);
         }
         if(v->right != nullptr) {
-          build_topo(v->left);
+          build_topo(v->right);
         }
         topo.push_back(v);
         std::ostringstream ss;
