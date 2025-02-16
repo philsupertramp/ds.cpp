@@ -13,10 +13,13 @@ find_program(CTEST_COVERAGE_COMMAND NAMES gcov)
 include(CTest)
 enable_testing()
 
+add_compile_options(-fsanitize=address -fsanitize=undefined)
+add_link_options(-fsanitize=address -fsanitize=undefined)
+
 include_directories(../include)
 
 IF (MATH_COVERAGE)
-    string(APPEND CMAKE_C_FLAGS " -fprofile-arcs -ftest-coverage -DHAVE_GCOV")
+string(APPEND CMAKE_C_FLAGS " -fprofile-arcs -ftest-coverage -DHAVE_GCOV")
     string(APPEND CMAKE_CXX_FLAGS " -fprofile-arcs -ftest-coverage -DHAVE_GCOV")
     string(APPEND CMAKE_EXE_LINKER_FLAGS " -fprofile-arcs -ftest-coverage -lgcov")
 ENDIF()

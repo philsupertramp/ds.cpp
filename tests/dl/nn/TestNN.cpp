@@ -113,7 +113,7 @@ public:
     std::vector<size_t> hidden = {1};
     auto n = MLP<float>(3, hidden);
 
-    size_t EPOCH = 10;
+    size_t EPOCH = 500;
     float learning_rate = 0.01;
 
     for(size_t epoch = 0; epoch < EPOCH; ++epoch){
@@ -150,6 +150,8 @@ public:
       std::cout << "]\033[0m" << std::endl;
 
       std::cout << "\033[32mEPOCH " << epoch  << ": loss = " << *l << "; LR: " << lr << "\033[0m" << std::endl;
+      ypred.clear();
+      l.reset();
     }
 
     return true;
@@ -230,13 +232,13 @@ public:
     std::vector<std::vector<std::shared_ptr<Value<float>>>> values;
     read_file(values, labels);
 
-    std::vector<size_t> hidden = {512, 32, 10};
+    std::vector<size_t> hidden = {512, 32, 1};
     auto n = MLP<float>(values[0].size(), hidden);
 
     size_t EPOCH = 5;
     float learning_rate = 0.01;
 
-    int batch_size = 16;
+    int batch_size = 1;
 
     size_t num_shards = ((values.size() + (values.size() % batch_size)) / batch_size);
 
@@ -274,6 +276,8 @@ public:
       //std::cout << "]\033[0m" << std::endl;
 
       std::cout << "\033[32mEPOCH " << epoch  << ": loss = " << *loss << "; LR: " << lr << "\033[0m" << std::endl;
+      local_values.clear();
+      ypred.clear();
     }
   }
 

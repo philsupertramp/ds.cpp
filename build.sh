@@ -14,6 +14,21 @@ TEST_ONLY=0;
 CLEAR=0;
 SPECIFIC_TEST=0;
 TARGET="";
+HELP=0;
+
+function print_help() {
+  echo "Build system...";
+  echo "Options:";
+  echo -e "-c | --coverage \t: build code coverage report";
+  echo -e "-b | --benchmarks \t: run benchmarks for matrix operations";
+  echo -e "-to | --test-only \t: only run test suite";
+  echo -e "-t | --build-type \t: building project with build type";
+  echo -e "-o | --options \t\t: other options for cmake (e.g. -o="MATH_DEBUG=2" -> -DMATH_DEBUG=2 )";
+  echo -e "-h | --help \t\t: print this help";
+  echo -e "--clear \t\t: clear build";
+  echo -e "--test \t\t\t: build & run test suite";
+  echo -e "--target \t\t: build specific target from cmake project";
+}
 
 for i in "$@"
 do
@@ -57,10 +72,19 @@ do
       BUILD_OPTIONS="${BUILD_OPTIONS} -D${i#*=}"
       shift
       ;;
+    -h|--help)
+      HELP=1;
+      shift
+      ;;
     *)
       ;;
 esac
 done
+
+if [ ${HELP:-0} == 1 ]; then
+  print_help
+  exit
+fi
 
 test_command() {
   COMMAND="ctest --extra-verbose --output-on-failure"
