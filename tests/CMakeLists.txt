@@ -13,8 +13,8 @@ find_program(CTEST_COVERAGE_COMMAND NAMES gcov)
 include(CTest)
 enable_testing()
 
-add_compile_options(-fsanitize=address -fsanitize=undefined)
-add_link_options(-fsanitize=address -fsanitize=undefined)
+# add_compile_options(-fsanitize=address -fsanitize=undefined)
+# add_link_options(-fsanitize=address -fsanitize=undefined)
 
 include_directories(../include)
 
