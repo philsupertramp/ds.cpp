@@ -109,7 +109,7 @@ public:
       {value(1), value(1), value(-1)},
     };
 
-    std::vector<std::shared_ptr<Value<float>>> ys = {value(1), value(-1), value(-1), value(1)};
+    std::vector<std::shared_ptr<Value<float>>> ys = {value(1), value(1), value(-1), value(-1)};
     std::vector<size_t> hidden = {1};
     auto n = MLP<float>(3, hidden);
 

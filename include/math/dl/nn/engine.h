@@ -178,6 +178,9 @@ public:
       right.reset();
       right = nullptr;
     }
+    if(backward_ != nullptr){
+      backward_ = nullptr;
+    }
     DEBUG_PRINT_1("Destroyed object.\n");
   };
 

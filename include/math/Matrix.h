@@ -398,7 +398,7 @@ public:
    */
   Matrix<T>& KroneckerMulti(const Matrix<T>& other) {
     assert(_element_size == other.elements());
-    auto result = new Matrix<T>(0, rows() * other.rows(), columns() * other.columns(), _element_size);
+    Matrix<T>* result = new Matrix<T>(0, rows() * other.rows(), columns() * other.columns(), _element_size);
     for(size_t m = 0; m < rows(); m++) {
       for(size_t n = 0; n < columns(); n++) {
         for(size_t p = 0; p < other.rows(); p++) {
