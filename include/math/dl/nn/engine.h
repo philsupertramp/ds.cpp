@@ -169,7 +169,17 @@ public:
     grad(other.grad),
     backward_(std::move(other.backward_)) {DEBUG_PRINT("%sMOVE%s\n", BOLDYELLOW, RESET);}
 
-  ~Value() = default;
+  ~Value(){
+    if(left != nullptr){
+      left.reset();
+      left = nullptr;
+    }
+    if(right != nullptr){
+      right.reset();
+      right = nullptr;
+    }
+    DEBUG_PRINT_1("Destroyed object.\n");
+  };
 
   // Assignment and comparison
 

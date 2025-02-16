@@ -216,9 +216,27 @@ public:
     val = x * W + b;
     val->backward();
 
+    std::cout << "\033[31mOP LEFT";
+    val->printGraph(val);
+    std::cout << "\033[0m;" << std::endl;
+
+    auto first_grad = val->grad;
+
     AssertEqual(val->right, b);
     AssertEqual(val->left->right, W);
     AssertEqual(val->left->left, x);
+
+    val = b + x * W;
+    val->backward();
+    std::cout << "\033[31mOP RIGHT";
+    val->printGraph(val);
+    std::cout << "\033[0m;" << std::endl;
+
+    AssertEqual(val->right->left, x);
+    AssertEqual(val->right->right, W);
+    AssertEqual(val->left, b);
+
+    AssertEqual(first_grad, val->grad);
 
     val = (x * x) * W + b;
 
