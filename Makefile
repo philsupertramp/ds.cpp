@@ -30,3 +30,6 @@ image-processing:
 
 benchmark:
 	./build.sh cmake-release -b -o="MATH_EXTENSIONS=numerics" --target=benchmarks -t=Release;
+
+vimtags: 
+  ctags --c++-kinds=+p --fields=+iaS --extras=+q --language-force=C++ -R .
