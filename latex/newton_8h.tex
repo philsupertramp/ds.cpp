@@ -6,14 +6,14 @@
 \doxysubsubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{using}} \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::function}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$
+using \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} = std\+::function$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$\&)$>$
 \begin{DoxyCompactList}\small\item\em representation of jacobian \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{using}} \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::function}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$
+using \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} = std\+::function$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$\&)$>$
 \begin{DoxyCompactList}\small\item\em representation of linear equation \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::pair}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} $>$ \mbox{\hyperlink{newton_8h_aacc26d9c74d7d171569d8fed83c6a967}{newton}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{f}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Df}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{x0}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} TOL, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} max\+Iter)
+std\+::pair$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$, int $>$ \mbox{\hyperlink{newton_8h_aacc26d9c74d7d171569d8fed83c6a967}{newton}} (const \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} \&f, const \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} \&Df, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&x0, double TOL, int max\+Iter)
 \end{DoxyCompactItemize}
 
 
@@ -28,21 +28,21 @@ Requires\+:
  
 
 \doxysubsection{Typedef Documentation}
-\Hypertarget{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}\label{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb} 
-\index{newton.h@{newton.h}!Jacobian@{Jacobian}}
+\Hypertarget{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}\index{newton.h@{newton.h}!Jacobian@{Jacobian}}
 \index{Jacobian@{Jacobian}!newton.h@{newton.h}}
 \doxysubsubsection{\texorpdfstring{Jacobian}{Jacobian}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{using}} \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} =  \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::function}}$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$\&)$>$}
+{\footnotesize\ttfamily \label{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb} 
+using \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} = std\+::function$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$\&)$>$}
 
 
 
 representation of jacobian 
 
-\Hypertarget{newton_8h_ae8b65eb11627dab8f1907f164294756b}\label{newton_8h_ae8b65eb11627dab8f1907f164294756b} 
-\index{newton.h@{newton.h}!LinearEquation@{LinearEquation}}
+\Hypertarget{newton_8h_ae8b65eb11627dab8f1907f164294756b}\index{newton.h@{newton.h}!LinearEquation@{LinearEquation}}
 \index{LinearEquation@{LinearEquation}!newton.h@{newton.h}}
 \doxysubsubsection{\texorpdfstring{LinearEquation}{LinearEquation}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{using}} \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} =  \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::function}}$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$\&)$>$}
+{\footnotesize\ttfamily \label{newton_8h_ae8b65eb11627dab8f1907f164294756b} 
+using \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} = std\+::function$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$\&)$>$}
 
 
 
@@ -51,11 +51,11 @@ representation of linear equation
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{newton_8h_aacc26d9c74d7d171569d8fed83c6a967}\label{newton_8h_aacc26d9c74d7d171569d8fed83c6a967} 
-\index{newton.h@{newton.h}!newton@{newton}}
+\Hypertarget{newton_8h_aacc26d9c74d7d171569d8fed83c6a967}\index{newton.h@{newton.h}!newton@{newton}}
 \index{newton@{newton}!newton.h@{newton.h}}
 \doxysubsubsection{\texorpdfstring{newton()}{newton()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::pair}}$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} $>$ newton (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} \&}]{f,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} \&}]{Df,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x0,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{TOL,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{max\+Iter }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{newton_8h_aacc26d9c74d7d171569d8fed83c6a967} 
+std\+::pair$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$, int $>$ newton (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{newton_8h_ae8b65eb11627dab8f1907f164294756b}{Linear\+Equation}} \&}]{f}{, }\item[{const \mbox{\hyperlink{newton_8h_aa3d3f9218597552f3ff4726daa5d68eb}{Jacobian}} \&}]{Df}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{x0}{, }\item[{double}]{TOL}{, }\item[{int}]{max\+Iter}{}\end{DoxyParamCaption})}
 
 newton method to find roots of given function f 
 \begin{DoxyParams}{Parameters}

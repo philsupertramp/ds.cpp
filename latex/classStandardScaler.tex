@@ -13,30 +13,31 @@ Inheritance diagram for Standard\+Scaler\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classStandardScaler_a9e15355fc3d19b29336d07460a56fae0}{Standard\+Scaler}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{with\+Means}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{with\+Std}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}})
+\mbox{\hyperlink{classStandardScaler_a9e15355fc3d19b29336d07460a56fae0}{Standard\+Scaler}} (bool with\+Means=true, bool with\+Std=true)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+void \mbox{\hyperlink{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec}{fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y) override
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7}{transform}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in) override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransformer}{Transformer}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classTransformer_a7f72b0693dc577dc9527daec63e3ee18}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classTransformer_a7f72b0693dc577dc9527daec63e3ee18}{predict}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in) override
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPredictor}{Predictor}}}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classStandardScaler_a564e42e242489cbb290fa6061e9f4bba}{means}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classStandardScaler_a564e42e242489cbb290fa6061e9f4bba}{means}}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classStandardScaler_a0d695e1928f2949cccd440ee39dec26c}{std\+\_\+deviations}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classStandardScaler_a0d695e1928f2949cccd440ee39dec26c}{std\+\_\+deviations}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classStandardScaler_a70710d2726c83503d50417c5e454bf08}{with\+\_\+std}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}
+bool \mbox{\hyperlink{classStandardScaler_a70710d2726c83503d50417c5e454bf08}{with\+\_\+std}} = true
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classStandardScaler_a7701dce93dd11c481804fd252bfec150}{with\+\_\+means}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}
+bool \mbox{\hyperlink{classStandardScaler_a7701dce93dd11c481804fd252bfec150}{with\+\_\+means}} = true
 \end{DoxyCompactItemize}
 
 
@@ -62,20 +63,20 @@ For instance many elements used in the objective funtion of a learning algorithm
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classStandardScaler_a9e15355fc3d19b29336d07460a56fae0}\label{classStandardScaler_a9e15355fc3d19b29336d07460a56fae0} 
-\index{StandardScaler@{StandardScaler}!StandardScaler@{StandardScaler}}
+\Hypertarget{classStandardScaler_a9e15355fc3d19b29336d07460a56fae0}\index{StandardScaler@{StandardScaler}!StandardScaler@{StandardScaler}}
 \index{StandardScaler@{StandardScaler}!StandardScaler@{StandardScaler}}
 \doxysubsubsection{\texorpdfstring{StandardScaler()}{StandardScaler()}}
-{\footnotesize\ttfamily Standard\+Scaler\+::\+Standard\+Scaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}}]{with\+Means = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}}]{with\+Std = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classStandardScaler_a9e15355fc3d19b29336d07460a56fae0} 
+Standard\+Scaler\+::\+Standard\+Scaler (\begin{DoxyParamCaption}\item[{bool}]{with\+Means}{ = {\ttfamily true}, }\item[{bool}]{with\+Std}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec}\label{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec} 
-\index{StandardScaler@{StandardScaler}!fit@{fit}}
+\Hypertarget{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec}\index{StandardScaler@{StandardScaler}!fit@{fit}}
 \index{fit@{fit}!StandardScaler@{StandardScaler}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Standard\+Scaler\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec} 
+void Standard\+Scaler\+::fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 Computes mean and sds to be used later in scaling.
 
@@ -90,11 +91,11 @@ Computes mean and sds to be used later in scaling.
 
 Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
 
-\Hypertarget{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7}\label{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7} 
-\index{StandardScaler@{StandardScaler}!transform@{transform}}
+\Hypertarget{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7}\index{StandardScaler@{StandardScaler}!transform@{transform}}
 \index{transform@{transform}!StandardScaler@{StandardScaler}}
 \doxysubsubsection{\texorpdfstring{transform()}{transform()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Standard\+Scaler\+::transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Standard\+Scaler\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{in}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 Perform standarization by centering and scaling
 \begin{DoxyItemize}
@@ -116,29 +117,29 @@ Implements \mbox{\hyperlink{classPredictor_a341a4d9fc8af8f53a07089100b213a73}{Pr
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classStandardScaler_a564e42e242489cbb290fa6061e9f4bba}\label{classStandardScaler_a564e42e242489cbb290fa6061e9f4bba} 
-\index{StandardScaler@{StandardScaler}!means@{means}}
+\Hypertarget{classStandardScaler_a564e42e242489cbb290fa6061e9f4bba}\index{StandardScaler@{StandardScaler}!means@{means}}
 \index{means@{means}!StandardScaler@{StandardScaler}}
 \doxysubsubsection{\texorpdfstring{means}{means}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ Standard\+Scaler\+::means}
+{\footnotesize\ttfamily \label{classStandardScaler_a564e42e242489cbb290fa6061e9f4bba} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$ Standard\+Scaler\+::means}
 
-\Hypertarget{classStandardScaler_a0d695e1928f2949cccd440ee39dec26c}\label{classStandardScaler_a0d695e1928f2949cccd440ee39dec26c} 
-\index{StandardScaler@{StandardScaler}!std\_deviations@{std\_deviations}}
+\Hypertarget{classStandardScaler_a0d695e1928f2949cccd440ee39dec26c}\index{StandardScaler@{StandardScaler}!std\_deviations@{std\_deviations}}
 \index{std\_deviations@{std\_deviations}!StandardScaler@{StandardScaler}}
 \doxysubsubsection{\texorpdfstring{std\_deviations}{std\_deviations}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ Standard\+Scaler\+::std\+\_\+deviations}
+{\footnotesize\ttfamily \label{classStandardScaler_a0d695e1928f2949cccd440ee39dec26c} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$ Standard\+Scaler\+::std\+\_\+deviations}
 
-\Hypertarget{classStandardScaler_a7701dce93dd11c481804fd252bfec150}\label{classStandardScaler_a7701dce93dd11c481804fd252bfec150} 
-\index{StandardScaler@{StandardScaler}!with\_means@{with\_means}}
+\Hypertarget{classStandardScaler_a7701dce93dd11c481804fd252bfec150}\index{StandardScaler@{StandardScaler}!with\_means@{with\_means}}
 \index{with\_means@{with\_means}!StandardScaler@{StandardScaler}}
 \doxysubsubsection{\texorpdfstring{with\_means}{with\_means}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} Standard\+Scaler\+::with\+\_\+means = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classStandardScaler_a7701dce93dd11c481804fd252bfec150} 
+bool Standard\+Scaler\+::with\+\_\+means = true\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classStandardScaler_a70710d2726c83503d50417c5e454bf08}\label{classStandardScaler_a70710d2726c83503d50417c5e454bf08} 
-\index{StandardScaler@{StandardScaler}!with\_std@{with\_std}}
+\Hypertarget{classStandardScaler_a70710d2726c83503d50417c5e454bf08}\index{StandardScaler@{StandardScaler}!with\_std@{with\_std}}
 \index{with\_std@{with\_std}!StandardScaler@{StandardScaler}}
 \doxysubsubsection{\texorpdfstring{with\_std}{with\_std}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} Standard\+Scaler\+::with\+\_\+std = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classStandardScaler_a70710d2726c83503d50417c5e454bf08} 
+bool Standard\+Scaler\+::with\+\_\+std = true\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

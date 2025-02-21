@@ -13,43 +13,43 @@ Inheritance diagram for Operand\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classOperand_a172a86345b5a1041f5565e1c6b457bc8}{Operand}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{name}})
+\mbox{\hyperlink{classOperand_a172a86345b5a1041f5565e1c6b457bc8}{Operand}} (const std\+::string \&name)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classMathNode}{Math\+Node}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMathNode_a3072bd11e770363889906d16578954cb}{Math\+Node}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}})
+\mbox{\hyperlink{classMathNode_a3072bd11e770363889906d16578954cb}{Math\+Node}} (const std\+::string \&val)
 \item 
-\mbox{\hyperlink{classMathNode_a18ab20a5b9156a02d4e4eec2a4c9528e}{Math\+Node}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMathNode}{Math\+Node}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{other}})
+\mbox{\hyperlink{classMathNode_a18ab20a5b9156a02d4e4eec2a4c9528e}{Math\+Node}} (const \mbox{\hyperlink{classMathNode}{Math\+Node}} \&other)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classMathNode_ac6689c4cc69071efbd524e0f2a7fe0f6}{Evaluate}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} =0
+virtual double \mbox{\hyperlink{classMathNode_ac6689c4cc69071efbd524e0f2a7fe0f6}{Evaluate}} () const =0
 \item 
-std\+::string \mbox{\hyperlink{classMathNode_abb5b146cee0a672f8fac4f2fd64c2c5e}{Get\+String}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+std\+::string \mbox{\hyperlink{classMathNode_abb5b146cee0a672f8fac4f2fd64c2c5e}{Get\+String}} () const
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classMathNode_a81c411ca0bd88075c3b1ba8b64bc6a47}{operator==}} (\mbox{\hyperlink{classMathNode}{Math\+Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{rhs}})
+bool \mbox{\hyperlink{classMathNode_a81c411ca0bd88075c3b1ba8b64bc6a47}{operator==}} (\mbox{\hyperlink{classMathNode}{Math\+Node}} \texorpdfstring{$\ast$}{*}rhs)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classMathNode}{Math\+Node}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classMathNode_a23bb4430c010646f85a41e722f30d7f6}{is\+Negative}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+bool \mbox{\hyperlink{classMathNode_a23bb4430c010646f85a41e722f30d7f6}{is\+Negative}} = false
 \begin{DoxyCompactList}\small\item\em helper to determine whether a node is negated or not \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classMathNode_a9cff117d073cd15538cf3f1d385d3207}{has\+Parentheses}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+bool \mbox{\hyperlink{classMathNode_a9cff117d073cd15538cf3f1d385d3207}{has\+Parentheses}} = false
 \begin{DoxyCompactList}\small\item\em helper to determine if node is within parentheses \end{DoxyCompactList}\item 
 \mbox{\hyperlink{MathNode_8h_af66185625ec6e66044e64693a29dfefe}{Math\+Node\+Type}} \mbox{\hyperlink{classMathNode_ab70eeffac4cad37de01dc063eeb93d8c}{type}}
 \begin{DoxyCompactList}\small\item\em node type representation \end{DoxyCompactList}\item 
 \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747ab}{Node\+Connection\+Type}} \mbox{\hyperlink{classMathNode_af971f001f9f6b2478dd28d9fa752c5e9}{connection\+Type}} = \mbox{\hyperlink{MathNode_8h_ac3957c9768ee90555a77588a75a747aba7e556deecd3a56edd17baf888f865259}{Node\+Connection\+Type\+::\+Connection\+Type\+\_\+\+Dual}}
 \begin{DoxyCompactList}\small\item\em type of connection allowed for this node \end{DoxyCompactList}\item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMathNode}{Math\+Node}} $>$ \mbox{\hyperlink{classMathNode_a7246ecf47bdb68471202f2c725cb41e4}{left}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMathNode}{Math\+Node}} $>$ \mbox{\hyperlink{classMathNode_a7246ecf47bdb68471202f2c725cb41e4}{left}} = nullptr
 \begin{DoxyCompactList}\small\item\em next node on left side \end{DoxyCompactList}\item 
-std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMathNode}{Math\+Node}} $>$ \mbox{\hyperlink{classMathNode_af81f7d62cd9008544aa999c6a1c55934}{right}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMathNode}{Math\+Node}} $>$ \mbox{\hyperlink{classMathNode_af81f7d62cd9008544aa999c6a1c55934}{right}} = nullptr
 \begin{DoxyCompactList}\small\item\em next node on right side \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMathNode_a2d7c199d2c5581160db369014654c084}{value}} \{\}
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMathNode_a2d7c199d2c5581160db369014654c084}{value}} \{\}
 \begin{DoxyCompactList}\small\item\em char representation of value \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classMathNode}{Math\+Node}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classMathNode_a316c8023f8a4129fb93974e3ce12b65d}{val\+Size}} = 0
+size\+\_\+t \mbox{\hyperlink{classMathNode_a316c8023f8a4129fb93974e3ce12b65d}{val\+Size}} = 0
 \begin{DoxyCompactList}\small\item\em helper to store size of value \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -57,11 +57,11 @@ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classMathNode}{Math\+Node}} $>$ \mbox
 Representation of operand can be numerical/symbolical 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classOperand_a172a86345b5a1041f5565e1c6b457bc8}\label{classOperand_a172a86345b5a1041f5565e1c6b457bc8} 
-\index{Operand@{Operand}!Operand@{Operand}}
+\Hypertarget{classOperand_a172a86345b5a1041f5565e1c6b457bc8}\index{Operand@{Operand}!Operand@{Operand}}
 \index{Operand@{Operand}!Operand@{Operand}}
 \doxysubsubsection{\texorpdfstring{Operand()}{Operand()}}
-{\footnotesize\ttfamily Operand\+::\+Operand (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{classOperand_a172a86345b5a1041f5565e1c6b457bc8} 
+Operand\+::\+Operand (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 default constructor 
 \begin{DoxyParams}{Parameters}

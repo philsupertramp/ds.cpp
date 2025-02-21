@@ -8,7 +8,7 @@ var searchData=
   ['get_5',['Get',['../classRandom.html#a5e7703d9e1a4de62e6483748afe35243',1,'Random']]],
   ['getbatch_6',['GetBatch',['../structSet.html#a38774f6f226f344d4444507fc5e53dc5',1,'Set']]],
   ['getboundaries_7',['getBoundaries',['../classPlot.html#abdbf7c37362b8b8b739b62ceb00a9b70',1,'Plot']]],
-  ['getcoefficient_8',['getcoefficient',['../classLagrangeBase.html#a4a8130da124cbc7cde51567d2c109f26',1,'LagrangeBase::GetCoefficient()'],['../classNewtonBase.html#a6c1dab8ac618446f83aec81320c67c4e',1,'NewtonBase::GetCoefficient()']]],
+  ['getcoefficient_8',['GetCoefficient',['../classLagrangeBase.html#a4a8130da124cbc7cde51567d2c109f26',1,'LagrangeBase::GetCoefficient()'],['../classNewtonBase.html#a6c1dab8ac618446f83aec81320c67c4e',1,'NewtonBase::GetCoefficient()']]],
   ['getcomponents_9',['GetComponents',['../classMatrix.html#ab300149624881a42fddbfbe9a463bd64',1,'Matrix']]],
   ['getdegree_10',['GetDegree',['../classEquation.html#afc1f65482396b9a8f0d07affe798fb2e',1,'Equation']]],
   ['getdepth_11',['GetDepth',['../classEquation.html#af24aea49f8fddde7c8ac1157bc99c636',1,'Equation']]],
@@ -19,8 +19,9 @@ var searchData=
   ['getplotdatatypename_16',['GetPlotDataTypeName',['../Plot_8h.html#aabdee3e53fca620b2e7929e0f29d41b4',1,'Plot.h']]],
   ['getregex_17',['GetRegex',['../MathNode_8h.html#a85bcdf174a2e5f29fc70bab45310509c',1,'MathNode.h']]],
   ['getrootnode_18',['GetRootNode',['../classDecisionTree.html#a569b48c520eb5b72a857170fccc791af',1,'DecisionTree']]],
-  ['getslice_19',['getslice',['../classMatrix.html#a74deba042f505ff0640028b07c20778e',1,'Matrix::GetSlice(size_t rowStart) const'],['../classMatrix.html#a48d5726de651f2cadce0255bd23b6b9b',1,'Matrix::GetSlice(size_t rowStart, size_t rowEnd, size_t colStart, size_t colEnd) const'],['../classMatrix.html#a9272c91399245dfc1a9a7787760b7815',1,'Matrix::GetSlice(size_t rowStart, size_t rowEnd, size_t colStart) const'],['../classMatrix.html#a263c7a2f670ed338a4cc4050f248fcc5',1,'Matrix::GetSlice(size_t rowStart, size_t rowEnd) const']]],
+  ['getslice_19',['GetSlice',['../classMatrix.html#a74deba042f505ff0640028b07c20778e',1,'Matrix::GetSlice(size_t rowStart) const'],['../classMatrix.html#a263c7a2f670ed338a4cc4050f248fcc5',1,'Matrix::GetSlice(size_t rowStart, size_t rowEnd) const'],['../classMatrix.html#a9272c91399245dfc1a9a7787760b7815',1,'Matrix::GetSlice(size_t rowStart, size_t rowEnd, size_t colStart) const'],['../classMatrix.html#a48d5726de651f2cadce0255bd23b6b9b',1,'Matrix::GetSlice(size_t rowStart, size_t rowEnd, size_t colStart, size_t colEnd) const']]],
   ['getslicesbyindex_20',['GetSlicesByIndex',['../classMatrix.html#acbab33bf55dbcfecea49053ccabed802',1,'Matrix']]],
-  ['getstring_21',['getstring',['../classMathNode.html#abb5b146cee0a672f8fac4f2fd64c2c5e',1,'MathNode::GetString()'],['../classEquation.html#a5e5434dd97f523734bd6dc41db0ea79a',1,'Equation::GetString()']]],
-  ['gini_22',['gini',['../DecisionTree_8h.html#ad2f2963dddf5d8c176992a23aedc3092',1,'gini(const Matrix&lt; double &gt; &amp;in):&#160;DecisionTree.h'],['../DecisionTree_8h.html#ad27b83d37741cc5afd32dab8738e4a79ad98fff1a06cd7c914cb9c4776045a6c2',1,'GINI:&#160;DecisionTree.h']]]
+  ['getstring_21',['GetString',['../classEquation.html#a5e5434dd97f523734bd6dc41db0ea79a',1,'Equation::GetString()'],['../classMathNode.html#abb5b146cee0a672f8fac4f2fd64c2c5e',1,'MathNode::GetString()']]],
+  ['gini_22',['GINI',['../DecisionTree_8h.html#ad27b83d37741cc5afd32dab8738e4a79ad98fff1a06cd7c914cb9c4776045a6c2',1,'DecisionTree.h']]],
+  ['gini_23',['gini',['../DecisionTree_8h.html#ad2f2963dddf5d8c176992a23aedc3092',1,'DecisionTree.h']]]
 ];

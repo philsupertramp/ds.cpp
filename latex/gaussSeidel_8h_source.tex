@@ -4,21 +4,21 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ }
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#pragma\ once}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../../Matrix.h"{}}}
-\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../../matrix\_utils.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Matrix_8h}{../../Matrix.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{matrix__utils_8h}{../../matrix\_utils.h}}"{}}}
 \DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{LU_8h}{LU.h}}"{}}}
 \DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{backwardSub_8h}{backwardSub.h}}"{}}}
 \DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{forwardSub_8h}{forwardSub.h}}"{}}}
 \DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00019\ }
 \DoxyCodeLine{00029\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\ \mbox{\hyperlink{gaussSeidel_8h_a7bb1e3f545d858ee2a450500c711f471}{gaussSeidel}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ A,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMatrix}{Matrix<double>}}\&\ b)\ \{}
-\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{LR}}\ =\ \mbox{\hyperlink{LU_8h_a038dcb2cb21184a74721f04644287d16}{LU}}(A);}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{auto}\ LR\ =\ \mbox{\hyperlink{LU_8h_a038dcb2cb21184a74721f04644287d16}{LU}}(A);}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bCopy}}\ =\ b;}
-\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ b.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ i++)\ \{\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bCopy}}.\mbox{\hyperlink{classMatrix_a097ed201a1768090a524f621ee2d80a1}{SetRow}}(i,\ b(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{LR}}.second[i]));\ \}}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{auto}\ bCopy\ =\ b;}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ b.\mbox{\hyperlink{classMatrix_a5330adf02b284293259eb9f7c9acaa99}{rows}}();\ i++)\ \{\ bCopy.SetRow(i,\ b(LR.second[i]));\ \}}
 \DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{c}}\ =\ \mbox{\hyperlink{forwardSub_8h_a2004e88ef01c16e0c9c5d99a45a208cf}{forwardSub}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{LR}}.first,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bCopy}});}
-\DoxyCodeLine{00036\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}{backwardSub}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{LR}}.first,\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{c}});}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{auto}\ c\ =\ \mbox{\hyperlink{forwardSub_8h_a2004e88ef01c16e0c9c5d99a45a208cf}{forwardSub}}(LR.first,\ bCopy);}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{backwardSub_8h_ae28539a00e471c9e01480c2d00874049}{backwardSub}}(LR.first,\ c);}
 \DoxyCodeLine{00037\ \}}
 \DoxyCodeLine{00038\ }
 

@@ -1,10 +1,10 @@
 var searchData=
 [
   ['i_0',['i',['../structInterest.html#a1cc071af1a8e0ad6c6916e7548da066a',1,'Interest']]],
-  ['imagedataset_1',['imagedataset',['../classImageDataSet.html#a6cb4942bbb5ce16e1ab67ccd550dc9e3',1,'ImageDataSet::ImageDataSet()'],['../classImageDataSet.html',1,'ImageDataSet'],['../classDataSet.html#ace55546372c7d22ae3fd467bdd6d1b5d',1,'DataSet::ImageDataSet']]],
+  ['imagedataset_1',['ImageDataSet',['../classImageDataSet.html',1,'ImageDataSet'],['../classDataSet.html#ace55546372c7d22ae3fd467bdd6d1b5d',1,'DataSet::ImageDataSet'],['../classImageDataSet.html#a6cb4942bbb5ce16e1ab67ccd550dc9e3',1,'ImageDataSet::ImageDataSet()']]],
   ['imagedataset_2eh_2',['ImageDataSet.h',['../ImageDataSet_8h.html',1,'']]],
   ['imageheight_3',['imageHeight',['../classImageDataSet.html#ab83106b8cff6d5cc8359aa490d85d07e',1,'ImageDataSet']]],
-  ['imageplot_4',['imageplot',['../classImagePlot.html',1,'ImagePlot'],['../classImagePlot.html#ac58ba6ab6c1ad8223934403858497b03',1,'ImagePlot::ImagePlot()']]],
+  ['imageplot_4',['ImagePlot',['../classImagePlot.html',1,'ImagePlot'],['../classImagePlot.html#ac58ba6ab6c1ad8223934403858497b03',1,'ImagePlot::ImagePlot()']]],
   ['imagewidth_5',['imageWidth',['../classImageDataSet.html#a9ba02bb2e1b60de7f6835ace293809f9',1,'ImageDataSet']]],
   ['impurity_6',['impurity',['../classDecisionTree.html#ab5bdd809891b26afecb2906e51e56f3c',1,'DecisionTree']]],
   ['impuritymeasure_7',['ImpurityMeasure',['../DecisionTree_8h.html#ad27b83d37741cc5afd32dab8738e4a79',1,'DecisionTree.h']]],
@@ -13,8 +13,8 @@ var searchData=
   ['initialize_5fweights_10',['initialize_weights',['../classClassifier.html#a82afce4aff01a4d7292eb43fb38329b8',1,'Classifier::initialize_weights()'],['../classLogRegSGD.html#a5f875d85e17bcd4b5c094214e4ef0c23',1,'LogRegSGD::initialize_weights()']]],
   ['inittime_11',['InitTime',['../classRandom.html#a1ded95446bdeffc95358e33de5d7de3b',1,'Random']]],
   ['input_12',['Input',['../structSet.html#a05d1a42371080cffdd7851cf9c00f81b',1,'Set']]],
-  ['inputcount_13',['inputcount',['../structSet.html#a2b7d3fdcba4188a6c2cd7808e8b0892a',1,'Set::InputCount'],['../classDataSet.html#a9cc77d557deb5f130c5ca93267a88b69',1,'DataSet::InputCount']]],
-  ['insertion_5fsort_14',['insertion_sort',['../sorting_8h.html#a681ff9816420cb51176ffbdcadaec45e',1,'insertion_sort(const T &amp;elem, Matrix&lt; T &gt; &amp;out, const int &amp;current_index):&#160;sorting.h'],['../sorting_8h.html#a796e0a1fdb1816ce8086aaf73bce409c',1,'insertion_sort(const T &amp;elem, std::vector&lt; T &gt; &amp;vec, const int &amp;current_index):&#160;sorting.h']]],
+  ['inputcount_13',['InputCount',['../structSet.html#a2b7d3fdcba4188a6c2cd7808e8b0892a',1,'Set::InputCount'],['../classDataSet.html#a9cc77d557deb5f130c5ca93267a88b69',1,'DataSet::InputCount']]],
+  ['insertion_5fsort_14',['insertion_sort',['../sorting_8h.html#a796e0a1fdb1816ce8086aaf73bce409c',1,'insertion_sort(const T &amp;elem, std::vector&lt; T &gt; &amp;vec, const int &amp;current_index):&#160;sorting.h'],['../sorting_8h.html#a681ff9816420cb51176ffbdcadaec45e',1,'insertion_sort(const T &amp;elem, Matrix&lt; T &gt; &amp;out, const int &amp;current_index):&#160;sorting.h']]],
   ['installation_15',['Installation',['../index.html#autotoc_md20',1,'']]],
   ['insurance_20h_20tt_16',['&lt;tt&gt;Insurance.h&lt;/tt&gt;',['../md_include_2math_2statistics_2README.html#autotoc_md10',1,'']]],
   ['insurance_2eh_17',['Insurance.h',['../Insurance_8h.html',1,'']]],

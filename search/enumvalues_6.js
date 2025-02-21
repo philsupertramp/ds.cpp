@@ -8,5 +8,5 @@ var searchData=
   ['nodetype_5foperator_5for_5fparentheses_5',['NodeType_Operator_or_Parentheses',['../MathNode_8h.html#af66185625ec6e66044e64693a29dfefeaa395cc2e4df7237a8e4cf83b2c175a59',1,'MathNode.h']]],
   ['nodetype_5fparentheses_6',['NodeType_Parentheses',['../MathNode_8h.html#af66185625ec6e66044e64693a29dfefeabb22938ecb03779ebe89024bb122529a',1,'MathNode.h']]],
   ['nodetype_5fsymbolic_7',['NodeType_Symbolic',['../MathNode_8h.html#af66185625ec6e66044e64693a29dfefea1e2b34bb3fd76d1773c0e739ab757f0b',1,'MathNode.h']]],
-  ['none_8',['none',['../DecisionTree_8h.html#aa7e8eeb6e645374f861a868ea569d360ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'NONE:&#160;DecisionTree.h'],['../Plot_8h.html#afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'NONE:&#160;Plot.h']]]
+  ['none_8',['NONE',['../DecisionTree_8h.html#aa7e8eeb6e645374f861a868ea569d360ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'NONE:&#160;DecisionTree.h'],['../Plot_8h.html#afb6eb4f28419b652027fad41104a6d22ac157bdf0b85a40d2619cbc8bc1ae5fe2',1,'NONE:&#160;Plot.h']]]
 ];

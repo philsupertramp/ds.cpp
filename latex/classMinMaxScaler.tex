@@ -13,23 +13,24 @@ Inheritance diagram for Min\+Max\+Scaler\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMinMaxScaler_a5a92384d12fdc77a5cd3b4f69709dae8}{Min\+Max\+Scaler}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{range\+\_\+min\+\_\+val}}=0., \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{range\+\_\+max\+\_\+val}}=1.\+0)
+\mbox{\hyperlink{classMinMaxScaler_a5a92384d12fdc77a5cd3b4f69709dae8}{Min\+Max\+Scaler}} (double range\+\_\+min\+\_\+val=0., double range\+\_\+max\+\_\+val=1.\+0)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+void \mbox{\hyperlink{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e}{fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y) override
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517}{transform}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in) override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classTransformer}{Transformer}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classTransformer_a7f72b0693dc577dc9527daec63e3ee18}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classTransformer_a7f72b0693dc577dc9527daec63e3ee18}{predict}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in) override
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPredictor}{Predictor}}}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classMinMaxScaler_a093652a804c1b9abac66a90682826b26}{min\+\_\+val}}
+double \mbox{\hyperlink{classMinMaxScaler_a093652a804c1b9abac66a90682826b26}{min\+\_\+val}}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classMinMaxScaler_accb2e2bc54bc3b37b2b217c611e9e523}{max\+\_\+val}}
+double \mbox{\hyperlink{classMinMaxScaler_accb2e2bc54bc3b37b2b217c611e9e523}{max\+\_\+val}}
 \end{DoxyCompactItemize}
 
 
@@ -40,20 +41,20 @@ Inheritance diagram for Min\+Max\+Scaler\+:\begin{figure}[H]
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classMinMaxScaler_a5a92384d12fdc77a5cd3b4f69709dae8}\label{classMinMaxScaler_a5a92384d12fdc77a5cd3b4f69709dae8} 
-\index{MinMaxScaler@{MinMaxScaler}!MinMaxScaler@{MinMaxScaler}}
+\Hypertarget{classMinMaxScaler_a5a92384d12fdc77a5cd3b4f69709dae8}\index{MinMaxScaler@{MinMaxScaler}!MinMaxScaler@{MinMaxScaler}}
 \index{MinMaxScaler@{MinMaxScaler}!MinMaxScaler@{MinMaxScaler}}
 \doxysubsubsection{\texorpdfstring{MinMaxScaler()}{MinMaxScaler()}}
-{\footnotesize\ttfamily Min\+Max\+Scaler\+::\+Min\+Max\+Scaler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{range\+\_\+min\+\_\+val = {\ttfamily 0.},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{range\+\_\+max\+\_\+val = {\ttfamily 1.0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classMinMaxScaler_a5a92384d12fdc77a5cd3b4f69709dae8} 
+Min\+Max\+Scaler\+::\+Min\+Max\+Scaler (\begin{DoxyParamCaption}\item[{double}]{range\+\_\+min\+\_\+val}{ = {\ttfamily 0.}, }\item[{double}]{range\+\_\+max\+\_\+val}{ = {\ttfamily 1.0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e}\label{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e} 
-\index{MinMaxScaler@{MinMaxScaler}!fit@{fit}}
+\Hypertarget{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e}\index{MinMaxScaler@{MinMaxScaler}!fit@{fit}}
 \index{fit@{fit}!MinMaxScaler@{MinMaxScaler}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Min\+Max\+Scaler\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e} 
+void Min\+Max\+Scaler\+::fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 Implements training algorithm 
 \begin{DoxyParams}{Parameters}
@@ -69,11 +70,11 @@ this
 
 Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
 
-\Hypertarget{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517}\label{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517} 
-\index{MinMaxScaler@{MinMaxScaler}!transform@{transform}}
+\Hypertarget{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517}\index{MinMaxScaler@{MinMaxScaler}!transform@{transform}}
 \index{transform@{transform}!MinMaxScaler@{MinMaxScaler}}
 \doxysubsubsection{\texorpdfstring{transform()}{transform()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Min\+Max\+Scaler\+::transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Min\+Max\+Scaler\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{in}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -82,17 +83,17 @@ Implements \mbox{\hyperlink{classPredictor_a341a4d9fc8af8f53a07089100b213a73}{Pr
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classMinMaxScaler_accb2e2bc54bc3b37b2b217c611e9e523}\label{classMinMaxScaler_accb2e2bc54bc3b37b2b217c611e9e523} 
-\index{MinMaxScaler@{MinMaxScaler}!max\_val@{max\_val}}
+\Hypertarget{classMinMaxScaler_accb2e2bc54bc3b37b2b217c611e9e523}\index{MinMaxScaler@{MinMaxScaler}!max\_val@{max\_val}}
 \index{max\_val@{max\_val}!MinMaxScaler@{MinMaxScaler}}
 \doxysubsubsection{\texorpdfstring{max\_val}{max\_val}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Min\+Max\+Scaler\+::max\+\_\+val\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classMinMaxScaler_accb2e2bc54bc3b37b2b217c611e9e523} 
+double Min\+Max\+Scaler\+::max\+\_\+val\hspace{0.3cm}{\ttfamily [private]}}
 
-\Hypertarget{classMinMaxScaler_a093652a804c1b9abac66a90682826b26}\label{classMinMaxScaler_a093652a804c1b9abac66a90682826b26} 
-\index{MinMaxScaler@{MinMaxScaler}!min\_val@{min\_val}}
+\Hypertarget{classMinMaxScaler_a093652a804c1b9abac66a90682826b26}\index{MinMaxScaler@{MinMaxScaler}!min\_val@{min\_val}}
 \index{min\_val@{min\_val}!MinMaxScaler@{MinMaxScaler}}
 \doxysubsubsection{\texorpdfstring{min\_val}{min\_val}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Min\+Max\+Scaler\+::min\+\_\+val\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classMinMaxScaler_a093652a804c1b9abac66a90682826b26} 
+double Min\+Max\+Scaler\+::min\+\_\+val\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

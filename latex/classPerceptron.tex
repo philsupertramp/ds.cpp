@@ -13,53 +13,54 @@ Inheritance diagram for Perceptron\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classPerceptron_a499ae65d675aca14c0b803df31199705}{Perceptron}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+eta}}=0.\+01, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{iter}}=10)
+\mbox{\hyperlink{classPerceptron_a499ae65d675aca14c0b803df31199705}{Perceptron}} (double \+\_\+eta=0.\+01, int iter=10)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPerceptron_a430fcf4782a3020add0094f986a1c54e}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+void \mbox{\hyperlink{classPerceptron_a430fcf4782a3020add0094f986a1c54e}{fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y) override
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classPerceptron_adba6029ff33690c1973fa24222f862b8}{net\+Input}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classPerceptron_adba6029ff33690c1973fa24222f862b8}{net\+Input}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X) override
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classPerceptron_a705ba8a2e4c9c5d0884ba9bdf769bd18}{activation}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classPerceptron_a705ba8a2e4c9c5d0884ba9bdf769bd18}{activation}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X) override
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d}{predict}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X) override
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classPerceptron_a8f136bf2a36d5a1b83fb02215cacb271}{cost\+Function}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+double \mbox{\hyperlink{classPerceptron_a8f136bf2a36d5a1b83fb02215cacb271}{cost\+Function}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X) override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classANNClassifier_af6e0a151d0d20cfff2abedca49c617ab}{ANNClassifier}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+eta}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+n\+\_\+iter}})
+\mbox{\hyperlink{classANNClassifier_af6e0a151d0d20cfff2abedca49c617ab}{ANNClassifier}} (double \+\_\+eta, int \+\_\+n\+\_\+iter)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classClassifier_ae6132b100c96a4f3d8ad3885b5acb28e}{Classifier}} ()
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Rows}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Columns}}=1)
+void \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (size\+\_\+t num\+Rows, size\+\_\+t num\+Columns=1)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{update}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{delta}})
+void \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&update, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&delta)
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in) override
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPredictor}{Predictor}}}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
 \begin{DoxyCompactList}\small\item\em Vector holding weights. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
 \begin{DoxyCompactList}\small\item\em Vector holding classification error per epoch. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classANNClassifier_a2e0e1ac7757c8cb67567c4dd4f42fef8}{eta}}
+double \mbox{\hyperlink{classANNClassifier_a2e0e1ac7757c8cb67567c4dd4f42fef8}{eta}}
 \begin{DoxyCompactList}\small\item\em Learning rate. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classANNClassifier_aae9927c5e2e95d69ba5baa9842f36b02}{n\+\_\+iter}}
+int \mbox{\hyperlink{classANNClassifier_aae9927c5e2e95d69ba5baa9842f36b02}{n\+\_\+iter}}
 \begin{DoxyCompactList}\small\item\em number epochs \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+bool \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = false
 \begin{DoxyCompactList}\small\item\em flag to initialize weights only once \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -80,11 +81,11 @@ Mainly implemented for academic use \begin{Desc}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classPerceptron_a499ae65d675aca14c0b803df31199705}\label{classPerceptron_a499ae65d675aca14c0b803df31199705} 
-\index{Perceptron@{Perceptron}!Perceptron@{Perceptron}}
+\Hypertarget{classPerceptron_a499ae65d675aca14c0b803df31199705}\index{Perceptron@{Perceptron}!Perceptron@{Perceptron}}
 \index{Perceptron@{Perceptron}!Perceptron@{Perceptron}}
 \doxysubsubsection{\texorpdfstring{Perceptron()}{Perceptron()}}
-{\footnotesize\ttfamily Perceptron\+::\+Perceptron (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{\+\_\+eta = {\ttfamily 0.01},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{iter = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{classPerceptron_a499ae65d675aca14c0b803df31199705} 
+Perceptron\+::\+Perceptron (\begin{DoxyParamCaption}\item[{double}]{\+\_\+eta}{ = {\ttfamily 0.01}, }\item[{int}]{iter}{ = {\ttfamily 10}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 default constructor 
 \begin{DoxyParams}{Parameters}
@@ -96,11 +97,11 @@ default constructor
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classPerceptron_a705ba8a2e4c9c5d0884ba9bdf769bd18}\label{classPerceptron_a705ba8a2e4c9c5d0884ba9bdf769bd18} 
-\index{Perceptron@{Perceptron}!activation@{activation}}
+\Hypertarget{classPerceptron_a705ba8a2e4c9c5d0884ba9bdf769bd18}\index{Perceptron@{Perceptron}!activation@{activation}}
 \index{activation@{activation}!Perceptron@{Perceptron}}
 \doxysubsubsection{\texorpdfstring{activation()}{activation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Perceptron\+::activation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classPerceptron_a705ba8a2e4c9c5d0884ba9bdf769bd18} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Perceptron\+::activation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 activate given input 
 \begin{DoxyParams}{Parameters}
@@ -114,11 +115,11 @@ activate given input
 
 Implements \mbox{\hyperlink{classANNClassifier_af1d25129fd2594d89a08a025b03dfd62}{ANNClassifier}}.
 
-\Hypertarget{classPerceptron_a8f136bf2a36d5a1b83fb02215cacb271}\label{classPerceptron_a8f136bf2a36d5a1b83fb02215cacb271} 
-\index{Perceptron@{Perceptron}!costFunction@{costFunction}}
+\Hypertarget{classPerceptron_a8f136bf2a36d5a1b83fb02215cacb271}\index{Perceptron@{Perceptron}!costFunction@{costFunction}}
 \index{costFunction@{costFunction}!Perceptron@{Perceptron}}
 \doxysubsubsection{\texorpdfstring{costFunction()}{costFunction()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Perceptron\+::cost\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classPerceptron_a8f136bf2a36d5a1b83fb02215cacb271} 
+double Perceptron\+::cost\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 cost function override, don\textquotesingle{}t use! 
 \begin{DoxyParams}{Parameters}
@@ -132,11 +133,11 @@ cost function override, don\textquotesingle{}t use!
 
 Implements \mbox{\hyperlink{classANNClassifier_aa5a6c1d789eed4f0a6a501dc08e420ce}{ANNClassifier}}.
 
-\Hypertarget{classPerceptron_a430fcf4782a3020add0094f986a1c54e}\label{classPerceptron_a430fcf4782a3020add0094f986a1c54e} 
-\index{Perceptron@{Perceptron}!fit@{fit}}
+\Hypertarget{classPerceptron_a430fcf4782a3020add0094f986a1c54e}\index{Perceptron@{Perceptron}!fit@{fit}}
 \index{fit@{fit}!Perceptron@{Perceptron}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Perceptron\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classPerceptron_a430fcf4782a3020add0094f986a1c54e} 
+void Perceptron\+::fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 \begin{DoxyParams}{Parameters}
@@ -152,13 +153,13 @@ this
 
 Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
 
-\Hypertarget{classPerceptron_adba6029ff33690c1973fa24222f862b8}\label{classPerceptron_adba6029ff33690c1973fa24222f862b8} 
-\index{Perceptron@{Perceptron}!netInput@{netInput}}
+\Hypertarget{classPerceptron_adba6029ff33690c1973fa24222f862b8}\index{Perceptron@{Perceptron}!netInput@{netInput}}
 \index{netInput@{netInput}!Perceptron@{Perceptron}}
 \doxysubsubsection{\texorpdfstring{netInput()}{netInput()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Perceptron\+::net\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classPerceptron_adba6029ff33690c1973fa24222f862b8} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Perceptron\+::net\+Input (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
-calculates net input  \[
+calculates net input   \[
      X * weights + b
 \] 
 \begin{DoxyParams}{Parameters}
@@ -172,11 +173,11 @@ calculates net input  \[
 
 Implements \mbox{\hyperlink{classANNClassifier_a8236348bfd0b4a4907c2ea2ca2b5d71a}{ANNClassifier}}.
 
-\Hypertarget{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d}\label{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d} 
-\index{Perceptron@{Perceptron}!predict@{predict}}
+\Hypertarget{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d}\index{Perceptron@{Perceptron}!predict@{predict}}
 \index{predict@{predict}!Perceptron@{Perceptron}}
 \doxysubsubsection{\texorpdfstring{predict()}{predict()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Perceptron\+::predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Perceptron\+::predict (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 predict class of given input 
 \begin{DoxyParams}{Parameters}

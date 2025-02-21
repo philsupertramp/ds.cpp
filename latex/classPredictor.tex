@@ -13,20 +13,20 @@ Inheritance diagram for Predictor\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)=0
+virtual void \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y)=0
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)=0
+virtual \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}{predict}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)=0
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classPredictor_a341a4d9fc8af8f53a07089100b213a73}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)=0
+virtual \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classPredictor_a341a4d9fc8af8f53a07089100b213a73}{transform}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)=0
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}\label{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf} 
-\index{Predictor@{Predictor}!fit@{fit}}
+\Hypertarget{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}\index{Predictor@{Predictor}!fit@{fit}}
 \index{fit@{fit}!Predictor@{Predictor}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Predictor\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily \label{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf} 
+virtual void Predictor\+::fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Implements training algorithm 
 \begin{DoxyParams}{Parameters}
@@ -40,30 +40,30 @@ this
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classAdalineGD_a16791c4ac85a0e7117105f8835a19f69}{Adaline\+GD}}, \mbox{\hyperlink{classAdalineSGD_a8b97d260bc04aa8cd6d02436fb5f3c76}{Adaline\+SGD}}, \mbox{\hyperlink{classDecisionTree_ac4a9745f215b98d1d1e99bfada4f892d}{Decision\+Tree}}, \mbox{\hyperlink{classPCA_a425bf6a87a11aa8bfd5c82cdf2b18520}{PCA}}, \mbox{\hyperlink{classKNN_ab5c83a7deee14bf6b66ecef806f77b41}{KNN}}, \mbox{\hyperlink{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd}{Log\+Reg\+SGD}}, \mbox{\hyperlink{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb}{NCC}}, \mbox{\hyperlink{classPerceptron_a430fcf4782a3020add0094f986a1c54e}{Perceptron}}, \mbox{\hyperlink{classOneHotEncoder_a80ba2dfa75f9fb35b3af6853e2f9a200}{One\+Hot\+Encoder}}, \mbox{\hyperlink{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec}{Standard\+Scaler}}, and \mbox{\hyperlink{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e}{Min\+Max\+Scaler}}.
+Implemented in \mbox{\hyperlink{classAdalineGD_a16791c4ac85a0e7117105f8835a19f69}{Adaline\+GD}}, \mbox{\hyperlink{classAdalineSGD_a8b97d260bc04aa8cd6d02436fb5f3c76}{Adaline\+SGD}}, \mbox{\hyperlink{classDecisionTree_ac4a9745f215b98d1d1e99bfada4f892d}{Decision\+Tree}}, \mbox{\hyperlink{classKNN_ab5c83a7deee14bf6b66ecef806f77b41}{KNN}}, \mbox{\hyperlink{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd}{Log\+Reg\+SGD}}, \mbox{\hyperlink{classMinMaxScaler_ae126ec6ab22f69e3d047f26a197ea15e}{Min\+Max\+Scaler}}, \mbox{\hyperlink{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb}{NCC}}, \mbox{\hyperlink{classOneHotEncoder_a80ba2dfa75f9fb35b3af6853e2f9a200}{One\+Hot\+Encoder}}, \mbox{\hyperlink{classPCA_a425bf6a87a11aa8bfd5c82cdf2b18520}{PCA}}, \mbox{\hyperlink{classPerceptron_a430fcf4782a3020add0094f986a1c54e}{Perceptron}}, and \mbox{\hyperlink{classStandardScaler_ac21dcb106786b3bc69cb8a0e1e226fec}{Standard\+Scaler}}.
 
-\Hypertarget{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}\label{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2} 
-\index{Predictor@{Predictor}!predict@{predict}}
+\Hypertarget{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}\index{Predictor@{Predictor}!predict@{predict}}
 \index{predict@{predict}!Predictor@{Predictor}}
 \doxysubsubsection{\texorpdfstring{predict()}{predict()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Predictor\+::predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily \label{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2} 
+virtual \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Predictor\+::predict (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 Makes prediction for given input \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classTransformer_a7f72b0693dc577dc9527daec63e3ee18}{Transformer}}, \mbox{\hyperlink{classAdalineGD_a1f0d6aa8bb5847c09273517e60e12cfc}{Adaline\+GD}}, \mbox{\hyperlink{classAdalineSGD_a2bd7bc8ce36bdc2d9372f9bfbe9d4d8c}{Adaline\+SGD}}, \mbox{\hyperlink{classDecisionTree_a5be795faaf93df472927196e01b6e505}{Decision\+Tree}}, \mbox{\hyperlink{classKNN_a8e9c1edbc9a7fc4756ef86fbe52bb753}{KNN}}, \mbox{\hyperlink{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67}{Log\+Reg\+SGD}}, \mbox{\hyperlink{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5}{NCC}}, and \mbox{\hyperlink{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d}{Perceptron}}.
+Implemented in \mbox{\hyperlink{classAdalineGD_a1f0d6aa8bb5847c09273517e60e12cfc}{Adaline\+GD}}, \mbox{\hyperlink{classAdalineSGD_a2bd7bc8ce36bdc2d9372f9bfbe9d4d8c}{Adaline\+SGD}}, \mbox{\hyperlink{classDecisionTree_a5be795faaf93df472927196e01b6e505}{Decision\+Tree}}, \mbox{\hyperlink{classKNN_a8e9c1edbc9a7fc4756ef86fbe52bb753}{KNN}}, \mbox{\hyperlink{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67}{Log\+Reg\+SGD}}, \mbox{\hyperlink{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5}{NCC}}, \mbox{\hyperlink{classPerceptron_a8ecc2a278aefaf4eea183ae25455d14d}{Perceptron}}, and \mbox{\hyperlink{classTransformer_a7f72b0693dc577dc9527daec63e3ee18}{Transformer}}.
 
-\Hypertarget{classPredictor_a341a4d9fc8af8f53a07089100b213a73}\label{classPredictor_a341a4d9fc8af8f53a07089100b213a73} 
-\index{Predictor@{Predictor}!transform@{transform}}
+\Hypertarget{classPredictor_a341a4d9fc8af8f53a07089100b213a73}\index{Predictor@{Predictor}!transform@{transform}}
 \index{transform@{transform}!Predictor@{Predictor}}
 \doxysubsubsection{\texorpdfstring{transform()}{transform()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Predictor\+::transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+{\footnotesize\ttfamily \label{classPredictor_a341a4d9fc8af8f53a07089100b213a73} 
+virtual \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Predictor\+::transform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{Classifier}}, \mbox{\hyperlink{classDecisionTree_a8a6df0f826c735c1bf8cd3af1d9b0615}{Decision\+Tree}}, \mbox{\hyperlink{classPCA_adc66271e89ab7e91e90081f5d1e4257a}{PCA}}, \mbox{\hyperlink{classOneHotEncoder_a4722e28c22e8253771950203c0713436}{One\+Hot\+Encoder}}, \mbox{\hyperlink{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7}{Standard\+Scaler}}, and \mbox{\hyperlink{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517}{Min\+Max\+Scaler}}.
+Implemented in \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{Classifier}}, \mbox{\hyperlink{classDecisionTree_a8a6df0f826c735c1bf8cd3af1d9b0615}{Decision\+Tree}}, \mbox{\hyperlink{classMinMaxScaler_ae90079be08fd2a30d5707115c4381517}{Min\+Max\+Scaler}}, \mbox{\hyperlink{classOneHotEncoder_a4722e28c22e8253771950203c0713436}{One\+Hot\+Encoder}}, \mbox{\hyperlink{classPCA_adc66271e89ab7e91e90081f5d1e4257a}{PCA}}, and \mbox{\hyperlink{classStandardScaler_ae2a4e02ac2ed3a0fa74656b87bb13ff7}{Standard\+Scaler}}.
 
 
 

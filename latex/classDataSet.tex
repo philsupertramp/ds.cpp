@@ -13,18 +13,18 @@ Inheritance diagram for Data\+Set\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classDataSet_a06a0a03f65d1ed5a3b9102242e761639}{Data\+Set}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{file\+Path}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{input\+Count}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output\+Count}})
+\mbox{\hyperlink{classDataSet_a06a0a03f65d1ed5a3b9102242e761639}{Data\+Set}} (const char \texorpdfstring{$\ast$}{*}file\+Path, size\+\_\+t input\+Count, size\+\_\+t output\+Count)
 \item 
-\mbox{\hyperlink{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb}{Data\+Set}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{input\+Count}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{output\+Count}})
+\mbox{\hyperlink{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb}{Data\+Set}} (size\+\_\+t input\+Count, size\+\_\+t output\+Count)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classDataSet_ab55020328d9b53265bfece0e16696baf}{Prepare\+Directory}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{file\+Path}})
+virtual void \mbox{\hyperlink{classDataSet_ab55020328d9b53265bfece0e16696baf}{Prepare\+Directory}} (const char \texorpdfstring{$\ast$}{*}file\+Path)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{Input\+Count}}
+size\+\_\+t \mbox{\hyperlink{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}{Input\+Count}}
 \begin{DoxyCompactList}\small\item\em number input elements \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{Output\+Count}}
+size\+\_\+t \mbox{\hyperlink{classDataSet_a80e15af63fd1574afb65efa990187203}{Output\+Count}}
 \begin{DoxyCompactList}\small\item\em number output elements \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structSet}{Set}} \mbox{\hyperlink{classDataSet_ab2e28670df1d61a926990a8d00627fdf}{Training}}
 \begin{DoxyCompactList}\small\item\em set for training \end{DoxyCompactList}\item 
@@ -32,20 +32,20 @@ Inheritance diagram for Data\+Set\+:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em set for validation of training \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structSet}{Set}} \mbox{\hyperlink{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b}{Test}}
 \begin{DoxyCompactList}\small\item\em set to test after training \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57}{max\+Epoch}} = 1000
+int \mbox{\hyperlink{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57}{max\+Epoch}} = 1000
 \begin{DoxyCompactList}\small\item\em number of epochs while training \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3}{stop\+Threshold}} = 0.\+001
+double \mbox{\hyperlink{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3}{stop\+Threshold}} = 0.\+001
 \begin{DoxyCompactList}\small\item\em threshold for loss to prevent over-\/fitting \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDataSet_a5e96a7989e932a765382ec05df96f02e}{eta}} = 0.\+0051
+double \mbox{\hyperlink{classDataSet_a5e96a7989e932a765382ec05df96f02e}{eta}} = 0.\+0051
 \begin{DoxyCompactList}\small\item\em learning rate \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classDataSet_a72f424eb8039147514fe51fbd2e0948b}{batch\+Size}} = 5
+int \mbox{\hyperlink{classDataSet_a72f424eb8039147514fe51fbd2e0948b}{batch\+Size}} = 5
 \begin{DoxyCompactList}\small\item\em number of elements per batch \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596}{verbose}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+bool \mbox{\hyperlink{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596}{verbose}} = false
 \begin{DoxyCompactList}\small\item\em use verbose output during fitting \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{class}} \mbox{\hyperlink{classDataSet_ace55546372c7d22ae3fd467bdd6d1b5d}{Image\+Data\+Set}}
+class \mbox{\hyperlink{classDataSet_ace55546372c7d22ae3fd467bdd6d1b5d}{Image\+Data\+Set}}
 \end{DoxyCompactItemize}
 
 
@@ -53,11 +53,11 @@ Inheritance diagram for Data\+Set\+:\begin{figure}[H]
 dataset representation 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classDataSet_a06a0a03f65d1ed5a3b9102242e761639}\label{classDataSet_a06a0a03f65d1ed5a3b9102242e761639} 
-\index{DataSet@{DataSet}!DataSet@{DataSet}}
+\Hypertarget{classDataSet_a06a0a03f65d1ed5a3b9102242e761639}\index{DataSet@{DataSet}!DataSet@{DataSet}}
 \index{DataSet@{DataSet}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{DataSet()}{DataSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Data\+Set\+::\+Data\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}}]{file\+Path,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{input\+Count,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{output\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classDataSet_a06a0a03f65d1ed5a3b9102242e761639} 
+Data\+Set\+::\+Data\+Set (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+Path}{, }\item[{size\+\_\+t}]{input\+Count}{, }\item[{size\+\_\+t}]{output\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 regular constructor 
 \begin{DoxyParams}{Parameters}
@@ -68,11 +68,11 @@ regular constructor
 {\em output\+Count} & number output elements \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb}\label{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb} 
-\index{DataSet@{DataSet}!DataSet@{DataSet}}
+\Hypertarget{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb}\index{DataSet@{DataSet}!DataSet@{DataSet}}
 \index{DataSet@{DataSet}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{DataSet()}{DataSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Data\+Set\+::\+Data\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{input\+Count,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{output\+Count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classDataSet_ad398cb9b594f7fc99ebec3e2fb227ebb} 
+Data\+Set\+::\+Data\+Set (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{input\+Count}{, }\item[{size\+\_\+t}]{output\+Count}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 initialization constructor, initializes required structures by given dimensions 
 \begin{DoxyParams}{Parameters}
@@ -84,11 +84,11 @@ initialization constructor, initializes required structures by given dimensions
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classDataSet_ab55020328d9b53265bfece0e16696baf}\label{classDataSet_ab55020328d9b53265bfece0e16696baf} 
-\index{DataSet@{DataSet}!PrepareDirectory@{PrepareDirectory}}
+\Hypertarget{classDataSet_ab55020328d9b53265bfece0e16696baf}\index{DataSet@{DataSet}!PrepareDirectory@{PrepareDirectory}}
 \index{PrepareDirectory@{PrepareDirectory}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{PrepareDirectory()}{PrepareDirectory()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Data\+Set\+::\+Prepare\+Directory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classDataSet_ab55020328d9b53265bfece0e16696baf} 
+virtual void Data\+Set\+::\+Prepare\+Directory (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 interface definition, does nothing here 
 \begin{DoxyParams}{Parameters}
@@ -102,110 +102,110 @@ Reimplemented in \mbox{\hyperlink{classImageDataSet_a9bbabe8ae4b48f1238be7828d6f
 
 
 \doxysubsection{Friends And Related Symbol Documentation}
-\Hypertarget{classDataSet_ace55546372c7d22ae3fd467bdd6d1b5d}\label{classDataSet_ace55546372c7d22ae3fd467bdd6d1b5d} 
-\index{DataSet@{DataSet}!ImageDataSet@{ImageDataSet}}
+\Hypertarget{classDataSet_ace55546372c7d22ae3fd467bdd6d1b5d}\index{DataSet@{DataSet}!ImageDataSet@{ImageDataSet}}
 \index{ImageDataSet@{ImageDataSet}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{ImageDataSet}{ImageDataSet}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{friend}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{class}} \mbox{\hyperlink{classImageDataSet}{Image\+Data\+Set}}\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily \label{classDataSet_ace55546372c7d22ae3fd467bdd6d1b5d} 
+friend class \mbox{\hyperlink{classImageDataSet}{Image\+Data\+Set}}\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classDataSet_a72f424eb8039147514fe51fbd2e0948b}\label{classDataSet_a72f424eb8039147514fe51fbd2e0948b} 
-\index{DataSet@{DataSet}!batchSize@{batchSize}}
+\Hypertarget{classDataSet_a72f424eb8039147514fe51fbd2e0948b}\index{DataSet@{DataSet}!batchSize@{batchSize}}
 \index{batchSize@{batchSize}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{batchSize}{batchSize}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Data\+Set\+::batch\+Size = 5}
+{\footnotesize\ttfamily \label{classDataSet_a72f424eb8039147514fe51fbd2e0948b} 
+int Data\+Set\+::batch\+Size = 5}
 
 
 
 number of elements per batch 
 
-\Hypertarget{classDataSet_a5e96a7989e932a765382ec05df96f02e}\label{classDataSet_a5e96a7989e932a765382ec05df96f02e} 
-\index{DataSet@{DataSet}!eta@{eta}}
+\Hypertarget{classDataSet_a5e96a7989e932a765382ec05df96f02e}\index{DataSet@{DataSet}!eta@{eta}}
 \index{eta@{eta}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{eta}{eta}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Data\+Set\+::eta = 0.\+0051}
+{\footnotesize\ttfamily \label{classDataSet_a5e96a7989e932a765382ec05df96f02e} 
+double Data\+Set\+::eta = 0.\+0051}
 
 
 
 learning rate 
 
-\Hypertarget{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}\label{classDataSet_a9cc77d557deb5f130c5ca93267a88b69} 
-\index{DataSet@{DataSet}!InputCount@{InputCount}}
+\Hypertarget{classDataSet_a9cc77d557deb5f130c5ca93267a88b69}\index{DataSet@{DataSet}!InputCount@{InputCount}}
 \index{InputCount@{InputCount}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{InputCount}{InputCount}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Data\+Set\+::\+Input\+Count}
+{\footnotesize\ttfamily \label{classDataSet_a9cc77d557deb5f130c5ca93267a88b69} 
+size\+\_\+t Data\+Set\+::\+Input\+Count}
 
 
 
 number input elements 
 
-\Hypertarget{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57}\label{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57} 
-\index{DataSet@{DataSet}!maxEpoch@{maxEpoch}}
+\Hypertarget{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57}\index{DataSet@{DataSet}!maxEpoch@{maxEpoch}}
 \index{maxEpoch@{maxEpoch}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{maxEpoch}{maxEpoch}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Data\+Set\+::max\+Epoch = 1000}
+{\footnotesize\ttfamily \label{classDataSet_ac2b6c6303ce008694bbfd6d177f18e57} 
+int Data\+Set\+::max\+Epoch = 1000}
 
 
 
 number of epochs while training 
 
-\Hypertarget{classDataSet_a80e15af63fd1574afb65efa990187203}\label{classDataSet_a80e15af63fd1574afb65efa990187203} 
-\index{DataSet@{DataSet}!OutputCount@{OutputCount}}
+\Hypertarget{classDataSet_a80e15af63fd1574afb65efa990187203}\index{DataSet@{DataSet}!OutputCount@{OutputCount}}
 \index{OutputCount@{OutputCount}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{OutputCount}{OutputCount}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} Data\+Set\+::\+Output\+Count}
+{\footnotesize\ttfamily \label{classDataSet_a80e15af63fd1574afb65efa990187203} 
+size\+\_\+t Data\+Set\+::\+Output\+Count}
 
 
 
 number output elements 
 
-\Hypertarget{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3}\label{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3} 
-\index{DataSet@{DataSet}!stopThreshold@{stopThreshold}}
+\Hypertarget{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3}\index{DataSet@{DataSet}!stopThreshold@{stopThreshold}}
 \index{stopThreshold@{stopThreshold}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{stopThreshold}{stopThreshold}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Data\+Set\+::stop\+Threshold = 0.\+001}
+{\footnotesize\ttfamily \label{classDataSet_ac26562ed16c2c3b63aed463cb8c77fe3} 
+double Data\+Set\+::stop\+Threshold = 0.\+001}
 
 
 
 threshold for loss to prevent over-\/fitting 
 
-\Hypertarget{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b}\label{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b} 
-\index{DataSet@{DataSet}!Test@{Test}}
+\Hypertarget{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b}\index{DataSet@{DataSet}!Test@{Test}}
 \index{Test@{Test}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{Test}{Test}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structSet}{Set}} Data\+Set\+::\+Test}
+{\footnotesize\ttfamily \label{classDataSet_a2d5a67b441bf92f3d9f9ca28e134266b} 
+\mbox{\hyperlink{structSet}{Set}} Data\+Set\+::\+Test}
 
 
 
 set to test after training 
 
-\Hypertarget{classDataSet_ab2e28670df1d61a926990a8d00627fdf}\label{classDataSet_ab2e28670df1d61a926990a8d00627fdf} 
-\index{DataSet@{DataSet}!Training@{Training}}
+\Hypertarget{classDataSet_ab2e28670df1d61a926990a8d00627fdf}\index{DataSet@{DataSet}!Training@{Training}}
 \index{Training@{Training}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{Training}{Training}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structSet}{Set}} Data\+Set\+::\+Training}
+{\footnotesize\ttfamily \label{classDataSet_ab2e28670df1d61a926990a8d00627fdf} 
+\mbox{\hyperlink{structSet}{Set}} Data\+Set\+::\+Training}
 
 
 
 set for training 
 
-\Hypertarget{classDataSet_a83ba4064a6be64f1b1535de18005e270}\label{classDataSet_a83ba4064a6be64f1b1535de18005e270} 
-\index{DataSet@{DataSet}!Validation@{Validation}}
+\Hypertarget{classDataSet_a83ba4064a6be64f1b1535de18005e270}\index{DataSet@{DataSet}!Validation@{Validation}}
 \index{Validation@{Validation}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{Validation}{Validation}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structSet}{Set}} Data\+Set\+::\+Validation}
+{\footnotesize\ttfamily \label{classDataSet_a83ba4064a6be64f1b1535de18005e270} 
+\mbox{\hyperlink{structSet}{Set}} Data\+Set\+::\+Validation}
 
 
 
 set for validation of training 
 
-\Hypertarget{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596}\label{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596} 
-\index{DataSet@{DataSet}!verbose@{verbose}}
+\Hypertarget{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596}\index{DataSet@{DataSet}!verbose@{verbose}}
 \index{verbose@{verbose}!DataSet@{DataSet}}
 \doxysubsubsection{\texorpdfstring{verbose}{verbose}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} Data\+Set\+::verbose = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}}
+{\footnotesize\ttfamily \label{classDataSet_af05bcbf6eba3ef7dbb89e0d396d45596} 
+bool Data\+Set\+::verbose = false}
 
 
 

@@ -13,44 +13,45 @@ Inheritance diagram for NCC\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classNCC_a470527d954ba7507ced80f0a4ad6123f}{NCC}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{use\+Iterative}})
+\mbox{\hyperlink{classNCC_a470527d954ba7507ced80f0a4ad6123f}{NCC}} (bool use\+Iterative)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+void \mbox{\hyperlink{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb}{fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y) override
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classNCC_aef1907285e5bcd8e64ea897d9418daae}{fit\+\_\+batch}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{labels}})
+void \mbox{\hyperlink{classNCC_aef1907285e5bcd8e64ea897d9418daae}{fit\+\_\+batch}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&labels)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classNCC_a33865760c545363e114484de9aa62224}{fit\+\_\+iterative}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{labels}})
+void \mbox{\hyperlink{classNCC_a33865760c545363e114484de9aa62224}{fit\+\_\+iterative}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&labels)
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5}{predict}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&x) override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classClassifier_ae6132b100c96a4f3d8ad3885b5acb28e}{Classifier}} ()
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Rows}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Columns}}=1)
+void \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (size\+\_\+t num\+Rows, size\+\_\+t num\+Columns=1)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{update}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{delta}})
+void \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&update, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&delta)
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in) override
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPredictor}{Predictor}}}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classNCC_afc9875457c682131961c4b7205a48055}{use\+\_\+iterative}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}
+bool \mbox{\hyperlink{classNCC_afc9875457c682131961c4b7205a48055}{use\+\_\+iterative}} = true
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
 \begin{DoxyCompactList}\small\item\em Vector holding weights. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
 \begin{DoxyCompactList}\small\item\em Vector holding classification error per epoch. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+bool \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = false
 \begin{DoxyCompactList}\small\item\em flag to initialize weights only once \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -63,20 +64,20 @@ Calculates centroids iteratively, holds \$\+K\$ centroids and 1 training sample 
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classNCC_a470527d954ba7507ced80f0a4ad6123f}\label{classNCC_a470527d954ba7507ced80f0a4ad6123f} 
-\index{NCC@{NCC}!NCC@{NCC}}
+\Hypertarget{classNCC_a470527d954ba7507ced80f0a4ad6123f}\index{NCC@{NCC}!NCC@{NCC}}
 \index{NCC@{NCC}!NCC@{NCC}}
 \doxysubsubsection{\texorpdfstring{NCC()}{NCC()}}
-{\footnotesize\ttfamily NCC\+::\+NCC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}}]{use\+Iterative }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classNCC_a470527d954ba7507ced80f0a4ad6123f} 
+NCC\+::\+NCC (\begin{DoxyParamCaption}\item[{bool}]{use\+Iterative}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb}\label{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb} 
-\index{NCC@{NCC}!fit@{fit}}
+\Hypertarget{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb}\index{NCC@{NCC}!fit@{fit}}
 \index{fit@{fit}!NCC@{NCC}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} NCC\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classNCC_a712fa8bd2912720d0a69fcfdf748e2cb} 
+void NCC\+::fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 Implements training algorithm 
 \begin{DoxyParams}{Parameters}
@@ -92,11 +93,11 @@ this
 
 Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
 
-\Hypertarget{classNCC_aef1907285e5bcd8e64ea897d9418daae}\label{classNCC_aef1907285e5bcd8e64ea897d9418daae} 
-\index{NCC@{NCC}!fit\_batch@{fit\_batch}}
+\Hypertarget{classNCC_aef1907285e5bcd8e64ea897d9418daae}\index{NCC@{NCC}!fit\_batch@{fit\_batch}}
 \index{fit\_batch@{fit\_batch}!NCC@{NCC}}
 \doxysubsubsection{\texorpdfstring{fit\_batch()}{fit\_batch()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} NCC\+::fit\+\_\+batch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classNCC_aef1907285e5bcd8e64ea897d9418daae} 
+void NCC\+::fit\+\_\+batch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{labels}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Batch-\/wise implementation of nearest centroid classifier centroid calculation.
 
@@ -113,11 +114,11 @@ Complexity\+: O(\+K \texorpdfstring{$\ast$}{*} 6\+N)
 {\em labels} & unique labels inside y \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classNCC_a33865760c545363e114484de9aa62224}\label{classNCC_a33865760c545363e114484de9aa62224} 
-\index{NCC@{NCC}!fit\_iterative@{fit\_iterative}}
+\Hypertarget{classNCC_a33865760c545363e114484de9aa62224}\index{NCC@{NCC}!fit\_iterative@{fit\_iterative}}
 \index{fit\_iterative@{fit\_iterative}!NCC@{NCC}}
 \doxysubsubsection{\texorpdfstring{fit\_iterative()}{fit\_iterative()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} NCC\+::fit\+\_\+iterative (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{labels }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classNCC_a33865760c545363e114484de9aa62224} 
+void NCC\+::fit\+\_\+iterative (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{labels}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 Iterative implementation of nearest centroid classifier centroid calculation
 
@@ -134,11 +135,11 @@ Complexity\+: O(\+N \texorpdfstring{$\ast$}{*} 3\+D)
 {\em labels} & unique labels inside y \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5}\label{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5} 
-\index{NCC@{NCC}!predict@{predict}}
+\Hypertarget{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5}\index{NCC@{NCC}!predict@{predict}}
 \index{predict@{predict}!NCC@{NCC}}
 \doxysubsubsection{\texorpdfstring{predict()}{predict()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ NCC\+::predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classNCC_a12bb7ec347a8ac42abc2eca6f881dee5} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ NCC\+::predict (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{x}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 Prediction\+: In\+: \$x\$\+: Data point to classify \$\textbackslash{}mu\+\_\+k\$\+: \$k\$ class centroids Out\+: \$\$ argmin(\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\textbackslash{}mu\+\_\+k -\/ x\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}\+\_\+2) \$\$ 
 
@@ -147,11 +148,11 @@ Implements \mbox{\hyperlink{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}{Pr
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classNCC_afc9875457c682131961c4b7205a48055}\label{classNCC_afc9875457c682131961c4b7205a48055} 
-\index{NCC@{NCC}!use\_iterative@{use\_iterative}}
+\Hypertarget{classNCC_afc9875457c682131961c4b7205a48055}\index{NCC@{NCC}!use\_iterative@{use\_iterative}}
 \index{use\_iterative@{use\_iterative}!NCC@{NCC}}
 \doxysubsubsection{\texorpdfstring{use\_iterative}{use\_iterative}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} NCC\+::use\+\_\+iterative = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{true}}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classNCC_afc9875457c682131961c4b7205a48055} 
+bool NCC\+::use\+\_\+iterative = true\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

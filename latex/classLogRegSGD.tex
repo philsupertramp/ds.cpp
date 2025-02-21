@@ -13,76 +13,77 @@ Inheritance diagram for Log\+Reg\+SGD\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classLogRegSGD_afd641912a68b8c0b2981585fb2cfc068}{Log\+Reg\+SGD}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+eta}}=0.\+01, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{iter}}=10, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+shuffle}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+random\+State}}=0)
+\mbox{\hyperlink{classLogRegSGD_afd641912a68b8c0b2981585fb2cfc068}{Log\+Reg\+SGD}} (double \+\_\+eta=0.\+01, int iter=10, bool \+\_\+shuffle=false, int \+\_\+random\+State=0)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+void \mbox{\hyperlink{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd}{fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y) override
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classLogRegSGD_a7e21cee4236b4f144cf507396849110f}{partial\+\_\+fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+void \mbox{\hyperlink{classLogRegSGD_a7e21cee4236b4f144cf507396849110f}{partial\+\_\+fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y)
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}{net\+Input}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}{net\+Input}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X) override
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87}{activation}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87}{activation}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X) override
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67}{predict}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67}{predict}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X) override
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classLogRegSGD_a31bce949b842722348434559d7219586}{cost\+Function}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{mat}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+double \mbox{\hyperlink{classLogRegSGD_a31bce949b842722348434559d7219586}{cost\+Function}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&mat) override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classANNClassifier_af6e0a151d0d20cfff2abedca49c617ab}{ANNClassifier}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+eta}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+n\+\_\+iter}})
+\mbox{\hyperlink{classANNClassifier_af6e0a151d0d20cfff2abedca49c617ab}{ANNClassifier}} (double \+\_\+eta, int \+\_\+n\+\_\+iter)
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classClassifier_ae6132b100c96a4f3d8ad3885b5acb28e}{Classifier}} ()
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Rows}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{num\+Columns}}=1)
+void \mbox{\hyperlink{classClassifier_a82afce4aff01a4d7292eb43fb38329b8}{initialize\+\_\+weights}} (size\+\_\+t num\+Rows, size\+\_\+t num\+Columns=1)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{update}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{delta}})
+void \mbox{\hyperlink{classClassifier_aa9257aed615a41cac4030fcfc7dc08ca}{update\+\_\+weights}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&update, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&delta)
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{override}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_aa171a8c6668f6ea0c22fa2312c0f0061}{transform}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in) override
 \end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPredictor}{Predictor}}}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e}{shuffle}}
+bool \mbox{\hyperlink{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e}{shuffle}}
 \begin{DoxyCompactList}\small\item\em signalizes whether given dataset should be shuffled while fitting \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}{random\+State}}
+int \mbox{\hyperlink{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}{random\+State}}
 \begin{DoxyCompactList}\small\item\em initialize weights with random state \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classSGD}{SGD}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}{sgd}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}
+\mbox{\hyperlink{classSGD}{SGD}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}{sgd}} = nullptr
 \begin{DoxyCompactList}\small\item\em algorithmic object to represent fitting algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_a5d4d61496164c06deab141329b6c878f}{weights}}
 \begin{DoxyCompactList}\small\item\em Vector holding weights. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classClassifier_a8688dfb2318e40a7c2f3747b68c96bae}{costs}}
 \begin{DoxyCompactList}\small\item\em Vector holding classification error per epoch. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23}{initialize\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{m}})
+void \mbox{\hyperlink{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23}{initialize\+\_\+weights}} (size\+\_\+t m)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da}{update\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xi}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}})
+double \mbox{\hyperlink{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da}{update\+\_\+weights}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&xi, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&target)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4}{Log}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+static \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4}{Log}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&in)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classANNClassifier}{ANNClassifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classANNClassifier_a2e0e1ac7757c8cb67567c4dd4f42fef8}{eta}}
+double \mbox{\hyperlink{classANNClassifier_a2e0e1ac7757c8cb67567c4dd4f42fef8}{eta}}
 \begin{DoxyCompactList}\small\item\em Learning rate. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classANNClassifier_aae9927c5e2e95d69ba5baa9842f36b02}{n\+\_\+iter}}
+int \mbox{\hyperlink{classANNClassifier_aae9927c5e2e95d69ba5baa9842f36b02}{n\+\_\+iter}}
 \begin{DoxyCompactList}\small\item\em number epochs \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classClassifier}{Classifier}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+bool \mbox{\hyperlink{classClassifier_a5c3236f91e4f14965715caaca167dec8}{w\+\_\+initialized}} = false
 \begin{DoxyCompactList}\small\item\em flag to initialize weights only once \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -93,11 +94,11 @@ Logistical regression model using statistic gradient decent method for model fit
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classLogRegSGD_afd641912a68b8c0b2981585fb2cfc068}\label{classLogRegSGD_afd641912a68b8c0b2981585fb2cfc068} 
-\index{LogRegSGD@{LogRegSGD}!LogRegSGD@{LogRegSGD}}
+\Hypertarget{classLogRegSGD_afd641912a68b8c0b2981585fb2cfc068}\index{LogRegSGD@{LogRegSGD}!LogRegSGD@{LogRegSGD}}
 \index{LogRegSGD@{LogRegSGD}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{LogRegSGD()}{LogRegSGD()}}
-{\footnotesize\ttfamily Log\+Reg\+SGD\+::\+Log\+Reg\+SGD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{\+\_\+eta = {\ttfamily 0.01},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{iter = {\ttfamily 10},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}}]{\+\_\+shuffle = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{\+\_\+random\+State = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_afd641912a68b8c0b2981585fb2cfc068} 
+Log\+Reg\+SGD\+::\+Log\+Reg\+SGD (\begin{DoxyParamCaption}\item[{double}]{\+\_\+eta}{ = {\ttfamily 0.01}, }\item[{int}]{iter}{ = {\ttfamily 10}, }\item[{bool}]{\+\_\+shuffle}{ = {\ttfamily false}, }\item[{int}]{\+\_\+random\+State}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 default constructor 
 \begin{DoxyParams}{Parameters}
@@ -113,11 +114,11 @@ default constructor
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87}\label{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87} 
-\index{LogRegSGD@{LogRegSGD}!activation@{activation}}
+\Hypertarget{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87}\index{LogRegSGD@{LogRegSGD}!activation@{activation}}
 \index{activation@{activation}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{activation()}{activation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Log\+Reg\+SGD\+::activation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_ace312230b45f4c6eb9bf42c1f1fc2e87} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Log\+Reg\+SGD\+::activation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 activate given input \$\$x\textbackslash{}mapsto \textbackslash{}phi(x)\$\$ 
 \begin{DoxyParams}{Parameters}
@@ -131,11 +132,11 @@ activated values
 
 Implements \mbox{\hyperlink{classANNClassifier_af1d25129fd2594d89a08a025b03dfd62}{ANNClassifier}}.
 
-\Hypertarget{classLogRegSGD_a31bce949b842722348434559d7219586}\label{classLogRegSGD_a31bce949b842722348434559d7219586} 
-\index{LogRegSGD@{LogRegSGD}!costFunction@{costFunction}}
+\Hypertarget{classLogRegSGD_a31bce949b842722348434559d7219586}\index{LogRegSGD@{LogRegSGD}!costFunction@{costFunction}}
 \index{costFunction@{costFunction}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{costFunction()}{costFunction()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Log\+Reg\+SGD\+::cost\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{mat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_a31bce949b842722348434559d7219586} 
+double Log\+Reg\+SGD\+::cost\+Function (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{mat}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 do not use! 
 \begin{DoxyParams}{Parameters}
@@ -149,11 +150,11 @@ do not use!
 
 Implements \mbox{\hyperlink{classANNClassifier_aa5a6c1d789eed4f0a6a501dc08e420ce}{ANNClassifier}}.
 
-\Hypertarget{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd}\label{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd} 
-\index{LogRegSGD@{LogRegSGD}!fit@{fit}}
+\Hypertarget{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd}\index{LogRegSGD@{LogRegSGD}!fit@{fit}}
 \index{fit@{fit}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Log\+Reg\+SGD\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_aef4c82d4582b263409e37a1b6d461cbd} 
+void Log\+Reg\+SGD\+::fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 fits the weights of the model for given input values 
 \begin{DoxyParams}{Parameters}
@@ -169,22 +170,22 @@ this
 
 Implements \mbox{\hyperlink{classPredictor_a5364a5c595cd09f99fdc57fd28839bdf}{Predictor}}.
 
-\Hypertarget{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23}\label{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23} 
-\index{LogRegSGD@{LogRegSGD}!initialize\_weights@{initialize\_weights}}
+\Hypertarget{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23}\index{LogRegSGD@{LogRegSGD}!initialize\_weights@{initialize\_weights}}
 \index{initialize\_weights@{initialize\_weights}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{initialize\_weights()}{initialize\_weights()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Log\+Reg\+SGD\+::initialize\+\_\+weights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_a5f875d85e17bcd4b5c094214e4ef0c23} 
+void Log\+Reg\+SGD\+::initialize\+\_\+weights (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{m}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 helper to initialize weights matrix 
 \begin{DoxyParams}{Parameters}
 {\em m} & dimension \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4}\label{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4} 
-\index{LogRegSGD@{LogRegSGD}!Log@{Log}}
+\Hypertarget{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4}\index{LogRegSGD@{LogRegSGD}!Log@{Log}}
 \index{Log@{Log}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{Log()}{Log()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Log\+Reg\+SGD\+::\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_a0f21b159d024258fadfa34c2d30672d4} 
+static \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Log\+Reg\+SGD\+::\+Log (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{in}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
 
 Calculates log of each element. Implementation doesn\textquotesingle{}t use \doxylink{classMatrix_ab6114bb3b048f92505d664efe4a10bfb}{Matrix\+::\+Apply} 
 \begin{DoxyParams}{Parameters}
@@ -194,11 +195,11 @@ Calculates log of each element. Implementation doesn\textquotesingle{}t use \dox
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\Hypertarget{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}\label{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2} 
-\index{LogRegSGD@{LogRegSGD}!netInput@{netInput}}
+\Hypertarget{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2}\index{LogRegSGD@{LogRegSGD}!netInput@{netInput}}
 \index{netInput@{netInput}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{netInput()}{netInput()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Log\+Reg\+SGD\+::net\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_a4f0b244b494e4fb6bab9932f93ad7bc2} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Log\+Reg\+SGD\+::net\+Input (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 calculate netinput 
 \begin{DoxyParams}{Parameters}
@@ -212,11 +213,11 @@ calculate netinput
 
 Implements \mbox{\hyperlink{classANNClassifier_a8236348bfd0b4a4907c2ea2ca2b5d71a}{ANNClassifier}}.
 
-\Hypertarget{classLogRegSGD_a7e21cee4236b4f144cf507396849110f}\label{classLogRegSGD_a7e21cee4236b4f144cf507396849110f} 
-\index{LogRegSGD@{LogRegSGD}!partial\_fit@{partial\_fit}}
+\Hypertarget{classLogRegSGD_a7e21cee4236b4f144cf507396849110f}\index{LogRegSGD@{LogRegSGD}!partial\_fit@{partial\_fit}}
 \index{partial\_fit@{partial\_fit}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{partial\_fit()}{partial\_fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} Log\+Reg\+SGD\+::partial\+\_\+fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_a7e21cee4236b4f144cf507396849110f} 
+void Log\+Reg\+SGD\+::partial\+\_\+fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 partially fit weights 
 \begin{DoxyParams}{Parameters}
@@ -225,11 +226,11 @@ partially fit weights
 {\em y} & target output values \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67}\label{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67} 
-\index{LogRegSGD@{LogRegSGD}!predict@{predict}}
+\Hypertarget{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67}\index{LogRegSGD@{LogRegSGD}!predict@{predict}}
 \index{predict@{predict}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{predict()}{predict()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Log\+Reg\+SGD\+::predict (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_a55ac458f1e5b06f8b9542d1133d50e67} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Log\+Reg\+SGD\+::predict (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
 
 predict output for given input 
 \begin{DoxyParams}{Parameters}
@@ -243,11 +244,11 @@ predicted output for given input
 
 Implements \mbox{\hyperlink{classPredictor_a33fd5ee04d4d1f55e9f3c1557838c6d2}{Predictor}}.
 
-\Hypertarget{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da}\label{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da} 
-\index{LogRegSGD@{LogRegSGD}!update\_weights@{update\_weights}}
+\Hypertarget{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da}\index{LogRegSGD@{LogRegSGD}!update\_weights@{update\_weights}}
 \index{update\_weights@{update\_weights}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{update\_weights()}{update\_weights()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Log\+Reg\+SGD\+::update\+\_\+weights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{xi,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classLogRegSGD_ae0fa063b1608fd8695d5bb4d30fe76da} 
+double Log\+Reg\+SGD\+::update\+\_\+weights (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{xi}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
 
 logistical regression 
 \begin{DoxyParams}{Parameters}
@@ -262,31 +263,31 @@ cost
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}\label{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997} 
-\index{LogRegSGD@{LogRegSGD}!randomState@{randomState}}
+\Hypertarget{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997}\index{LogRegSGD@{LogRegSGD}!randomState@{randomState}}
 \index{randomState@{randomState}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{randomState}{randomState}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Log\+Reg\+SGD\+::random\+State}
+{\footnotesize\ttfamily \label{classLogRegSGD_a654e74118d5644bc8e18ca5e5bcca997} 
+int Log\+Reg\+SGD\+::random\+State}
 
 
 
 initialize weights with random state 
 
-\Hypertarget{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}\label{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97} 
-\index{LogRegSGD@{LogRegSGD}!sgd@{sgd}}
+\Hypertarget{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97}\index{LogRegSGD@{LogRegSGD}!sgd@{sgd}}
 \index{sgd@{sgd}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{sgd}{sgd}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classSGD}{SGD}}\texorpdfstring{$\ast$}{*} Log\+Reg\+SGD\+::sgd = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}}
+{\footnotesize\ttfamily \label{classLogRegSGD_af80d2b982ab742580caeda9bd2f48d97} 
+\mbox{\hyperlink{classSGD}{SGD}}\texorpdfstring{$\ast$}{*} Log\+Reg\+SGD\+::sgd = nullptr}
 
 
 
 algorithmic object to represent fitting algorithm 
 
-\Hypertarget{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e}\label{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e} 
-\index{LogRegSGD@{LogRegSGD}!shuffle@{shuffle}}
+\Hypertarget{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e}\index{LogRegSGD@{LogRegSGD}!shuffle@{shuffle}}
 \index{shuffle@{shuffle}!LogRegSGD@{LogRegSGD}}
 \doxysubsubsection{\texorpdfstring{shuffle}{shuffle}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} Log\+Reg\+SGD\+::shuffle}
+{\footnotesize\ttfamily \label{classLogRegSGD_a3bfe916ce0635c0b00c77731bf3ad77e} 
+bool Log\+Reg\+SGD\+::shuffle}
 
 
 

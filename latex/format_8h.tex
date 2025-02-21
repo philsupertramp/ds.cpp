@@ -8,19 +8,19 @@
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \mbox{\hyperlink{format_8h_a1921b31564b858b45e94efff9e9d54bf}{format}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fmt}},...)
+std\+::string \mbox{\hyperlink{format_8h_a1921b31564b858b45e94efff9e9d54bf}{format}} (const char \texorpdfstring{$\ast$}{*}fmt,...)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \mbox{\hyperlink{format_8h_a5f3e23cac814c84a5494842243316a4b}{strip}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+std\+::string \mbox{\hyperlink{format_8h_a5f3e23cac814c84a5494842243316a4b}{strip}} (const std\+::string \&in)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}} $>$ }\\\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{format_8h_a03529396588a5d4dac36c432989fdfaa}{split}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{s}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{delim}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{result}})
+{\footnotesize template$<$typename Out $>$ }\\void \mbox{\hyperlink{format_8h_a03529396588a5d4dac36c432989fdfaa}{split}} (const std\+::string \&s, char delim, Out result)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} $>$ \mbox{\hyperlink{format_8h_a0711bc625a1e6944ca62107b5847365f}{split}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{s}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{delim}})
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{format_8h_a0711bc625a1e6944ca62107b5847365f}{split}} (const std\+::string \&s, char delim)
 \item 
-{\footnotesize template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}} $>$ }\\\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{format_8h_a9f228a0aba90f49160a09ccde4133fa1}{split}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{s}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{result}})
+{\footnotesize template$<$typename Out $>$ }\\void \mbox{\hyperlink{format_8h_a9f228a0aba90f49160a09ccde4133fa1}{split}} (const std\+::string \&s, Out result)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} $>$ \mbox{\hyperlink{format_8h_aaca53fa3a4bcbc31a89f0ce32925cb0e}{split}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{s}})
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{format_8h_aaca53fa3a4bcbc31a89f0ce32925cb0e}{split}} (const std\+::string \&s)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} $>$ \mbox{\hyperlink{format_8h_a46f6d1654169d0a28cb76133309eeb86}{split\+\_\+by\+\_\+regex}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{s}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::regex}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{regex}})
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{format_8h_a46f6d1654169d0a28cb76133309eeb86}{split\+\_\+by\+\_\+regex}} (const std\+::string \&s, const std\+::regex \&regex)
 \end{DoxyCompactItemize}
 
 
@@ -30,11 +30,11 @@ Missing string manipulations.
 This header file contains essential methods to manipulate strings. 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{format_8h_a1921b31564b858b45e94efff9e9d54bf}\label{format_8h_a1921b31564b858b45e94efff9e9d54bf} 
-\index{format.h@{format.h}!format@{format}}
+\Hypertarget{format_8h_a1921b31564b858b45e94efff9e9d54bf}\index{format.h@{format.h}!format@{format}}
 \index{format@{format}!format.h@{format.h}}
 \doxysubsubsection{\texorpdfstring{format()}{format()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}} \texorpdfstring{$\ast$}{*}}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{format_8h_a1921b31564b858b45e94efff9e9d54bf} 
+std\+::string format (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fmt}{, }\item[{}]{...}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 missing string printf this is safe and convenient but not exactly efficient 
 \begin{DoxyParams}{Parameters}
@@ -46,11 +46,11 @@ missing string printf this is safe and convenient but not exactly efficient
 \begin{DoxyReturn}{Returns}
 formatted string 
 \end{DoxyReturn}
-\Hypertarget{format_8h_aaca53fa3a4bcbc31a89f0ce32925cb0e}\label{format_8h_aaca53fa3a4bcbc31a89f0ce32925cb0e} 
-\index{format.h@{format.h}!split@{split}}
+\Hypertarget{format_8h_aaca53fa3a4bcbc31a89f0ce32925cb0e}\index{format.h@{format.h}!split@{split}}
 \index{split@{split}!format.h@{format.h}}
 \doxysubsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} $>$ split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{s }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{format_8h_aaca53fa3a4bcbc31a89f0ce32925cb0e} 
+std\+::vector$<$ std\+::string $>$ split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{}\end{DoxyParamCaption})}
 
 Helper method to simplify call to split 
 \begin{DoxyParams}{Parameters}
@@ -60,11 +60,11 @@ Helper method to simplify call to split
 \begin{DoxyReturn}{Returns}
 split vector of strings 
 \end{DoxyReturn}
-\Hypertarget{format_8h_a0711bc625a1e6944ca62107b5847365f}\label{format_8h_a0711bc625a1e6944ca62107b5847365f} 
-\index{format.h@{format.h}!split@{split}}
+\Hypertarget{format_8h_a0711bc625a1e6944ca62107b5847365f}\index{format.h@{format.h}!split@{split}}
 \index{split@{split}!format.h@{format.h}}
 \doxysubsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} $>$ split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{s,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}}]{delim }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{format_8h_a0711bc625a1e6944ca62107b5847365f} 
+std\+::vector$<$ std\+::string $>$ split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{, }\item[{char}]{delim}{}\end{DoxyParamCaption})}
 
 Helper method to simplify call to split 
 \begin{DoxyParams}{Parameters}
@@ -76,14 +76,14 @@ Helper method to simplify call to split
 \begin{DoxyReturn}{Returns}
 vector of strings split\textquotesingle{} by delim 
 \end{DoxyReturn}
-\Hypertarget{format_8h_a03529396588a5d4dac36c432989fdfaa}\label{format_8h_a03529396588a5d4dac36c432989fdfaa} 
-\index{format.h@{format.h}!split@{split}}
+\Hypertarget{format_8h_a03529396588a5d4dac36c432989fdfaa}\index{format.h@{format.h}!split@{split}}
 \index{split@{split}!format.h@{format.h}}
 \doxysubsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}} $>$ \\
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{s,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}}]{delim,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}}}]{result }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{format_8h_a03529396588a5d4dac36c432989fdfaa} 
+template$<$typename Out $>$ \\
+void split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{, }\item[{char}]{delim}{, }\item[{Out}]{result}{}\end{DoxyParamCaption})}
 
-\hypertarget{format_8h_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{from https\+://stackoverflow.\+com/a/236803}{from https://stackoverflow.com/a/236803}}\label{format_8h_autotoc_md0}
+\hypertarget{format_8h_autotoc_md0}{}\doxysubsubsection{\texorpdfstring{from \href{https://stackoverflow.com/a/236803}{\texttt{ https\+://stackoverflow.\+com/a/236803}}}{from \href{https://stackoverflow.com/a/236803}{\texttt{ https\+://stackoverflow.\+com/a/236803}}}}\label{format_8h_autotoc_md0}
 splits s into result by delim 
 \begin{DoxyTemplParams}{Template Parameters}
 {\em Out} & \\
@@ -98,12 +98,12 @@ splits s into result by delim
 {\em result} & \\
 \hline
 \end{DoxyParams}
-\Hypertarget{format_8h_a9f228a0aba90f49160a09ccde4133fa1}\label{format_8h_a9f228a0aba90f49160a09ccde4133fa1} 
-\index{format.h@{format.h}!split@{split}}
+\Hypertarget{format_8h_a9f228a0aba90f49160a09ccde4133fa1}\index{format.h@{format.h}!split@{split}}
 \index{split@{split}!format.h@{format.h}}
 \doxysubsubsection{\texorpdfstring{split()}{split()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily template$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{typename}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}} $>$ \\
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} split (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{s,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{Out}}}]{result }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{format_8h_a9f228a0aba90f49160a09ccde4133fa1} 
+template$<$typename Out $>$ \\
+void split (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{, }\item[{Out}]{result}{}\end{DoxyParamCaption})}
 
 Split after each character 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -117,17 +117,17 @@ Split after each character
 {\em result} & container to write results in \\
 \hline
 \end{DoxyParams}
-\Hypertarget{format_8h_a46f6d1654169d0a28cb76133309eeb86}\label{format_8h_a46f6d1654169d0a28cb76133309eeb86} 
-\index{format.h@{format.h}!split\_by\_regex@{split\_by\_regex}}
+\Hypertarget{format_8h_a46f6d1654169d0a28cb76133309eeb86}\index{format.h@{format.h}!split\_by\_regex@{split\_by\_regex}}
 \index{split\_by\_regex@{split\_by\_regex}!format.h@{format.h}}
 \doxysubsubsection{\texorpdfstring{split\_by\_regex()}{split\_by\_regex()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::vector}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} $>$ split\+\_\+by\+\_\+regex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{s,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::regex}} \&}]{regex }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{format_8h_a46f6d1654169d0a28cb76133309eeb86} 
+std\+::vector$<$ std\+::string $>$ split\+\_\+by\+\_\+regex (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s}{, }\item[{const std\+::regex \&}]{regex}{}\end{DoxyParamCaption})}
 
-\Hypertarget{format_8h_a5f3e23cac814c84a5494842243316a4b}\label{format_8h_a5f3e23cac814c84a5494842243316a4b} 
-\index{format.h@{format.h}!strip@{strip}}
+\Hypertarget{format_8h_a5f3e23cac814c84a5494842243316a4b}\index{format.h@{format.h}!strip@{strip}}
 \index{strip@{strip}!format.h@{format.h}}
 \doxysubsubsection{\texorpdfstring{strip()}{strip()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} strip (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{in }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{format_8h_a5f3e23cac814c84a5494842243316a4b} 
+std\+::string strip (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{in}{}\end{DoxyParamCaption})}
 
 Strips whitespaces of a string 
 \begin{DoxyParams}{Parameters}

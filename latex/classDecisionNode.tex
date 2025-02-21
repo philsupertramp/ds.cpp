@@ -9,20 +9,20 @@
 \item 
 \mbox{\hyperlink{classDecisionNode_a1b6aadd701a106ea0596806f3b0345d5}{Decision\+Node}} ()
 \item 
-\mbox{\hyperlink{classDecisionNode_a58abd8501fc1f0cc4d6895eeea605c17}{Decision\+Node}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{val}})
+\mbox{\hyperlink{classDecisionNode_a58abd8501fc1f0cc4d6895eeea605c17}{Decision\+Node}} (double val)
 \item 
-\mbox{\hyperlink{classDecisionNode_a505bb5ac9db74e250341b0fda527bd12}{Decision\+Node}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{feat}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{thresh}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{ig}}, \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classDecisionNode_aa8ff3eafda21da952e69bb1774909b15}{left}}, \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classDecisionNode_a0a0a2c5131fb90e486bf12b245048b9a}{right}})
+\mbox{\hyperlink{classDecisionNode_a505bb5ac9db74e250341b0fda527bd12}{Decision\+Node}} (int feat, double thresh, double ig, \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classDecisionNode_aa8ff3eafda21da952e69bb1774909b15}{left}}, \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{classDecisionNode_a0a0a2c5131fb90e486bf12b245048b9a}{right}})
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDecisionNode_a33261e7ae7ff313fe71885a887abf8c7}{value}} = -\/1
+double \mbox{\hyperlink{classDecisionNode_a33261e7ae7ff313fe71885a887abf8c7}{value}} = -\/1
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} \mbox{\hyperlink{classDecisionNode_a4e872cb5e21b8b26bb122bfd8d23d878}{feature}} = -\/1
+int \mbox{\hyperlink{classDecisionNode_a4e872cb5e21b8b26bb122bfd8d23d878}{feature}} = -\/1
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDecisionNode_a3c647d210ebc81ea45138d95b4ad759b}{threshold}} = -\/1
+double \mbox{\hyperlink{classDecisionNode_a3c647d210ebc81ea45138d95b4ad759b}{threshold}} = -\/1
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classDecisionNode_a98a2a9c54818c864dea1e8b7f4dc2153}{information\+\_\+gain}} = -\/1
+double \mbox{\hyperlink{classDecisionNode_a98a2a9c54818c864dea1e8b7f4dc2153}{information\+\_\+gain}} = -\/1
 \item 
 \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDecisionNode_aa8ff3eafda21da952e69bb1774909b15}{left}}
 \item 
@@ -42,68 +42,68 @@ Avaibale in two types\+:
 \end{DoxyItemize}
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classDecisionNode_a1b6aadd701a106ea0596806f3b0345d5}\label{classDecisionNode_a1b6aadd701a106ea0596806f3b0345d5} 
-\index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
+\Hypertarget{classDecisionNode_a1b6aadd701a106ea0596806f3b0345d5}\index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
 \index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{DecisionNode()}{DecisionNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Decision\+Node\+::\+Decision\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classDecisionNode_a1b6aadd701a106ea0596806f3b0345d5} 
+Decision\+Node\+::\+Decision\+Node (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classDecisionNode_a58abd8501fc1f0cc4d6895eeea605c17}\label{classDecisionNode_a58abd8501fc1f0cc4d6895eeea605c17} 
-\index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
+\Hypertarget{classDecisionNode_a58abd8501fc1f0cc4d6895eeea605c17}\index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
 \index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{DecisionNode()}{DecisionNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily Decision\+Node\+::\+Decision\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classDecisionNode_a58abd8501fc1f0cc4d6895eeea605c17} 
+Decision\+Node\+::\+Decision\+Node (\begin{DoxyParamCaption}\item[{double}]{val}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{classDecisionNode_a505bb5ac9db74e250341b0fda527bd12}\label{classDecisionNode_a505bb5ac9db74e250341b0fda527bd12} 
-\index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
+\Hypertarget{classDecisionNode_a505bb5ac9db74e250341b0fda527bd12}\index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
 \index{DecisionNode@{DecisionNode}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{DecisionNode()}{DecisionNode()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily Decision\+Node\+::\+Decision\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}}}]{feat,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{thresh,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{ig,  }\item[{\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}}]{left,  }\item[{\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classDecisionNode_a505bb5ac9db74e250341b0fda527bd12} 
+Decision\+Node\+::\+Decision\+Node (\begin{DoxyParamCaption}\item[{int}]{feat}{, }\item[{double}]{thresh}{, }\item[{double}]{ig}{, }\item[{\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}}]{left}{, }\item[{\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*}}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classDecisionNode_a4e872cb5e21b8b26bb122bfd8d23d878}\label{classDecisionNode_a4e872cb5e21b8b26bb122bfd8d23d878} 
-\index{DecisionNode@{DecisionNode}!feature@{feature}}
+\Hypertarget{classDecisionNode_a4e872cb5e21b8b26bb122bfd8d23d878}\index{DecisionNode@{DecisionNode}!feature@{feature}}
 \index{feature@{feature}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{feature}{feature}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{int}} Decision\+Node\+::feature = -\/1}
+{\footnotesize\ttfamily \label{classDecisionNode_a4e872cb5e21b8b26bb122bfd8d23d878} 
+int Decision\+Node\+::feature = -\/1}
 
-\Hypertarget{classDecisionNode_a98a2a9c54818c864dea1e8b7f4dc2153}\label{classDecisionNode_a98a2a9c54818c864dea1e8b7f4dc2153} 
-\index{DecisionNode@{DecisionNode}!information\_gain@{information\_gain}}
+\Hypertarget{classDecisionNode_a98a2a9c54818c864dea1e8b7f4dc2153}\index{DecisionNode@{DecisionNode}!information\_gain@{information\_gain}}
 \index{information\_gain@{information\_gain}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{information\_gain}{information\_gain}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Decision\+Node\+::information\+\_\+gain = -\/1}
+{\footnotesize\ttfamily \label{classDecisionNode_a98a2a9c54818c864dea1e8b7f4dc2153} 
+double Decision\+Node\+::information\+\_\+gain = -\/1}
 
-\Hypertarget{classDecisionNode_aa8ff3eafda21da952e69bb1774909b15}\label{classDecisionNode_aa8ff3eafda21da952e69bb1774909b15} 
-\index{DecisionNode@{DecisionNode}!left@{left}}
+\Hypertarget{classDecisionNode_aa8ff3eafda21da952e69bb1774909b15}\index{DecisionNode@{DecisionNode}!left@{left}}
 \index{left@{left}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{left}{left}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classDecisionNode}{Decision\+Node}}\texorpdfstring{$\ast$}{*} Decision\+Node\+::left}
+{\footnotesize\ttfamily \label{classDecisionNode_aa8ff3eafda21da952e69bb1774909b15} 
+\mbox{\hyperlink{classDecisionNode}{Decision\+Node}}\texorpdfstring{$\ast$}{*} Decision\+Node\+::left}
 
-\Hypertarget{classDecisionNode_a0a0a2c5131fb90e486bf12b245048b9a}\label{classDecisionNode_a0a0a2c5131fb90e486bf12b245048b9a} 
-\index{DecisionNode@{DecisionNode}!right@{right}}
+\Hypertarget{classDecisionNode_a0a0a2c5131fb90e486bf12b245048b9a}\index{DecisionNode@{DecisionNode}!right@{right}}
 \index{right@{right}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{right}{right}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} Decision\+Node\+::right}
+{\footnotesize\ttfamily \label{classDecisionNode_a0a0a2c5131fb90e486bf12b245048b9a} 
+\mbox{\hyperlink{classDecisionNode}{Decision\+Node}} \texorpdfstring{$\ast$}{*} Decision\+Node\+::right}
 
-\Hypertarget{classDecisionNode_a3c647d210ebc81ea45138d95b4ad759b}\label{classDecisionNode_a3c647d210ebc81ea45138d95b4ad759b} 
-\index{DecisionNode@{DecisionNode}!threshold@{threshold}}
+\Hypertarget{classDecisionNode_a3c647d210ebc81ea45138d95b4ad759b}\index{DecisionNode@{DecisionNode}!threshold@{threshold}}
 \index{threshold@{threshold}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{threshold}{threshold}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Decision\+Node\+::threshold = -\/1}
+{\footnotesize\ttfamily \label{classDecisionNode_a3c647d210ebc81ea45138d95b4ad759b} 
+double Decision\+Node\+::threshold = -\/1}
 
-\Hypertarget{classDecisionNode_aefe3826544a26c8ac74bb735d2a9c867}\label{classDecisionNode_aefe3826544a26c8ac74bb735d2a9c867} 
-\index{DecisionNode@{DecisionNode}!type@{type}}
+\Hypertarget{classDecisionNode_aefe3826544a26c8ac74bb735d2a9c867}\index{DecisionNode@{DecisionNode}!type@{type}}
 \index{type@{type}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{type}{type}}
-{\footnotesize\ttfamily \mbox{\hyperlink{DecisionTree_8h_aa7e8eeb6e645374f861a868ea569d360}{Decision\+Node\+Type}} Decision\+Node\+::type = \mbox{\hyperlink{DecisionTree_8h_aa7e8eeb6e645374f861a868ea569d360ac157bdf0b85a40d2619cbc8bc1ae5fe2}{Decision\+Node\+Type\+::\+NONE}}}
+{\footnotesize\ttfamily \label{classDecisionNode_aefe3826544a26c8ac74bb735d2a9c867} 
+\mbox{\hyperlink{DecisionTree_8h_aa7e8eeb6e645374f861a868ea569d360}{Decision\+Node\+Type}} Decision\+Node\+::type = \mbox{\hyperlink{DecisionTree_8h_aa7e8eeb6e645374f861a868ea569d360ac157bdf0b85a40d2619cbc8bc1ae5fe2}{Decision\+Node\+Type\+::\+NONE}}}
 
-\Hypertarget{classDecisionNode_a33261e7ae7ff313fe71885a887abf8c7}\label{classDecisionNode_a33261e7ae7ff313fe71885a887abf8c7} 
-\index{DecisionNode@{DecisionNode}!value@{value}}
+\Hypertarget{classDecisionNode_a33261e7ae7ff313fe71885a887abf8c7}\index{DecisionNode@{DecisionNode}!value@{value}}
 \index{value@{value}!DecisionNode@{DecisionNode}}
 \doxysubsubsection{\texorpdfstring{value}{value}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Decision\+Node\+::value = -\/1}
+{\footnotesize\ttfamily \label{classDecisionNode_a33261e7ae7ff313fe71885a887abf8c7} 
+double Decision\+Node\+::value = -\/1}
 
 
 

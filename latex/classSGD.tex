@@ -7,38 +7,38 @@
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classSGD_aa9604ea5aecad681f674c24137d5b0c9}{SGD}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+eta}}=0.\+01, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{iter}}=10, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{\+\_\+shuffle}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::function$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{update\+\_\+weights\+\_\+fun}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::function$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{net\+Input\+Fun}}=\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}})
+\mbox{\hyperlink{classSGD_aa9604ea5aecad681f674c24137d5b0c9}{SGD}} (double \+\_\+eta=0.\+01, size\+\_\+t iter=10, bool \+\_\+shuffle=false, const std\+::function$<$ double(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)$>$ \&update\+\_\+weights\+\_\+fun=nullptr, const std\+::function$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)$>$ \&net\+Input\+Fun=nullptr)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classSGD_ac1c260b0af030ec1016eb21c18a32952}{fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&weights)
+void \mbox{\hyperlink{classSGD_ac1c260b0af030ec1016eb21c18a32952}{fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&weights)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} \mbox{\hyperlink{classSGD_a45c2d880b888167941d996ddf1b39b0b}{partial\+\_\+fit}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&weights) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+void \mbox{\hyperlink{classSGD_a45c2d880b888167941d996ddf1b39b0b}{partial\+\_\+fit}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&weights) const
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classSGD_a1d63550696ce2020c915db4a87412fde}{update\+\_\+weights}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{xi}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{target}}, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&weights) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+double \mbox{\hyperlink{classSGD_a1d63550696ce2020c915db4a87412fde}{update\+\_\+weights}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&xi, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&target, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&weights) const
 \item 
-std\+::pair$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ $>$ \mbox{\hyperlink{classSGD_a62f02503e631b14ed152d226be446c00}{shuffle\+Data}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+std\+::pair$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ $>$ \mbox{\hyperlink{classSGD_a62f02503e631b14ed152d226be446c00}{shuffle\+Data}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classSGD_a6e9a27e08c7e4e442b29ad8ca0729bcc}{net\+Input}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&weights)
+static \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classSGD_a6e9a27e08c7e4e442b29ad8ca0729bcc}{net\+Input}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&weights)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classSGD_a843697c86d1d89defc5b23e9847cdb4c}{cost}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classSGD_a843697c86d1d89defc5b23e9847cdb4c}{cost}}
 \begin{DoxyCompactList}\small\item\em matrix holding cost per epoch \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} \mbox{\hyperlink{classSGD_a41e45e615afc99e5336bde58de5d1e02}{n\+\_\+iter}}
+size\+\_\+t \mbox{\hyperlink{classSGD_a41e45e615afc99e5336bde58de5d1e02}{n\+\_\+iter}}
 \begin{DoxyCompactList}\small\item\em number iterations (epochs) during fit \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classSGD_ad45df4b7453474d02c8d7888dddcdcdf}{eta}}
+double \mbox{\hyperlink{classSGD_ad45df4b7453474d02c8d7888dddcdcdf}{eta}}
 \begin{DoxyCompactList}\small\item\em cost factor \end{DoxyCompactList}\item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{classSGD_a3150c7954c208f5f57f7744196ec1fcc}{shuffle}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}
+bool \mbox{\hyperlink{classSGD_a3150c7954c208f5f57f7744196ec1fcc}{shuffle}} = false
 \begin{DoxyCompactList}\small\item\em shuffle during training \end{DoxyCompactList}\item 
-std\+::function$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$ \mbox{\hyperlink{classSGD_a8c2e2f3e7cd86bc70ff5ff4ffb58e7c3}{weight\+\_\+update}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}
+std\+::function$<$ double(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)$>$ \mbox{\hyperlink{classSGD_a8c2e2f3e7cd86bc70ff5ff4ffb58e7c3}{weight\+\_\+update}} = nullptr
 \begin{DoxyCompactList}\small\item\em represents weight update function \end{DoxyCompactList}\item 
-std\+::function$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$ \mbox{\hyperlink{classSGD_a2de1cfda27c58fb5c9f3ef08b123ac97}{net\+\_\+input\+\_\+fun}} = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}
+std\+::function$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)$>$ \mbox{\hyperlink{classSGD_a2de1cfda27c58fb5c9f3ef08b123ac97}{net\+\_\+input\+\_\+fun}} = nullptr
 \begin{DoxyCompactList}\small\item\em represents net input function \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -46,11 +46,11 @@ std\+::function$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{ma
 Implements statistic gradient decent method to fit a model 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classSGD_aa9604ea5aecad681f674c24137d5b0c9}\label{classSGD_aa9604ea5aecad681f674c24137d5b0c9} 
-\index{SGD@{SGD}!SGD@{SGD}}
+\Hypertarget{classSGD_aa9604ea5aecad681f674c24137d5b0c9}\index{SGD@{SGD}!SGD@{SGD}}
 \index{SGD@{SGD}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{SGD()}{SGD()}}
-{\footnotesize\ttfamily SGD\+::\+SGD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}}]{\+\_\+eta = {\ttfamily 0.01},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{iter = {\ttfamily 10},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}}}]{\+\_\+shuffle = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::function$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$ \&}]{update\+\_\+weights\+\_\+fun = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}},  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} std\+::function$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&)$>$ \&}]{net\+Input\+Fun = {\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily \label{classSGD_aa9604ea5aecad681f674c24137d5b0c9} 
+SGD\+::\+SGD (\begin{DoxyParamCaption}\item[{double}]{\+\_\+eta}{ = {\ttfamily 0.01}, }\item[{size\+\_\+t}]{iter}{ = {\ttfamily 10}, }\item[{bool}]{\+\_\+shuffle}{ = {\ttfamily false}, }\item[{const std\+::function$<$ double(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)$>$ \&}]{update\+\_\+weights\+\_\+fun}{ = {\ttfamily nullptr}, }\item[{const std\+::function$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&)$>$ \&}]{net\+Input\+Fun}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 default constructor 
 \begin{DoxyParams}{Parameters}
@@ -68,11 +68,11 @@ default constructor
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classSGD_ac1c260b0af030ec1016eb21c18a32952}\label{classSGD_ac1c260b0af030ec1016eb21c18a32952} 
-\index{SGD@{SGD}!fit@{fit}}
+\Hypertarget{classSGD_ac1c260b0af030ec1016eb21c18a32952}\index{SGD@{SGD}!fit@{fit}}
 \index{fit@{fit}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{fit()}{fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} SGD\+::fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classSGD_ac1c260b0af030ec1016eb21c18a32952} 
+void SGD\+::fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{weights}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 fits given weights according to used weight update/net input function based on given values X and y 
 \begin{DoxyParams}{Parameters}
@@ -83,11 +83,11 @@ fits given weights according to used weight update/net input function based on g
 {\em weights} & \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classSGD_a6e9a27e08c7e4e442b29ad8ca0729bcc}\label{classSGD_a6e9a27e08c7e4e442b29ad8ca0729bcc} 
-\index{SGD@{SGD}!netInput@{netInput}}
+\Hypertarget{classSGD_a6e9a27e08c7e4e442b29ad8ca0729bcc}\index{SGD@{SGD}!netInput@{netInput}}
 \index{netInput@{netInput}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{netInput()}{netInput()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{static}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ SGD\+::net\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{weights }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+{\footnotesize\ttfamily \label{classSGD_a6e9a27e08c7e4e442b29ad8ca0729bcc} 
+static \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ SGD\+::net\+Input (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{weights}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [nodiscard]}}
 
 computes the net-\/input for given values 
 \begin{DoxyParams}{Parameters}
@@ -99,11 +99,11 @@ computes the net-\/input for given values
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\Hypertarget{classSGD_a45c2d880b888167941d996ddf1b39b0b}\label{classSGD_a45c2d880b888167941d996ddf1b39b0b} 
-\index{SGD@{SGD}!partial\_fit@{partial\_fit}}
+\Hypertarget{classSGD_a45c2d880b888167941d996ddf1b39b0b}\index{SGD@{SGD}!partial\_fit@{partial\_fit}}
 \index{partial\_fit@{partial\_fit}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{partial\_fit()}{partial\_fit()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{void}} SGD\+::partial\+\_\+fit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y,  }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{weights }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classSGD_a45c2d880b888167941d996ddf1b39b0b} 
+void SGD\+::partial\+\_\+fit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{weights}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Performs partial fit of given weights to input values 
 \begin{DoxyParams}{Parameters}
@@ -114,11 +114,11 @@ Performs partial fit of given weights to input values
 {\em weights} & \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classSGD_a62f02503e631b14ed152d226be446c00}\label{classSGD_a62f02503e631b14ed152d226be446c00} 
-\index{SGD@{SGD}!shuffleData@{shuffleData}}
+\Hypertarget{classSGD_a62f02503e631b14ed152d226be446c00}\index{SGD@{SGD}!shuffleData@{shuffleData}}
 \index{shuffleData@{shuffleData}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{shuffleData()}{shuffleData()}}
-{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ $>$ SGD\+::shuffle\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{X,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classSGD_a62f02503e631b14ed152d226be446c00} 
+std\+::pair$<$ \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$, \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ $>$ SGD\+::shuffle\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{X}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 shuffles given data 
 \begin{DoxyParams}{Parameters}
@@ -130,11 +130,11 @@ shuffles given data
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\Hypertarget{classSGD_a1d63550696ce2020c915db4a87412fde}\label{classSGD_a1d63550696ce2020c915db4a87412fde} 
-\index{SGD@{SGD}!update\_weights@{update\_weights}}
+\Hypertarget{classSGD_a1d63550696ce2020c915db4a87412fde}\index{SGD@{SGD}!update\_weights@{update\_weights}}
 \index{update\_weights@{update\_weights}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{update\_weights()}{update\_weights()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} SGD\+::update\+\_\+weights (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{xi,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{target,  }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{weights }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classSGD_a1d63550696ce2020c915db4a87412fde} 
+double SGD\+::update\+\_\+weights (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{xi}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{target}{, }\item[{\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{weights}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 calculates update values (mean-\/square-\/error) 
 \begin{DoxyParams}{Parameters}
@@ -151,61 +151,61 @@ calculates update values (mean-\/square-\/error)
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classSGD_a843697c86d1d89defc5b23e9847cdb4c}\label{classSGD_a843697c86d1d89defc5b23e9847cdb4c} 
-\index{SGD@{SGD}!cost@{cost}}
+\Hypertarget{classSGD_a843697c86d1d89defc5b23e9847cdb4c}\index{SGD@{SGD}!cost@{cost}}
 \index{cost@{cost}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{cost}{cost}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ SGD\+::cost}
+{\footnotesize\ttfamily \label{classSGD_a843697c86d1d89defc5b23e9847cdb4c} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$ SGD\+::cost}
 
 
 
 matrix holding cost per epoch 
 
-\Hypertarget{classSGD_ad45df4b7453474d02c8d7888dddcdcdf}\label{classSGD_ad45df4b7453474d02c8d7888dddcdcdf} 
-\index{SGD@{SGD}!eta@{eta}}
+\Hypertarget{classSGD_ad45df4b7453474d02c8d7888dddcdcdf}\index{SGD@{SGD}!eta@{eta}}
 \index{eta@{eta}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{eta}{eta}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} SGD\+::eta\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classSGD_ad45df4b7453474d02c8d7888dddcdcdf} 
+double SGD\+::eta\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 cost factor 
 
-\Hypertarget{classSGD_a41e45e615afc99e5336bde58de5d1e02}\label{classSGD_a41e45e615afc99e5336bde58de5d1e02} 
-\index{SGD@{SGD}!n\_iter@{n\_iter}}
+\Hypertarget{classSGD_a41e45e615afc99e5336bde58de5d1e02}\index{SGD@{SGD}!n\_iter@{n\_iter}}
 \index{n\_iter@{n\_iter}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{n\_iter}{n\_iter}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} SGD\+::n\+\_\+iter\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classSGD_a41e45e615afc99e5336bde58de5d1e02} 
+size\+\_\+t SGD\+::n\+\_\+iter\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 number iterations (epochs) during fit 
 
-\Hypertarget{classSGD_a2de1cfda27c58fb5c9f3ef08b123ac97}\label{classSGD_a2de1cfda27c58fb5c9f3ef08b123ac97} 
-\index{SGD@{SGD}!net\_input\_fun@{net\_input\_fun}}
+\Hypertarget{classSGD_a2de1cfda27c58fb5c9f3ef08b123ac97}\index{SGD@{SGD}!net\_input\_fun@{net\_input\_fun}}
 \index{net\_input\_fun@{net\_input\_fun}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{net\_input\_fun}{net\_input\_fun}}
-{\footnotesize\ttfamily std\+::function$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$\&)$>$ SGD\+::net\+\_\+input\+\_\+fun = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classSGD_a2de1cfda27c58fb5c9f3ef08b123ac97} 
+std\+::function$<$\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$\&)$>$ SGD\+::net\+\_\+input\+\_\+fun = nullptr\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 represents net input function 
 
-\Hypertarget{classSGD_a3150c7954c208f5f57f7744196ec1fcc}\label{classSGD_a3150c7954c208f5f57f7744196ec1fcc} 
-\index{SGD@{SGD}!shuffle@{shuffle}}
+\Hypertarget{classSGD_a3150c7954c208f5f57f7744196ec1fcc}\index{SGD@{SGD}!shuffle@{shuffle}}
 \index{shuffle@{shuffle}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{shuffle}{shuffle}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} SGD\+::shuffle = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{false}}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classSGD_a3150c7954c208f5f57f7744196ec1fcc} 
+bool SGD\+::shuffle = false\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
 shuffle during training 
 
-\Hypertarget{classSGD_a8c2e2f3e7cd86bc70ff5ff4ffb58e7c3}\label{classSGD_a8c2e2f3e7cd86bc70ff5ff4ffb58e7c3} 
-\index{SGD@{SGD}!weight\_update@{weight\_update}}
+\Hypertarget{classSGD_a8c2e2f3e7cd86bc70ff5ff4ffb58e7c3}\index{SGD@{SGD}!weight\_update@{weight\_update}}
 \index{weight\_update@{weight\_update}!SGD@{SGD}}
 \doxysubsubsection{\texorpdfstring{weight\_update}{weight\_update}}
-{\footnotesize\ttfamily std\+::function$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$\&, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$\&)$>$ SGD\+::weight\+\_\+update = \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{nullptr}}\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classSGD_a8c2e2f3e7cd86bc70ff5ff4ffb58e7c3} 
+std\+::function$<$double(const \mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$\&, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$\&)$>$ SGD\+::weight\+\_\+update = nullptr\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

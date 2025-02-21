@@ -13,28 +13,28 @@ Inheritance diagram for Newton\+Base\+:\begin{figure}[H]
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classNewtonBase_a789b7658f5c76f974e7425976b62f796}{Newton\+Base}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&x, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&y)
+\mbox{\hyperlink{classNewtonBase_a789b7658f5c76f974e7425976b62f796}{Newton\+Base}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&x, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&y)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string \mbox{\hyperlink{classNewtonBase_af59cf5892ed772c87c830ceb701160dd}{Function}} () \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+virtual std\+::string \mbox{\hyperlink{classNewtonBase_af59cf5892ed772c87c830ceb701160dd}{Function}} () const
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \mbox{\hyperlink{classNewtonBase_a6c1dab8ac618446f83aec81320c67c4e}{Get\+Coefficient}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}} index, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&x) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+double \mbox{\hyperlink{classNewtonBase_a6c1dab8ac618446f83aec81320c67c4e}{Get\+Coefficient}} (size\+\_\+t index, const double \&x) const
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classNewtonBase_adc0ff93bb2460cac720680102a6ac83f}{Evaluate}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{x\+In}}) \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}}
+virtual \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classNewtonBase_adc0ff93bb2460cac720680102a6ac83f}{Evaluate}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&x\+In) const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classPolynomialBase}{Polynomial\+Base}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classPolynomialBase_a35c1b1f74053833dcd865908c93e8f24}{Polynomial\+Base}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&X, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&Y)
+\mbox{\hyperlink{classPolynomialBase_a35c1b1f74053833dcd865908c93e8f24}{Polynomial\+Base}} (const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&X, const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&Y)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classNewtonBase_ad33933afa51a82891d615d2789b089b0}{b}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classNewtonBase_ad33933afa51a82891d615d2789b089b0}{b}}
 \begin{DoxyCompactList}\small\item\em newton base coefficients \$\$b\+\_\+i\$\$ \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \mbox{\hyperlink{classNewtonBase_a06ff10676feb2bfddd21d01b883cb539}{X}}
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \mbox{\hyperlink{classNewtonBase_a06ff10676feb2bfddd21d01b883cb539}{X}}
 \begin{DoxyCompactList}\small\item\em support values \$\$x\+\_\+i\$\$ \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -49,11 +49,11 @@ Newton-\/\+Base
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classNewtonBase_a789b7658f5c76f974e7425976b62f796}\label{classNewtonBase_a789b7658f5c76f974e7425976b62f796} 
-\index{NewtonBase@{NewtonBase}!NewtonBase@{NewtonBase}}
+\Hypertarget{classNewtonBase_a789b7658f5c76f974e7425976b62f796}\index{NewtonBase@{NewtonBase}!NewtonBase@{NewtonBase}}
 \index{NewtonBase@{NewtonBase}!NewtonBase@{NewtonBase}}
 \doxysubsubsection{\texorpdfstring{NewtonBase()}{NewtonBase()}}
-{\footnotesize\ttfamily Newton\+Base\+::\+Newton\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classNewtonBase_a789b7658f5c76f974e7425976b62f796} 
+Newton\+Base\+::\+Newton\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{x}{, }\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 default constructor 
 \begin{DoxyParams}{Parameters}
@@ -65,11 +65,11 @@ default constructor
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classNewtonBase_adc0ff93bb2460cac720680102a6ac83f}\label{classNewtonBase_adc0ff93bb2460cac720680102a6ac83f} 
-\index{NewtonBase@{NewtonBase}!Evaluate@{Evaluate}}
+\Hypertarget{classNewtonBase_adc0ff93bb2460cac720680102a6ac83f}\index{NewtonBase@{NewtonBase}!Evaluate@{Evaluate}}
 \index{Evaluate@{Evaluate}!NewtonBase@{NewtonBase}}
 \doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ Newton\+Base\+::\+Evaluate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{classMatrix}{Matrix}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} $>$ \&}]{x\+In }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classNewtonBase_adc0ff93bb2460cac720680102a6ac83f} 
+virtual \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ Newton\+Base\+::\+Evaluate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMatrix}{Matrix}}$<$ double $>$ \&}]{x\+In}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 Evaluate the newton base for given values 
 \begin{DoxyParams}{Parameters}
@@ -83,11 +83,11 @@ interpolated values
 
 Implements \mbox{\hyperlink{classPolynomialBase_a7bbf28d9cc1bd42019c07c8af297563b}{Polynomial\+Base}}.
 
-\Hypertarget{classNewtonBase_af59cf5892ed772c87c830ceb701160dd}\label{classNewtonBase_af59cf5892ed772c87c830ceb701160dd} 
-\index{NewtonBase@{NewtonBase}!Function@{Function}}
+\Hypertarget{classNewtonBase_af59cf5892ed772c87c830ceb701160dd}\index{NewtonBase@{NewtonBase}!Function@{Function}}
 \index{Function@{Function}!NewtonBase@{NewtonBase}}
 \doxysubsubsection{\texorpdfstring{Function()}{Function()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{virtual}} std\+::string Newton\+Base\+::\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \label{classNewtonBase_af59cf5892ed772c87c830ceb701160dd} 
+virtual std\+::string Newton\+Base\+::\+Function (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 String representation in newton base \begin{DoxyReturn}{Returns}
 representational string 
@@ -96,11 +96,11 @@ representational string
 
 Implements \mbox{\hyperlink{classPolynomialBase_a7c5cff1055e525bd01ab24cf39bf9ed5}{Polynomial\+Base}}.
 
-\Hypertarget{classNewtonBase_a6c1dab8ac618446f83aec81320c67c4e}\label{classNewtonBase_a6c1dab8ac618446f83aec81320c67c4e} 
-\index{NewtonBase@{NewtonBase}!GetCoefficient@{GetCoefficient}}
+\Hypertarget{classNewtonBase_a6c1dab8ac618446f83aec81320c67c4e}\index{NewtonBase@{NewtonBase}!GetCoefficient@{GetCoefficient}}
 \index{GetCoefficient@{GetCoefficient}!NewtonBase@{NewtonBase}}
 \doxysubsubsection{\texorpdfstring{GetCoefficient()}{GetCoefficient()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} Newton\+Base\+::\+Get\+Coefficient (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{size\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}} \&}]{x }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{classNewtonBase_a6c1dab8ac618446f83aec81320c67c4e} 
+double Newton\+Base\+::\+Get\+Coefficient (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{, }\item[{const double \&}]{x}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 Getter for coefficient with index i for a value x 
 \begin{DoxyParams}{Parameters}
@@ -115,21 +115,21 @@ evaluated coefficient
 
 
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classNewtonBase_ad33933afa51a82891d615d2789b089b0}\label{classNewtonBase_ad33933afa51a82891d615d2789b089b0} 
-\index{NewtonBase@{NewtonBase}!b@{b}}
+\Hypertarget{classNewtonBase_ad33933afa51a82891d615d2789b089b0}\index{NewtonBase@{NewtonBase}!b@{b}}
 \index{b@{b}!NewtonBase@{NewtonBase}}
 \doxysubsubsection{\texorpdfstring{b}{b}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ Newton\+Base\+::b}
+{\footnotesize\ttfamily \label{classNewtonBase_ad33933afa51a82891d615d2789b089b0} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$ Newton\+Base\+::b}
 
 
 
 newton base coefficients \$\$b\+\_\+i\$\$ 
 
-\Hypertarget{classNewtonBase_a06ff10676feb2bfddd21d01b883cb539}\label{classNewtonBase_a06ff10676feb2bfddd21d01b883cb539} 
-\index{NewtonBase@{NewtonBase}!X@{X}}
+\Hypertarget{classNewtonBase_a06ff10676feb2bfddd21d01b883cb539}\index{NewtonBase@{NewtonBase}!X@{X}}
 \index{X@{X}!NewtonBase@{NewtonBase}}
 \doxysubsubsection{\texorpdfstring{X}{X}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classMatrix}{Matrix}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{double}}$>$ Newton\+Base\+::X\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \label{classNewtonBase_a06ff10676feb2bfddd21d01b883cb539} 
+\mbox{\hyperlink{classMatrix}{Matrix}}$<$double$>$ Newton\+Base\+::X\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

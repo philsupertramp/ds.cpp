@@ -24,10 +24,10 @@ Printing the result matrix can already look quite nice!
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classNewtonFractal}{NewtonFractal}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}}(25);}
-\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}}.maxIter\ =\ 2000;}
-\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}}.tol\ =\ 1\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{e}}-\/13;}
-\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}}();}
+\DoxyCodeLine{\mbox{\hyperlink{classNewtonFractal}{NewtonFractal}}\ fractal(25);}
+\DoxyCodeLine{fractal.maxIter\ =\ 2000;}
+\DoxyCodeLine{fractal.tol\ =\ 1e-\/13;}
+\DoxyCodeLine{fractal();}
 \DoxyCodeLine{>>>\ [}
 \DoxyCodeLine{\ \ \ \ 0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 2,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,\ 3,}
 \DoxyCodeLine{3,}
@@ -112,12 +112,12 @@ or as plot using \doxylink{classImagePlot}{Image\+Plot}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classMandelbrot}{Mandelbrot}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}};}
-\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}}.\mbox{\hyperlink{classMandelbrot_a09a174794619b9f2a13010b4af19d498}{detail}}\ \ \ =\ 1250;}
-\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}}.maxIters\ =\ 99;}
-\DoxyCodeLine{\mbox{\hyperlink{classImagePlot}{ImagePlot}}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{plot}}(\textcolor{stringliteral}{"{}Mandelbrot"{}});}
-\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{plot}}.AddData(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{fractal}}(),\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{plot}}();}
+\DoxyCodeLine{\mbox{\hyperlink{classMandelbrot}{Mandelbrot}}\ fractal;}
+\DoxyCodeLine{fractal.\mbox{\hyperlink{classMandelbrot_a09a174794619b9f2a13010b4af19d498}{detail}}\ \ \ =\ 1250;}
+\DoxyCodeLine{fractal.\mbox{\hyperlink{classMandelbrot_a02ac592d77e906df905626032b9af8aa}{maxIters}}\ =\ 99;}
+\DoxyCodeLine{\mbox{\hyperlink{classImagePlot}{ImagePlot}}\ plot(\textcolor{stringliteral}{"{}Mandelbrot"{}});}
+\DoxyCodeLine{plot.AddData(fractal(),\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{plot();}
 
 \end{DoxyCode}
   

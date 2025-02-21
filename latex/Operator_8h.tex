@@ -52,118 +52,118 @@ enum \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2e}{Operator\+V
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classOperator}{Operator}} $>$ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{Generate\+Operator}} (\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}} type)
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classOperator}{Operator}} $>$ \mbox{\hyperlink{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}{Generate\+Operator}} (\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}} type)
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} \mbox{\hyperlink{Operator_8h_aa26df455b0a2615c65df309cb038167f}{is\+Function}} (\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{in}})
+bool \mbox{\hyperlink{Operator_8h_aa26df455b0a2615c65df309cb038167f}{is\+Function}} (const std\+::string \&in)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::map}}$<$ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classFunction}{Function}} $>$ $>$ \mbox{\hyperlink{Operator_8h_a99dcd69d67fa481b0e277d8e9fd68e09}{Default\+Functions}}
+const std\+::map$<$ std\+::string, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classFunction}{Function}} $>$ $>$ \mbox{\hyperlink{Operator_8h_a99dcd69d67fa481b0e277d8e9fd68e09}{Default\+Functions}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Enumeration Type Documentation}
-\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
-\index{Operator.h@{Operator.h}!OperatorPriority@{OperatorPriority}}
+\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}\index{Operator.h@{Operator.h}!OperatorPriority@{OperatorPriority}}
 \index{OperatorPriority@{OperatorPriority}!Operator.h@{Operator.h}}
 \doxysubsubsection{\texorpdfstring{OperatorPriority}{OperatorPriority}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{enum}} \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}{Operator\+Priority}}}
+{\footnotesize\ttfamily \label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
+enum \mbox{\hyperlink{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7}{Operator\+Priority}}}
 
-Priority definition for AST generation, used in shunting-\/yard algorithm, the \doxylink{classEquation}{Equation} class builds nodes using a stack based on priorities \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassUnknown@{OPClassUnknown}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassUnknown@{OPClassUnknown}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a16fb5a99927a6fe55a41cd184a41c55b}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a16fb5a99927a6fe55a41cd184a41c55b} 
+Priority definition for AST generation, used in shunting-\/yard algorithm, the \doxylink{classEquation}{Equation} class builds nodes using a stack based on priorities \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassUnknown@{OPClassUnknown}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassUnknown@{OPClassUnknown}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a16fb5a99927a6fe55a41cd184a41c55b}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
 OPClass\+Unknown&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassLine@{OPClassLine}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassLine@{OPClassLine}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a14a7e4e3f29c74875a1560a628f7e560}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a14a7e4e3f29c74875a1560a628f7e560} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassLine@{OPClassLine}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassLine@{OPClassLine}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a14a7e4e3f29c74875a1560a628f7e560}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
 OPClass\+Line&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassDot@{OPClassDot}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassDot@{OPClassDot}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7ad2cb6f029c9332ded1b1359c5021aea5}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7ad2cb6f029c9332ded1b1359c5021aea5} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassDot@{OPClassDot}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassDot@{OPClassDot}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7ad2cb6f029c9332ded1b1359c5021aea5}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
 OPClass\+Dot&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassPow@{OPClassPow}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassPow@{OPClassPow}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a39530fd3bfb1fee73f2d1f8e08b26078}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a39530fd3bfb1fee73f2d1f8e08b26078} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassPow@{OPClassPow}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassPow@{OPClassPow}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a39530fd3bfb1fee73f2d1f8e08b26078}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
 OPClass\+Pow&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassParentheses@{OPClassParentheses}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassParentheses@{OPClassParentheses}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7acb85e0b74531a7513ce7efbd0982e893}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7acb85e0b74531a7513ce7efbd0982e893} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassParentheses@{OPClassParentheses}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassParentheses@{OPClassParentheses}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7acb85e0b74531a7513ce7efbd0982e893}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
 OPClass\+Parentheses&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassFunction@{OPClassFunction}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassFunction@{OPClassFunction}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a48873ec61a22f8057aeeb35a848e52da}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a48873ec61a22f8057aeeb35a848e52da} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPClassFunction@{OPClassFunction}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!OPClassFunction@{OPClassFunction}}}\Hypertarget{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7a48873ec61a22f8057aeeb35a848e52da}\label{Operator_8h_a46dd797d9c42218918ba2a83eb5b8db7} 
 OPClass\+Function&\\
 \hline
 
 \end{DoxyEnumFields}
-\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
-\index{Operator.h@{Operator.h}!OperatorType@{OperatorType}}
+\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}\index{Operator.h@{Operator.h}!OperatorType@{OperatorType}}
 \index{OperatorType@{OperatorType}!Operator.h@{Operator.h}}
 \doxysubsubsection{\texorpdfstring{OperatorType}{OperatorType}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{enum}} \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}}}
+{\footnotesize\ttfamily \label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
+enum \mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}}}
 
-Representation of operator type used in factories \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_ADDITION@{TYPE\_ADDITION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_ADDITION@{TYPE\_ADDITION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576} 
+Representation of operator type used in factories \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_ADDITION@{TYPE\_ADDITION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_ADDITION@{TYPE\_ADDITION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a9d2ba264cfc9d4b4d48afaa051abc576}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
 TYPE\+\_\+\+ADDITION&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_SUBTRACTION@{TYPE\_SUBTRACTION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_SUBTRACTION@{TYPE\_SUBTRACTION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a7637e5c33286f4e519ec1622c113e273}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a7637e5c33286f4e519ec1622c113e273} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_SUBTRACTION@{TYPE\_SUBTRACTION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_SUBTRACTION@{TYPE\_SUBTRACTION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a7637e5c33286f4e519ec1622c113e273}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
 TYPE\+\_\+\+SUBTRACTION&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_MULTIPLICATION@{TYPE\_MULTIPLICATION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_MULTIPLICATION@{TYPE\_MULTIPLICATION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40c6b3a7d7ccf0fb358be439f7a969d9}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40c6b3a7d7ccf0fb358be439f7a969d9} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_MULTIPLICATION@{TYPE\_MULTIPLICATION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_MULTIPLICATION@{TYPE\_MULTIPLICATION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40c6b3a7d7ccf0fb358be439f7a969d9}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
 TYPE\+\_\+\+MULTIPLICATION&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_DIVISION@{TYPE\_DIVISION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_DIVISION@{TYPE\_DIVISION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40d27ed340959efbbe20f81dc93028fb}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40d27ed340959efbbe20f81dc93028fb} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_DIVISION@{TYPE\_DIVISION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_DIVISION@{TYPE\_DIVISION}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a40d27ed340959efbbe20f81dc93028fb}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
 TYPE\+\_\+\+DIVISION&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_POWER@{TYPE\_POWER}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_POWER@{TYPE\_POWER}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a234eaa29e4af2f0d4711216c296a6445}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a234eaa29e4af2f0d4711216c296a6445} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_POWER@{TYPE\_POWER}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_POWER@{TYPE\_POWER}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117a234eaa29e4af2f0d4711216c296a6445}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
 TYPE\+\_\+\+POWER&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_PARENTHESES\_OPEN@{TYPE\_PARENTHESES\_OPEN}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_PARENTHESES\_OPEN@{TYPE\_PARENTHESES\_OPEN}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117adb06169322e6eae6db269eab60a12117}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117adb06169322e6eae6db269eab60a12117} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_PARENTHESES\_OPEN@{TYPE\_PARENTHESES\_OPEN}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_PARENTHESES\_OPEN@{TYPE\_PARENTHESES\_OPEN}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117adb06169322e6eae6db269eab60a12117}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
 TYPE\+\_\+\+PARENTHESES\+\_\+\+OPEN&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_PARENTHESES\_CLOSE@{TYPE\_PARENTHESES\_CLOSE}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_PARENTHESES\_CLOSE@{TYPE\_PARENTHESES\_CLOSE}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117aca16c2cd01b23b65503c291f19a8235c}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117aca16c2cd01b23b65503c291f19a8235c} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TYPE\_PARENTHESES\_CLOSE@{TYPE\_PARENTHESES\_CLOSE}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!TYPE\_PARENTHESES\_CLOSE@{TYPE\_PARENTHESES\_CLOSE}}}\Hypertarget{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117aca16c2cd01b23b65503c291f19a8235c}\label{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117} 
 TYPE\+\_\+\+PARENTHESES\+\_\+\+CLOSE&\\
 \hline
 
 \end{DoxyEnumFields}
-\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2e}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
-\index{Operator.h@{Operator.h}!OperatorValue@{OperatorValue}}
+\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2e}\index{Operator.h@{Operator.h}!OperatorValue@{OperatorValue}}
 \index{OperatorValue@{OperatorValue}!Operator.h@{Operator.h}}
 \doxysubsubsection{\texorpdfstring{OperatorValue}{OperatorValue}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{enum}} \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2e}{Operator\+Value}} \+: \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{char}}}
+{\footnotesize\ttfamily \label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
+enum \mbox{\hyperlink{Operator_8h_a9ed491928ed861a174dee2dadc145b2e}{Operator\+Value}} \+: char}
 
-representation of operator value in char \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_ADDITION@{VALUE\_ADDITION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_ADDITION@{VALUE\_ADDITION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea0f0b1eeb14adb11a5f39fb471f3ac52c}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea0f0b1eeb14adb11a5f39fb471f3ac52c} 
+representation of operator value in char \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_ADDITION@{VALUE\_ADDITION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_ADDITION@{VALUE\_ADDITION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea0f0b1eeb14adb11a5f39fb471f3ac52c}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
 VALUE\+\_\+\+ADDITION&l + r \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_SUBTRACTION@{VALUE\_SUBTRACTION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_SUBTRACTION@{VALUE\_SUBTRACTION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2eab7eb88eb1f8cc909905bd1890b093599}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2eab7eb88eb1f8cc909905bd1890b093599} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_SUBTRACTION@{VALUE\_SUBTRACTION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_SUBTRACTION@{VALUE\_SUBTRACTION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2eab7eb88eb1f8cc909905bd1890b093599}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
 VALUE\+\_\+\+SUBTRACTION&l -\/ r \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_MULTIPLICATION@{VALUE\_MULTIPLICATION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_MULTIPLICATION@{VALUE\_MULTIPLICATION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4206b2e10138126515fc5c585fd39912}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4206b2e10138126515fc5c585fd39912} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_MULTIPLICATION@{VALUE\_MULTIPLICATION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_MULTIPLICATION@{VALUE\_MULTIPLICATION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4206b2e10138126515fc5c585fd39912}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
 VALUE\+\_\+\+MULTIPLICATION&l \texorpdfstring{$\ast$}{*} r \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_DIVISION@{VALUE\_DIVISION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_DIVISION@{VALUE\_DIVISION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea63579227fd6e6d1bb6ee75015b18eb56}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea63579227fd6e6d1bb6ee75015b18eb56} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_DIVISION@{VALUE\_DIVISION}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_DIVISION@{VALUE\_DIVISION}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea63579227fd6e6d1bb6ee75015b18eb56}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
 VALUE\+\_\+\+DIVISION&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_POWER@{VALUE\_POWER}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_POWER@{VALUE\_POWER}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea2826b73297c6ccf5e8f8b74f3ce39f6b}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea2826b73297c6ccf5e8f8b74f3ce39f6b} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_POWER@{VALUE\_POWER}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_POWER@{VALUE\_POWER}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea2826b73297c6ccf5e8f8b74f3ce39f6b}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
 VALUE\+\_\+\+POWER&l\texorpdfstring{$^\wedge$}{\string^}r \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_PARENTHESES\_OPEN@{VALUE\_PARENTHESES\_OPEN}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_PARENTHESES\_OPEN@{VALUE\_PARENTHESES\_OPEN}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4e1a812af2c01c4dc422c5bbd055caa9}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4e1a812af2c01c4dc422c5bbd055caa9} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_PARENTHESES\_OPEN@{VALUE\_PARENTHESES\_OPEN}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_PARENTHESES\_OPEN@{VALUE\_PARENTHESES\_OPEN}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea4e1a812af2c01c4dc422c5bbd055caa9}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
 VALUE\+\_\+\+PARENTHESES\+\_\+\+OPEN&( \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_PARENTHESES\_CLOSE@{VALUE\_PARENTHESES\_CLOSE}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_PARENTHESES\_CLOSE@{VALUE\_PARENTHESES\_CLOSE}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea28e6bebd88b6bb7db193e4e0e2624b13}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea28e6bebd88b6bb7db193e4e0e2624b13} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VALUE\_PARENTHESES\_CLOSE@{VALUE\_PARENTHESES\_CLOSE}!Operator.h@{Operator.h}}\index{Operator.h@{Operator.h}!VALUE\_PARENTHESES\_CLOSE@{VALUE\_PARENTHESES\_CLOSE}}}\Hypertarget{Operator_8h_a9ed491928ed861a174dee2dadc145b2ea28e6bebd88b6bb7db193e4e0e2624b13}\label{Operator_8h_a9ed491928ed861a174dee2dadc145b2e} 
 VALUE\+\_\+\+PARENTHESES\+\_\+\+CLOSE&) \\
 \hline
 
@@ -171,11 +171,11 @@ VALUE\+\_\+\+PARENTHESES\+\_\+\+CLOSE&) \\
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}\label{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed} 
-\index{Operator.h@{Operator.h}!GenerateOperator@{GenerateOperator}}
+\Hypertarget{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed}\index{Operator.h@{Operator.h}!GenerateOperator@{GenerateOperator}}
 \index{GenerateOperator@{GenerateOperator}!Operator.h@{Operator.h}}
 \doxysubsubsection{\texorpdfstring{GenerateOperator()}{GenerateOperator()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$ \mbox{\hyperlink{classOperator}{Operator}} $>$ Generate\+Operator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}}}]{type }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Operator_8h_a2d90273d7103d93ce6e1e9c40b77aeed} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classOperator}{Operator}} $>$ Generate\+Operator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Operator_8h_a6a02b2d1d62293b20242e3dcfbdd0117}{Operator\+Type}}}]{type}{}\end{DoxyParamCaption})}
 
 \doxylink{classOperator}{Operator} factory, returns shared\+\_\+ptr to operator with given type 
 \begin{DoxyParams}{Parameters}
@@ -188,11 +188,11 @@ VALUE\+\_\+\+PARENTHESES\+\_\+\+CLOSE&) \\
 \begin{Desc}
 \item[Examples]\par
 \mbox{\hyperlink{symb_2TestSymbolic_8cpp-example}{symb/\+Test\+Symbolic.\+cpp}}.\end{Desc}
-\Hypertarget{Operator_8h_aa26df455b0a2615c65df309cb038167f}\label{Operator_8h_aa26df455b0a2615c65df309cb038167f} 
-\index{Operator.h@{Operator.h}!isFunction@{isFunction}}
+\Hypertarget{Operator_8h_aa26df455b0a2615c65df309cb038167f}\index{Operator.h@{Operator.h}!isFunction@{isFunction}}
 \index{isFunction@{isFunction}!Operator.h@{Operator.h}}
 \doxysubsubsection{\texorpdfstring{isFunction()}{isFunction()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{bool}} is\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}} \&}]{in }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{Operator_8h_aa26df455b0a2615c65df309cb038167f} 
+bool is\+Function (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{in}{}\end{DoxyParamCaption})}
 
 Helper function to test if string is function representation 
 \begin{DoxyParams}{Parameters}
@@ -205,19 +205,19 @@ Helper function to test if string is function representation
 
 
 \doxysubsection{Variable Documentation}
-\Hypertarget{Operator_8h_a99dcd69d67fa481b0e277d8e9fd68e09}\label{Operator_8h_a99dcd69d67fa481b0e277d8e9fd68e09} 
-\index{Operator.h@{Operator.h}!DefaultFunctions@{DefaultFunctions}}
+\Hypertarget{Operator_8h_a99dcd69d67fa481b0e277d8e9fd68e09}\index{Operator.h@{Operator.h}!DefaultFunctions@{DefaultFunctions}}
 \index{DefaultFunctions@{DefaultFunctions}!Operator.h@{Operator.h}}
 \doxysubsubsection{\texorpdfstring{DefaultFunctions}{DefaultFunctions}}
-{\footnotesize\ttfamily \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{const}} \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::map}}$<$\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::string}}, \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{std\+::shared\+\_\+ptr}}$<$\mbox{\hyperlink{classFunction}{Function}}$>$ $>$ Default\+Functions}
+{\footnotesize\ttfamily \label{Operator_8h_a99dcd69d67fa481b0e277d8e9fd68e09} 
+const std\+::map$<$std\+::string, std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classFunction}{Function}}$>$ $>$ Default\+Functions}
 
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=\ \{}
-\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}sqrt"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}sqrt"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{sqrt}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
-\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}log"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}log"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{log}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
-\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}sin"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}sin"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{sin}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
-\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}cos"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}cos"{}},\ [](\textcolor{keywordtype}{double}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}})\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{cos}}(\mbox{\hyperlink{matrix__utils_8h_ace948cba52caa75f48454f881bc51a68}{a}});\ \})\ \},}
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}sqrt"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}sqrt"{}},\ [](\textcolor{keywordtype}{double}\ a)\ \{\ \textcolor{keywordflow}{return}\ sqrt(a);\ \})\ \},}
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}log"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}log"{}},\ [](\textcolor{keywordtype}{double}\ a)\ \{\ \textcolor{keywordflow}{return}\ log(a);\ \})\ \},}
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}sin"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}sin"{}},\ [](\textcolor{keywordtype}{double}\ a)\ \{\ \textcolor{keywordflow}{return}\ sin(a);\ \})\ \},}
+\DoxyCodeLine{\ \ \{\ \textcolor{stringliteral}{"{}cos"{}},\ std::make\_shared<Function>(\textcolor{stringliteral}{"{}cos"{}},\ [](\textcolor{keywordtype}{double}\ a)\ \{\ \textcolor{keywordflow}{return}\ cos(a);\ \})\ \},}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
